@@ -1,0 +1,20 @@
+{
+  "PresetName": "Midrange",
+  "Cards": [
+    { "CardId": 1007, "Count": 2 },
+    { "CardId": 1009, "Count": 2 },
+    { "CardId": 2001, "Count": 2 },
+    { "CardId": 2002, "Count": 2 },
+    { "CardId": 2005, "Count": 2 },
+    { "CardId": 2011, "Count": 2 },
+    { "CardId": 2012, "Count": 2 },
+    { "CardId": 2014, "Count": 2 },
+    { "CardId": 2017, "Count": 2 },
+    { "CardId": 2022, "Count": 2 },
+    { "CardId": 2026, "Count": 2 },
+    { "CardId": 2101, "Count": 2 },
+    { "CardId": 2104, "Count": 2 },
+    { "CardId": 3001, "Count": 2 },
+    { "CardId": 3003, "Count": 2 }
+  ]
+}

@@ -1,0 +1,738 @@
+{
+  "setName": "Midgame Cards",
+  "orderPriority": 2,
+  "splitRule": "Collectible cards with ManaCost 3-5. Summon-only dependencies used by midgame cards are included.",
+  "entities": [
+    {
+      "id": 2000,
+      "Title": "Plungeclaw Gryphon",
+      "Description": "Rush.",
+      "Class": "ENTITY",
+      "LogoPath": "CardsLogos/Mid/Plungeclaw Gryphon",
+      "Attack": 3,
+      "HP": 2,
+      "MaxHP": 2,
+      "ManaCost": 3,
+      "Keywords": [
+        "Rush"
+      ],
+      "Effects": [],
+      "IsCollectible": true
+    },
+    {
+      "id": 2001,
+      "Title": "Twilight Duelist",
+      "Description": "Double Attack.",
+      "Class": "ENTITY",
+      "LogoPath": "CardsLogos/Mid/Twilight Duelist",
+      "Attack": 2,
+      "HP": 2,
+      "MaxHP": 2,
+      "ManaCost": 3,
+      "Keywords": [
+        "DoubleAttack"
+      ],
+      "Effects": [],
+      "IsCollectible": true
+    },
+    {
+      "id": 2002,
+      "Title": "Rodent Commander",
+      "Description": "On Play: Give other allied cards +1 Attack.",
+      "Class": "ENTITY",
+      "LogoPath": "CardsLogos/Mid/Rodent Commander",
+      "Attack": 2,
+      "HP": 3,
+      "MaxHP": 3,
+      "ManaCost": 3,
+      "Keywords": [],
+      "Effects": [
+        {
+          "Trigger": "OnPlay",
+          "Type": "BuffAttack",
+          "Target": "OtherAllyCards",
+          "Value": 1
+        }
+      ],
+      "IsCollectible": true
+    },
+    {
+      "id": 2003,
+      "Title": "Rock Fella",
+      "Description": "Charge. On Play: Opponent gains 1 temporary mana on their next turn.",
+      "Class": "ENTITY",
+      "LogoPath": "CardsLogos/Mid/Rock Fella",
+      "Attack": 4,
+      "HP": 2,
+      "MaxHP": 2,
+      "ManaCost": 3,
+      "Keywords": [
+        "Charge"
+      ],
+      "Effects": [
+        {
+          "Trigger": "OnPlay",
+          "Type": "GainTemporaryManaNextTurn",
+          "Target": "EnemyHero",
+          "Value": 1
+        }
+      ],
+      "IsCollectible": true
+    },
+    {
+      "id": 2004,
+      "Title": "Gallows Spur-Rider",
+      "Description": "Charge.",
+      "Class": "ENTITY",
+      "LogoPath": "CardsLogos/Mid/Gallows Spur-Rider",
+      "Attack": 3,
+      "HP": 1,
+      "MaxHP": 1,
+      "ManaCost": 3,
+      "Keywords": [
+        "Charge"
+      ],
+      "Effects": [],
+      "IsCollectible": true
+    },
+    {
+      "id": 2005,
+      "Title": "Blackshovel Ambusher",
+      "Description": "Rush.",
+      "Class": "ENTITY",
+      "LogoPath": "CardsLogos/Mid/Blackshovel Ambusher",
+      "Attack": 4,
+      "HP": 2,
+      "MaxHP": 2,
+      "ManaCost": 3,
+      "Keywords": [
+        "Rush"
+      ],
+      "Effects": [],
+      "IsCollectible": true
+    },
+    {
+      "id": 2006,
+      "Title": "Vesperlight Chaplain",
+      "Description": "On Play: Give a friendly card +1/+1.",
+      "Class": "ENTITY",
+      "LogoPath": "CardsLogos/Mid/Vesperlight Chaplain",
+      "Attack": 4,
+      "HP": 4,
+      "MaxHP": 4,
+      "ManaCost": 5,
+      "Keywords": [],
+      "Effects": [
+        {
+          "Trigger": "OnPlay",
+          "Type": "BuffStats",
+          "Target": "SelectedAllyCard",
+          "Value": 0,
+          "AttackValue": 1,
+          "HealthValue": 1,
+          "Keyword": "None"
+        }
+      ],
+      "IsCollectible": true
+    },
+    {
+      "id": 2007,
+      "Title": "Formidable Harvester",
+      "Description": "On Death: Summon a 2/1 Harvester-chan.",
+      "Class": "ENTITY",
+      "LogoPath": "CardsLogos/Mid/Formidable Harvester",
+      "Attack": 2,
+      "HP": 3,
+      "MaxHP": 3,
+      "ManaCost": 3,
+      "Keywords": [],
+      "Effects": [
+        {
+          "Trigger": "OnDeath",
+          "Type": "Summon",
+          "Target": "None",
+          "CardId": 2900,
+          "Value": 1
+        }
+      ],
+      "IsCollectible": true
+    },
+    {
+      "id": 2008,
+      "Title": "Whimsical Herbalist",
+      "Description": "On Play: Heal your hero for 3.",
+      "Class": "ENTITY",
+      "LogoPath": "CardsLogos/Mid/Whimsical Herbalist",
+      "Attack": 3,
+      "HP": 4,
+      "MaxHP": 4,
+      "ManaCost": 4,
+      "Keywords": [],
+      "Effects": [
+        {
+          "Trigger": "OnPlay",
+          "Type": "Heal",
+          "Target": "SelfHero",
+          "Value": 3
+        }
+      ],
+      "IsCollectible": true
+    },
+    {
+      "id": 2009,
+      "Title": "Johnny Sharpshooter",
+      "Description": "On Play: Deal 1 damage.",
+      "Class": "ENTITY",
+      "LogoPath": "CardsLogos/Mid/Johnny Sharpshooter",
+      "Attack": 2,
+      "HP": 2,
+      "MaxHP": 2,
+      "ManaCost": 3,
+      "Keywords": [],
+      "Effects": [
+        {
+          "Trigger": "OnPlay",
+          "Type": "DealDamage",
+          "Target": "SelectedEnemyCharacter",
+          "Value": 1
+        }
+      ],
+      "IsCollectible": true
+    },
+    {
+      "id": 2010,
+      "Title": "Briarback Gate-Ape",
+      "Description": "Provocation.",
+      "Class": "ENTITY",
+      "LogoPath": "CardsLogos/Mid/Briarback Gate-Ape",
+      "Attack": 3,
+      "HP": 4,
+      "MaxHP": 4,
+      "ManaCost": 3,
+      "Keywords": [
+        "Provocation"
+      ],
+      "Effects": [],
+      "IsCollectible": true
+    },
+    {
+      "id": 2011,
+      "Title": "Meekmaking Beadle",
+      "Description": "On Play: Give an enemy card -2 Attack.",
+      "Class": "ENTITY",
+      "LogoPath": "CardsLogos/Mid/Meekmaking Beadle",
+      "Attack": 3,
+      "HP": 3,
+      "MaxHP": 3,
+      "ManaCost": 3,
+      "Keywords": [],
+      "Effects": [
+        {
+          "Trigger": "OnPlay",
+          "Type": "DebuffAttack",
+          "Target": "SelectedEnemyCard",
+          "Value": 2
+        }
+      ],
+      "IsCollectible": true
+    },
+    {
+      "id": 2012,
+      "Title": "Snowpeak Warder",
+      "Description": "",
+      "Class": "ENTITY",
+      "LogoPath": "CardsLogos/Mid/Snowpeak Warder",
+      "Attack": 4,
+      "HP": 5,
+      "MaxHP": 5,
+      "ManaCost": 4,
+      "Keywords": [],
+      "Effects": [],
+      "IsCollectible": true
+    },
+    {
+      "id": 2013,
+      "Title": "Coffinroad Warder",
+      "Description": "Provocation.",
+      "Class": "ENTITY",
+      "LogoPath": "CardsLogos/Mid/Coffinroad Warder",
+      "Attack": 3,
+      "HP": 5,
+      "MaxHP": 5,
+      "ManaCost": 4,
+      "Keywords": [
+        "Provocation"
+      ],
+      "Effects": [],
+      "IsCollectible": true
+    },
+    {
+      "id": 2014,
+      "Title": "Arc-Prohibitor",
+      "Description": "On Play: Silence an enemy card.",
+      "Class": "ENTITY",
+      "LogoPath": "CardsLogos/Mid/Arc-Prohibitor",
+      "Attack": 4,
+      "HP": 3,
+      "MaxHP": 3,
+      "ManaCost": 4,
+      "Keywords": [],
+      "Effects": [
+        {
+          "Trigger": "OnPlay",
+          "Type": "Silence",
+          "Target": "SelectedEnemyCard"
+        }
+      ],
+      "IsCollectible": true
+    },
+    {
+      "id": 2015,
+      "Title": "CrankNest Handler",
+      "Description": "On Play: Summon a 2/1 CrankNest.",
+      "Class": "ENTITY",
+      "LogoPath": "CardsLogos/Mid/CrankNest Handler",
+      "Attack": 2,
+      "HP": 4,
+      "MaxHP": 4,
+      "ManaCost": 4,
+      "Keywords": [],
+      "Effects": [
+        {
+          "Trigger": "OnPlay",
+          "Type": "Summon",
+          "Target": "None",
+          "CardId": 2901,
+          "Value": 1
+        }
+      ],
+      "IsCollectible": true
+    },
+    {
+      "id": 2016,
+      "Title": "Dustpack Archivist",
+      "Description": "On Play: Draw 1 card.",
+      "Class": "ENTITY",
+      "LogoPath": "CardsLogos/Mid/Dustpack Archivist",
+      "Attack": 2,
+      "HP": 4,
+      "MaxHP": 4,
+      "ManaCost": 4,
+      "Keywords": [],
+      "Effects": [
+        {
+          "Trigger": "OnPlay",
+          "Type": "DrawCards",
+          "Target": "None",
+          "Value": 1
+        }
+      ],
+      "IsCollectible": true
+    },
+    {
+      "id": 2017,
+      "Title": "Briette Haundmaster",
+      "Description": "On Play: Give a friendly card +2/+2 and Provocation.",
+      "Class": "ENTITY",
+      "LogoPath": "CardsLogos/Mid/Briette Haundmaster",
+      "Attack": 4,
+      "HP": 3,
+      "MaxHP": 3,
+      "ManaCost": 4,
+      "Keywords": [],
+      "Effects": [
+        {
+          "Trigger": "OnPlay",
+          "Type": "BuffStats",
+          "Target": "SelectedAllyCard",
+          "Value": 0,
+          "AttackValue": 2,
+          "HealthValue": 2,
+          "Keyword": "None"
+        },
+        {
+          "Trigger": "OnPlay",
+          "Type": "AddKeyword",
+          "Target": "SelectedAllyCard",
+          "Value": 0,
+          "Keyword": "Provocation"
+        }
+      ],
+      "IsCollectible": true
+    },
+    {
+      "id": 2018,
+      "Title": "Broodrot She-Wolf",
+      "Description": "On Death: Summon two 1/1 Broodrot Imps.",
+      "Class": "ENTITY",
+      "LogoPath": "CardsLogos/Mid/Broodrot She-Wolf",
+      "Attack": 3,
+      "HP": 3,
+      "MaxHP": 3,
+      "ManaCost": 4,
+      "Keywords": [],
+      "Effects": [
+        {
+          "Trigger": "OnDeath",
+          "Type": "Summon",
+          "Target": "None",
+          "CardId": 2903,
+          "Value": 2
+        }
+      ],
+      "IsCollectible": true
+    },
+    {
+      "id": 2019,
+      "Title": "Bogbelch Coffinwall",
+      "Description": "Provocation. On Death: Summon a 1/2 Coffinborn Boneguard with Provocation.",
+      "Class": "ENTITY",
+      "LogoPath": "CardsLogos/Mid/Bogbelch Coffinwall",
+      "Attack": 3,
+      "HP": 5,
+      "MaxHP": 5,
+      "ManaCost": 5,
+      "Keywords": [
+        "Provocation"
+      ],
+      "Effects": [
+        {
+          "Trigger": "OnDeath",
+          "Type": "Summon",
+          "Target": "None",
+          "CardId": 2902,
+          "Value": 1
+        }
+      ],
+      "IsCollectible": true
+    },
+    {
+      "id": 2020,
+      "Title": "Sporecourt Reveler",
+      "Description": "On Play: Give your other ally cards +1/+1.",
+      "Class": "ENTITY",
+      "LogoPath": "CardsLogos/Mid/Sporecourt Reveler",
+      "Attack": 2,
+      "HP": 2,
+      "MaxHP": 2,
+      "ManaCost": 5,
+      "Keywords": [],
+      "Effects": [
+        {
+          "Trigger": "OnPlay",
+          "Type": "BuffStats",
+          "Target": "OtherAllyCards",
+          "Value": 0,
+          "AttackValue": 1,
+          "HealthValue": 1,
+          "Keyword": "None"
+        }
+      ],
+      "IsCollectible": true
+    },
+    {
+      "id": 2021,
+      "Title": "Filthy Miron",
+      "Description": "On Play: Deal 1 damage to all enemy cards.",
+      "Class": "ENTITY",
+      "LogoPath": "CardsLogos/Mid/Filthy Miron",
+      "Attack": 5,
+      "HP": 6,
+      "MaxHP": 6,
+      "ManaCost": 5,
+      "Keywords": [],
+      "Effects": [
+        {
+          "Trigger": "OnPlay",
+          "Type": "DealDamage",
+          "Target": "AllEnemyCards",
+          "Value": 1
+        }
+      ],
+      "IsCollectible": true
+    },
+    {
+      "id": 2022,
+      "Title": "Afterimage Fencer",
+      "Description": "Double Attack.",
+      "Class": "ENTITY",
+      "LogoPath": "CardsLogos/Mid/Afterimage Fencer",
+      "Attack": 3,
+      "HP": 4,
+      "MaxHP": 4,
+      "ManaCost": 4,
+      "Keywords": [
+        "DoubleAttack"
+      ],
+      "Effects": [],
+      "IsCollectible": true
+    },
+    {
+      "id": 2023,
+      "Title": "Chonky Leech",
+      "Description": "Lifesteal.",
+      "Class": "ENTITY",
+      "LogoPath": "CardsLogos/Mid/Chonky Leech",
+      "Attack": 3,
+      "HP": 3,
+      "MaxHP": 3,
+      "ManaCost": 3,
+      "Keywords": [
+        "Lifesteal"
+      ],
+      "Effects": [],
+      "IsCollectible": true
+    },
+    {
+      "id": 2024,
+      "Title": "Thunderhoof Charger",
+      "Description": "Charge.",
+      "Class": "ENTITY",
+      "LogoPath": "CardsLogos/Mid/Thunderhoof Charger",
+      "Attack": 5,
+      "HP": 4,
+      "MaxHP": 4,
+      "ManaCost": 5,
+      "Keywords": [
+        "Charge"
+      ],
+      "Effects": [],
+      "IsCollectible": true
+    },
+    {
+      "id": 2025,
+      "Title": "Imp Wrangler",
+      "Description": "On Play: Summon two 1/1 Broodrot Imps.",
+      "Class": "ENTITY",
+      "LogoPath": "CardsLogos/Mid/Imp Wrangler",
+      "Attack": 2,
+      "HP": 2,
+      "MaxHP": 2,
+      "ManaCost": 4,
+      "Keywords": [],
+      "Effects": [
+        {
+          "Trigger": "OnPlay",
+          "Type": "Summon",
+          "Target": "None",
+          "CardId": 2903,
+          "Value": 2
+        }
+      ],
+      "IsCollectible": true
+    },
+    {
+      "id": 2026,
+      "Title": "Punch-Punch Bot",
+      "Description": "Double Attack.",
+      "Class": "ENTITY",
+      "LogoPath": "CardsLogos/Mid/Punch-Punch Bot",
+      "Attack": 4,
+      "HP": 4,
+      "MaxHP": 4,
+      "ManaCost": 5,
+      "Keywords": [
+        "DoubleAttack"
+      ],
+      "Effects": [],
+      "IsCollectible": true
+    }
+  ],
+  "spells": [
+    {
+      "id": 2100,
+      "Title": "Rabblemoon Howl",
+      "Description": "Give all allied cards +1 Attack.",
+      "Class": "SPELL",
+      "LogoPath": "CardsLogos/Mid/Rabblemoon Howl",
+      "ManaCost": 3,
+      "Keywords": [],
+      "Effects": [
+        {
+          "Trigger": "OnPlay",
+          "Type": "BuffAttack",
+          "Target": "AllAllyCards",
+          "Value": 1
+        }
+      ],
+      "IsCollectible": true
+    },
+    {
+      "id": 2101,
+      "Title": "Fangflank Ambush",
+      "Description": "Deal 3 damage to an enemy card. Summon a 3/3 Ambush Kitty.",
+      "Class": "SPELL",
+      "LogoPath": "CardsLogos/Mid/Fangflank Ambush",
+      "Attack": 0,
+      "HP": 0,
+      "MaxHP": 0,
+      "ManaCost": 4,
+      "Keywords": [],
+      "Effects": [
+        {
+          "Trigger": "OnPlay",
+          "Type": "DealDamage",
+          "Target": "SelectedEnemyCard",
+          "Value": 3
+        },
+        {
+          "Trigger": "OnPlay",
+          "Type": "Summon",
+          "Target": "None",
+          "CardId": 2904,
+          "Value": 1
+        }
+      ],
+      "IsCollectible": true
+    },
+    {
+      "id": 2102,
+      "Title": "Whispering Tome",
+      "Description": "Draw 2 cards.",
+      "Class": "SPELL",
+      "LogoPath": "CardsLogos/Mid/Whispering Tome",
+      "ManaCost": 3,
+      "Keywords": [],
+      "Effects": [
+        {
+          "Trigger": "OnPlay",
+          "Type": "DrawCards",
+          "Target": "None",
+          "Value": 2
+        }
+      ],
+      "IsCollectible": true
+    },
+    {
+      "id": 2103,
+      "Title": "Cinder Nova",
+      "Description": "Deal 2 damage to all enemy cards.",
+      "Class": "SPELL",
+      "LogoPath": "CardsLogos/Mid/Cinder Nova",
+      "ManaCost": 4,
+      "Keywords": [],
+      "Effects": [
+        {
+          "Trigger": "OnPlay",
+          "Type": "DealDamage",
+          "Target": "AllEnemyCards",
+          "Value": 2
+        }
+      ],
+      "IsCollectible": true
+    },
+    {
+      "id": 2104,
+      "Title": "Skyfall Lance",
+      "Description": "Deal 5 damage.",
+      "Class": "SPELL",
+      "LogoPath": "CardsLogos/Mid/Skyfall Lance",
+      "ManaCost": 4,
+      "Keywords": [],
+      "Effects": [
+        {
+          "Trigger": "OnPlay",
+          "Type": "DealDamage",
+          "Target": "SelectedEnemyCharacter",
+          "Value": 5
+        }
+      ],
+      "IsCollectible": true
+    },
+    {
+      "id": 2105,
+      "Title": "Rallying Hymn",
+      "Description": "Give all allied cards +1/+1.",
+      "Class": "SPELL",
+      "LogoPath": "CardsLogos/Mid/Rallying Hymn",
+      "ManaCost": 3,
+      "Keywords": [],
+      "Effects": [
+        {
+          "Trigger": "OnPlay",
+          "Type": "BuffStats",
+          "Target": "AllAllyCards",
+          "Value": 0,
+          "AttackValue": 1,
+          "HealthValue": 1,
+          "Keyword": "None"
+        }
+      ],
+      "IsCollectible": true
+    }
+  ],
+  "summonEntities": [
+    {
+      "id": 2900,
+      "Title": "Harvester-chan",
+      "Description": "Summoned token.",
+      "Class": "ENTITY",
+      "LogoPath": "CardsLogos/Mid/Tokens/Harvester-chan",
+      "Attack": 2,
+      "HP": 1,
+      "MaxHP": 1,
+      "ManaCost": 0,
+      "Keywords": [],
+      "Effects": [],
+      "IsCollectible": false
+    },
+    {
+      "id": 2901,
+      "Title": "CrankNest",
+      "Description": "Summoned token.",
+      "Class": "ENTITY",
+      "LogoPath": "CardsLogos/Mid/Tokens/CrankNest",
+      "Attack": 2,
+      "HP": 1,
+      "MaxHP": 1,
+      "ManaCost": 0,
+      "Keywords": [],
+      "Effects": [],
+      "IsCollectible": false
+    },
+    {
+      "id": 2902,
+      "Title": "Coffinborn Boneguard",
+      "Description": "Summoned token. Provocation.",
+      "Class": "ENTITY",
+      "LogoPath": "CardsLogos/Mid/Tokens/Coffinborn Boneguard",
+      "Attack": 1,
+      "HP": 2,
+      "MaxHP": 2,
+      "ManaCost": 0,
+      "Keywords": [
+        "Provocation"
+      ],
+      "Effects": [],
+      "IsCollectible": false
+    },
+    {
+      "id": 2903,
+      "Title": "Broodrot Imp",
+      "Description": "Summoned token.",
+      "Class": "ENTITY",
+      "LogoPath": "CardsLogos/Mid/Tokens/Broodrot Imp",
+      "Attack": 1,
+      "HP": 1,
+      "MaxHP": 1,
+      "ManaCost": 0,
+      "Keywords": [],
+      "Effects": [],
+      "IsCollectible": false
+    },
+    {
+      "id": 2904,
+      "Title": "Ambush Kitty",
+      "Description": "Summoned token.",
+      "Class": "ENTITY",
+      "LogoPath": "CardsLogos/Mid/Tokens/Ambush Kitty",
+      "Attack": 3,
+      "HP": 3,
+      "MaxHP": 3,
+      "ManaCost": 0,
+      "Keywords": [],
+      "Effects": [],
+      "IsCollectible": false
+    }
+  ]
+}

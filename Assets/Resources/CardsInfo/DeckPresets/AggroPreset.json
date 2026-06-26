@@ -1,0 +1,20 @@
+{
+  "PresetName": "Aggro",
+  "Cards": [
+    { "CardId": 1000, "Count": 2 },
+    { "CardId": 1002, "Count": 2 },
+    { "CardId": 1005, "Count": 2 },
+    { "CardId": 1006, "Count": 2 },
+    { "CardId": 1007, "Count": 2 },
+    { "CardId": 1011, "Count": 2 },
+    { "CardId": 1100, "Count": 2 },
+    { "CardId": 1104, "Count": 2 },
+    { "CardId": 2000, "Count": 2 },
+    { "CardId": 2003, "Count": 2 },
+    { "CardId": 2004, "Count": 2 },
+    { "CardId": 2009, "Count": 2 },
+    { "CardId": 2100, "Count": 2 },
+    { "CardId": 2104, "Count": 2 },
+    { "CardId": 2024, "Count": 2 }
+  ]
+}

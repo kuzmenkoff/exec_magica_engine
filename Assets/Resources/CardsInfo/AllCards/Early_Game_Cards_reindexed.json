@@ -1,0 +1,398 @@
+{
+  "setName": "Early Game Cards",
+  "orderPriority": 1,
+  "splitRule": "Collectible cards with ManaCost 0-2. Summon-only dependencies used by early-game cards are included.",
+  "entities": [
+    {
+      "id": 1000,
+      "Title": "Mirefin Spearboi",
+      "Description": "",
+      "Class": "ENTITY",
+      "LogoPath": "CardsLogos/Early/Mirefin Spearboi",
+      "Attack": 2,
+      "HP": 1,
+      "MaxHP": 1,
+      "ManaCost": 1,
+      "Keywords": [],
+      "Effects": [],
+      "IsCollectible": true
+    },
+    {
+      "id": 1001,
+      "Title": "Mechadawg",
+      "Description": "On Death: Summon a 1/1 Mechadawg-E.",
+      "Class": "ENTITY",
+      "LogoPath": "CardsLogos/Early/Mechadawg",
+      "Attack": 1,
+      "HP": 1,
+      "MaxHP": 1,
+      "ManaCost": 1,
+      "Keywords": [],
+      "Effects": [
+        {
+          "Trigger": "OnDeath",
+          "Type": "Summon",
+          "Target": "None",
+          "CardId": 1901,
+          "Value": 1
+        }
+      ],
+      "IsCollectible": true
+    },
+    {
+      "id": 1002,
+      "Title": "Plague-Bell",
+      "Description": "On Death: Deal 2 damage to the enemy hero.",
+      "Class": "ENTITY",
+      "LogoPath": "CardsLogos/Early/Plague-Bell",
+      "Attack": 1,
+      "HP": 1,
+      "MaxHP": 1,
+      "ManaCost": 1,
+      "Keywords": [],
+      "Effects": [
+        {
+          "Trigger": "OnDeath",
+          "Type": "DealDamage",
+          "Target": "EnemyHero",
+          "Value": 2
+        }
+      ],
+      "IsCollectible": true
+    },
+    {
+      "id": 1003,
+      "Title": "Bramblegate Warden",
+      "Description": "Provocation.",
+      "Class": "ENTITY",
+      "LogoPath": "CardsLogos/Early/Bramblegate Warden",
+      "Attack": 1,
+      "HP": 2,
+      "MaxHP": 2,
+      "ManaCost": 1,
+      "Keywords": [
+        "Provocation"
+      ],
+      "Effects": [],
+      "IsCollectible": true
+    },
+    {
+      "id": 1004,
+      "Title": "Wardlight Acolyte",
+      "Description": "Shield.",
+      "Class": "ENTITY",
+      "LogoPath": "CardsLogos/Early/Wardlight Acolyte",
+      "Attack": 1,
+      "HP": 1,
+      "MaxHP": 1,
+      "ManaCost": 1,
+      "Keywords": [
+        "Shield"
+      ],
+      "Effects": [],
+      "IsCollectible": true
+    },
+    {
+      "id": 1005,
+      "Title": "Ditchwater Slarchie",
+      "Description": "Charge.",
+      "Class": "ENTITY",
+      "LogoPath": "CardsLogos/Early/Ditchwater Slarchie",
+      "Attack": 2,
+      "HP": 1,
+      "MaxHP": 1,
+      "ManaCost": 2,
+      "Keywords": [
+        "Charge"
+      ],
+      "Effects": [],
+      "IsCollectible": true
+    },
+    {
+      "id": 1006,
+      "Title": "Ditchwater Snapmaw",
+      "Description": "",
+      "Class": "ENTITY",
+      "LogoPath": "CardsLogos/Early/Ditchwater Snapmaw",
+      "Attack": 2,
+      "HP": 3,
+      "MaxHP": 3,
+      "ManaCost": 2,
+      "Keywords": [],
+      "Effects": [],
+      "IsCollectible": true
+    },
+    {
+      "id": 1007,
+      "Title": "Fenfang Roadstalker",
+      "Description": "",
+      "Class": "ENTITY",
+      "LogoPath": "CardsLogos/Early/Fenfang Roadstalker",
+      "Attack": 3,
+      "HP": 2,
+      "MaxHP": 2,
+      "ManaCost": 2,
+      "Keywords": [],
+      "Effects": [],
+      "IsCollectible": true
+    },
+    {
+      "id": 1008,
+      "Title": "Cogfeather Magpie",
+      "Description": "On Play: Draw 1 card.",
+      "Class": "ENTITY",
+      "LogoPath": "CardsLogos/Early/Cogfeather Magpie",
+      "Attack": 1,
+      "HP": 1,
+      "MaxHP": 1,
+      "ManaCost": 2,
+      "Keywords": [],
+      "Effects": [
+        {
+          "Trigger": "OnPlay",
+          "Type": "DrawCards",
+          "Target": "None",
+          "Value": 1
+        }
+      ],
+      "IsCollectible": true
+    },
+    {
+      "id": 1009,
+      "Title": "Grave-Loot Scavenger",
+      "Description": "On Death: Draw 1 card.",
+      "Class": "ENTITY",
+      "LogoPath": "CardsLogos/Early/Grave-Loot Scavenger",
+      "Attack": 2,
+      "HP": 1,
+      "MaxHP": 1,
+      "ManaCost": 2,
+      "Keywords": [],
+      "Effects": [
+        {
+          "Trigger": "OnDeath",
+          "Type": "DrawCards",
+          "Target": "None",
+          "Value": 1
+        }
+      ],
+      "IsCollectible": true
+    },
+    {
+      "id": 1010,
+      "Title": "Lil' Tin",
+      "Description": "Shield.",
+      "Class": "ENTITY",
+      "LogoPath": "CardsLogos/Early/Lil' Tin",
+      "Attack": 2,
+      "HP": 2,
+      "MaxHP": 2,
+      "ManaCost": 2,
+      "Keywords": [
+        "Shield"
+      ],
+      "Effects": [],
+      "IsCollectible": true
+    },
+    {
+      "id": 1011,
+      "Title": "Lil' Drainer",
+      "Description": "Rush. Lifesteal.",
+      "Class": "ENTITY",
+      "LogoPath": "CardsLogos/Early/Lil' Drainer",
+      "Attack": 1,
+      "HP": 3,
+      "MaxHP": 3,
+      "ManaCost": 2,
+      "Keywords": [
+        "Rush",
+        "Lifesteal"
+      ],
+      "Effects": [],
+      "IsCollectible": true
+    },
+    {
+      "id": 1012,
+      "Title": "Hearthlight Acolyte",
+      "Description": "On Play: Restore 3 Health to a friendly character.",
+      "Class": "ENTITY",
+      "LogoPath": "CardsLogos/Early/Hearthlight Acolyte",
+      "Attack": 2,
+      "HP": 3,
+      "MaxHP": 3,
+      "ManaCost": 2,
+      "Keywords": [],
+      "Effects": [
+        {
+          "Trigger": "OnPlay",
+          "Type": "Heal",
+          "Target": "SelectedAllyCharacter",
+          "Value": 3
+        }
+      ],
+      "IsCollectible": true
+    },
+    {
+      "id": 1013,
+      "Title": "Thirsty Treant",
+      "Description": "Lifesteal.",
+      "Class": "ENTITY",
+      "LogoPath": "CardsLogos/Early/Thirsty Treant",
+      "Attack": 1,
+      "HP": 4,
+      "MaxHP": 4,
+      "ManaCost": 2,
+      "Keywords": [
+        "Lifesteal"
+      ],
+      "Effects": [],
+      "IsCollectible": true
+    }
+  ],
+  "spells": [
+    {
+      "id": 1100,
+      "Title": "Bloodthirst Amulet",
+      "Description": "Give an allied card +2 Attack.",
+      "Class": "SPELL",
+      "LogoPath": "CardsLogos/Early/Bloodthirst Amulet",
+      "ManaCost": 1,
+      "Keywords": [],
+      "Effects": [
+        {
+          "Trigger": "OnPlay",
+          "Type": "BuffAttack",
+          "Target": "SelectedAllyCard",
+          "Value": 2
+        }
+      ],
+      "IsCollectible": true
+    },
+    {
+      "id": 1101,
+      "Title": "Wardlight Aegis",
+      "Description": "Give an allied card Shield.",
+      "Class": "SPELL",
+      "LogoPath": "CardsLogos/Early/Wardlight Aegis",
+      "ManaCost": 1,
+      "Keywords": [],
+      "Effects": [
+        {
+          "Trigger": "OnPlay",
+          "Type": "AddKeyword",
+          "Target": "SelectedAllyCard",
+          "Keyword": "Shield"
+        }
+      ],
+      "IsCollectible": true
+    },
+    {
+      "id": 1102,
+      "Title": "Arcane Bolt",
+      "Description": "Deal 2 damage.",
+      "Class": "SPELL",
+      "LogoPath": "CardsLogos/Early/Arcane Bolt",
+      "ManaCost": 2,
+      "Keywords": [],
+      "Effects": [
+        {
+          "Trigger": "OnPlay",
+          "Type": "DealDamage",
+          "Target": "SelectedEnemyCharacter",
+          "Value": 2
+        }
+      ],
+      "IsCollectible": true
+    },
+    {
+      "id": 1103,
+      "Title": "Zap All!",
+      "Description": "Deal 1 damage to all enemy cards.",
+      "Class": "SPELL",
+      "LogoPath": "CardsLogos/Early/Zap All!",
+      "ManaCost": 2,
+      "Keywords": [],
+      "Effects": [
+        {
+          "Trigger": "OnPlay",
+          "Type": "DealDamage",
+          "Target": "AllEnemyCards",
+          "Value": 1
+        }
+      ],
+      "IsCollectible": true
+    },
+    {
+      "id": 1104,
+      "Title": "Fireball",
+      "Description": "Deal 1 damage.",
+      "Class": "SPELL",
+      "LogoPath": "CardsLogos/Early/Fireball",
+      "ManaCost": 1,
+      "Keywords": [],
+      "Effects": [
+        {
+          "Trigger": "OnPlay",
+          "Type": "DealDamage",
+          "Target": "SelectedEnemyCharacter",
+          "Value": 1
+        }
+      ],
+      "IsCollectible": true
+    },
+    {
+      "id": 1105,
+      "Title": "Sealing Sigil",
+      "Description": "Silence an enemy card.",
+      "Class": "SPELL",
+      "LogoPath": "CardsLogos/Early/Sealing Sigil",
+      "ManaCost": 2,
+      "Keywords": [],
+      "Effects": [
+        {
+          "Trigger": "OnPlay",
+          "Type": "Silence",
+          "Target": "SelectedEnemyCard"
+        }
+      ],
+      "IsCollectible": true
+    }
+  ],
+  "summonEntities": [
+    {
+      "id": 1901,
+      "Title": "Mechadawg-E",
+      "Description": "Summoned token. No special effect.",
+      "Class": "ENTITY",
+      "LogoPath": "CardsLogos/Early/Tokens/Mechadawg-E",
+      "Attack": 1,
+      "HP": 1,
+      "MaxHP": 1,
+      "ManaCost": 0,
+      "Keywords": [],
+      "Effects": [],
+      "IsCollectible": false
+    },
+    {
+      "id": 100000,
+      "Title": "The Coin",
+      "Description": "Gain 1 temporary mana this turn.",
+      "LogoPath": "CardsLogos/Early/The Coin",
+      "Class": "SPELL",
+      "Attack": 0,
+      "HP": 0,
+      "MaxHP": 0,
+      "ManaCost": 0,
+      "IsCollectible": false,
+      "Effects": [
+        {
+          "Trigger": "OnPlay",
+          "Type": "GainTemporaryMana",
+          "Target": "None",
+          "Value": 1
+        }
+      ],
+      "Keywords": []
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "PresetName": "Token",
+  "Cards": [
+    { "CardId": 1000, "Count": 2 },
+    { "CardId": 1001, "Count": 2 },
+    { "CardId": 1003, "Count": 2 },
+    { "CardId": 2002, "Count": 2 },
+    { "CardId": 2007, "Count": 2 },
+    { "CardId": 2015, "Count": 2 },
+    { "CardId": 2018, "Count": 2 },
+    { "CardId": 2019, "Count": 2 },
+    { "CardId": 2020, "Count": 2 },
+    { "CardId": 2025, "Count": 2 },
+    { "CardId": 2100, "Count": 2 },
+    { "CardId": 2105, "Count": 2 },
+    { "CardId": 3003, "Count": 2 },
+    { "CardId": 3004, "Count": 2 },
+    { "CardId": 3008, "Count": 2 }
+  ]
+}

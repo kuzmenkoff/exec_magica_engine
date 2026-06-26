@@ -1,0 +1,396 @@
+{
+  "setName": "Late Game Cards",
+  "orderPriority": 3,
+  "splitRule": "Collectible cards with ManaCost 6+. Summon-only dependencies used by late-game cards are included.",
+  "entities": [
+    {
+      "id": 3000,
+      "Title": "Sunless Bastion Saint",
+      "Description": "Provocation. Shield.",
+      "Class": "ENTITY",
+      "LogoPath": "CardsLogos/Late/Sunless Bastion Saint",
+      "Attack": 4,
+      "HP": 5,
+      "MaxHP": 5,
+      "ManaCost": 6,
+      "Keywords": [
+        "Provocation",
+        "Shield"
+      ],
+      "Effects": [],
+      "IsCollectible": true
+    },
+    {
+      "id": 3001,
+      "Title": "Tollroad Behemoth",
+      "Description": "",
+      "Class": "ENTITY",
+      "LogoPath": "CardsLogos/Neutral/Tollroad Behemoth",
+      "Attack": 6,
+      "HP": 7,
+      "MaxHP": 7,
+      "ManaCost": 6,
+      "Keywords": [],
+      "Effects": [],
+      "IsCollectible": true
+    },
+    {
+      "id": 3002,
+      "Title": "Veilwing Wyrm-Raider",
+      "Description": "Rush. Shield.",
+      "Class": "ENTITY",
+      "LogoPath": "CardsLogos/Late/Veilwing Wyrm-Raider",
+      "Attack": 5,
+      "HP": 3,
+      "MaxHP": 3,
+      "ManaCost": 6,
+      "Keywords": [
+        "Rush",
+        "Shield"
+      ],
+      "Effects": [],
+      "IsCollectible": true
+    },
+    {
+      "id": 3003,
+      "Title": "Embermane Matron",
+      "Description": "On Death: Summon two 2/2 Embermane Cubs.",
+      "Class": "ENTITY",
+      "LogoPath": "CardsLogos/Late/Embermane Matron",
+      "Attack": 6,
+      "HP": 5,
+      "MaxHP": 5,
+      "ManaCost": 6,
+      "Keywords": [],
+      "Effects": [
+        {
+          "Trigger": "OnDeath",
+          "Type": "Summon",
+          "Target": "None",
+          "CardId": 3900,
+          "Value": 2
+        }
+      ],
+      "IsCollectible": true
+    },
+    {
+      "id": 3004,
+      "Title": "Procession Bannerlord",
+      "Description": "On Play: Your other ally cards have +1/+1.",
+      "Class": "ENTITY",
+      "LogoPath": "CardsLogos/Neutral/Procession Bannerlord",
+      "Attack": 6,
+      "HP": 6,
+      "MaxHP": 6,
+      "ManaCost": 7,
+      "Keywords": [],
+      "Effects": [
+        {
+          "Trigger": "OnPlay",
+          "Type": "BuffStats",
+          "Target": "OtherAllyCards",
+          "Value": 0,
+          "AttackValue": 1,
+          "HealthValue": 1,
+          "Keyword": "None"
+        }
+      ],
+      "IsCollectible": true
+    },
+    {
+      "id": 3005,
+      "Title": "Reliquary Lampbearer",
+      "Description": "Provocation. On Play: Restore 6 Health to a friendly character.",
+      "Class": "ENTITY",
+      "LogoPath": "CardsLogos/Late/Reliquary Lampbearer",
+      "Attack": 5,
+      "HP": 6,
+      "MaxHP": 6,
+      "ManaCost": 7,
+      "Keywords": [
+        "Provocation"
+      ],
+      "Effects": [
+        {
+          "Trigger": "OnPlay",
+          "Type": "Heal",
+          "Target": "SelectedAllyCharacter",
+          "Value": 6
+        }
+      ],
+      "IsCollectible": true
+    },
+    {
+      "id": 3006,
+      "Title": "Crimson Templar",
+      "Description": "Provocation. Lifesteal.",
+      "Class": "ENTITY",
+      "LogoPath": "CardsLogos/Late/Crimson Templar",
+      "Attack": 5,
+      "HP": 6,
+      "MaxHP": 6,
+      "ManaCost": 7,
+      "Keywords": [
+        "Provocation",
+        "Lifesteal"
+      ],
+      "Effects": [],
+      "IsCollectible": true
+    },
+    {
+      "id": 3007,
+      "Title": "Tollroad Outrider",
+      "Description": "Rush.",
+      "Class": "ENTITY",
+      "LogoPath": "CardsLogos/Late/Tollroad Outrider",
+      "Attack": 6,
+      "HP": 4,
+      "MaxHP": 4,
+      "ManaCost": 6,
+      "Keywords": [
+        "Rush"
+      ],
+      "Effects": [],
+      "IsCollectible": true
+    },
+    {
+      "id": 3008,
+      "Title": "Carrion Broodwyrm",
+      "Description": "On Death: Summon two 3/3 Carrion Hatchlings.",
+      "Class": "ENTITY",
+      "LogoPath": "CardsLogos/Late/Carrion Broodwyrm",
+      "Attack": 6,
+      "HP": 6,
+      "MaxHP": 6,
+      "ManaCost": 8,
+      "Keywords": [],
+      "Effects": [
+        {
+          "Trigger": "OnDeath",
+          "Type": "Summon",
+          "Target": "None",
+          "CardId": 3902,
+          "Value": 2
+        }
+      ],
+      "IsCollectible": true
+    },
+    {
+      "id": 3009,
+      "Title": "Ossuary Archivist",
+      "Description": "Provocation. On Death: Draw 1 card.",
+      "Class": "ENTITY",
+      "LogoPath": "CardsLogos/Late/Ossuary Archivist",
+      "Attack": 6,
+      "HP": 8,
+      "MaxHP": 8,
+      "ManaCost": 7,
+      "Keywords": [
+        "Provocation"
+      ],
+      "Effects": [
+        {
+          "Trigger": "OnDeath",
+          "Type": "DrawCards",
+          "Target": "None",
+          "Value": 1
+        }
+      ],
+      "IsCollectible": true
+    },
+    {
+      "id": 3010,
+      "Title": "Ruinmarch Colossus",
+      "Description": "On Play: Deal 4 damage to the enemy hero.",
+      "Class": "ENTITY",
+      "LogoPath": "CardsLogos/Late/Ruinmarch Colossus",
+      "Attack": 8,
+      "HP": 8,
+      "MaxHP": 8,
+      "ManaCost": 8,
+      "Keywords": [],
+      "Effects": [
+        {
+          "Trigger": "OnPlay",
+          "Type": "DealDamage",
+          "Target": "EnemyHero",
+          "Value": 4
+        }
+      ],
+      "IsCollectible": true
+    },
+    {
+      "id": 3011,
+      "Title": "Solace Matriarch",
+      "Description": "Provocation. On Play: Heal your hero for 8.",
+      "Class": "ENTITY",
+      "LogoPath": "CardsLogos/Late/Solace Matriarch",
+      "Attack": 5,
+      "HP": 7,
+      "MaxHP": 7,
+      "ManaCost": 7,
+      "Keywords": [
+        "Provocation"
+      ],
+      "Effects": [
+        {
+          "Trigger": "OnPlay",
+          "Type": "Heal",
+          "Target": "SelfHero",
+          "Value": 8
+        }
+      ],
+      "IsCollectible": true
+    },
+    {
+      "id": 3012,
+      "Title": "Doomtoll Leviathan",
+      "Description": "On Play: Deal 5 damage to the enemy hero.",
+      "Class": "ENTITY",
+      "LogoPath": "CardsLogos/Late/Doomtoll Leviathan",
+      "Attack": 8,
+      "HP": 8,
+      "MaxHP": 8,
+      "ManaCost": 9,
+      "Keywords": [],
+      "Effects": [
+        {
+          "Trigger": "OnPlay",
+          "Type": "DealDamage",
+          "Target": "EnemyHero",
+          "Value": 5
+        }
+      ],
+      "IsCollectible": true
+    },
+    {
+      "id": 3013,
+      "Title": "Grand March Warlord",
+      "Description": "On Play: Summon two 4/4 Last March Footmen.",
+      "Class": "ENTITY",
+      "LogoPath": "CardsLogos/Late/Grand March Warlord",
+      "Attack": 8,
+      "HP": 8,
+      "MaxHP": 8,
+      "ManaCost": 10,
+      "Keywords": [],
+      "Effects": [
+        {
+          "Trigger": "OnPlay",
+          "Type": "Summon",
+          "Target": "None",
+          "CardId": 3901,
+          "Value": 2
+        }
+      ],
+      "IsCollectible": true
+    }
+  ],
+  "spells": [
+    {
+      "id": 3100,
+      "Title": "Pyrefall Reckoning",
+      "Description": "Deal 3 damage to all enemy cards.",
+      "Class": "SPELL",
+      "LogoPath": "CardsLogos/Late/Pyrefall Reckoning",
+      "Attack": 0,
+      "HP": 0,
+      "MaxHP": 0,
+      "ManaCost": 6,
+      "Keywords": [],
+      "Effects": [
+        {
+          "Trigger": "OnPlay",
+          "Type": "DealDamage",
+          "Target": "AllEnemyCards",
+          "Value": 3
+        }
+      ],
+      "IsCollectible": true
+    },
+    {
+      "id": 3101,
+      "Title": "Gallows Decree",
+      "Description": "Destroy an enemy card.",
+      "Class": "SPELL",
+      "LogoPath": "CardsLogos/Late/Gallows Decree",
+      "Attack": 0,
+      "HP": 0,
+      "MaxHP": 0,
+      "ManaCost": 6,
+      "Keywords": [],
+      "Effects": [
+        {
+          "Trigger": "OnPlay",
+          "Type": "Destroy",
+          "Target": "SelectedEnemyCard"
+        }
+      ],
+      "IsCollectible": true
+    },
+    {
+      "id": 3102,
+      "Title": "The Last Toll",
+      "Description": "Destroy all cards.",
+      "Class": "SPELL",
+      "LogoPath": "CardsLogos/Late/The Last Toll",
+      "Attack": 0,
+      "HP": 0,
+      "MaxHP": 0,
+      "ManaCost": 8,
+      "Keywords": [],
+      "Effects": [
+        {
+          "Trigger": "OnPlay",
+          "Type": "Destroy",
+          "Target": "AllCards"
+        }
+      ],
+      "IsCollectible": true
+    }
+  ],
+  "summonEntities": [
+    {
+      "id": 3900,
+      "Title": "Embermane Cub",
+      "Description": "Summoned token.",
+      "Class": "ENTITY",
+      "LogoPath": "CardsLogos/Late/Tokens/Embermane Cub",
+      "Attack": 2,
+      "HP": 2,
+      "MaxHP": 2,
+      "ManaCost": 0,
+      "Keywords": [],
+      "Effects": [],
+      "IsCollectible": false
+    },
+    {
+      "id": 3901,
+      "Title": "Last March Footman",
+      "Description": "Summoned token.",
+      "Class": "ENTITY",
+      "LogoPath": "CardsLogos/Late/Tokens/Last March Footman",
+      "Attack": 4,
+      "HP": 4,
+      "MaxHP": 4,
+      "ManaCost": 0,
+      "Keywords": [],
+      "Effects": [],
+      "IsCollectible": false
+    },
+    {
+      "id": 3902,
+      "Title": "Carrion Hatchling",
+      "Description": "Summoned token.",
+      "Class": "ENTITY",
+      "LogoPath": "CardsLogos/Late/Tokens/Carrion Hatchling",
+      "Attack": 3,
+      "HP": 3,
+      "MaxHP": 3,
+      "ManaCost": 0,
+      "Keywords": [],
+      "Effects": [],
+      "IsCollectible": false
+    }
+  ]
+}

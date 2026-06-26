@@ -1,0 +1,36 @@
+cff-version: 1.2.0
+title: "EXEC_MAGICA: a collectible card-game benchmark for game-playing AI"
+message: "If you use this software or its results, please cite it as below."
+type: software
+authors:
+  - given-names: Dmytro
+    family-names: Kuzmenkov
+    orcid: "https://orcid.org/0009-0000-5981-2407"
+abstract: >-
+  EXEC_MAGICA is a turn-based collectible card game built as a research
+  testbed for comparing decision-making algorithms under hidden information
+  and stochasticity. It provides a reproducible pipeline for evaluating
+  game-playing AI agents and a playable client for human-vs-AI and
+  AI-vs-AI matches.
+keywords:
+  - game-playing AI
+  - Monte-Carlo Tree Search
+  - collectible card game
+  - imperfect information
+  - decision-making under uncertainty
+license: MIT
+version: "1.0.0"
+date-released: 2026-06-24
+url: "https://github.com/kuzmenkoff/exec_magica"
+repository-code: "https://github.com/kuzmenkoff/exec_magica"
+
+preferred-citation:
+  type: thesis
+  title: "Методи та програмні засоби прийняття рішень ігровими агентами в колекційних карткових іграх з використанням ШНМ [Methods and software tools for decision-making by game agents in collectible card games using artificial neural networks]"
+  authors:
+    - given-names: Dmytro
+      family-names: Kuzmenkov
+  year: 2026
+  thesis-type: "Master's thesis"
+  institution:
+    name: "Національний технічний університет України «Київський політехнічний інститут імені Ігоря Сікорського»"

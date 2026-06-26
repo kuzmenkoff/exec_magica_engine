@@ -1,0 +1,25 @@
+{
+  "PresetName": "Control",
+  "Cards": [
+    { "CardId": 1012, "Count": 2 },
+    { "CardId": 1103, "Count": 2 },
+    { "CardId": 2008, "Count": 2 },
+    { "CardId": 2010, "Count": 2 },
+    { "CardId": 2013, "Count": 2 },
+    { "CardId": 2102, "Count": 2 },
+    { "CardId": 2103, "Count": 2 },
+    { "CardId": 3000, "Count": 2 },
+    { "CardId": 3100, "Count": 2 },
+    { "CardId": 3101, "Count": 2 },
+    { "CardId": 2021, "Count": 1 },
+    { "CardId": 3001, "Count": 1 },
+    { "CardId": 3005, "Count": 1 },
+    { "CardId": 3006, "Count": 1 },
+    { "CardId": 3009, "Count": 1 },
+    { "CardId": 3010, "Count": 1 },
+    { "CardId": 3011, "Count": 1 },
+    { "CardId": 3012, "Count": 1 },
+    { "CardId": 3013, "Count": 1 },
+    { "CardId": 3102, "Count": 1 }
+  ]
+}
