@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "GreedyOpponentModel", menuName = "EXEC_MAGICA/Opponent Models/Greedy")]
+/// <summary>Opponent model backed by the one-ply greedy policy, with tunable evaluation weights.</summary>
 public class GreedyOpponentModelDefinition : OpponentModelDefinition
 {
     [Header("Evaluation weights")]
@@ -11,9 +12,11 @@ public class GreedyOpponentModelDefinition : OpponentModelDefinition
     [SerializeField] private double minionCountWeight = 1.0;
     [SerializeField] private double handCountWeight = 1.0;
 
+    /// <inheritdoc/>
     public override IGameActionPolicy CreatePolicy(int seed)
         => new GreedyActionPolicy(seed, heroHpWeight, attackWeight, hpWeight, minionCountWeight, handCountWeight);
 
+    /// <inheritdoc/>
     public override ModelInfo BuildModelInfo() => new ModelInfo
     {
         ModelId = string.IsNullOrEmpty(Id) ? "Greedy" : Id,

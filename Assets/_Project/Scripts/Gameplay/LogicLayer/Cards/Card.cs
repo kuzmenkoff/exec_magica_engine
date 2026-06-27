@@ -14,9 +14,12 @@ using System.Collections.Generic;
 [Serializable]
 public class Card
 {
+    /// <summary>Whether a card is a board creature (ENTITY) or a one-shot SPELL.</summary>
     public enum CardClass
     {
+        /// <summary>A creature summoned to the battlefield that can attack.</summary>
         ENTITY,
+        /// <summary>A one-shot card that resolves its effects and never enters the field.</summary>
         SPELL
     }
 
@@ -69,21 +72,25 @@ public class Card
     // Definition-like helpers
     // ---------------------------------------------------------------------
 
+    /// <summary>True if this card is a spell (resolves and never stays on the field).</summary>
     public bool IsSpell
     {
         get { return Class == CardClass.SPELL; }
     }
 
+    /// <summary>True if this card is a creature that enters the battlefield.</summary>
     public bool IsEntity
     {
         get { return Class == CardClass.ENTITY; }
     }
 
+    /// <summary>True if this card has the Provocation (taunt) keyword.</summary>
     public bool IsProvocation
     {
         get { return HasKeyword(KeywordType.Provocation); }
     }
 
+    /// <summary>True if this card has any effect that triggers on play.</summary>
     public bool HasOnPlayEffects
     {
         get
@@ -93,11 +100,13 @@ public class Card
         }
     }
 
+    /// <summary>Returns whether this card currently has the given keyword.</summary>
     public bool HasKeyword(KeywordType keyword)
     {
         return Keywords != null && Keywords.Contains(keyword);
     }
 
+    /// <summary>Adds a keyword if not already present (ignores <see cref="KeywordType.None"/>).</summary>
     public void AddKeyword(KeywordType keyword)
     {
         if (keyword == KeywordType.None)
@@ -110,6 +119,7 @@ public class Card
             Keywords.Add(keyword);
     }
 
+    /// <summary>Removes all keywords (e.g. on Silence).</summary>
     public void ClearKeywords()
     {
         if (Keywords == null)
@@ -118,11 +128,13 @@ public class Card
             Keywords.Clear();
     }
 
+    /// <summary>Resolves whether playing this card needs a target, and of what kind.</summary>
     public PlayTargetRequirement GetPlayTargetRequirement()
     {
         return PlayTargetRequirementResolver.GetRequirement(this);
     }
 
+    /// <summary>Ensures <see cref="MaxHP"/> is set, defaulting it to <see cref="HP"/> when unspecified.</summary>
     public void NormalizeHealth()
     {
         if (MaxHP <= 0)
@@ -133,6 +145,7 @@ public class Card
     // Legacy runtime helpers
     // ---------------------------------------------------------------------
 
+    /// <summary>Restores health up to <see cref="MaxHP"/> (no-op for non-positive amounts).</summary>
     public void Heal(int amount)
     {
         NormalizeHealth();
@@ -166,11 +179,13 @@ public class Card
         return actualDamage;
     }
 
+    /// <summary>Assigns a fresh runtime instance id.</summary>
     public void AssignNewInstanceId()
     {
         InstanceId = Guid.NewGuid().GetHashCode();
     }
 
+    /// <summary>True while HP is above zero.</summary>
     public bool IsAlive()
     {
         return HP > 0;
@@ -180,11 +195,13 @@ public class Card
     // Definition conversion
     // ---------------------------------------------------------------------
 
+    /// <summary>Projects this card into an immutable <see cref="CardDefinition"/>.</summary>
     public CardDefinition ToDefinition()
     {
         return CardDefinition.FromCard(this);
     }
 
+    /// <summary>Copies all definition fields from a <see cref="CardDefinition"/> onto this card.</summary>
     public void ApplyDefinition(CardDefinition definition)
     {
         if (definition == null)
@@ -220,11 +237,13 @@ public class Card
     // Copy
     // ---------------------------------------------------------------------
 
+    /// <summary>Returns a deep copy (alias of <see cref="GetDeepCopy"/>).</summary>
     public Card GetCopy()
     {
         return GetDeepCopy();
     }
 
+    /// <summary>Returns an independent deep copy including runtime state.</summary>
     public Card GetDeepCopy()
     {
         Card card = new Card();

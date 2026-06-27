@@ -12,6 +12,7 @@ public class CardSetInfo
     public int OrderPriority;
     public AllCards Cards;
 
+    /// <summary>Human-readable set name; falls back to a prettified file name.</summary>
     public string DisplayName
     {
         get

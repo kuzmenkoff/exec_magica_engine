@@ -3,6 +3,7 @@
 /// </summary>
 public static class PlayTargetValidator
 {
+    /// <summary>Validates that the action's target satisfies the source card's play-target requirement.</summary>
     public static bool IsValidPlayTarget(
         GameState state,
         CardInstance source,
@@ -36,6 +37,7 @@ public static class PlayTargetValidator
         }
     }
 
+    /// <summary>True if at least one legal play target exists for the source card in the current state.</summary>
     public static bool HasAnyValidPlayTarget(
         GameState state,
         CardInstance source)

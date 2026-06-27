@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 
+/// <summary>Catalog of debug/test scenarios that exercise specific engine rules.</summary>
 public enum DebugScenarioType
 {
     RealDeckStart,

@@ -26,7 +26,7 @@ public enum KeywordType
     /// <summary>
     /// This card can attack enemy cards immediately after being played,
     /// but cannot attack the enemy hero on the same turn.
-    //// </summary>
+    /// </summary>
     Rush,
 
     /// <summary>

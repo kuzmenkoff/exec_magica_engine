@@ -6,6 +6,7 @@ using System.Text;
 /// </summary>
 public static class GameEventDebugFormatter
 {
+    /// <summary>Returns a human-readable, numbered listing of an event stream.</summary>
     public static string Format(List<GameEvent> events)
     {
         StringBuilder sb = new StringBuilder();

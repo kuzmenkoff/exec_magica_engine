@@ -6,6 +6,7 @@ using System.Text;
 /// </summary>
 public static class GameStateDebugFormatter
 {
+    /// <summary>Returns a human-readable multi-line snapshot of the state (turn, both players, hand/field cards).</summary>
     public static string Format(GameState state)
     {
         if (state == null)

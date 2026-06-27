@@ -8,23 +8,32 @@ using System.Collections.Generic;
 /// </summary>
 public class GameEngine
 {
+    /// <summary>The current game state this engine reads and mutates.</summary>
     public GameState State { get; private set; }
 
+    /// <summary>Creates an engine wrapping the given initial state (build it with <see cref="GameStateBuilder"/>).</summary>
     public GameEngine(GameState initialState)
     {
         State = initialState;
     }
 
+    /// <summary>Returns the legal actions for the side whose turn it is.</summary>
     public List<GameAction> GetLegalActions()
     {
         return CoreLegalActionGenerator.GetLegalActions(State);
     }
 
+    /// <summary>Returns the legal actions available to the given side.</summary>
     public List<GameAction> GetLegalActions(PlayerSide side)
     {
         return CoreLegalActionGenerator.GetLegalActions(State, side);
     }
 
+    /// <summary>
+    /// Applies one action to the state: validates it (game not over, correct actor, legality),
+    /// mutates the state, and returns a <see cref="GameStepResult"/> with the emitted event stream.
+    /// On any violation the state is left unchanged and a failure result is returned.
+    /// </summary>
     public GameStepResult ApplyAction(GameAction action)
     {
         if (State == null)

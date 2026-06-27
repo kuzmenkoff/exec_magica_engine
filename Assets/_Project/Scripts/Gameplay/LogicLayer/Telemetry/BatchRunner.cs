@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
+/// <summary>Configuration for a batch of self-play games.</summary>
 public class BatchConfig
 {
     public int Games = 100;
@@ -13,6 +14,7 @@ public class BatchConfig
     public int MaxParallelGames = 1;
 }
 
+/// <summary>Aggregate statistics over a batch: win rates (with Wilson CI), end reasons, lengths, think times, card impact.</summary>
 public class BatchSummary
 {
     public int Games;
@@ -32,6 +34,7 @@ public class BatchSummary
     public double TotalDurationMs;
 }
 
+/// <summary>Result of a batch run: the per-game records plus the computed <see cref="BatchSummary"/>.</summary>
 public class BatchResult
 {
     public string RunId = System.Guid.NewGuid().ToString();
@@ -46,8 +49,14 @@ public class BatchResult
     public BatchSummary Summary = new BatchSummary();
 }
 
+/// <summary>Runs batches of self-play games and summarizes them.</summary>
 public static class BatchRunner
 {
+    /// <summary>
+    /// Runs <see cref="BatchConfig.Games"/> games between two model/deck factories (optionally in
+    /// parallel, optionally alternating who starts) and returns per-game records plus an aggregate
+    /// summary. <paramref name="onProgress"/> may cancel the run (sequential mode only).
+    /// </summary>
     public static BatchResult Run(
         Func<int, AllCards> makePlayerDeck, Func<int, AllCards> makeEnemyDeck, AllCards database,
         Func<int, IGameActionPolicy> makePlayerPolicy,
@@ -174,6 +183,7 @@ public static class BatchRunner
         return sum;
     }
 
+    /// <summary>Wilson score confidence interval for a binomial proportion (default 95%, z = 1.96).</summary>
     public static (double low, double high) WilsonCI(int wins, int total, double z = 1.96)
     {
         if (total <= 0) return (0.0, 0.0);

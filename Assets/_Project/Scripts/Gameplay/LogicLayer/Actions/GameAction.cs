@@ -46,6 +46,7 @@ public class GameAction
     /// </summary>
     public PlayerSide? TargetHeroSide { get; }
 
+    /// <summary>Optional battlefield slot index where a played/summoned entity should be inserted.</summary>
     public int? FieldIndex { get; }
 
     /// <summary>
@@ -82,6 +83,7 @@ public class GameAction
         }
     }
 
+    /// <summary>Builds a PlayCard action targeting a card on the battlefield.</summary>
     public static GameAction PlayCardOnCard(
         PlayerSide actorSide,
         int sourceInstanceId,
@@ -99,6 +101,7 @@ public class GameAction
         );
     }
 
+    /// <summary>Builds a PlayCard action targeting a hero.</summary>
     public static GameAction PlayCardOnHero(
         PlayerSide actorSide,
         int sourceInstanceId,
@@ -116,6 +119,7 @@ public class GameAction
         );
     }
 
+    /// <summary>Builds an AttackCard action: an attacker striking a defending card.</summary>
     public static GameAction AttackCard(
         PlayerSide actorSide,
         int attackerInstanceId,
@@ -130,6 +134,7 @@ public class GameAction
         );
     }
 
+    /// <summary>Builds an AttackHero action: an attacker striking the enemy hero.</summary>
     public static GameAction AttackHero(
         PlayerSide actorSide,
         int attackerInstanceId,
@@ -145,6 +150,7 @@ public class GameAction
         );
     }
 
+    /// <summary>Builds an EndTurn action for the given side.</summary>
     public static GameAction EndTurn(PlayerSide actorSide)
     {
         return new GameAction(

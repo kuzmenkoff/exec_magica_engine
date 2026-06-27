@@ -5,6 +5,7 @@ using System.Collections.Generic;
 /// </summary>
 public static class CoreLegalActionGenerator
 {
+    /// <summary>Returns all legal actions for the side whose turn it is (empty if the game is over).</summary>
     public static List<GameAction> GetLegalActions(GameState state)
     {
         if (state == null || state.IsGameOver)
@@ -13,6 +14,10 @@ public static class CoreLegalActionGenerator
         return GetLegalActions(state, state.ActiveSide);
     }
 
+    /// <summary>
+    /// Returns every legal action for the given side — playable cards (respecting mana, the field
+    /// cap and target requirements), attacks (respecting Provocation and attack eligibility), and EndTurn.
+    /// </summary>
     public static List<GameAction> GetLegalActions(GameState state, PlayerSide side)
     {
         List<GameAction> actions = new List<GameAction>();

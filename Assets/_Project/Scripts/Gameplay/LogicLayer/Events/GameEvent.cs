@@ -20,9 +20,11 @@ public class GameEvent
 
     public int? FieldIndex;
 
+    /// <summary>Numeric payload whose meaning depends on <see cref="Type"/> (e.g. damage, healing, mana amount).</summary>
     public int Value;
     public string Message;
 
+    /// <summary>Builds an event, stamping it with the state's current turn and action index.</summary>
     public static GameEvent Create(
         GameState state,
         GameEventType type,

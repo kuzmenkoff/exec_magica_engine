@@ -39,12 +39,18 @@ public class MctsActionPolicy : IGameActionPolicy
     private readonly MctsConfig config;
     private readonly System.Random rng;
 
+    /// <summary>Creates an ISMCTS policy with the given configuration (defaults if null).</summary>
     public MctsActionPolicy(MctsConfig config = null)
     {
         this.config = config ?? new MctsConfig();
         rng = this.config.Seed == 0 ? new System.Random() : new System.Random(this.config.Seed);
     }
 
+    /// <summary>
+    /// Runs Information-Set MCTS and returns the chosen action: builds a tree keyed by canonical
+    /// action keys, re-determinizing the hidden world each iteration, then selects the root move by
+    /// visit count or mean value. Cases with 0 or 1 legal actions short-circuit.
+    /// </summary>
     public GameAction ChooseAction(GameState state, List<GameAction> legalActions, PlayerSide actorSide)
     {
         if (state == null || legalActions == null || legalActions.Count == 0)

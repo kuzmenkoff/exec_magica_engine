@@ -6,6 +6,11 @@ using System.Collections.Generic;
 /// </summary>
 public static class CardZoneService
 {
+    /// <summary>
+    /// Draws the top card into the player's hand, emitting <see cref="GameEventType.CardDrawn"/>.
+    /// If the deck is empty the player takes escalating <b>fatigue</b> damage (and may lose);
+    /// if the hand is full the draw is skipped. Returns the drawn card, or null on fatigue/skip.
+    /// </summary>
     public static CardInstance DrawCard(
         GameState state,
         PlayerState player,
@@ -94,6 +99,7 @@ public static class CardZoneService
         return drawnCard;
     }
 
+    /// <summary>Moves a card to its owner's graveyard from whatever zone it is in, emitting the given event type.</summary>
     public static bool MoveToGraveyard(
         GameState state,
         PlayerState owner,
@@ -130,6 +136,7 @@ public static class CardZoneService
         return true;
     }
 
+    /// <summary>Moves an entity from hand to the field (optionally at a slot index) and applies Charge/Rush attack rules.</summary>
     public static bool MoveEntityFromHandToField(
         GameState state,
         PlayerState owner,
@@ -183,6 +190,7 @@ public static class CardZoneService
         return true;
     }
 
+    /// <summary>Summons a token onto the field (respecting the field cap) with summoning sickness; skips if the field is full.</summary>
     public static bool SummonToField(
         GameState state,
         PlayerState owner,

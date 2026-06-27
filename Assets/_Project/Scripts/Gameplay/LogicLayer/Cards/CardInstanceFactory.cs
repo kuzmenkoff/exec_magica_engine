@@ -8,6 +8,7 @@ using System.Collections.Generic;
 /// </summary>
 public static class CardInstanceFactory
 {
+    /// <summary>Creates a runtime <see cref="CardInstance"/> from a legacy <see cref="Card"/> for the given owner and zone.</summary>
     public static CardInstance Create(
         Card definition,
         int instanceId,
@@ -25,6 +26,7 @@ public static class CardInstanceFactory
         );
     }
 
+    /// <summary>Creates a runtime <see cref="CardInstance"/> from a <see cref="CardDefinition"/>, seeding combat flags and copying effects/keywords.</summary>
     public static CardInstance Create(
         CardDefinition definition,
         int instanceId,

@@ -6,6 +6,7 @@ using System.Text;
 /// </summary>
 public static class CoreLegalActionDebugFormatter
 {
+    /// <summary>Returns a human-readable, numbered listing of legal actions with resolved card/hero names.</summary>
     public static string Format(GameState state, List<GameAction> actions)
     {
         StringBuilder sb = new StringBuilder();

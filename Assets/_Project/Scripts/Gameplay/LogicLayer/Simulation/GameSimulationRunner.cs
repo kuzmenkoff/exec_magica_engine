@@ -6,6 +6,10 @@ using System.Collections.Generic;
 /// </summary>
 public static class GameSimulationRunner
 {
+    /// <summary>
+    /// Plays the given state to terminal (or <paramref name="maxActions"/>) using the two policies on a
+    /// deep copy, and returns the final state. Used for diagnostics/playouts.
+    /// </summary>
     public static GameState SimulatePlayout(
         GameState initialState,
         IGameActionPolicy playerPolicy,
@@ -55,6 +59,7 @@ public static class GameSimulationRunner
         return engine.State;
     }
 
+    /// <summary>Convenience playout with seeded random policies for both sides.</summary>
     public static GameState SimulateRandomPlayout(
         GameState initialState,
         int maxActions = 200,

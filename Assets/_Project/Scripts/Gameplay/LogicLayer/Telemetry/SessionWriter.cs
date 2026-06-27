@@ -5,6 +5,7 @@ using System.IO;
 using System.Text;
 using Newtonsoft.Json;
 
+/// <summary>Top-level summary written per run (summary.json): config, models, decks and aggregate stats.</summary>
 public class RunSummary
 {
     public int SchemaVersion = 1;
@@ -16,6 +17,7 @@ public class RunSummary
     public BatchSummary Summary;
 }
 
+/// <summary>One line in index.jsonl — a compact, queryable summary of a run and its result.</summary>
 public class RunIndexEntry
 {
     public string RunId;
@@ -37,6 +39,7 @@ public class RunIndexEntry
     public string Folder;
 }
 
+/// <summary>Writes batch results to disk as run folders plus an append-only index.</summary>
 public static class SessionWriter
 {
     private static readonly JsonSerializerSettings Settings =

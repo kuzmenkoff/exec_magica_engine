@@ -35,16 +35,19 @@ public class CardDefinition
     public List<CardEffect> Effects = new List<CardEffect>();
     public List<KeywordType> Keywords = new List<KeywordType>();
 
+    /// <summary>True if this card is a spell.</summary>
     public bool IsSpell
     {
         get { return Class == Card.CardClass.SPELL; }
     }
 
+    /// <summary>True if this card is a creature.</summary>
     public bool IsEntity
     {
         get { return Class == Card.CardClass.ENTITY; }
     }
 
+    /// <summary>True if this card has any on-play effect.</summary>
     public bool HasOnPlayEffects
     {
         get
@@ -54,22 +57,26 @@ public class CardDefinition
         }
     }
 
+    /// <summary>Returns whether this definition has the given keyword.</summary>
     public bool HasKeyword(KeywordType keyword)
     {
         return Keywords != null && Keywords.Contains(keyword);
     }
 
+    /// <summary>Resolves whether playing this card needs a target, and of what kind.</summary>
     public PlayTargetRequirement GetPlayTargetRequirement()
     {
         return PlayTargetRequirementResolver.GetRequirement(this);
     }
 
+    /// <summary>Ensures <see cref="MaxHP"/> defaults to <see cref="HP"/> when unspecified.</summary>
     public void NormalizeHealth()
     {
         if (MaxHP <= 0)
             MaxHP = HP;
     }
 
+    /// <summary>Returns an independent copy of this definition.</summary>
     public CardDefinition GetDeepCopy()
     {
         return new CardDefinition
@@ -99,6 +106,7 @@ public class CardDefinition
         };
     }
 
+    /// <summary>Builds a definition from a legacy <see cref="Card"/> (drops runtime state).</summary>
     public static CardDefinition FromCard(Card card)
     {
         if (card == null)
@@ -131,6 +139,7 @@ public class CardDefinition
         };
     }
 
+    /// <summary>Materializes a legacy <see cref="Card"/> from this definition.</summary>
     public Card ToLegacyCard()
     {
         Card card = new Card();

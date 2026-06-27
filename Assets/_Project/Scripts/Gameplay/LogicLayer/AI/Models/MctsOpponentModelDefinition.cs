@@ -4,6 +4,7 @@ using UnityEngine;
     fileName = "MctsOpponentModel",
     menuName = "EXEC_MAGICA/Opponent Models/MCTS"
 )]
+/// <summary>Opponent model backed by the ISMCTS policy; the serialized fields map onto <see cref="MctsConfig"/>.</summary>
 public class MctsOpponentModelDefinition : OpponentModelDefinition
 {
     [Header("Budget")]
@@ -44,8 +45,10 @@ public class MctsOpponentModelDefinition : OpponentModelDefinition
         Seed = seed
     };
 
+    /// <inheritdoc/>
     public override IGameActionPolicy CreatePolicy(int seed) => new MctsActionPolicy(BuildConfig(seed));
 
+    /// <inheritdoc/>
     public override ModelInfo BuildModelInfo() => new ModelInfo
     {
         ModelId = string.IsNullOrEmpty(Id) ? "MCTS" : Id,

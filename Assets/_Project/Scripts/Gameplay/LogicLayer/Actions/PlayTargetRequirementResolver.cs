@@ -7,6 +7,7 @@ using System.Collections.Generic;
 /// </summary>
 public static class PlayTargetRequirementResolver
 {
+    /// <summary>Returns the target requirement implied by a definition's OnPlay effects.</summary>
     public static PlayTargetRequirement GetRequirement(CardDefinition definition)
     {
         if (definition == null)
@@ -15,6 +16,7 @@ public static class PlayTargetRequirementResolver
         return GetRequirementFromEffects(definition.Effects);
     }
 
+    /// <summary>Returns the target requirement implied by a card instance's OnPlay effects.</summary>
     public static PlayTargetRequirement GetRequirement(CardInstance card)
     {
         if (card == null)
@@ -23,6 +25,7 @@ public static class PlayTargetRequirementResolver
         return GetRequirementFromEffects(card.Effects);
     }
 
+    /// <summary>Returns the target requirement implied by a legacy card's OnPlay effects.</summary>
     public static PlayTargetRequirement GetRequirement(Card card)
     {
         if (card == null)
@@ -48,6 +51,7 @@ public static class PlayTargetRequirementResolver
         return PlayTargetRequirement.None;
     }
 
+    /// <summary>Returns the requirement implied by a single effect (None unless it is an OnPlay targeted effect).</summary>
     public static PlayTargetRequirement GetRequirement(CardEffect effect)
     {
         if (effect == null || effect.Trigger != EffectTrigger.OnPlay)
@@ -72,16 +76,19 @@ public static class PlayTargetRequirementResolver
         }
     }
 
+    /// <summary>True if the definition needs a play target.</summary>
     public static bool RequiresTarget(CardDefinition definition)
     {
         return GetRequirement(definition) != PlayTargetRequirement.None;
     }
 
+    /// <summary>True if the card instance needs a play target.</summary>
     public static bool RequiresTarget(CardInstance card)
     {
         return GetRequirement(card) != PlayTargetRequirement.None;
     }
 
+    /// <summary>True if the legacy card needs a play target.</summary>
     public static bool RequiresTarget(Card card)
     {
         return GetRequirement(card) != PlayTargetRequirement.None;

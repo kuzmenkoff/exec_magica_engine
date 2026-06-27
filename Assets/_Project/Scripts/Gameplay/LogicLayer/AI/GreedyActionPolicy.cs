@@ -20,8 +20,11 @@ public class GreedyActionPolicy : IGameActionPolicy
     private readonly double handCountWeight;
     private readonly System.Random tieBreaker;
 
-    // seed == 0 -> non-deterministic tie-break; non-zero -> reproducible.
-    // Defaults reproduce the old boardStat behaviour (attack=hp=1, minionCount=0).
+    /// <summary>
+    /// Creates a one-ply greedy policy. <paramref name="seed"/>: 0 = non-deterministic tie-break,
+    /// non-zero = reproducible. Weights tune the linear evaluation (hero HP, board attack/HP,
+    /// minion count and hand-size differences).
+    /// </summary>
     public GreedyActionPolicy(
         int seed = 0,
         double heroHpWeight = 1.0,
@@ -38,6 +41,11 @@ public class GreedyActionPolicy : IGameActionPolicy
         tieBreaker = seed == 0 ? new System.Random() : new System.Random(seed);
     }
 
+    /// <summary>
+    /// Evaluates every legal action one ply deep (applies it on a deep copy via the real engine,
+    /// scores the result from the actor's perspective) and returns the best, with a uniform
+    /// reservoir tie-break.
+    /// </summary>
     public GameAction ChooseAction(
         GameState state,
         List<GameAction> legalActions,
@@ -129,21 +137,5 @@ public class GreedyActionPolicy : IGameActionPolicy
         public int Attack;
         public int Hp;
         public int Count;
-    }
-
-    private static int BoardStat(PlayerState player)
-    {
-        if (player?.Field == null)
-            return 0;
-
-        int total = 0;
-        foreach (CardInstance card in player.Field)
-        {
-            if (card == null || !card.IsEntity)
-                continue;
-
-            total += card.Attack + card.HP;
-        }
-        return total;
     }
 }

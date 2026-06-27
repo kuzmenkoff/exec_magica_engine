@@ -14,6 +14,7 @@ public static class RuntimeDeckLoader
     private const string PresetsPath = "CardsInfo/DeckPresets";
     private static List<string> cachedPresetNames;
 
+    /// <summary>Returns the available deck-preset names (cached, sorted) from Resources/CardsInfo/DeckPresets.</summary>
     public static IReadOnlyList<string> GetPresetNames()
     {
         if (cachedPresetNames == null)
@@ -26,6 +27,7 @@ public static class RuntimeDeckLoader
         return cachedPresetNames;
     }
 
+    /// <summary>Loads a named deck preset, expanding each entry into card copies from the database.</summary>
     public static AllCards LoadPreset(string presetName, AllCards db)
     {
         AllCards deck = new AllCards { cards = new List<Card>() };
@@ -44,6 +46,7 @@ public static class RuntimeDeckLoader
         return deck;
     }
 
+    /// <summary>Builds a random legal deck (<see cref="GameRules.DeckSize"/> cards, ≤<see cref="GameRules.MaxCopiesPerCardInDeck"/> copies each) from the collectible pool, seeded.</summary>
     public static AllCards RandomDeck(AllCards db, int seed)
     {
         System.Random rng = new System.Random(seed);
@@ -62,6 +65,7 @@ public static class RuntimeDeckLoader
         return deck;
     }
 
+    /// <summary>Picks a random preset (seeded) and loads it.</summary>
     public static AllCards RandomPreset(AllCards db, int seed)
     {
         IReadOnlyList<string> names = GetPresetNames();

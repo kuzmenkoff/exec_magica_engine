@@ -7,6 +7,11 @@ using System.Collections.Generic;
 /// </summary>
 public static class EffectEngine
 {
+    /// <summary>
+    /// Resolves all of a source card's effects matching the given trigger against the state,
+    /// emitting <see cref="GameEvent"/>s. <paramref name="selectedTarget"/> supplies the
+    /// player-chosen target for targeted effects (ignored by area/self effects).
+    /// </summary>
     public static void ResolveEffects(
         GameState state,
         CardInstance source,
@@ -881,7 +886,7 @@ public static class EffectEngine
             {
                 // Flank the summoner: even offsets go to its right, odd to its
                 // left, so multiple tokens appear on both sides instead of
-                // stacking on one. (Field order is cosmetic — no positional rules.)
+                // stacking on one. (Field order is cosmetic - no positional rules.)
                 int sideStep = summonOffset / 2;
 
                 int index = (summonOffset % 2) == 0
@@ -1097,6 +1102,10 @@ public static class EffectEngine
         }
     }
 
+    /// <summary>
+    /// Deals damage to a card on the field, honoring Shield (absorbed, no damage) and applying the
+    /// source's Lifesteal. Returns the damage actually dealt (0 if prevented or invalid).
+    /// </summary>
     public static int DealDamageToCard(
         GameState state,
         CardInstance source,
@@ -1162,7 +1171,10 @@ public static class EffectEngine
         return amount;
     }
 
-
+    /// <summary>
+    /// Deals damage to a hero, applying the source's Lifesteal and ending the game if the hero
+    /// drops to 0. Returns the damage actually dealt.
+    /// </summary>
     public static int DealDamageToHero(
         GameState state,
         CardInstance source,
@@ -1402,6 +1414,10 @@ public static class EffectEngine
         ));
     }
 
+    /// <summary>
+    /// Moves any cards at 0 HP to the graveyard and resolves their OnDeath effects, looping until
+    /// the board is stable (so chained deaths settle). Call after any damage/destroy step.
+    /// </summary>
     public static void ResolveDeaths(
         GameState state,
         List<GameEvent> events)

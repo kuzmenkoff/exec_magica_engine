@@ -7,6 +7,7 @@ using System.Linq;
 /// </summary>
 public static class GameStateValidator
 {
+    /// <summary>Checks state integrity (sides, HP/mana bounds, zone/owner consistency, unique instance ids) and returns error messages (empty if valid).</summary>
     public static List<string> Validate(GameState state)
     {
         List<string> errors = new List<string>();
@@ -33,6 +34,7 @@ public static class GameStateValidator
         return errors;
     }
 
+    /// <summary>True if <see cref="Validate"/> finds no integrity errors.</summary>
     public static bool IsValid(GameState state)
     {
         return Validate(state).Count == 0;

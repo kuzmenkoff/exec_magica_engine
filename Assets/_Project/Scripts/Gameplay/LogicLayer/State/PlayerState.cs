@@ -2,6 +2,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
+/// <summary>
+/// One player's full state: hero health, mana, fatigue, and the four card zones
+/// (deck, hand, field, graveyard).
+/// </summary>
 [Serializable]
 public class PlayerState
 {
@@ -10,11 +14,16 @@ public class PlayerState
     public int HP;
     public int MaxHP;
 
+    /// <summary>Mana available to spend this turn.</summary>
     public int Mana;
+    /// <summary>Refillable mana "crystals" (0..<see cref="GameRules.MaxManaPool"/>) that top up each turn.</summary>
     public int ManaPool;
+    /// <summary>Temporary mana queued to be granted at the start of the next turn.</summary>
     public int PendingTemporaryMana;
 
+    /// <summary>How many turns this player has begun (drives the mana-pool ramp).</summary>
     public int TurnsStarted;
+    /// <summary>Fatigue hits taken so far; each empty-deck draw deals escalating self-damage.</summary>
     public int FatigueCounter;
 
     public List<CardInstance> Deck = new List<CardInstance>();
@@ -22,6 +31,7 @@ public class PlayerState
     public List<CardInstance> Field = new List<CardInstance>();
     public List<CardInstance> Graveyard = new List<CardInstance>();
 
+    /// <summary>Returns an independent deep copy of this player's state and all card zones.</summary>
     public PlayerState GetDeepCopy()
     {
         return new PlayerState

@@ -3,8 +3,18 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 
+/// <summary>
+/// Plays one game between two policies on a fresh <see cref="GameEngine"/>, then fills a
+/// <see cref="SessionRecord"/> with outcome, per-side metrics (mana efficiency, think time) and
+/// per-card impact.
+/// </summary>
 public static class SessionRunner
 {
+    /// <summary>
+    /// Runs a single game to completion (or <paramref name="maxActions"/>), measuring per-decision
+    /// think time, and returns <paramref name="meta"/> populated with the results. Pass
+    /// <paramref name="logEvents"/> = false to omit the raw event stream from the record.
+    /// </summary>
     public static SessionRecord RunGame(
         GameState initialState,
         IGameActionPolicy playerPolicy,

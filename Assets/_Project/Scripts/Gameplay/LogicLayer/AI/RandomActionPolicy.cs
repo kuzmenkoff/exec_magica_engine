@@ -10,6 +10,7 @@ public class RandomActionPolicy : IGameActionPolicy
 {
     private readonly Random random;
 
+    /// <summary>Creates a random policy. <paramref name="seed"/>: 0 = non-deterministic, non-zero = reproducible.</summary>
     public RandomActionPolicy(int seed = 0)
     {
         random = seed == 0
@@ -17,6 +18,7 @@ public class RandomActionPolicy : IGameActionPolicy
             : new Random(seed);
     }
 
+    /// <summary>Picks a uniformly random legal action, preferring non-EndTurn actions (ends the turn only when forced).</summary>
     public GameAction ChooseAction(
         GameState state,
         List<GameAction> legalActions,

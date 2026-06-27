@@ -162,6 +162,7 @@ public class AllCards
         return GetAllCards().Find(card => card != null && card.id == cardId);
     }
 
+    /// <summary>Finds a card by id and returns it as a <see cref="CardDefinition"/>, or null.</summary>
     public CardDefinition FindDefinition(int cardId)
     {
         Card card = FindCardDefinition(cardId);
@@ -171,6 +172,7 @@ public class AllCards
             : null;
     }
 
+    /// <summary>Returns every card in the collection as definitions.</summary>
     public List<CardDefinition> GetAllDefinitions()
     {
         List<CardDefinition> result = new List<CardDefinition>();
@@ -184,6 +186,7 @@ public class AllCards
         return result;
     }
 
+    /// <summary>Returns deck-legal (collectible) cards as definitions.</summary>
     public List<CardDefinition> GetCollectibleDefinitions()
     {
         List<CardDefinition> result = new List<CardDefinition>();
@@ -197,6 +200,7 @@ public class AllCards
         return result;
     }
 
+    /// <summary>True if a card with the same id exists in this collection.</summary>
     public bool ContainsCard(Card checkedCard)
     {
         if (checkedCard == null)
@@ -211,6 +215,7 @@ public class AllCards
         return false;
     }
 
+    /// <summary>Returns an independent deep copy of the whole collection.</summary>
     public AllCards GetDeepCopy()
     {
         var clone = new AllCards();
@@ -254,6 +259,7 @@ public class AllCards
         return clone;
     }
 
+    /// <summary>In-place Fisher–Yates shuffle of the deck's <c>cards</c> list.</summary>
     public void Shuffle()
     {
         if (cards == null)

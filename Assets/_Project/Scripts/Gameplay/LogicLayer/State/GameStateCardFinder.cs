@@ -5,6 +5,7 @@ using System.Collections.Generic;
 /// </summary>
 public static class GameStateCardFinder
 {
+    /// <summary>Finds a card instance by id anywhere in the state (both players, all zones).</summary>
     public static CardInstance FindCard(GameState state, int instanceId)
     {
         if (state == null)
@@ -23,6 +24,7 @@ public static class GameStateCardFinder
         return null;
     }
 
+    /// <summary>Finds a card instance by id within one player's zones.</summary>
     public static CardInstance FindCardInPlayer(PlayerState player, int instanceId)
     {
         if (player == null)
@@ -49,6 +51,7 @@ public static class GameStateCardFinder
         return null;
     }
 
+    /// <summary>Finds a card instance by id within a single zone list.</summary>
     public static CardInstance FindCardInList(
         List<CardInstance> cards,
         int instanceId)

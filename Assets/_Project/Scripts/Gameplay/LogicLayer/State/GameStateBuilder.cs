@@ -10,6 +10,16 @@ using System.Linq;
 /// </summary>
 public static class GameStateBuilder
 {
+    /// <summary>
+    /// Builds a ready-to-play <see cref="GameState"/> from two decks: creates both players,
+    /// fills and shuffles decks, draws starting hands, gives the Coin to the second player,
+    /// and starts the first turn.
+    /// </summary>
+    /// <param name="playerDeck">The Player side's deck (an <see cref="AllCards"/> <c>cards</c> list).</param>
+    /// <param name="enemyDeck">The Enemy side's deck.</param>
+    /// <param name="cardDatabase">Full card database — used for summons and the Coin lookup.</param>
+    /// <param name="playerFirst">True if the Player side takes the first turn.</param>
+    /// <param name="shuffleSeed">Optional seed for reproducible shuffles; null = non-deterministic.</param>
     public static GameState CreateInitialState(
         AllCards playerDeck,
         AllCards enemyDeck,
