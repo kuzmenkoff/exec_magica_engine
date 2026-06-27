@@ -20,7 +20,7 @@ keywords:
   - decision-making under uncertainty
 license: MIT
 version: "1.0.0"
-date-released: 2026-06-24
+date-released: 2026-06-27
 url: "https://github.com/kuzmenkoff/exec_magica"
 repository-code: "https://github.com/kuzmenkoff/exec_magica"
 
@@ -33,4 +33,4 @@ preferred-citation:
   year: 2026
   thesis-type: "Master's thesis"
   institution:
-    name: "Національний технічний університет України «Київський політехнічний інститут імені Ігоря Сікорського»"
+    name: "Національний технічний університет України «Київський політехнічний інститут імені Ігоря Сікорського» [National Technical University of Ukraine «Igor Sikorsky Kyiv Polytechnic Institute»]"
