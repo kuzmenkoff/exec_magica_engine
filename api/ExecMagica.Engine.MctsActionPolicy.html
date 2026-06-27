@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class MctsActionPolicy | EXEC_MAGICA Engine — API Reference </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class MctsActionPolicy | EXEC_MAGICA Engine — API Reference ">
+      
+      <meta name="description" content="Information Set MCTS policy. Tree keyed by canonical ACTION keys; each iteration re-determinizes the hidden world (opponent hand/deck and both deck orders), descends via the real GameEngine, expands one node, rolls out to terminal, and backpropagates a win/loss from the ROOT player&#39;s perspective (per-node chooser flip). UCB1 uses availability counts (Cowling 2012) so actions that are legal only in some determinizations are handled correctly. Information model (Phase 2.0): no model sees hidden info. Hidden opponent hand cards are keyed by CardId (type), not InstanceId, so the agent never relies on specific hidden identities; it reasons over the information set.">
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/kuzmenkoff/exec_magica_engine/new/main/apiSpec/new?filename=ExecMagica_Engine_MctsActionPolicy.md&amp;value=---%0Auid%3A%20ExecMagica.Engine.MctsActionPolicy%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../logo.svg" alt="EXEC_MAGICA Engine">
+            EXEC_MAGICA Engine
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="ExecMagica.Engine.MctsActionPolicy">
+
+
+
+  <h1 id="ExecMagica_Engine_MctsActionPolicy" data-uid="ExecMagica.Engine.MctsActionPolicy" class="text-break">
+Class MctsActionPolicy  <a class="header-action link-secondary" title="View source" href="https://github.com/kuzmenkoff/exec_magica_engine/blob/main/docfx/_src/AI/MCTS/MctsActionPolicy.cs/#L19"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="ExecMagica.html">ExecMagica</a>.<a class="xref" href="ExecMagica.Engine.html">Engine</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>EngineDocs.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>Information Set MCTS policy.
+Tree keyed by canonical ACTION keys; each iteration re-determinizes the hidden world
+(opponent hand/deck and both deck orders), descends via the real GameEngine, expands one
+node, rolls out to terminal, and backpropagates a win/loss from the ROOT player's
+perspective (per-node chooser flip). UCB1 uses availability counts (Cowling 2012) so
+actions that are legal only in some determinizations are handled correctly.</p>
+<p>Information model (Phase 2.0): no model sees hidden info. Hidden opponent hand cards are
+keyed by CardId (type), not InstanceId, so the agent never relies on specific hidden
+identities; it reasons over the information set.</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class MctsActionPolicy : IGameActionPolicy</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">MctsActionPolicy</span></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><a class="xref" href="ExecMagica.Engine.IGameActionPolicy.html">IGameActionPolicy</a></div>
+    </dd>
+  </dl>
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </dd></dl>
+
+
+
+
+
+
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
+  <a id="ExecMagica_Engine_MctsActionPolicy__ctor_" data-uid="ExecMagica.Engine.MctsActionPolicy.#ctor*"></a>
+
+  <h3 id="ExecMagica_Engine_MctsActionPolicy__ctor_ExecMagica_Engine_MctsConfig_" data-uid="ExecMagica.Engine.MctsActionPolicy.#ctor(ExecMagica.Engine.MctsConfig)">
+  MctsActionPolicy(MctsConfig)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/kuzmenkoff/exec_magica_engine/blob/main/docfx/_src/AI/MCTS/MctsActionPolicy.cs/#L44"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Creates an ISMCTS policy with the given configuration (defaults if null).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MctsActionPolicy(MctsConfig config = null)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>config</code> <a class="xref" href="ExecMagica.Engine.MctsConfig.html">MctsConfig</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="ExecMagica_Engine_MctsActionPolicy_ChooseAction_" data-uid="ExecMagica.Engine.MctsActionPolicy.ChooseAction*"></a>
+
+  <h3 id="ExecMagica_Engine_MctsActionPolicy_ChooseAction_ExecMagica_Engine_GameState_System_Collections_Generic_List_ExecMagica_Engine_GameAction__ExecMagica_Engine_PlayerSide_" data-uid="ExecMagica.Engine.MctsActionPolicy.ChooseAction(ExecMagica.Engine.GameState,System.Collections.Generic.List{ExecMagica.Engine.GameAction},ExecMagica.Engine.PlayerSide)">
+  ChooseAction(GameState, List&lt;GameAction&gt;, PlayerSide)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/kuzmenkoff/exec_magica_engine/blob/main/docfx/_src/AI/MCTS/MctsActionPolicy.cs/#L55"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Runs Information-Set MCTS and returns the chosen action: builds a tree keyed by canonical
+action keys, re-determinizing the hidden world each iteration, then selects the root move by
+visit count or mean value. Cases with 0 or 1 legal actions short-circuit.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public GameAction ChooseAction(GameState state, List&lt;GameAction&gt; legalActions, PlayerSide actorSide)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>state</code> <a class="xref" href="ExecMagica.Engine.GameState.html">GameState</a></dt>
+    <dd></dd>
+    <dt><code>legalActions</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="ExecMagica.Engine.GameAction.html">GameAction</a>&gt;</dt>
+    <dd></dd>
+    <dt><code>actorSide</code> <a class="xref" href="ExecMagica.Engine.PlayerSide.html">PlayerSide</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ExecMagica.Engine.GameAction.html">GameAction</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/kuzmenkoff/exec_magica_engine/blob/main/docfx/_src/AI/MCTS/MctsActionPolicy.cs/#L19" class="edit-link">Edit this page</a>
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

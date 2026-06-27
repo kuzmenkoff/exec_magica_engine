@@ -1,0 +1,891 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class AllCards | EXEC_MAGICA Engine — API Reference </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class AllCards | EXEC_MAGICA Engine — API Reference ">
+      
+      <meta name="description" content="Represents either a saved deck or the full card database. Saved decks use the &amp;quot;cards&amp;quot; list. Main card database can use structured lists: entities, spells and summonEntities.">
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/kuzmenkoff/exec_magica_engine/new/main/apiSpec/new?filename=ExecMagica_Engine_AllCards.md&amp;value=---%0Auid%3A%20ExecMagica.Engine.AllCards%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../logo.svg" alt="EXEC_MAGICA Engine">
+            EXEC_MAGICA Engine
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="ExecMagica.Engine.AllCards">
+
+
+
+  <h1 id="ExecMagica_Engine_AllCards" data-uid="ExecMagica.Engine.AllCards" class="text-break">
+Class AllCards  <a class="header-action link-secondary" title="View source" href="https://github.com/kuzmenkoff/exec_magica_engine/blob/main/docfx/_src/Cards/AllCards.cs/#L12"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="ExecMagica.html">ExecMagica</a>.<a class="xref" href="ExecMagica.Engine.html">Engine</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>EngineDocs.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>Represents either a saved deck or the full card database.</p>
+<p>Saved decks use the &quot;cards&quot; list.
+Main card database can use structured lists:
+entities, spells and summonEntities.</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Serializable]
+public class AllCards</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">AllCards</span></div>
+    </dd>
+  </dl>
+
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </dd></dl>
+
+
+
+
+
+
+  <h2 class="section" id="fields">Fields
+</h2>
+
+
+
+  <h3 id="ExecMagica_Engine_AllCards_cards" data-uid="ExecMagica.Engine.AllCards.cards">
+  cards
+  <a class="header-action link-secondary" title="View source" href="https://github.com/kuzmenkoff/exec_magica_engine/blob/main/docfx/_src/Cards/AllCards.cs/#L21"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public List&lt;Card&gt; cards</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="ExecMagica.Engine.Card.html">Card</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="ExecMagica_Engine_AllCards_entities" data-uid="ExecMagica.Engine.AllCards.entities">
+  entities
+  <a class="header-action link-secondary" title="View source" href="https://github.com/kuzmenkoff/exec_magica_engine/blob/main/docfx/_src/Cards/AllCards.cs/#L24"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public List&lt;Card&gt; entities</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="ExecMagica.Engine.Card.html">Card</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="ExecMagica_Engine_AllCards_orderPriority" data-uid="ExecMagica.Engine.AllCards.orderPriority">
+  orderPriority
+  <a class="header-action link-secondary" title="View source" href="https://github.com/kuzmenkoff/exec_magica_engine/blob/main/docfx/_src/Cards/AllCards.cs/#L18"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int orderPriority</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="ExecMagica_Engine_AllCards_setName" data-uid="ExecMagica.Engine.AllCards.setName">
+  setName
+  <a class="header-action link-secondary" title="View source" href="https://github.com/kuzmenkoff/exec_magica_engine/blob/main/docfx/_src/Cards/AllCards.cs/#L17"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string setName</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="ExecMagica_Engine_AllCards_spells" data-uid="ExecMagica.Engine.AllCards.spells">
+  spells
+  <a class="header-action link-secondary" title="View source" href="https://github.com/kuzmenkoff/exec_magica_engine/blob/main/docfx/_src/Cards/AllCards.cs/#L25"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public List&lt;Card&gt; spells</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="ExecMagica.Engine.Card.html">Card</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="ExecMagica_Engine_AllCards_summonEntities" data-uid="ExecMagica.Engine.AllCards.summonEntities">
+  summonEntities
+  <a class="header-action link-secondary" title="View source" href="https://github.com/kuzmenkoff/exec_magica_engine/blob/main/docfx/_src/Cards/AllCards.cs/#L26"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public List&lt;Card&gt; summonEntities</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="ExecMagica.Engine.Card.html">Card</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="ExecMagica_Engine_AllCards_AddCardSet_" data-uid="ExecMagica.Engine.AllCards.AddCardSet*"></a>
+
+  <h3 id="ExecMagica_Engine_AllCards_AddCardSet_ExecMagica_Engine_AllCards_" data-uid="ExecMagica.Engine.AllCards.AddCardSet(ExecMagica.Engine.AllCards)">
+  AddCardSet(AllCards)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/kuzmenkoff/exec_magica_engine/blob/main/docfx/_src/Cards/AllCards.cs/#L90"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Adds card definitions from another card collection into this collection.
+Used to merge multiple card set JSON files into one runtime database.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void AddCardSet(AllCards source)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>source</code> <a class="xref" href="ExecMagica.Engine.AllCards.html">AllCards</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ExecMagica_Engine_AllCards_ContainsCard_" data-uid="ExecMagica.Engine.AllCards.ContainsCard*"></a>
+
+  <h3 id="ExecMagica_Engine_AllCards_ContainsCard_ExecMagica_Engine_Card_" data-uid="ExecMagica.Engine.AllCards.ContainsCard(ExecMagica.Engine.Card)">
+  ContainsCard(Card)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/kuzmenkoff/exec_magica_engine/blob/main/docfx/_src/Cards/AllCards.cs/#L205"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>True if a card with the same id exists in this collection.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool ContainsCard(Card checkedCard)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>checkedCard</code> <a class="xref" href="ExecMagica.Engine.Card.html">Card</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ExecMagica_Engine_AllCards_FindCardDefinition_" data-uid="ExecMagica.Engine.AllCards.FindCardDefinition*"></a>
+
+  <h3 id="ExecMagica_Engine_AllCards_FindCardDefinition_System_Int32_" data-uid="ExecMagica.Engine.AllCards.FindCardDefinition(System.Int32)">
+  FindCardDefinition(int)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/kuzmenkoff/exec_magica_engine/blob/main/docfx/_src/Cards/AllCards.cs/#L161"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Finds any card definition by id, including summon-only cards.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Card FindCardDefinition(int cardId)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>cardId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ExecMagica.Engine.Card.html">Card</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ExecMagica_Engine_AllCards_FindDefinition_" data-uid="ExecMagica.Engine.AllCards.FindDefinition*"></a>
+
+  <h3 id="ExecMagica_Engine_AllCards_FindDefinition_System_Int32_" data-uid="ExecMagica.Engine.AllCards.FindDefinition(System.Int32)">
+  FindDefinition(int)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/kuzmenkoff/exec_magica_engine/blob/main/docfx/_src/Cards/AllCards.cs/#L167"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Finds a card by id and returns it as a <a class="xref" href="ExecMagica.Engine.CardDefinition.html">CardDefinition</a>, or null.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CardDefinition FindDefinition(int cardId)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>cardId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ExecMagica.Engine.CardDefinition.html">CardDefinition</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ExecMagica_Engine_AllCards_GetAllCards_" data-uid="ExecMagica.Engine.AllCards.GetAllCards*"></a>
+
+  <h3 id="ExecMagica_Engine_AllCards_GetAllCards" data-uid="ExecMagica.Engine.AllCards.GetAllCards">
+  GetAllCards()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/kuzmenkoff/exec_magica_engine/blob/main/docfx/_src/Cards/AllCards.cs/#L67"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns every card known to this collection.
+For the main database, this includes entities, spells and summon-only entities.
+For saved decks, this returns the cards list.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public List&lt;Card&gt; GetAllCards()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="ExecMagica.Engine.Card.html">Card</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ExecMagica_Engine_AllCards_GetAllDefinitions_" data-uid="ExecMagica.Engine.AllCards.GetAllDefinitions*"></a>
+
+  <h3 id="ExecMagica_Engine_AllCards_GetAllDefinitions" data-uid="ExecMagica.Engine.AllCards.GetAllDefinitions">
+  GetAllDefinitions()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/kuzmenkoff/exec_magica_engine/blob/main/docfx/_src/Cards/AllCards.cs/#L177"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns every card in the collection as definitions.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public List&lt;CardDefinition&gt; GetAllDefinitions()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="ExecMagica.Engine.CardDefinition.html">CardDefinition</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ExecMagica_Engine_AllCards_GetCollectibleCards_" data-uid="ExecMagica.Engine.AllCards.GetCollectibleCards*"></a>
+
+  <h3 id="ExecMagica_Engine_AllCards_GetCollectibleCards" data-uid="ExecMagica.Engine.AllCards.GetCollectibleCards">
+  GetCollectibleCards()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/kuzmenkoff/exec_magica_engine/blob/main/docfx/_src/Cards/AllCards.cs/#L137"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns only cards that can be used in player/enemy decks.
+Summon-only cards are intentionally excluded.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public List&lt;Card&gt; GetCollectibleCards()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="ExecMagica.Engine.Card.html">Card</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ExecMagica_Engine_AllCards_GetCollectibleDefinitions_" data-uid="ExecMagica.Engine.AllCards.GetCollectibleDefinitions*"></a>
+
+  <h3 id="ExecMagica_Engine_AllCards_GetCollectibleDefinitions" data-uid="ExecMagica.Engine.AllCards.GetCollectibleDefinitions">
+  GetCollectibleDefinitions()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/kuzmenkoff/exec_magica_engine/blob/main/docfx/_src/Cards/AllCards.cs/#L191"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns deck-legal (collectible) cards as definitions.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public List&lt;CardDefinition&gt; GetCollectibleDefinitions()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="ExecMagica.Engine.CardDefinition.html">CardDefinition</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ExecMagica_Engine_AllCards_GetDeepCopy_" data-uid="ExecMagica.Engine.AllCards.GetDeepCopy*"></a>
+
+  <h3 id="ExecMagica_Engine_AllCards_GetDeepCopy" data-uid="ExecMagica.Engine.AllCards.GetDeepCopy">
+  GetDeepCopy()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/kuzmenkoff/exec_magica_engine/blob/main/docfx/_src/Cards/AllCards.cs/#L220"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns an independent deep copy of the whole collection.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public AllCards GetDeepCopy()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ExecMagica.Engine.AllCards.html">AllCards</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ExecMagica_Engine_AllCards_ShouldSerializecards_" data-uid="ExecMagica.Engine.AllCards.ShouldSerializecards*"></a>
+
+  <h3 id="ExecMagica_Engine_AllCards_ShouldSerializecards" data-uid="ExecMagica.Engine.AllCards.ShouldSerializecards">
+  ShouldSerializecards()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/kuzmenkoff/exec_magica_engine/blob/main/docfx/_src/Cards/AllCards.cs/#L32"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Prevents empty structured lists from being written into deck JSON files.
+Newtonsoft.Json calls these methods automatically.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool ShouldSerializecards()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ExecMagica_Engine_AllCards_ShouldSerializeentities_" data-uid="ExecMagica.Engine.AllCards.ShouldSerializeentities*"></a>
+
+  <h3 id="ExecMagica_Engine_AllCards_ShouldSerializeentities" data-uid="ExecMagica.Engine.AllCards.ShouldSerializeentities">
+  ShouldSerializeentities()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/kuzmenkoff/exec_magica_engine/blob/main/docfx/_src/Cards/AllCards.cs/#L37"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool ShouldSerializeentities()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ExecMagica_Engine_AllCards_ShouldSerializeorderPriority_" data-uid="ExecMagica.Engine.AllCards.ShouldSerializeorderPriority*"></a>
+
+  <h3 id="ExecMagica_Engine_AllCards_ShouldSerializeorderPriority" data-uid="ExecMagica.Engine.AllCards.ShouldSerializeorderPriority">
+  ShouldSerializeorderPriority()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/kuzmenkoff/exec_magica_engine/blob/main/docfx/_src/Cards/AllCards.cs/#L57"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool ShouldSerializeorderPriority()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ExecMagica_Engine_AllCards_ShouldSerializesetName_" data-uid="ExecMagica.Engine.AllCards.ShouldSerializesetName*"></a>
+
+  <h3 id="ExecMagica_Engine_AllCards_ShouldSerializesetName" data-uid="ExecMagica.Engine.AllCards.ShouldSerializesetName">
+  ShouldSerializesetName()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/kuzmenkoff/exec_magica_engine/blob/main/docfx/_src/Cards/AllCards.cs/#L52"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool ShouldSerializesetName()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ExecMagica_Engine_AllCards_ShouldSerializespells_" data-uid="ExecMagica.Engine.AllCards.ShouldSerializespells*"></a>
+
+  <h3 id="ExecMagica_Engine_AllCards_ShouldSerializespells" data-uid="ExecMagica.Engine.AllCards.ShouldSerializespells">
+  ShouldSerializespells()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/kuzmenkoff/exec_magica_engine/blob/main/docfx/_src/Cards/AllCards.cs/#L42"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool ShouldSerializespells()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ExecMagica_Engine_AllCards_ShouldSerializesummonEntities_" data-uid="ExecMagica.Engine.AllCards.ShouldSerializesummonEntities*"></a>
+
+  <h3 id="ExecMagica_Engine_AllCards_ShouldSerializesummonEntities" data-uid="ExecMagica.Engine.AllCards.ShouldSerializesummonEntities">
+  ShouldSerializesummonEntities()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/kuzmenkoff/exec_magica_engine/blob/main/docfx/_src/Cards/AllCards.cs/#L47"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool ShouldSerializesummonEntities()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ExecMagica_Engine_AllCards_Shuffle_" data-uid="ExecMagica.Engine.AllCards.Shuffle*"></a>
+
+  <h3 id="ExecMagica_Engine_AllCards_Shuffle" data-uid="ExecMagica.Engine.AllCards.Shuffle">
+  Shuffle()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/kuzmenkoff/exec_magica_engine/blob/main/docfx/_src/Cards/AllCards.cs/#L264"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>In-place Fisher–Yates shuffle of the deck's <code>cards</code> list.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Shuffle()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/kuzmenkoff/exec_magica_engine/blob/main/docfx/_src/Cards/AllCards.cs/#L12" class="edit-link">Edit this page</a>
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

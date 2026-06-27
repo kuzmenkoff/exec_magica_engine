@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class MctsConfig | EXEC_MAGICA Engine — API Reference </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class MctsConfig | EXEC_MAGICA Engine — API Reference ">
+      
+      <meta name="description" content="Configuration for  — search budget, exploration, rollout policy, information model, final-move selection, seeding and parallelization.">
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/kuzmenkoff/exec_magica_engine/new/main/apiSpec/new?filename=ExecMagica_Engine_MctsConfig.md&amp;value=---%0Auid%3A%20ExecMagica.Engine.MctsConfig%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../logo.svg" alt="EXEC_MAGICA Engine">
+            EXEC_MAGICA Engine
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="ExecMagica.Engine.MctsConfig">
+
+
+
+  <h1 id="ExecMagica_Engine_MctsConfig" data-uid="ExecMagica.Engine.MctsConfig" class="text-break">
+Class MctsConfig  <a class="header-action link-secondary" title="View source" href="https://github.com/kuzmenkoff/exec_magica_engine/blob/main/docfx/_src/AI/MCTS/MctsConfig.cs/#L6"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="ExecMagica.html">ExecMagica</a>.<a class="xref" href="ExecMagica.Engine.html">Engine</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>EngineDocs.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>Configuration for <a class="xref" href="ExecMagica.Engine.MctsActionPolicy.html">MctsActionPolicy</a> — search budget, exploration, rollout
+policy, information model, final-move selection, seeding and parallelization.</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class MctsConfig</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">MctsConfig</span></div>
+    </dd>
+  </dl>
+
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </dd></dl>
+
+
+
+
+
+
+  <h2 class="section" id="fields">Fields
+</h2>
+
+
+
+  <h3 id="ExecMagica_Engine_MctsConfig_BudgetMode" data-uid="ExecMagica.Engine.MctsConfig.BudgetMode">
+  BudgetMode
+  <a class="header-action link-secondary" title="View source" href="https://github.com/kuzmenkoff/exec_magica_engine/blob/main/docfx/_src/AI/MCTS/MctsConfig.cs/#L16"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Whether the budget is counted in iterations or milliseconds.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MctsConfig.Budget BudgetMode</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ExecMagica.Engine.MctsConfig.html">MctsConfig</a>.<a class="xref" href="ExecMagica.Engine.MctsConfig.Budget.html">Budget</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="ExecMagica_Engine_MctsConfig_Determinize" data-uid="ExecMagica.Engine.MctsConfig.Determinize">
+  Determinize
+  <a class="header-action link-secondary" title="View source" href="https://github.com/kuzmenkoff/exec_magica_engine/blob/main/docfx/_src/AI/MCTS/MctsConfig.cs/#L30"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>If true, re-determinize hidden info each iteration (ISMCTS); false = perfect-information search.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool Determinize</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="ExecMagica_Engine_MctsConfig_ExplorationC" data-uid="ExecMagica.Engine.MctsConfig.ExplorationC">
+  ExplorationC
+  <a class="header-action link-secondary" title="View source" href="https://github.com/kuzmenkoff/exec_magica_engine/blob/main/docfx/_src/AI/MCTS/MctsConfig.cs/#L23"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>UCB1 exploration constant C (≈√2 by default).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double ExplorationC</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="ExecMagica_Engine_MctsConfig_FinalAction" data-uid="ExecMagica.Engine.MctsConfig.FinalAction">
+  FinalAction
+  <a class="header-action link-secondary" title="View source" href="https://github.com/kuzmenkoff/exec_magica_engine/blob/main/docfx/_src/AI/MCTS/MctsConfig.cs/#L35"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>How the root move is selected after search.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MctsConfig.FinalSelection FinalAction</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ExecMagica.Engine.MctsConfig.html">MctsConfig</a>.<a class="xref" href="ExecMagica.Engine.MctsConfig.FinalSelection.html">FinalSelection</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="ExecMagica_Engine_MctsConfig_Iterations" data-uid="ExecMagica.Engine.MctsConfig.Iterations">
+  Iterations
+  <a class="header-action link-secondary" title="View source" href="https://github.com/kuzmenkoff/exec_magica_engine/blob/main/docfx/_src/AI/MCTS/MctsConfig.cs/#L18"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Iteration budget — TOTAL across threads in Iterations mode.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int Iterations</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="ExecMagica_Engine_MctsConfig_KnowsOpponentDeck" data-uid="ExecMagica.Engine.MctsConfig.KnowsOpponentDeck">
+  KnowsOpponentDeck
+  <a class="header-action link-secondary" title="View source" href="https://github.com/kuzmenkoff/exec_magica_engine/blob/main/docfx/_src/AI/MCTS/MctsConfig.cs/#L32"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Known-decklist assumption: the opponent's hidden cards are re-dealt from their actual deck.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool KnowsOpponentDeck</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="ExecMagica_Engine_MctsConfig_MaxRolloutActions" data-uid="ExecMagica.Engine.MctsConfig.MaxRolloutActions">
+  MaxRolloutActions
+  <a class="header-action link-secondary" title="View source" href="https://github.com/kuzmenkoff/exec_magica_engine/blob/main/docfx/_src/AI/MCTS/MctsConfig.cs/#L27"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Hard cap on actions per rollout; if reached, the rollout scores as a draw (0.5).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int MaxRolloutActions</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="ExecMagica_Engine_MctsConfig_Parallelize" data-uid="ExecMagica.Engine.MctsConfig.Parallelize">
+  Parallelize
+  <a class="header-action link-secondary" title="View source" href="https://github.com/kuzmenkoff/exec_magica_engine/blob/main/docfx/_src/AI/MCTS/MctsConfig.cs/#L40"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Enable root parallelization (off by default for determinism and simplicity).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool Parallelize</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="ExecMagica_Engine_MctsConfig_RolloutPolicy" data-uid="ExecMagica.Engine.MctsConfig.RolloutPolicy">
+  RolloutPolicy
+  <a class="header-action link-secondary" title="View source" href="https://github.com/kuzmenkoff/exec_magica_engine/blob/main/docfx/_src/AI/MCTS/MctsConfig.cs/#L25"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Rollout policy used from expanded nodes to terminal.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MctsConfig.Rollout RolloutPolicy</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ExecMagica.Engine.MctsConfig.html">MctsConfig</a>.<a class="xref" href="ExecMagica.Engine.MctsConfig.Rollout.html">Rollout</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="ExecMagica_Engine_MctsConfig_Seed" data-uid="ExecMagica.Engine.MctsConfig.Seed">
+  Seed
+  <a class="header-action link-secondary" title="View source" href="https://github.com/kuzmenkoff/exec_magica_engine/blob/main/docfx/_src/AI/MCTS/MctsConfig.cs/#L37"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>RNG seed; 0 = non-deterministic, non-zero = reproducible.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int Seed</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="ExecMagica_Engine_MctsConfig_ThreadCount" data-uid="ExecMagica.Engine.MctsConfig.ThreadCount">
+  ThreadCount
+  <a class="header-action link-secondary" title="View source" href="https://github.com/kuzmenkoff/exec_magica_engine/blob/main/docfx/_src/AI/MCTS/MctsConfig.cs/#L42"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Worker thread count; 0 = auto (<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.environment.processorcount">ProcessorCount</a>).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int ThreadCount</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="ExecMagica_Engine_MctsConfig_TimeBudgetMs" data-uid="ExecMagica.Engine.MctsConfig.TimeBudgetMs">
+  TimeBudgetMs
+  <a class="header-action link-secondary" title="View source" href="https://github.com/kuzmenkoff/exec_magica_engine/blob/main/docfx/_src/AI/MCTS/MctsConfig.cs/#L20"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Time budget per thread, in milliseconds (Time mode).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int TimeBudgetMs</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/kuzmenkoff/exec_magica_engine/blob/main/docfx/_src/AI/MCTS/MctsConfig.cs/#L6" class="edit-link">Edit this page</a>
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

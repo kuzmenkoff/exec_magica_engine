@@ -1,0 +1,1148 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class GameStateTestFactory | EXEC_MAGICA Engine — API Reference </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class GameStateTestFactory | EXEC_MAGICA Engine — API Reference ">
+      
+      <meta name="description" content="Creates controlled pure GameState scenarios for testing GameEngine logic. This is not production gameplay code.">
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/kuzmenkoff/exec_magica_engine/new/main/apiSpec/new?filename=ExecMagica_Engine_GameStateTestFactory.md&amp;value=---%0Auid%3A%20ExecMagica.Engine.GameStateTestFactory%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../logo.svg" alt="EXEC_MAGICA Engine">
+            EXEC_MAGICA Engine
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="ExecMagica.Engine.GameStateTestFactory">
+
+
+
+  <h1 id="ExecMagica_Engine_GameStateTestFactory" data-uid="ExecMagica.Engine.GameStateTestFactory" class="text-break">
+Class GameStateTestFactory  <a class="header-action link-secondary" title="View source" href="https://github.com/kuzmenkoff/exec_magica_engine/blob/main/docfx/_src/Debug/GameStateTestFactory.cs/#L55"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="ExecMagica.html">ExecMagica</a>.<a class="xref" href="ExecMagica.Engine.html">Engine</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>EngineDocs.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>Creates controlled pure GameState scenarios for testing GameEngine logic.
+This is not production gameplay code.</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static class GameStateTestFactory</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">GameStateTestFactory</span></div>
+    </dd>
+  </dl>
+
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </dd></dl>
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="ExecMagica_Engine_GameStateTestFactory_CreateAddKeywordSelectedAllyCardScenario_" data-uid="ExecMagica.Engine.GameStateTestFactory.CreateAddKeywordSelectedAllyCardScenario*"></a>
+
+  <h3 id="ExecMagica_Engine_GameStateTestFactory_CreateAddKeywordSelectedAllyCardScenario" data-uid="ExecMagica.Engine.GameStateTestFactory.CreateAddKeywordSelectedAllyCardScenario">
+  CreateAddKeywordSelectedAllyCardScenario()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/kuzmenkoff/exec_magica_engine/blob/main/docfx/_src/Debug/GameStateTestFactory.cs/#L1385"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static GameState CreateAddKeywordSelectedAllyCardScenario()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ExecMagica.Engine.GameState.html">GameState</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ExecMagica_Engine_GameStateTestFactory_CreateAttackBlockedByProvocationScenario_" data-uid="ExecMagica.Engine.GameStateTestFactory.CreateAttackBlockedByProvocationScenario*"></a>
+
+  <h3 id="ExecMagica_Engine_GameStateTestFactory_CreateAttackBlockedByProvocationScenario" data-uid="ExecMagica.Engine.GameStateTestFactory.CreateAttackBlockedByProvocationScenario">
+  CreateAttackBlockedByProvocationScenario()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/kuzmenkoff/exec_magica_engine/blob/main/docfx/_src/Debug/GameStateTestFactory.cs/#L866"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static GameState CreateAttackBlockedByProvocationScenario()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ExecMagica.Engine.GameState.html">GameState</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ExecMagica_Engine_GameStateTestFactory_CreateAttackCardScenario_" data-uid="ExecMagica.Engine.GameStateTestFactory.CreateAttackCardScenario*"></a>
+
+  <h3 id="ExecMagica_Engine_GameStateTestFactory_CreateAttackCardScenario" data-uid="ExecMagica.Engine.GameStateTestFactory.CreateAttackCardScenario">
+  CreateAttackCardScenario()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/kuzmenkoff/exec_magica_engine/blob/main/docfx/_src/Debug/GameStateTestFactory.cs/#L917"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static GameState CreateAttackCardScenario()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ExecMagica.Engine.GameState.html">GameState</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ExecMagica_Engine_GameStateTestFactory_CreateAttackHeroScenario_" data-uid="ExecMagica.Engine.GameStateTestFactory.CreateAttackHeroScenario*"></a>
+
+  <h3 id="ExecMagica_Engine_GameStateTestFactory_CreateAttackHeroScenario" data-uid="ExecMagica.Engine.GameStateTestFactory.CreateAttackHeroScenario">
+  CreateAttackHeroScenario()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/kuzmenkoff/exec_magica_engine/blob/main/docfx/_src/Debug/GameStateTestFactory.cs/#L954"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static GameState CreateAttackHeroScenario()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ExecMagica.Engine.GameState.html">GameState</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ExecMagica_Engine_GameStateTestFactory_CreateBuffAttackSelectedAllyCardScenario_" data-uid="ExecMagica.Engine.GameStateTestFactory.CreateBuffAttackSelectedAllyCardScenario*"></a>
+
+  <h3 id="ExecMagica_Engine_GameStateTestFactory_CreateBuffAttackSelectedAllyCardScenario" data-uid="ExecMagica.Engine.GameStateTestFactory.CreateBuffAttackSelectedAllyCardScenario">
+  CreateBuffAttackSelectedAllyCardScenario()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/kuzmenkoff/exec_magica_engine/blob/main/docfx/_src/Debug/GameStateTestFactory.cs/#L629"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static GameState CreateBuffAttackSelectedAllyCardScenario()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ExecMagica.Engine.GameState.html">GameState</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ExecMagica_Engine_GameStateTestFactory_CreateBuffHealthSelectedAllyCardScenario_" data-uid="ExecMagica.Engine.GameStateTestFactory.CreateBuffHealthSelectedAllyCardScenario*"></a>
+
+  <h3 id="ExecMagica_Engine_GameStateTestFactory_CreateBuffHealthSelectedAllyCardScenario" data-uid="ExecMagica.Engine.GameStateTestFactory.CreateBuffHealthSelectedAllyCardScenario">
+  CreateBuffHealthSelectedAllyCardScenario()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/kuzmenkoff/exec_magica_engine/blob/main/docfx/_src/Debug/GameStateTestFactory.cs/#L589"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static GameState CreateBuffHealthSelectedAllyCardScenario()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ExecMagica.Engine.GameState.html">GameState</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ExecMagica_Engine_GameStateTestFactory_CreateBuffSelectedAllyCardScenario_" data-uid="ExecMagica.Engine.GameStateTestFactory.CreateBuffSelectedAllyCardScenario*"></a>
+
+  <h3 id="ExecMagica_Engine_GameStateTestFactory_CreateBuffSelectedAllyCardScenario" data-uid="ExecMagica.Engine.GameStateTestFactory.CreateBuffSelectedAllyCardScenario">
+  CreateBuffSelectedAllyCardScenario()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/kuzmenkoff/exec_magica_engine/blob/main/docfx/_src/Debug/GameStateTestFactory.cs/#L1185"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static GameState CreateBuffSelectedAllyCardScenario()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ExecMagica.Engine.GameState.html">GameState</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ExecMagica_Engine_GameStateTestFactory_CreateCannotAttackTwiceScenario_" data-uid="ExecMagica.Engine.GameStateTestFactory.CreateCannotAttackTwiceScenario*"></a>
+
+  <h3 id="ExecMagica_Engine_GameStateTestFactory_CreateCannotAttackTwiceScenario" data-uid="ExecMagica.Engine.GameStateTestFactory.CreateCannotAttackTwiceScenario">
+  CreateCannotAttackTwiceScenario()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/kuzmenkoff/exec_magica_engine/blob/main/docfx/_src/Debug/GameStateTestFactory.cs/#L738"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static GameState CreateCannotAttackTwiceScenario()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ExecMagica.Engine.GameState.html">GameState</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ExecMagica_Engine_GameStateTestFactory_CreateChargeCanAttackHeroScenario_" data-uid="ExecMagica.Engine.GameStateTestFactory.CreateChargeCanAttackHeroScenario*"></a>
+
+  <h3 id="ExecMagica_Engine_GameStateTestFactory_CreateChargeCanAttackHeroScenario" data-uid="ExecMagica.Engine.GameStateTestFactory.CreateChargeCanAttackHeroScenario">
+  CreateChargeCanAttackHeroScenario()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/kuzmenkoff/exec_magica_engine/blob/main/docfx/_src/Debug/GameStateTestFactory.cs/#L775"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static GameState CreateChargeCanAttackHeroScenario()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ExecMagica.Engine.GameState.html">GameState</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ExecMagica_Engine_GameStateTestFactory_CreateCoinScenario_" data-uid="ExecMagica.Engine.GameStateTestFactory.CreateCoinScenario*"></a>
+
+  <h3 id="ExecMagica_Engine_GameStateTestFactory_CreateCoinScenario_ExecMagica_Engine_Card_" data-uid="ExecMagica.Engine.GameStateTestFactory.CreateCoinScenario(ExecMagica.Engine.Card)">
+  CreateCoinScenario(Card)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/kuzmenkoff/exec_magica_engine/blob/main/docfx/_src/Debug/GameStateTestFactory.cs/#L1169"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static GameState CreateCoinScenario(Card coinDefinition)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>coinDefinition</code> <a class="xref" href="ExecMagica.Engine.Card.html">Card</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ExecMagica.Engine.GameState.html">GameState</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ExecMagica_Engine_GameStateTestFactory_CreateDealDamageEnemyCardScenario_" data-uid="ExecMagica.Engine.GameStateTestFactory.CreateDealDamageEnemyCardScenario*"></a>
+
+  <h3 id="ExecMagica_Engine_GameStateTestFactory_CreateDealDamageEnemyCardScenario" data-uid="ExecMagica.Engine.GameStateTestFactory.CreateDealDamageEnemyCardScenario">
+  CreateDealDamageEnemyCardScenario()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/kuzmenkoff/exec_magica_engine/blob/main/docfx/_src/Debug/GameStateTestFactory.cs/#L1108"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static GameState CreateDealDamageEnemyCardScenario()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ExecMagica.Engine.GameState.html">GameState</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ExecMagica_Engine_GameStateTestFactory_CreateDealDamageEnemyHeroScenario_" data-uid="ExecMagica.Engine.GameStateTestFactory.CreateDealDamageEnemyHeroScenario*"></a>
+
+  <h3 id="ExecMagica_Engine_GameStateTestFactory_CreateDealDamageEnemyHeroScenario" data-uid="ExecMagica.Engine.GameStateTestFactory.CreateDealDamageEnemyHeroScenario">
+  CreateDealDamageEnemyHeroScenario()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/kuzmenkoff/exec_magica_engine/blob/main/docfx/_src/Debug/GameStateTestFactory.cs/#L1145"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static GameState CreateDealDamageEnemyHeroScenario()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ExecMagica.Engine.GameState.html">GameState</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ExecMagica_Engine_GameStateTestFactory_CreateDebuffAttackSelectedEnemyCardScenario_" data-uid="ExecMagica.Engine.GameStateTestFactory.CreateDebuffAttackSelectedEnemyCardScenario*"></a>
+
+  <h3 id="ExecMagica_Engine_GameStateTestFactory_CreateDebuffAttackSelectedEnemyCardScenario" data-uid="ExecMagica.Engine.GameStateTestFactory.CreateDebuffAttackSelectedEnemyCardScenario">
+  CreateDebuffAttackSelectedEnemyCardScenario()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/kuzmenkoff/exec_magica_engine/blob/main/docfx/_src/Debug/GameStateTestFactory.cs/#L549"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static GameState CreateDebuffAttackSelectedEnemyCardScenario()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ExecMagica.Engine.GameState.html">GameState</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ExecMagica_Engine_GameStateTestFactory_CreateDestroyEnemyCardScenario_" data-uid="ExecMagica.Engine.GameStateTestFactory.CreateDestroyEnemyCardScenario*"></a>
+
+  <h3 id="ExecMagica_Engine_GameStateTestFactory_CreateDestroyEnemyCardScenario" data-uid="ExecMagica.Engine.GameStateTestFactory.CreateDestroyEnemyCardScenario">
+  CreateDestroyEnemyCardScenario()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/kuzmenkoff/exec_magica_engine/blob/main/docfx/_src/Debug/GameStateTestFactory.cs/#L509"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static GameState CreateDestroyEnemyCardScenario()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ExecMagica.Engine.GameState.html">GameState</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ExecMagica_Engine_GameStateTestFactory_CreateDestroyEnemyCardWithOnDeathScenario_" data-uid="ExecMagica.Engine.GameStateTestFactory.CreateDestroyEnemyCardWithOnDeathScenario*"></a>
+
+  <h3 id="ExecMagica_Engine_GameStateTestFactory_CreateDestroyEnemyCardWithOnDeathScenario" data-uid="ExecMagica.Engine.GameStateTestFactory.CreateDestroyEnemyCardWithOnDeathScenario">
+  CreateDestroyEnemyCardWithOnDeathScenario()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/kuzmenkoff/exec_magica_engine/blob/main/docfx/_src/Debug/GameStateTestFactory.cs/#L457"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static GameState CreateDestroyEnemyCardWithOnDeathScenario()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ExecMagica.Engine.GameState.html">GameState</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ExecMagica_Engine_GameStateTestFactory_CreateDoubleAttackCanAttackTwiceScenario_" data-uid="ExecMagica.Engine.GameStateTestFactory.CreateDoubleAttackCanAttackTwiceScenario*"></a>
+
+  <h3 id="ExecMagica_Engine_GameStateTestFactory_CreateDoubleAttackCanAttackTwiceScenario" data-uid="ExecMagica.Engine.GameStateTestFactory.CreateDoubleAttackCanAttackTwiceScenario">
+  CreateDoubleAttackCanAttackTwiceScenario()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/kuzmenkoff/exec_magica_engine/blob/main/docfx/_src/Debug/GameStateTestFactory.cs/#L88"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static GameState CreateDoubleAttackCanAttackTwiceScenario()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ExecMagica.Engine.GameState.html">GameState</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ExecMagica_Engine_GameStateTestFactory_CreateDoubleAttackRefreshesNextTurnScenario_" data-uid="ExecMagica.Engine.GameStateTestFactory.CreateDoubleAttackRefreshesNextTurnScenario*"></a>
+
+  <h3 id="ExecMagica_Engine_GameStateTestFactory_CreateDoubleAttackRefreshesNextTurnScenario" data-uid="ExecMagica.Engine.GameStateTestFactory.CreateDoubleAttackRefreshesNextTurnScenario">
+  CreateDoubleAttackRefreshesNextTurnScenario()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/kuzmenkoff/exec_magica_engine/blob/main/docfx/_src/Debug/GameStateTestFactory.cs/#L57"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static GameState CreateDoubleAttackRefreshesNextTurnScenario()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ExecMagica.Engine.GameState.html">GameState</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ExecMagica_Engine_GameStateTestFactory_CreateDrawCardsOnPlayScenario_" data-uid="ExecMagica.Engine.GameStateTestFactory.CreateDrawCardsOnPlayScenario*"></a>
+
+  <h3 id="ExecMagica_Engine_GameStateTestFactory_CreateDrawCardsOnPlayScenario" data-uid="ExecMagica.Engine.GameStateTestFactory.CreateDrawCardsOnPlayScenario">
+  CreateDrawCardsOnPlayScenario()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/kuzmenkoff/exec_magica_engine/blob/main/docfx/_src/Debug/GameStateTestFactory.cs/#L1063"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static GameState CreateDrawCardsOnPlayScenario()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ExecMagica.Engine.GameState.html">GameState</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ExecMagica_Engine_GameStateTestFactory_CreateHealAllyCardScenario_" data-uid="ExecMagica.Engine.GameStateTestFactory.CreateHealAllyCardScenario*"></a>
+
+  <h3 id="ExecMagica_Engine_GameStateTestFactory_CreateHealAllyCardScenario" data-uid="ExecMagica.Engine.GameStateTestFactory.CreateHealAllyCardScenario">
+  CreateHealAllyCardScenario()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/kuzmenkoff/exec_magica_engine/blob/main/docfx/_src/Debug/GameStateTestFactory.cs/#L698"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static GameState CreateHealAllyCardScenario()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ExecMagica.Engine.GameState.html">GameState</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ExecMagica_Engine_GameStateTestFactory_CreateHealAllyHeroScenario_" data-uid="ExecMagica.Engine.GameStateTestFactory.CreateHealAllyHeroScenario*"></a>
+
+  <h3 id="ExecMagica_Engine_GameStateTestFactory_CreateHealAllyHeroScenario" data-uid="ExecMagica.Engine.GameStateTestFactory.CreateHealAllyHeroScenario">
+  CreateHealAllyHeroScenario()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/kuzmenkoff/exec_magica_engine/blob/main/docfx/_src/Debug/GameStateTestFactory.cs/#L669"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static GameState CreateHealAllyHeroScenario()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ExecMagica.Engine.GameState.html">GameState</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ExecMagica_Engine_GameStateTestFactory_CreateLifestealAttackCardScenario_" data-uid="ExecMagica.Engine.GameStateTestFactory.CreateLifestealAttackCardScenario*"></a>
+
+  <h3 id="ExecMagica_Engine_GameStateTestFactory_CreateLifestealAttackCardScenario" data-uid="ExecMagica.Engine.GameStateTestFactory.CreateLifestealAttackCardScenario">
+  CreateLifestealAttackCardScenario()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/kuzmenkoff/exec_magica_engine/blob/main/docfx/_src/Debug/GameStateTestFactory.cs/#L208"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static GameState CreateLifestealAttackCardScenario()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ExecMagica.Engine.GameState.html">GameState</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ExecMagica_Engine_GameStateTestFactory_CreateLifestealAttackHeroScenario_" data-uid="ExecMagica.Engine.GameStateTestFactory.CreateLifestealAttackHeroScenario*"></a>
+
+  <h3 id="ExecMagica_Engine_GameStateTestFactory_CreateLifestealAttackHeroScenario" data-uid="ExecMagica.Engine.GameStateTestFactory.CreateLifestealAttackHeroScenario">
+  CreateLifestealAttackHeroScenario()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/kuzmenkoff/exec_magica_engine/blob/main/docfx/_src/Debug/GameStateTestFactory.cs/#L181"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static GameState CreateLifestealAttackHeroScenario()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ExecMagica.Engine.GameState.html">GameState</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ExecMagica_Engine_GameStateTestFactory_CreateLifestealBlockedByShieldScenario_" data-uid="ExecMagica.Engine.GameStateTestFactory.CreateLifestealBlockedByShieldScenario*"></a>
+
+  <h3 id="ExecMagica_Engine_GameStateTestFactory_CreateLifestealBlockedByShieldScenario" data-uid="ExecMagica.Engine.GameStateTestFactory.CreateLifestealBlockedByShieldScenario">
+  CreateLifestealBlockedByShieldScenario()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/kuzmenkoff/exec_magica_engine/blob/main/docfx/_src/Debug/GameStateTestFactory.cs/#L139"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static GameState CreateLifestealBlockedByShieldScenario()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ExecMagica.Engine.GameState.html">GameState</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ExecMagica_Engine_GameStateTestFactory_CreateOnDeathSummonScenario_" data-uid="ExecMagica.Engine.GameStateTestFactory.CreateOnDeathSummonScenario*"></a>
+
+  <h3 id="ExecMagica_Engine_GameStateTestFactory_CreateOnDeathSummonScenario" data-uid="ExecMagica.Engine.GameStateTestFactory.CreateOnDeathSummonScenario">
+  CreateOnDeathSummonScenario()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/kuzmenkoff/exec_magica_engine/blob/main/docfx/_src/Debug/GameStateTestFactory.cs/#L978"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static GameState CreateOnDeathSummonScenario()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ExecMagica.Engine.GameState.html">GameState</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ExecMagica_Engine_GameStateTestFactory_CreateRushCanAttackCardScenario_" data-uid="ExecMagica.Engine.GameStateTestFactory.CreateRushCanAttackCardScenario*"></a>
+
+  <h3 id="ExecMagica_Engine_GameStateTestFactory_CreateRushCanAttackCardScenario" data-uid="ExecMagica.Engine.GameStateTestFactory.CreateRushCanAttackCardScenario">
+  CreateRushCanAttackCardScenario()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/kuzmenkoff/exec_magica_engine/blob/main/docfx/_src/Debug/GameStateTestFactory.cs/#L801"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static GameState CreateRushCanAttackCardScenario()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ExecMagica.Engine.GameState.html">GameState</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ExecMagica_Engine_GameStateTestFactory_CreateRushCannotAttackHeroScenario_" data-uid="ExecMagica.Engine.GameStateTestFactory.CreateRushCannotAttackHeroScenario*"></a>
+
+  <h3 id="ExecMagica_Engine_GameStateTestFactory_CreateRushCannotAttackHeroScenario" data-uid="ExecMagica.Engine.GameStateTestFactory.CreateRushCannotAttackHeroScenario">
+  CreateRushCannotAttackHeroScenario()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/kuzmenkoff/exec_magica_engine/blob/main/docfx/_src/Debug/GameStateTestFactory.cs/#L840"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static GameState CreateRushCannotAttackHeroScenario()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ExecMagica.Engine.GameState.html">GameState</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ExecMagica_Engine_GameStateTestFactory_CreateShieldBlocksAttackDamageScenario_" data-uid="ExecMagica.Engine.GameStateTestFactory.CreateShieldBlocksAttackDamageScenario*"></a>
+
+  <h3 id="ExecMagica_Engine_GameStateTestFactory_CreateShieldBlocksAttackDamageScenario" data-uid="ExecMagica.Engine.GameStateTestFactory.CreateShieldBlocksAttackDamageScenario">
+  CreateShieldBlocksAttackDamageScenario()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/kuzmenkoff/exec_magica_engine/blob/main/docfx/_src/Debug/GameStateTestFactory.cs/#L248"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static GameState CreateShieldBlocksAttackDamageScenario()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ExecMagica.Engine.GameState.html">GameState</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ExecMagica_Engine_GameStateTestFactory_CreateShieldBlocksSpellDamageScenario_" data-uid="ExecMagica.Engine.GameStateTestFactory.CreateShieldBlocksSpellDamageScenario*"></a>
+
+  <h3 id="ExecMagica_Engine_GameStateTestFactory_CreateShieldBlocksSpellDamageScenario" data-uid="ExecMagica.Engine.GameStateTestFactory.CreateShieldBlocksSpellDamageScenario">
+  CreateShieldBlocksSpellDamageScenario()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/kuzmenkoff/exec_magica_engine/blob/main/docfx/_src/Debug/GameStateTestFactory.cs/#L287"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static GameState CreateShieldBlocksSpellDamageScenario()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ExecMagica.Engine.GameState.html">GameState</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ExecMagica_Engine_GameStateTestFactory_CreateSilenceEnemyCardRemovesOnDeathScenario_" data-uid="ExecMagica.Engine.GameStateTestFactory.CreateSilenceEnemyCardRemovesOnDeathScenario*"></a>
+
+  <h3 id="ExecMagica_Engine_GameStateTestFactory_CreateSilenceEnemyCardRemovesOnDeathScenario" data-uid="ExecMagica.Engine.GameStateTestFactory.CreateSilenceEnemyCardRemovesOnDeathScenario">
+  CreateSilenceEnemyCardRemovesOnDeathScenario()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/kuzmenkoff/exec_magica_engine/blob/main/docfx/_src/Debug/GameStateTestFactory.cs/#L329"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static GameState CreateSilenceEnemyCardRemovesOnDeathScenario()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ExecMagica.Engine.GameState.html">GameState</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ExecMagica_Engine_GameStateTestFactory_CreateSilenceEnemyCardScenario_" data-uid="ExecMagica.Engine.GameStateTestFactory.CreateSilenceEnemyCardScenario*"></a>
+
+  <h3 id="ExecMagica_Engine_GameStateTestFactory_CreateSilenceEnemyCardScenario" data-uid="ExecMagica.Engine.GameStateTestFactory.CreateSilenceEnemyCardScenario">
+  CreateSilenceEnemyCardScenario()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/kuzmenkoff/exec_magica_engine/blob/main/docfx/_src/Debug/GameStateTestFactory.cs/#L402"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static GameState CreateSilenceEnemyCardScenario()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ExecMagica.Engine.GameState.html">GameState</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ExecMagica_Engine_GameStateTestFactory_CreateSummonOnPlayScenario_" data-uid="ExecMagica.Engine.GameStateTestFactory.CreateSummonOnPlayScenario*"></a>
+
+  <h3 id="ExecMagica_Engine_GameStateTestFactory_CreateSummonOnPlayScenario" data-uid="ExecMagica.Engine.GameStateTestFactory.CreateSummonOnPlayScenario">
+  CreateSummonOnPlayScenario()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/kuzmenkoff/exec_magica_engine/blob/main/docfx/_src/Debug/GameStateTestFactory.cs/#L1030"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static GameState CreateSummonOnPlayScenario()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ExecMagica.Engine.GameState.html">GameState</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/kuzmenkoff/exec_magica_engine/blob/main/docfx/_src/Debug/GameStateTestFactory.cs/#L55" class="edit-link">Edit this page</a>
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

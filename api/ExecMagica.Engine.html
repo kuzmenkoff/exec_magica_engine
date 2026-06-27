@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Namespace ExecMagica.Engine | EXEC_MAGICA Engine — API Reference </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Namespace ExecMagica.Engine | EXEC_MAGICA Engine — API Reference ">
+      
+      
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../logo.svg" alt="EXEC_MAGICA Engine">
+            EXEC_MAGICA Engine
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="ExecMagica.Engine">
+
+  <h1 id="ExecMagica_Engine" data-uid="ExecMagica.Engine" class="text-break">Namespace ExecMagica.Engine</h1>
+  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="markdown level0 remarks"></div>
+
+    <h3 id="classes">
+Classes
+</h3>
+    <dl class="jumplist">
+      <dt><a class="xref" href="ExecMagica.Engine.AllCards.html">AllCards</a></dt>
+      <dd><p>Represents either a saved deck or the full card database.</p>
+<p>Saved decks use the &quot;cards&quot; list.
+Main card database can use structured lists:
+entities, spells and summonEntities.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="ExecMagica.Engine.BatchConfig.html">BatchConfig</a></dt>
+      <dd><p>Configuration for a batch of self-play games.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="ExecMagica.Engine.BatchResult.html">BatchResult</a></dt>
+      <dd><p>Result of a batch run: the per-game records plus the computed <a class="xref" href="ExecMagica.Engine.BatchSummary.html">BatchSummary</a>.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="ExecMagica.Engine.BatchRunner.html">BatchRunner</a></dt>
+      <dd><p>Runs batches of self-play games and summarizes them.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="ExecMagica.Engine.BatchSummary.html">BatchSummary</a></dt>
+      <dd><p>Aggregate statistics over a batch: win rates (with Wilson CI), end reasons, lengths, think times, card impact.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="ExecMagica.Engine.Card.html">Card</a></dt>
+      <dd><p>Legacy Unity card view/runtime model.</p>
+<p>Important:</p>
+<ul>
+<li>GameEngine must use CardInstance, not Card.</li>
+<li>CardDefinition describes immutable card data loaded from JSON.</li>
+<li>Card is kept temporarily because Unity UI, deck editor and prefabs still expect it.</li>
+</ul>
+<p>Later this class should be reduced or replaced by a dedicated UnityCardViewModel.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="ExecMagica.Engine.CardDefinition.html">CardDefinition</a></dt>
+      <dd><p>Immutable-like card definition loaded from JSON/database.</p>
+<p>This class describes what a card is:
+title, stats, cost, effects, keywords, artwork path, collectibility.</p>
+<p>It should not contain per-match runtime state such as:
+InstanceId, current zone, owner, CanAttack, IsPlaced, temporary damage counters.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="ExecMagica.Engine.CardEffect.html">CardEffect</a></dt>
+      <dd><p>Describes a single effect attached to a card.</p>
+<p>This model is intended for the future effects-based card system.
+It does not execute anything by itself.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="ExecMagica.Engine.CardInstance.html">CardInstance</a></dt>
+      <dd><p>A card as it exists during a match — a concrete instance with its own id, current
+stats, combat flags and zone. Unlike <a class="xref" href="ExecMagica.Engine.CardDefinition.html">CardDefinition</a>, it carries per-match
+runtime state and lives inside a <a class="xref" href="ExecMagica.Engine.PlayerState.html">PlayerState</a> zone.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="ExecMagica.Engine.CardInstanceFactory.html">CardInstanceFactory</a></dt>
+      <dd><p>Creates runtime card instances from immutable card definitions.</p>
+<p>CardDefinition/Card describe the card loaded from JSON.
+CardInstance is the concrete runtime card object used inside GameState.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="ExecMagica.Engine.CardJsonLoader.html">CardJsonLoader</a></dt>
+      <dd><p>Loads card data from JSON using Newtonsoft.Json.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="ExecMagica.Engine.CardSetInfo.html">CardSetInfo</a></dt>
+      <dd><p>Stores one loaded card set file and its parsed card data.</p>
+<p>Example:
+SetName = &quot;NeutralCoreCards&quot;
+Cards = cards loaded from NeutralCoreCards.json</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="ExecMagica.Engine.CardZoneService.html">CardZoneService</a></dt>
+      <dd><p>Centralized pure service for moving cards between zones.
+This class must not depend on Unity objects.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="ExecMagica.Engine.CoreLegalActionDebugFormatter.html">CoreLegalActionDebugFormatter</a></dt>
+      <dd><p>Formats pure GameState legal actions for debugging.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="ExecMagica.Engine.CoreLegalActionGenerator.html">CoreLegalActionGenerator</a></dt>
+      <dd><p>Generates legal actions from pure GameState.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="ExecMagica.Engine.EffectEngine.html">EffectEngine</a></dt>
+      <dd><p>Resolves card effects against pure GameState.</p>
+<p>This class must not depend on Unity objects.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="ExecMagica.Engine.GameAction.html">GameAction</a></dt>
+      <dd><p>Represents one concrete game action.</p>
+<p>Example:</p>
+<ul>
+<li>PlayCard: source = card from hand, target = optional card or hero</li>
+<li>AttackCard: source = attacking card, target = defending card</li>
+<li>AttackHero: source = attacking card, target = enemy hero</li>
+<li>EndTurn: source = 0, target = none</li>
+</ul>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="ExecMagica.Engine.GameEngine.html">GameEngine</a></dt>
+      <dd><p>Pure gameplay engine.</p>
+<p>This class must not depend on Unity objects:
+no MonoBehaviour, no GameObject, no Transform, no UI, no coroutines.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="ExecMagica.Engine.GameEvent.html">GameEvent</a></dt>
+      <dd><p>One atomic event produced by GameEngine.
+This is not animation logic. It is a clean gameplay fact.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="ExecMagica.Engine.GameEventDebugFormatter.html">GameEventDebugFormatter</a></dt>
+      <dd><p>Formats GameEngine events for readable debug output.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="ExecMagica.Engine.GameRules.html">GameRules</a></dt>
+      <dd><p>Central gameplay rule configuration.
+This class should be used by GameManagerScr, AI, simulations and future pure game engine logic.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="ExecMagica.Engine.GameSimulationRunner.html">GameSimulationRunner</a></dt>
+      <dd><p>Pure simulation runner for AI/MCTS.
+Uses the same GameEngine as the live game.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="ExecMagica.Engine.GameState.html">GameState</a></dt>
+      <dd><p>The complete, serializable snapshot of a match — both players, whose turn it is, and
+the outcome. This is the single source of truth the engine reads and mutates; AI agents
+plan over deep copies of it.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="ExecMagica.Engine.GameStateBuilder.html">GameStateBuilder</a></dt>
+      <dd><p>Builds initial pure GameState objects from deck definitions.</p>
+<p>This class does not create Unity objects and does not depend on scenes,
+transforms, prefabs, coroutines or UI.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="ExecMagica.Engine.GameStateCardFinder.html">GameStateCardFinder</a></dt>
+      <dd><p>Finds card instances inside pure GameState.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="ExecMagica.Engine.GameStateDebugFormatter.html">GameStateDebugFormatter</a></dt>
+      <dd><p>Creates readable debug snapshots of pure GameState.
+Useful before connecting GameEngine to Unity and AI simulations.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="ExecMagica.Engine.GameStateTestFactory.html">GameStateTestFactory</a></dt>
+      <dd><p>Creates controlled pure GameState scenarios for testing GameEngine logic.
+This is not production gameplay code.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="ExecMagica.Engine.GameStateValidator.html">GameStateValidator</a></dt>
+      <dd><p>Validates pure GameState integrity.
+This is used for debugging, simulations and future tests.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="ExecMagica.Engine.GameStepResult.html">GameStepResult</a></dt>
+      <dd><p>Result of applying one GameAction to GameState.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="ExecMagica.Engine.GameTarget.html">GameTarget</a></dt>
+      <dd><p>Identifies the target of a targeted action or effect: nothing, a specific card
+instance, or a hero. Use the factory helpers to build a well-formed target.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="ExecMagica.Engine.GreedyActionPolicy.html">GreedyActionPolicy</a></dt>
+      <dd><p>Heuristic baseline policy: one-ply greedy.
+For each legal action it applies the action to a deep copy of the state via the real
+GameEngine, scores the resulting state from the acting side's perspective with a linear
+evaluation, and picks the highest-scoring action.</p>
+<p>Information model (Phase 2.0): the evaluation reads only PUBLIC quantities (hero HP,
+board stats, hand counts), never opponent hand identities, so it respects the
+imperfect-information setting without determinization.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="ExecMagica.Engine.GreedyOpponentModelDefinition.html">GreedyOpponentModelDefinition</a></dt>
+      <dd></dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="ExecMagica.Engine.KeywordService.html">KeywordService</a></dt>
+      <dd><p>Pure helper service for card keyword operations.
+This class must not depend on Unity objects.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="ExecMagica.Engine.MctsActionPolicy.html">MctsActionPolicy</a></dt>
+      <dd><p>Information Set MCTS policy.
+Tree keyed by canonical ACTION keys; each iteration re-determinizes the hidden world
+(opponent hand/deck and both deck orders), descends via the real GameEngine, expands one
+node, rolls out to terminal, and backpropagates a win/loss from the ROOT player's
+perspective (per-node chooser flip). UCB1 uses availability counts (Cowling 2012) so
+actions that are legal only in some determinizations are handled correctly.</p>
+<p>Information model (Phase 2.0): no model sees hidden info. Hidden opponent hand cards are
+keyed by CardId (type), not InstanceId, so the agent never relies on specific hidden
+identities; it reasons over the information set.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="ExecMagica.Engine.MctsConfig.html">MctsConfig</a></dt>
+      <dd><p>Configuration for <a class="xref" href="ExecMagica.Engine.MctsActionPolicy.html">MctsActionPolicy</a> — search budget, exploration, rollout
+policy, information model, final-move selection, seeding and parallelization.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="ExecMagica.Engine.MctsOpponentModelDefinition.html">MctsOpponentModelDefinition</a></dt>
+      <dd></dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="ExecMagica.Engine.ModelInfo.html">ModelInfo</a></dt>
+      <dd><p>AI model identity recorded with a session: a model id plus its parameters.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="ExecMagica.Engine.OpponentModelCatalog.html">OpponentModelCatalog</a></dt>
+      <dd><p>Loads and caches all <a class="xref" href="ExecMagica.Engine.OpponentModelDefinition.html">OpponentModelDefinition</a> assets from Resources/OpponentModels
+and resolves them by id.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="ExecMagica.Engine.OpponentModelDefinition.html">OpponentModelDefinition</a></dt>
+      <dd><p>ScriptableObject defining a selectable AI opponent: identity, in-game presentation, rating,
+and how to build its runtime policy. Concrete subclasses (Random/Greedy/MCTS) supply the
+actual <a class="xref" href="ExecMagica.Engine.IGameActionPolicy.html">IGameActionPolicy</a> and parameter metadata.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="ExecMagica.Engine.OutcomeRecord.html">OutcomeRecord</a></dt>
+      <dd><p>Final outcome of one game: winner, end reason, length and duration.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="ExecMagica.Engine.PerSideMetrics.html">PerSideMetrics</a></dt>
+      <dd><p>Per-side aggregate metrics for one game (mana efficiency, think time).</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="ExecMagica.Engine.PlayTargetRequirementResolver.html">PlayTargetRequirementResolver</a></dt>
+      <dd><p>Resolves what kind of play target is required by a card's OnPlay effects.</p>
+<p>This class is pure core logic and must not depend on Unity objects.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="ExecMagica.Engine.PlayTargetValidator.html">PlayTargetValidator</a></dt>
+      <dd><p>Validates whether a GameAction target satisfies a card's play target requirement.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="ExecMagica.Engine.PlayerState.html">PlayerState</a></dt>
+      <dd><p>One player's full state: hero health, mana, fatigue, and the four card zones
+(deck, hand, field, graveyard).</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="ExecMagica.Engine.RandomActionPolicy.html">RandomActionPolicy</a></dt>
+      <dd><p>Pure random policy.
+Can be used both in live game and inside rollouts.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="ExecMagica.Engine.RandomOpponentModelDefinition.html">RandomOpponentModelDefinition</a></dt>
+      <dd></dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="ExecMagica.Engine.RunIndexEntry.html">RunIndexEntry</a></dt>
+      <dd><p>One line in index.jsonl — a compact, queryable summary of a run and its result.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="ExecMagica.Engine.RunSummary.html">RunSummary</a></dt>
+      <dd><p>Top-level summary written per run (summary.json): config, models, decks and aggregate stats.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="ExecMagica.Engine.RuntimeDeckLoader.html">RuntimeDeckLoader</a></dt>
+      <dd><p>Runtime deck resolution for the setup panel. Mirrors the Editor BatchRunnerWindow
+deck logic (presets / random cards / random preset) so menu-launched runs match
+research runs. Saved &quot;Player deck&quot;/&quot;Enemy deck&quot; are resolved by the panel via
+DecksManagerScr (already synced with the DB), not here.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="ExecMagica.Engine.SavedDeck.html">SavedDeck</a></dt>
+      <dd><p>A saved deck: a name plus card-count entries. Serializable persistence format for the deck editor.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="ExecMagica.Engine.SavedDeckEntry.html">SavedDeckEntry</a></dt>
+      <dd><p>One entry in a <a class="xref" href="ExecMagica.Engine.SavedDeck.html">SavedDeck</a>: a card id and how many copies.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="ExecMagica.Engine.SessionRecord.html">SessionRecord</a></dt>
+      <dd><p>Full telemetry record for a single game: identity, models, decks, outcome, per-side metrics,
+per-card impact and (optionally) the raw event stream. Serialized to JSON/JSONL.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="ExecMagica.Engine.SessionRunner.html">SessionRunner</a></dt>
+      <dd><p>Plays one game between two policies on a fresh <a class="xref" href="ExecMagica.Engine.GameEngine.html">GameEngine</a>, then fills a
+<a class="xref" href="ExecMagica.Engine.SessionRecord.html">SessionRecord</a> with outcome, per-side metrics (mana efficiency, think time) and
+per-card impact.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="ExecMagica.Engine.SessionWriter.html">SessionWriter</a></dt>
+      <dd><p>Writes batch results to disk as run folders plus an append-only index.</p>
+</dd>
+    </dl>
+    <h3 id="interfaces">
+Interfaces
+</h3>
+    <dl class="jumplist">
+      <dt><a class="xref" href="ExecMagica.Engine.IGameActionPolicy.html">IGameActionPolicy</a></dt>
+      <dd><p>Pure AI policy interface.</p>
+<p>MCTS, random AI, heuristic AI and neural-network policies should use this,
+not Unity objects.</p>
+</dd>
+    </dl>
+    <h3 id="enums">
+Enums
+</h3>
+    <dl class="jumplist">
+      <dt><a class="xref" href="ExecMagica.Engine.Card.CardClass.html">Card.CardClass</a></dt>
+      <dd><p>Whether a card is a board creature (ENTITY) or a one-shot SPELL.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="ExecMagica.Engine.DebugScenarioType.html">DebugScenarioType</a></dt>
+      <dd><p>Catalog of debug/test scenarios that exercise specific engine rules.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="ExecMagica.Engine.EffectTarget.html">EffectTarget</a></dt>
+      <dd><p>Defines what target or group of targets an effect should affect.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="ExecMagica.Engine.EffectTrigger.html">EffectTrigger</a></dt>
+      <dd><p>Defines when a card effect should be triggered.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="ExecMagica.Engine.EffectType.html">EffectType</a></dt>
+      <dd><p>Defines what a card effect does.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="ExecMagica.Engine.GameActionType.html">GameActionType</a></dt>
+      <dd><p>Represents all possible high-level action types that can happen during a turn.
+This enum does not execute any logic by itself.
+It only describes what kind of action the player or AI wants to perform.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="ExecMagica.Engine.GameEndReason.html">GameEndReason</a></dt>
+      <dd><p>Why a match ended — used to classify and aggregate outcomes in telemetry.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="ExecMagica.Engine.GameEventType.html">GameEventType</a></dt>
+      <dd><p>Describes what happened inside the pure GameEngine.
+Unity, logs, replays and datasets can consume these events.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="ExecMagica.Engine.GameZone.html">GameZone</a></dt>
+      <dd><p>The zone a card currently occupies.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="ExecMagica.Engine.KeywordType.html">KeywordType</a></dt>
+      <dd><p>Defines persistent card keywords.</p>
+<p>Keywords are passive properties of cards, unlike effects,
+which are triggered by specific events such as OnPlay or OnDeath.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="ExecMagica.Engine.MctsConfig.Budget.html">MctsConfig.Budget</a></dt>
+      <dd><p>Whether the budget is a fixed iteration count or wall-clock time.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="ExecMagica.Engine.MctsConfig.FinalSelection.html">MctsConfig.FinalSelection</a></dt>
+      <dd><p>How the final move is chosen once search ends: most-visited or highest mean value.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="ExecMagica.Engine.MctsConfig.Rollout.html">MctsConfig.Rollout</a></dt>
+      <dd><p>Policy used to play a node out to a terminal state during rollout.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="ExecMagica.Engine.PlayTargetRequirement.html">PlayTargetRequirement</a></dt>
+      <dd><p>Defines what kind of target a card requires when played.</p>
+<p>This is used by the action system to generate and validate PlayCard actions.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="ExecMagica.Engine.PlayTargetType.html">PlayTargetType</a></dt>
+      <dd><p>Defines what kind of object is selected as a PlayCard target.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="ExecMagica.Engine.PlayerSide.html">PlayerSide</a></dt>
+      <dd><p>Identifies which side of the match performs an action or owns a card.</p>
+</dd>
+    </dl>
+
+
+</article>
+
+        <div class="contribution d-print-none">
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

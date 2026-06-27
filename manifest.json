@@ -1,0 +1,1063 @@
+{
+  "source_base_path": "C:/Users/User/Desktop/Учёба/ІПЗ/exec_magica_engine/docfx",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "Resource",
+      "output": {
+        "resource": {
+          "relative_path": "index.json"
+        }
+      }
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ExecMagica.Engine.AllCards.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ExecMagica.Engine.AllCards.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ExecMagica.Engine.AllCards",
+      "Summary": "<p sourcefile=\"api/ExecMagica.Engine.AllCards.yml\" sourcestartlinenumber=\"1\">Represents either a saved deck or the full card database.</p>\n<p sourcefile=\"api/ExecMagica.Engine.AllCards.yml\" sourcestartlinenumber=\"3\">Saved decks use the &quot;cards&quot; list.\nMain card database can use structured lists:\nentities, spells and summonEntities.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ExecMagica.Engine.BatchConfig.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ExecMagica.Engine.BatchConfig.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ExecMagica.Engine.BatchConfig",
+      "Summary": "<p sourcefile=\"api/ExecMagica.Engine.BatchConfig.yml\" sourcestartlinenumber=\"1\">Configuration for a batch of self-play games.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ExecMagica.Engine.BatchResult.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ExecMagica.Engine.BatchResult.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ExecMagica.Engine.BatchResult",
+      "Summary": "<p sourcefile=\"api/ExecMagica.Engine.BatchResult.yml\" sourcestartlinenumber=\"1\">Result of a batch run: the per-game records plus the computed <xref href=\"ExecMagica.Engine.BatchSummary\" data-throw-if-not-resolved=\"false\"></xref>.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ExecMagica.Engine.BatchRunner.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ExecMagica.Engine.BatchRunner.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ExecMagica.Engine.BatchRunner",
+      "Summary": "<p sourcefile=\"api/ExecMagica.Engine.BatchRunner.yml\" sourcestartlinenumber=\"1\">Runs batches of self-play games and summarizes them.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ExecMagica.Engine.BatchSummary.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ExecMagica.Engine.BatchSummary.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ExecMagica.Engine.BatchSummary",
+      "Summary": "<p sourcefile=\"api/ExecMagica.Engine.BatchSummary.yml\" sourcestartlinenumber=\"1\">Aggregate statistics over a batch: win rates (with Wilson CI), end reasons, lengths, think times, card impact.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ExecMagica.Engine.Card.CardClass.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ExecMagica.Engine.Card.CardClass.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ExecMagica.Engine.Card.CardClass",
+      "Summary": "<p sourcefile=\"api/ExecMagica.Engine.Card.CardClass.yml\" sourcestartlinenumber=\"1\">Whether a card is a board creature (ENTITY) or a one-shot SPELL.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ExecMagica.Engine.Card.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ExecMagica.Engine.Card.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ExecMagica.Engine.Card",
+      "Summary": "<p sourcefile=\"api/ExecMagica.Engine.Card.yml\" sourcestartlinenumber=\"1\">Legacy Unity card view/runtime model.</p>\n<p sourcefile=\"api/ExecMagica.Engine.Card.yml\" sourcestartlinenumber=\"3\">Important:</p>\n<ul sourcefile=\"api/ExecMagica.Engine.Card.yml\" sourcestartlinenumber=\"4\">\n<li sourcefile=\"api/ExecMagica.Engine.Card.yml\" sourcestartlinenumber=\"4\">GameEngine must use CardInstance, not Card.</li>\n<li sourcefile=\"api/ExecMagica.Engine.Card.yml\" sourcestartlinenumber=\"5\">CardDefinition describes immutable card data loaded from JSON.</li>\n<li sourcefile=\"api/ExecMagica.Engine.Card.yml\" sourcestartlinenumber=\"6\">Card is kept temporarily because Unity UI, deck editor and prefabs still expect it.</li>\n</ul>\n<p sourcefile=\"api/ExecMagica.Engine.Card.yml\" sourcestartlinenumber=\"8\">Later this class should be reduced or replaced by a dedicated UnityCardViewModel.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ExecMagica.Engine.CardDefinition.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ExecMagica.Engine.CardDefinition.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ExecMagica.Engine.CardDefinition",
+      "Summary": "<p sourcefile=\"api/ExecMagica.Engine.CardDefinition.yml\" sourcestartlinenumber=\"1\">Immutable-like card definition loaded from JSON/database.</p>\n<p sourcefile=\"api/ExecMagica.Engine.CardDefinition.yml\" sourcestartlinenumber=\"3\">This class describes what a card is:\ntitle, stats, cost, effects, keywords, artwork path, collectibility.</p>\n<p sourcefile=\"api/ExecMagica.Engine.CardDefinition.yml\" sourcestartlinenumber=\"6\">It should not contain per-match runtime state such as:\nInstanceId, current zone, owner, CanAttack, IsPlaced, temporary damage counters.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ExecMagica.Engine.CardEffect.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ExecMagica.Engine.CardEffect.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ExecMagica.Engine.CardEffect",
+      "Summary": "<p sourcefile=\"api/ExecMagica.Engine.CardEffect.yml\" sourcestartlinenumber=\"1\">Describes a single effect attached to a card.</p>\n<p sourcefile=\"api/ExecMagica.Engine.CardEffect.yml\" sourcestartlinenumber=\"3\">This model is intended for the future effects-based card system.\nIt does not execute anything by itself.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ExecMagica.Engine.CardInstance.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ExecMagica.Engine.CardInstance.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ExecMagica.Engine.CardInstance",
+      "Summary": "<p sourcefile=\"api/ExecMagica.Engine.CardInstance.yml\" sourcestartlinenumber=\"1\">A card as it exists during a match — a concrete instance with its own id, current\nstats, combat flags and zone. Unlike <xref href=\"ExecMagica.Engine.CardDefinition\" data-throw-if-not-resolved=\"false\"></xref>, it carries per-match\nruntime state and lives inside a <xref href=\"ExecMagica.Engine.PlayerState\" data-throw-if-not-resolved=\"false\"></xref> zone.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ExecMagica.Engine.CardInstanceFactory.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ExecMagica.Engine.CardInstanceFactory.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ExecMagica.Engine.CardInstanceFactory",
+      "Summary": "<p sourcefile=\"api/ExecMagica.Engine.CardInstanceFactory.yml\" sourcestartlinenumber=\"1\">Creates runtime card instances from immutable card definitions.</p>\n<p sourcefile=\"api/ExecMagica.Engine.CardInstanceFactory.yml\" sourcestartlinenumber=\"3\">CardDefinition/Card describe the card loaded from JSON.\nCardInstance is the concrete runtime card object used inside GameState.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ExecMagica.Engine.CardJsonLoader.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ExecMagica.Engine.CardJsonLoader.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ExecMagica.Engine.CardJsonLoader",
+      "Summary": "<p sourcefile=\"api/ExecMagica.Engine.CardJsonLoader.yml\" sourcestartlinenumber=\"1\">Loads card data from JSON using Newtonsoft.Json.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ExecMagica.Engine.CardSetInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ExecMagica.Engine.CardSetInfo.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ExecMagica.Engine.CardSetInfo",
+      "Summary": "<p sourcefile=\"api/ExecMagica.Engine.CardSetInfo.yml\" sourcestartlinenumber=\"1\">Stores one loaded card set file and its parsed card data.</p>\n<p sourcefile=\"api/ExecMagica.Engine.CardSetInfo.yml\" sourcestartlinenumber=\"3\">Example:\nSetName = &quot;NeutralCoreCards&quot;\nCards = cards loaded from NeutralCoreCards.json</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ExecMagica.Engine.CardZoneService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ExecMagica.Engine.CardZoneService.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ExecMagica.Engine.CardZoneService",
+      "Summary": "<p sourcefile=\"api/ExecMagica.Engine.CardZoneService.yml\" sourcestartlinenumber=\"1\">Centralized pure service for moving cards between zones.\nThis class must not depend on Unity objects.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ExecMagica.Engine.CoreLegalActionDebugFormatter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ExecMagica.Engine.CoreLegalActionDebugFormatter.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ExecMagica.Engine.CoreLegalActionDebugFormatter",
+      "Summary": "<p sourcefile=\"api/ExecMagica.Engine.CoreLegalActionDebugFormatter.yml\" sourcestartlinenumber=\"1\">Formats pure GameState legal actions for debugging.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ExecMagica.Engine.CoreLegalActionGenerator.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ExecMagica.Engine.CoreLegalActionGenerator.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ExecMagica.Engine.CoreLegalActionGenerator",
+      "Summary": "<p sourcefile=\"api/ExecMagica.Engine.CoreLegalActionGenerator.yml\" sourcestartlinenumber=\"1\">Generates legal actions from pure GameState.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ExecMagica.Engine.DebugScenarioType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ExecMagica.Engine.DebugScenarioType.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ExecMagica.Engine.DebugScenarioType",
+      "Summary": "<p sourcefile=\"api/ExecMagica.Engine.DebugScenarioType.yml\" sourcestartlinenumber=\"1\">Catalog of debug/test scenarios that exercise specific engine rules.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ExecMagica.Engine.EffectEngine.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ExecMagica.Engine.EffectEngine.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ExecMagica.Engine.EffectEngine",
+      "Summary": "<p sourcefile=\"api/ExecMagica.Engine.EffectEngine.yml\" sourcestartlinenumber=\"1\">Resolves card effects against pure GameState.</p>\n<p sourcefile=\"api/ExecMagica.Engine.EffectEngine.yml\" sourcestartlinenumber=\"3\">This class must not depend on Unity objects.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ExecMagica.Engine.EffectTarget.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ExecMagica.Engine.EffectTarget.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ExecMagica.Engine.EffectTarget",
+      "Summary": "<p sourcefile=\"api/ExecMagica.Engine.EffectTarget.yml\" sourcestartlinenumber=\"1\">Defines what target or group of targets an effect should affect.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ExecMagica.Engine.EffectTrigger.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ExecMagica.Engine.EffectTrigger.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ExecMagica.Engine.EffectTrigger",
+      "Summary": "<p sourcefile=\"api/ExecMagica.Engine.EffectTrigger.yml\" sourcestartlinenumber=\"1\">Defines when a card effect should be triggered.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ExecMagica.Engine.EffectType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ExecMagica.Engine.EffectType.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ExecMagica.Engine.EffectType",
+      "Summary": "<p sourcefile=\"api/ExecMagica.Engine.EffectType.yml\" sourcestartlinenumber=\"1\">Defines what a card effect does.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ExecMagica.Engine.GameAction.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ExecMagica.Engine.GameAction.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ExecMagica.Engine.GameAction",
+      "Summary": "<p sourcefile=\"api/ExecMagica.Engine.GameAction.yml\" sourcestartlinenumber=\"1\">Represents one concrete game action.</p>\n<p sourcefile=\"api/ExecMagica.Engine.GameAction.yml\" sourcestartlinenumber=\"3\">Example:</p>\n<ul sourcefile=\"api/ExecMagica.Engine.GameAction.yml\" sourcestartlinenumber=\"4\">\n<li sourcefile=\"api/ExecMagica.Engine.GameAction.yml\" sourcestartlinenumber=\"4\">PlayCard: source = card from hand, target = optional card or hero</li>\n<li sourcefile=\"api/ExecMagica.Engine.GameAction.yml\" sourcestartlinenumber=\"5\">AttackCard: source = attacking card, target = defending card</li>\n<li sourcefile=\"api/ExecMagica.Engine.GameAction.yml\" sourcestartlinenumber=\"6\">AttackHero: source = attacking card, target = enemy hero</li>\n<li sourcefile=\"api/ExecMagica.Engine.GameAction.yml\" sourcestartlinenumber=\"7\">EndTurn: source = 0, target = none</li>\n</ul>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ExecMagica.Engine.GameActionType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ExecMagica.Engine.GameActionType.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ExecMagica.Engine.GameActionType",
+      "Summary": "<p sourcefile=\"api/ExecMagica.Engine.GameActionType.yml\" sourcestartlinenumber=\"1\">Represents all possible high-level action types that can happen during a turn.\nThis enum does not execute any logic by itself.\nIt only describes what kind of action the player or AI wants to perform.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ExecMagica.Engine.GameEndReason.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ExecMagica.Engine.GameEndReason.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ExecMagica.Engine.GameEndReason",
+      "Summary": "<p sourcefile=\"api/ExecMagica.Engine.GameEndReason.yml\" sourcestartlinenumber=\"1\">Why a match ended — used to classify and aggregate outcomes in telemetry.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ExecMagica.Engine.GameEngine.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ExecMagica.Engine.GameEngine.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ExecMagica.Engine.GameEngine",
+      "Summary": "<p sourcefile=\"api/ExecMagica.Engine.GameEngine.yml\" sourcestartlinenumber=\"1\">Pure gameplay engine.</p>\n<p sourcefile=\"api/ExecMagica.Engine.GameEngine.yml\" sourcestartlinenumber=\"3\">This class must not depend on Unity objects:\nno MonoBehaviour, no GameObject, no Transform, no UI, no coroutines.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ExecMagica.Engine.GameEvent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ExecMagica.Engine.GameEvent.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ExecMagica.Engine.GameEvent",
+      "Summary": "<p sourcefile=\"api/ExecMagica.Engine.GameEvent.yml\" sourcestartlinenumber=\"1\">One atomic event produced by GameEngine.\nThis is not animation logic. It is a clean gameplay fact.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ExecMagica.Engine.GameEventDebugFormatter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ExecMagica.Engine.GameEventDebugFormatter.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ExecMagica.Engine.GameEventDebugFormatter",
+      "Summary": "<p sourcefile=\"api/ExecMagica.Engine.GameEventDebugFormatter.yml\" sourcestartlinenumber=\"1\">Formats GameEngine events for readable debug output.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ExecMagica.Engine.GameEventType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ExecMagica.Engine.GameEventType.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ExecMagica.Engine.GameEventType",
+      "Summary": "<p sourcefile=\"api/ExecMagica.Engine.GameEventType.yml\" sourcestartlinenumber=\"1\">Describes what happened inside the pure GameEngine.\nUnity, logs, replays and datasets can consume these events.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ExecMagica.Engine.GameRules.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ExecMagica.Engine.GameRules.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ExecMagica.Engine.GameRules",
+      "Summary": "<p sourcefile=\"api/ExecMagica.Engine.GameRules.yml\" sourcestartlinenumber=\"1\">Central gameplay rule configuration.\nThis class should be used by GameManagerScr, AI, simulations and future pure game engine logic.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ExecMagica.Engine.GameSimulationRunner.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ExecMagica.Engine.GameSimulationRunner.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ExecMagica.Engine.GameSimulationRunner",
+      "Summary": "<p sourcefile=\"api/ExecMagica.Engine.GameSimulationRunner.yml\" sourcestartlinenumber=\"1\">Pure simulation runner for AI/MCTS.\nUses the same GameEngine as the live game.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ExecMagica.Engine.GameState.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ExecMagica.Engine.GameState.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ExecMagica.Engine.GameState",
+      "Summary": "<p sourcefile=\"api/ExecMagica.Engine.GameState.yml\" sourcestartlinenumber=\"1\">The complete, serializable snapshot of a match — both players, whose turn it is, and\nthe outcome. This is the single source of truth the engine reads and mutates; AI agents\nplan over deep copies of it.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ExecMagica.Engine.GameStateBuilder.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ExecMagica.Engine.GameStateBuilder.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ExecMagica.Engine.GameStateBuilder",
+      "Summary": "<p sourcefile=\"api/ExecMagica.Engine.GameStateBuilder.yml\" sourcestartlinenumber=\"1\">Builds initial pure GameState objects from deck definitions.</p>\n<p sourcefile=\"api/ExecMagica.Engine.GameStateBuilder.yml\" sourcestartlinenumber=\"3\">This class does not create Unity objects and does not depend on scenes,\ntransforms, prefabs, coroutines or UI.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ExecMagica.Engine.GameStateCardFinder.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ExecMagica.Engine.GameStateCardFinder.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ExecMagica.Engine.GameStateCardFinder",
+      "Summary": "<p sourcefile=\"api/ExecMagica.Engine.GameStateCardFinder.yml\" sourcestartlinenumber=\"1\">Finds card instances inside pure GameState.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ExecMagica.Engine.GameStateDebugFormatter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ExecMagica.Engine.GameStateDebugFormatter.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ExecMagica.Engine.GameStateDebugFormatter",
+      "Summary": "<p sourcefile=\"api/ExecMagica.Engine.GameStateDebugFormatter.yml\" sourcestartlinenumber=\"1\">Creates readable debug snapshots of pure GameState.\nUseful before connecting GameEngine to Unity and AI simulations.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ExecMagica.Engine.GameStateTestFactory.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ExecMagica.Engine.GameStateTestFactory.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ExecMagica.Engine.GameStateTestFactory",
+      "Summary": "<p sourcefile=\"api/ExecMagica.Engine.GameStateTestFactory.yml\" sourcestartlinenumber=\"1\">Creates controlled pure GameState scenarios for testing GameEngine logic.\nThis is not production gameplay code.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ExecMagica.Engine.GameStateValidator.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ExecMagica.Engine.GameStateValidator.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ExecMagica.Engine.GameStateValidator",
+      "Summary": "<p sourcefile=\"api/ExecMagica.Engine.GameStateValidator.yml\" sourcestartlinenumber=\"1\">Validates pure GameState integrity.\nThis is used for debugging, simulations and future tests.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ExecMagica.Engine.GameStepResult.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ExecMagica.Engine.GameStepResult.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ExecMagica.Engine.GameStepResult",
+      "Summary": "<p sourcefile=\"api/ExecMagica.Engine.GameStepResult.yml\" sourcestartlinenumber=\"1\">Result of applying one GameAction to GameState.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ExecMagica.Engine.GameTarget.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ExecMagica.Engine.GameTarget.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ExecMagica.Engine.GameTarget",
+      "Summary": "<p sourcefile=\"api/ExecMagica.Engine.GameTarget.yml\" sourcestartlinenumber=\"1\">Identifies the target of a targeted action or effect: nothing, a specific card\ninstance, or a hero. Use the factory helpers to build a well-formed target.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ExecMagica.Engine.GameZone.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ExecMagica.Engine.GameZone.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ExecMagica.Engine.GameZone",
+      "Summary": "<p sourcefile=\"api/ExecMagica.Engine.GameZone.yml\" sourcestartlinenumber=\"1\">The zone a card currently occupies.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ExecMagica.Engine.GreedyActionPolicy.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ExecMagica.Engine.GreedyActionPolicy.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ExecMagica.Engine.GreedyActionPolicy",
+      "Summary": "<p sourcefile=\"api/ExecMagica.Engine.GreedyActionPolicy.yml\" sourcestartlinenumber=\"1\">Heuristic baseline policy: one-ply greedy.\nFor each legal action it applies the action to a deep copy of the state via the real\nGameEngine, scores the resulting state from the acting side's perspective with a linear\nevaluation, and picks the highest-scoring action.</p>\n<p sourcefile=\"api/ExecMagica.Engine.GreedyActionPolicy.yml\" sourcestartlinenumber=\"6\">Information model (Phase 2.0): the evaluation reads only PUBLIC quantities (hero HP,\nboard stats, hand counts), never opponent hand identities, so it respects the\nimperfect-information setting without determinization.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ExecMagica.Engine.GreedyOpponentModelDefinition.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ExecMagica.Engine.GreedyOpponentModelDefinition.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ExecMagica.Engine.GreedyOpponentModelDefinition",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ExecMagica.Engine.IGameActionPolicy.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ExecMagica.Engine.IGameActionPolicy.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ExecMagica.Engine.IGameActionPolicy",
+      "Summary": "<p sourcefile=\"api/ExecMagica.Engine.IGameActionPolicy.yml\" sourcestartlinenumber=\"1\">Pure AI policy interface.</p>\n<p sourcefile=\"api/ExecMagica.Engine.IGameActionPolicy.yml\" sourcestartlinenumber=\"3\">MCTS, random AI, heuristic AI and neural-network policies should use this,\nnot Unity objects.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ExecMagica.Engine.KeywordService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ExecMagica.Engine.KeywordService.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ExecMagica.Engine.KeywordService",
+      "Summary": "<p sourcefile=\"api/ExecMagica.Engine.KeywordService.yml\" sourcestartlinenumber=\"1\">Pure helper service for card keyword operations.\nThis class must not depend on Unity objects.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ExecMagica.Engine.KeywordType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ExecMagica.Engine.KeywordType.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ExecMagica.Engine.KeywordType",
+      "Summary": "<p sourcefile=\"api/ExecMagica.Engine.KeywordType.yml\" sourcestartlinenumber=\"1\">Defines persistent card keywords.</p>\n<p sourcefile=\"api/ExecMagica.Engine.KeywordType.yml\" sourcestartlinenumber=\"3\">Keywords are passive properties of cards, unlike effects,\nwhich are triggered by specific events such as OnPlay or OnDeath.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ExecMagica.Engine.MctsActionPolicy.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ExecMagica.Engine.MctsActionPolicy.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ExecMagica.Engine.MctsActionPolicy",
+      "Summary": "<p sourcefile=\"api/ExecMagica.Engine.MctsActionPolicy.yml\" sourcestartlinenumber=\"1\">Information Set MCTS policy.\nTree keyed by canonical ACTION keys; each iteration re-determinizes the hidden world\n(opponent hand/deck and both deck orders), descends via the real GameEngine, expands one\nnode, rolls out to terminal, and backpropagates a win/loss from the ROOT player's\nperspective (per-node chooser flip). UCB1 uses availability counts (Cowling 2012) so\nactions that are legal only in some determinizations are handled correctly.</p>\n<p sourcefile=\"api/ExecMagica.Engine.MctsActionPolicy.yml\" sourcestartlinenumber=\"8\">Information model (Phase 2.0): no model sees hidden info. Hidden opponent hand cards are\nkeyed by CardId (type), not InstanceId, so the agent never relies on specific hidden\nidentities; it reasons over the information set.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ExecMagica.Engine.MctsConfig.Budget.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ExecMagica.Engine.MctsConfig.Budget.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ExecMagica.Engine.MctsConfig.Budget",
+      "Summary": "<p sourcefile=\"api/ExecMagica.Engine.MctsConfig.Budget.yml\" sourcestartlinenumber=\"1\">Whether the budget is a fixed iteration count or wall-clock time.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ExecMagica.Engine.MctsConfig.FinalSelection.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ExecMagica.Engine.MctsConfig.FinalSelection.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ExecMagica.Engine.MctsConfig.FinalSelection",
+      "Summary": "<p sourcefile=\"api/ExecMagica.Engine.MctsConfig.FinalSelection.yml\" sourcestartlinenumber=\"1\">How the final move is chosen once search ends: most-visited or highest mean value.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ExecMagica.Engine.MctsConfig.Rollout.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ExecMagica.Engine.MctsConfig.Rollout.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ExecMagica.Engine.MctsConfig.Rollout",
+      "Summary": "<p sourcefile=\"api/ExecMagica.Engine.MctsConfig.Rollout.yml\" sourcestartlinenumber=\"1\">Policy used to play a node out to a terminal state during rollout.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ExecMagica.Engine.MctsConfig.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ExecMagica.Engine.MctsConfig.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ExecMagica.Engine.MctsConfig",
+      "Summary": "<p sourcefile=\"api/ExecMagica.Engine.MctsConfig.yml\" sourcestartlinenumber=\"1\">Configuration for <xref href=\"ExecMagica.Engine.MctsActionPolicy\" data-throw-if-not-resolved=\"false\"></xref> — search budget, exploration, rollout\npolicy, information model, final-move selection, seeding and parallelization.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ExecMagica.Engine.MctsOpponentModelDefinition.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ExecMagica.Engine.MctsOpponentModelDefinition.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ExecMagica.Engine.MctsOpponentModelDefinition",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ExecMagica.Engine.ModelInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ExecMagica.Engine.ModelInfo.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ExecMagica.Engine.ModelInfo",
+      "Summary": "<p sourcefile=\"api/ExecMagica.Engine.ModelInfo.yml\" sourcestartlinenumber=\"1\">AI model identity recorded with a session: a model id plus its parameters.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ExecMagica.Engine.OpponentModelCatalog.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ExecMagica.Engine.OpponentModelCatalog.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ExecMagica.Engine.OpponentModelCatalog",
+      "Summary": "<p sourcefile=\"api/ExecMagica.Engine.OpponentModelCatalog.yml\" sourcestartlinenumber=\"1\">Loads and caches all <xref href=\"ExecMagica.Engine.OpponentModelDefinition\" data-throw-if-not-resolved=\"false\"></xref> assets from Resources/OpponentModels\nand resolves them by id.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ExecMagica.Engine.OpponentModelDefinition.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ExecMagica.Engine.OpponentModelDefinition.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ExecMagica.Engine.OpponentModelDefinition",
+      "Summary": "<p sourcefile=\"api/ExecMagica.Engine.OpponentModelDefinition.yml\" sourcestartlinenumber=\"1\">ScriptableObject defining a selectable AI opponent: identity, in-game presentation, rating,\nand how to build its runtime policy. Concrete subclasses (Random/Greedy/MCTS) supply the\nactual <xref href=\"ExecMagica.Engine.IGameActionPolicy\" data-throw-if-not-resolved=\"false\"></xref> and parameter metadata.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ExecMagica.Engine.OutcomeRecord.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ExecMagica.Engine.OutcomeRecord.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ExecMagica.Engine.OutcomeRecord",
+      "Summary": "<p sourcefile=\"api/ExecMagica.Engine.OutcomeRecord.yml\" sourcestartlinenumber=\"1\">Final outcome of one game: winner, end reason, length and duration.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ExecMagica.Engine.PerSideMetrics.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ExecMagica.Engine.PerSideMetrics.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ExecMagica.Engine.PerSideMetrics",
+      "Summary": "<p sourcefile=\"api/ExecMagica.Engine.PerSideMetrics.yml\" sourcestartlinenumber=\"1\">Per-side aggregate metrics for one game (mana efficiency, think time).</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ExecMagica.Engine.PlayTargetRequirement.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ExecMagica.Engine.PlayTargetRequirement.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ExecMagica.Engine.PlayTargetRequirement",
+      "Summary": "<p sourcefile=\"api/ExecMagica.Engine.PlayTargetRequirement.yml\" sourcestartlinenumber=\"1\">Defines what kind of target a card requires when played.</p>\n<p sourcefile=\"api/ExecMagica.Engine.PlayTargetRequirement.yml\" sourcestartlinenumber=\"3\">This is used by the action system to generate and validate PlayCard actions.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ExecMagica.Engine.PlayTargetRequirementResolver.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ExecMagica.Engine.PlayTargetRequirementResolver.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ExecMagica.Engine.PlayTargetRequirementResolver",
+      "Summary": "<p sourcefile=\"api/ExecMagica.Engine.PlayTargetRequirementResolver.yml\" sourcestartlinenumber=\"1\">Resolves what kind of play target is required by a card's OnPlay effects.</p>\n<p sourcefile=\"api/ExecMagica.Engine.PlayTargetRequirementResolver.yml\" sourcestartlinenumber=\"3\">This class is pure core logic and must not depend on Unity objects.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ExecMagica.Engine.PlayTargetType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ExecMagica.Engine.PlayTargetType.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ExecMagica.Engine.PlayTargetType",
+      "Summary": "<p sourcefile=\"api/ExecMagica.Engine.PlayTargetType.yml\" sourcestartlinenumber=\"1\">Defines what kind of object is selected as a PlayCard target.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ExecMagica.Engine.PlayTargetValidator.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ExecMagica.Engine.PlayTargetValidator.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ExecMagica.Engine.PlayTargetValidator",
+      "Summary": "<p sourcefile=\"api/ExecMagica.Engine.PlayTargetValidator.yml\" sourcestartlinenumber=\"1\">Validates whether a GameAction target satisfies a card's play target requirement.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ExecMagica.Engine.PlayerSide.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ExecMagica.Engine.PlayerSide.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ExecMagica.Engine.PlayerSide",
+      "Summary": "<p sourcefile=\"api/ExecMagica.Engine.PlayerSide.yml\" sourcestartlinenumber=\"1\">Identifies which side of the match performs an action or owns a card.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ExecMagica.Engine.PlayerState.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ExecMagica.Engine.PlayerState.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ExecMagica.Engine.PlayerState",
+      "Summary": "<p sourcefile=\"api/ExecMagica.Engine.PlayerState.yml\" sourcestartlinenumber=\"1\">One player's full state: hero health, mana, fatigue, and the four card zones\n(deck, hand, field, graveyard).</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ExecMagica.Engine.RandomActionPolicy.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ExecMagica.Engine.RandomActionPolicy.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ExecMagica.Engine.RandomActionPolicy",
+      "Summary": "<p sourcefile=\"api/ExecMagica.Engine.RandomActionPolicy.yml\" sourcestartlinenumber=\"1\">Pure random policy.\nCan be used both in live game and inside rollouts.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ExecMagica.Engine.RandomOpponentModelDefinition.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ExecMagica.Engine.RandomOpponentModelDefinition.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ExecMagica.Engine.RandomOpponentModelDefinition",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ExecMagica.Engine.RunIndexEntry.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ExecMagica.Engine.RunIndexEntry.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ExecMagica.Engine.RunIndexEntry",
+      "Summary": "<p sourcefile=\"api/ExecMagica.Engine.RunIndexEntry.yml\" sourcestartlinenumber=\"1\">One line in index.jsonl — a compact, queryable summary of a run and its result.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ExecMagica.Engine.RunSummary.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ExecMagica.Engine.RunSummary.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ExecMagica.Engine.RunSummary",
+      "Summary": "<p sourcefile=\"api/ExecMagica.Engine.RunSummary.yml\" sourcestartlinenumber=\"1\">Top-level summary written per run (summary.json): config, models, decks and aggregate stats.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ExecMagica.Engine.RuntimeDeckLoader.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ExecMagica.Engine.RuntimeDeckLoader.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ExecMagica.Engine.RuntimeDeckLoader",
+      "Summary": "<p sourcefile=\"api/ExecMagica.Engine.RuntimeDeckLoader.yml\" sourcestartlinenumber=\"1\">Runtime deck resolution for the setup panel. Mirrors the Editor BatchRunnerWindow\ndeck logic (presets / random cards / random preset) so menu-launched runs match\nresearch runs. Saved &quot;Player deck&quot;/&quot;Enemy deck&quot; are resolved by the panel via\nDecksManagerScr (already synced with the DB), not here.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ExecMagica.Engine.SavedDeck.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ExecMagica.Engine.SavedDeck.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ExecMagica.Engine.SavedDeck",
+      "Summary": "<p sourcefile=\"api/ExecMagica.Engine.SavedDeck.yml\" sourcestartlinenumber=\"1\">A saved deck: a name plus card-count entries. Serializable persistence format for the deck editor.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ExecMagica.Engine.SavedDeckEntry.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ExecMagica.Engine.SavedDeckEntry.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ExecMagica.Engine.SavedDeckEntry",
+      "Summary": "<p sourcefile=\"api/ExecMagica.Engine.SavedDeckEntry.yml\" sourcestartlinenumber=\"1\">One entry in a <xref href=\"ExecMagica.Engine.SavedDeck\" data-throw-if-not-resolved=\"false\"></xref>: a card id and how many copies.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ExecMagica.Engine.SessionRecord.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ExecMagica.Engine.SessionRecord.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ExecMagica.Engine.SessionRecord",
+      "Summary": "<p sourcefile=\"api/ExecMagica.Engine.SessionRecord.yml\" sourcestartlinenumber=\"1\">Full telemetry record for a single game: identity, models, decks, outcome, per-side metrics,\nper-card impact and (optionally) the raw event stream. Serialized to JSON/JSONL.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ExecMagica.Engine.SessionRunner.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ExecMagica.Engine.SessionRunner.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ExecMagica.Engine.SessionRunner",
+      "Summary": "<p sourcefile=\"api/ExecMagica.Engine.SessionRunner.yml\" sourcestartlinenumber=\"1\">Plays one game between two policies on a fresh <xref href=\"ExecMagica.Engine.GameEngine\" data-throw-if-not-resolved=\"false\"></xref>, then fills a\n<xref href=\"ExecMagica.Engine.SessionRecord\" data-throw-if-not-resolved=\"false\"></xref> with outcome, per-side metrics (mana efficiency, think time) and\nper-card impact.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ExecMagica.Engine.SessionWriter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ExecMagica.Engine.SessionWriter.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ExecMagica.Engine.SessionWriter",
+      "Summary": "<p sourcefile=\"api/ExecMagica.Engine.SessionWriter.yml\" sourcestartlinenumber=\"1\">Writes batch results to disk as run folders plus an append-only index.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ExecMagica.Engine.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ExecMagica.Engine.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ExecMagica.Engine",
+      "Summary": null
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/toc.html"
+        },
+        ".json": {
+          "relative_path": "api/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html"
+        },
+        ".json": {
+          "relative_path": "toc.json"
+        }
+      },
+      "version": ""
+    }
+  ],
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}

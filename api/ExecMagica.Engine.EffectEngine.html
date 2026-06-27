@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class EffectEngine | EXEC_MAGICA Engine — API Reference </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class EffectEngine | EXEC_MAGICA Engine — API Reference ">
+      
+      <meta name="description" content="Resolves card effects against pure GameState. This class must not depend on Unity objects.">
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/kuzmenkoff/exec_magica_engine/new/main/apiSpec/new?filename=ExecMagica_Engine_EffectEngine.md&amp;value=---%0Auid%3A%20ExecMagica.Engine.EffectEngine%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../logo.svg" alt="EXEC_MAGICA Engine">
+            EXEC_MAGICA Engine
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="ExecMagica.Engine.EffectEngine">
+
+
+
+  <h1 id="ExecMagica_Engine_EffectEngine" data-uid="ExecMagica.Engine.EffectEngine" class="text-break">
+Class EffectEngine  <a class="header-action link-secondary" title="View source" href="https://github.com/kuzmenkoff/exec_magica_engine/blob/main/docfx/_src/Effects/EffectEngine.cs/#L9"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="ExecMagica.html">ExecMagica</a>.<a class="xref" href="ExecMagica.Engine.html">Engine</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>EngineDocs.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>Resolves card effects against pure GameState.</p>
+<p>This class must not depend on Unity objects.</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static class EffectEngine</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">EffectEngine</span></div>
+    </dd>
+  </dl>
+
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </dd></dl>
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="ExecMagica_Engine_EffectEngine_DealDamageToCard_" data-uid="ExecMagica.Engine.EffectEngine.DealDamageToCard*"></a>
+
+  <h3 id="ExecMagica_Engine_EffectEngine_DealDamageToCard_ExecMagica_Engine_GameState_ExecMagica_Engine_CardInstance_ExecMagica_Engine_CardInstance_System_Int32_System_Collections_Generic_List_ExecMagica_Engine_GameEvent__" data-uid="ExecMagica.Engine.EffectEngine.DealDamageToCard(ExecMagica.Engine.GameState,ExecMagica.Engine.CardInstance,ExecMagica.Engine.CardInstance,System.Int32,System.Collections.Generic.List{ExecMagica.Engine.GameEvent})">
+  DealDamageToCard(GameState, CardInstance, CardInstance, int, List&lt;GameEvent&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/kuzmenkoff/exec_magica_engine/blob/main/docfx/_src/Effects/EffectEngine.cs/#L1110"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Deals damage to a card on the field, honoring Shield (absorbed, no damage) and applying the
+source's Lifesteal. Returns the damage actually dealt (0 if prevented or invalid).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int DealDamageToCard(GameState state, CardInstance source, CardInstance target, int amount, List&lt;GameEvent&gt; events)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>state</code> <a class="xref" href="ExecMagica.Engine.GameState.html">GameState</a></dt>
+    <dd></dd>
+    <dt><code>source</code> <a class="xref" href="ExecMagica.Engine.CardInstance.html">CardInstance</a></dt>
+    <dd></dd>
+    <dt><code>target</code> <a class="xref" href="ExecMagica.Engine.CardInstance.html">CardInstance</a></dt>
+    <dd></dd>
+    <dt><code>amount</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>events</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="ExecMagica.Engine.GameEvent.html">GameEvent</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ExecMagica_Engine_EffectEngine_DealDamageToHero_" data-uid="ExecMagica.Engine.EffectEngine.DealDamageToHero*"></a>
+
+  <h3 id="ExecMagica_Engine_EffectEngine_DealDamageToHero_ExecMagica_Engine_GameState_ExecMagica_Engine_CardInstance_ExecMagica_Engine_PlayerSide_System_Int32_System_Collections_Generic_List_ExecMagica_Engine_GameEvent__" data-uid="ExecMagica.Engine.EffectEngine.DealDamageToHero(ExecMagica.Engine.GameState,ExecMagica.Engine.CardInstance,ExecMagica.Engine.PlayerSide,System.Int32,System.Collections.Generic.List{ExecMagica.Engine.GameEvent})">
+  DealDamageToHero(GameState, CardInstance, PlayerSide, int, List&lt;GameEvent&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/kuzmenkoff/exec_magica_engine/blob/main/docfx/_src/Effects/EffectEngine.cs/#L1179"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Deals damage to a hero, applying the source's Lifesteal and ending the game if the hero
+drops to 0. Returns the damage actually dealt.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int DealDamageToHero(GameState state, CardInstance source, PlayerSide targetHeroSide, int amount, List&lt;GameEvent&gt; events)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>state</code> <a class="xref" href="ExecMagica.Engine.GameState.html">GameState</a></dt>
+    <dd></dd>
+    <dt><code>source</code> <a class="xref" href="ExecMagica.Engine.CardInstance.html">CardInstance</a></dt>
+    <dd></dd>
+    <dt><code>targetHeroSide</code> <a class="xref" href="ExecMagica.Engine.PlayerSide.html">PlayerSide</a></dt>
+    <dd></dd>
+    <dt><code>amount</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>events</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="ExecMagica.Engine.GameEvent.html">GameEvent</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ExecMagica_Engine_EffectEngine_ResolveDeaths_" data-uid="ExecMagica.Engine.EffectEngine.ResolveDeaths*"></a>
+
+  <h3 id="ExecMagica_Engine_EffectEngine_ResolveDeaths_ExecMagica_Engine_GameState_System_Collections_Generic_List_ExecMagica_Engine_GameEvent__" data-uid="ExecMagica.Engine.EffectEngine.ResolveDeaths(ExecMagica.Engine.GameState,System.Collections.Generic.List{ExecMagica.Engine.GameEvent})">
+  ResolveDeaths(GameState, List&lt;GameEvent&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/kuzmenkoff/exec_magica_engine/blob/main/docfx/_src/Effects/EffectEngine.cs/#L1422"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Moves any cards at 0 HP to the graveyard and resolves their OnDeath effects, looping until
+the board is stable (so chained deaths settle). Call after any damage/destroy step.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void ResolveDeaths(GameState state, List&lt;GameEvent&gt; events)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>state</code> <a class="xref" href="ExecMagica.Engine.GameState.html">GameState</a></dt>
+    <dd></dd>
+    <dt><code>events</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="ExecMagica.Engine.GameEvent.html">GameEvent</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ExecMagica_Engine_EffectEngine_ResolveEffects_" data-uid="ExecMagica.Engine.EffectEngine.ResolveEffects*"></a>
+
+  <h3 id="ExecMagica_Engine_EffectEngine_ResolveEffects_ExecMagica_Engine_GameState_ExecMagica_Engine_CardInstance_ExecMagica_Engine_EffectTrigger_ExecMagica_Engine_GameTarget_System_Collections_Generic_List_ExecMagica_Engine_GameEvent__" data-uid="ExecMagica.Engine.EffectEngine.ResolveEffects(ExecMagica.Engine.GameState,ExecMagica.Engine.CardInstance,ExecMagica.Engine.EffectTrigger,ExecMagica.Engine.GameTarget,System.Collections.Generic.List{ExecMagica.Engine.GameEvent})">
+  ResolveEffects(GameState, CardInstance, EffectTrigger, GameTarget, List&lt;GameEvent&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/kuzmenkoff/exec_magica_engine/blob/main/docfx/_src/Effects/EffectEngine.cs/#L16"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Resolves all of a source card's effects matching the given trigger against the state,
+emitting <a class="xref" href="ExecMagica.Engine.GameEvent.html">GameEvent</a>s. <code class="paramref">selectedTarget</code> supplies the
+player-chosen target for targeted effects (ignored by area/self effects).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void ResolveEffects(GameState state, CardInstance source, EffectTrigger trigger, GameTarget selectedTarget, List&lt;GameEvent&gt; events)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>state</code> <a class="xref" href="ExecMagica.Engine.GameState.html">GameState</a></dt>
+    <dd></dd>
+    <dt><code>source</code> <a class="xref" href="ExecMagica.Engine.CardInstance.html">CardInstance</a></dt>
+    <dd></dd>
+    <dt><code>trigger</code> <a class="xref" href="ExecMagica.Engine.EffectTrigger.html">EffectTrigger</a></dt>
+    <dd></dd>
+    <dt><code>selectedTarget</code> <a class="xref" href="ExecMagica.Engine.GameTarget.html">GameTarget</a></dt>
+    <dd></dd>
+    <dt><code>events</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="ExecMagica.Engine.GameEvent.html">GameEvent</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/kuzmenkoff/exec_magica_engine/blob/main/docfx/_src/Effects/EffectEngine.cs/#L9" class="edit-link">Edit this page</a>
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
