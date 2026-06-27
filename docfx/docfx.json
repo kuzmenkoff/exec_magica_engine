@@ -18,7 +18,8 @@
     "globalMetadata": {
       "_appName": "EXEC_MAGICA Engine",
       "_appTitle": "EXEC_MAGICA Engine — API Reference",
-      "_enableSearch": true
+      "_enableSearch": true,
+      "_disableContribution": true
     }
   }
 }

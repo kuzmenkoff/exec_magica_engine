@@ -2,80 +2,107 @@
 
 <img src="docs/assets/banner.png" alt="EXEC_MAGICA" width="640"/>
 
-### A collectible card game built as a benchmark for game-playing AI
+### A card-game engine and AI research framework
 
 [![Unity](https://img.shields.io/badge/Unity-2021.3.32f1-000000?logo=unity)](https://unity.com/)
 ![Platforms](https://img.shields.io/badge/Platforms-Windows%20%7C%20macOS-blue)
 [![License](https://img.shields.io/badge/License-MIT-green)](LICENSE)
 [![Play on itch.io](https://img.shields.io/badge/Play-itch.io-fa5c5c?logo=itchdotio&logoColor=white)](https://mizantrop4real.itch.io/exec-magica)
 ![Thesis](https://img.shields.io/badge/Master's-Thesis-8a5cf6)
+[![API Docs](https://img.shields.io/badge/docs-API%20reference-3b82f6)](https://kuzmenkoff.github.io/exec_magica_engine/)
 
 </div>
 
-**EXEC_MAGICA** is a turn-based collectible card game you can play yourself — or watch AI agents compete against each other to study decision-making under hidden information.
+**EXEC_MAGICA** is a turn-based collectible card game. **This repository** is its
+open-source **engine, game-playing AI agents, and reproducible benchmark** for
+decision-making under hidden information. The playable game built on it is on [itch.io](https://mizantrop4real.itch.io/exec-magica).
 
 <div align="center">
 
 <img src="docs/assets/hero.gif" alt="EXEC_MAGICA — AI vs AI" width="800"/>
 
+<br/><sub>EXEC_MAGICA — the reference game built on this engine (AI-vs-AI spectator)</sub>
+
 </div>
 
-## ▶ Play
+## Screenshots <!-- omit in toc -->
 
-Download a ready-to-play build — no Unity required:
+*EXEC_MAGICA — the reference game built on this engine:*
+
+<table>
+  <tr>
+    <td width="50%"><img src="docs/assets/screenshots/shot_gameplay.png"/><br/>
+      <sub><b>Gameplay</b> — play against an AI opponent.</sub></td>
+    <td width="50%"><img src="docs/assets/screenshots/shot_spectator.png"/><br/>
+      <sub><b>AI-vs-AI spectator</b> — watch two agents play, both hands revealed.</sub></td>
+  </tr>
+  <tr>
+    <td width="50%"><img src="docs/assets/screenshots/shot_setup.png"/><br/>
+      <sub><b>Pre-game setup</b> — pick the opponent agent and decks.</sub></td>
+    <td width="50%"><img src="docs/assets/screenshots/shot_deckeditor.png"/><br/>
+      <sub><b>Deck editor</b> — build and save custom decks.</sub></td>
+  </tr>
+</table>
+
+## ▶ Play the game
+
+This repository is the **engine + AI framework** — it does **not** contain the playable
+client (the Unity visual layer and its third-party art are not included). The full game
+built on this engine is on itch.io:
 
 | Platform | Download |
 |---|---|
-| 🪟 Windows | [Download on itch.io](https://mizantrop4real.itch.io/exec-magica) |
-| 🍎 macOS | [Download on itch.io](https://mizantrop4real.itch.io/exec-magica) |
+| 🪟 Windows | [Play on itch.io](https://mizantrop4real.itch.io/exec-magica) |
+| 🍎 macOS | [Play on itch.io](https://mizantrop4real.itch.io/exec-magica) |
 
-> **macOS:** the build is unsigned. On first launch right-click the app → **Open**,
-> or allow it in *System Settings → Privacy & Security*.
+> **macOS:** the build is unsigned. On first launch right-click the app → **Open**, or
+> allow it in *System Settings → Privacy & Security*.
 
-Prefer to build it yourself? See [Build from source](#build-from-source).
+To use the engine itself → [Use it as a framework](#use-it-as-a-framework) ·
+[Build from source](#build-from-source).
 
 ## Table of Contents <!-- omit in toc -->
 
-- [▶ Play](#-play)
+- [▶ Play the game](#-play-the-game)
 - [About](#about)
 - [★ Key Results](#-key-results)
-- [Screenshots](#screenshots)
 - [Architecture](#architecture)
+- [Use it as a framework](#use-it-as-a-framework)
 - [AI Models](#ai-models)
 - [Build from source](#build-from-source)
 - [Project structure](#project-structure)
 - [Tech stack](#tech-stack)
 - [Documentation](#documentation)
 - [Academic context](#academic-context)
-- [Acknowledgments](#acknowledgments)
 - [License](#license)
 
 ## About
 
-**EXEC_MAGICA** is a collectible card game built as a *controlled,
-reproducible environment* for studying how AI agents make decisions under
-**hidden information** and **randomness**. 
+**This repository** is the engine and research framework behind the card game
+**EXEC_MAGICA** — a *controlled, reproducible environment* for studying how AI agents
+make decisions under **hidden information** and **randomness**.
 
 > Game rules, keywords, effects and deck presets → [RULES.md](docs/RULES.md).
 
-Collectible card games are a hard, realistic testbed: unlike perfect-information
-games such as chess or Go, a player cannot see the opponent's hand or deck
-(*imperfect information*), draws and random effects introduce **stochasticity**,
-and the number of possible plays each turn is large. This makes a CCG a natural
-domain for comparing decision-making algorithms beyond classic search settings.
+Collectible card games are a hard, realistic testbed: unlike perfect-information games
+such as chess or Go, a player cannot see the opponent's hand or deck (*imperfect
+information*), draws and random effects introduce **stochasticity**, and the number of
+possible plays each turn is large. This makes a CCG a natural domain for comparing
+decision-making algorithms beyond classic search settings.
 
-The project pits families of agents — from simple heuristics to search-based
-planners — against each other and measures them with a reproducible self-play
-pipeline (Elo ratings, win-rate curves, deterministic seeds). The goal is to
-understand how different approaches trade **playing strength** against
-**compute budget**, and to motivate a learned evaluation function as the next step.
+The framework pits families of agents — from simple heuristics to search-based planners —
+against each other and measures them with a reproducible self-play pipeline (Elo ratings,
+win-rate curves, deterministic seeds). The goal is to understand how different approaches
+trade **playing strength** against **compute budget**, and to motivate a learned
+evaluation function as the next step.
 
 ### Highlights <!-- omit in toc -->
-- 🤖 **Pluggable AI agents** behind a single interface — swap or compare them freely
+- 🧠 **Pure-C# game engine** — full CCG rules, runs and unit-tests **headless** (no Unity for logic)
+- 🤖 **Pluggable AI agents** behind one interface (`IGameActionPolicy`) — swap or compare freely
 - 📊 **Reproducible experiments** — headless batch self-play, Elo ladder, fixed seeds
-- 👁 **AI-vs-AI spectator** + human-vs-AI play
+- 🔌 **Build your own frontend** — drive the engine via a thin Unity adapter (the reference game is one such frontend)
 - 🃏 **Hearthstone-style ruleset** — mana, minions, spells, triggered & on-death effects, summons, silence
-- 🧱 **Clean Logic/Visual split** — a pure C# engine that runs and tests headless
+- 🛠 **Data-driven cards** — define new cards in JSON with a composable effect system (damage · heal · buff · summon · silence · keywords)
 
 ## ★ Key Results
 
@@ -104,28 +131,11 @@ rollouts are as effective as expensive *greedy* ones — the result that motivat
 value function as the next step. Full analysis →
 [MODEL_TUNING.md](docs/MODEL_TUNING.md#comparison--rollout-policies-strength-vs-time).
 
-## Screenshots
-
-<table>
-  <tr>
-    <td width="50%"><img src="docs/assets/screenshots/shot_gameplay.png"/><br/>
-      <sub><b>Gameplay</b> — play against an AI opponent.</sub></td>
-    <td width="50%"><img src="docs/assets/screenshots/shot_spectator.png"/><br/>
-      <sub><b>AI-vs-AI spectator</b> — watch two agents play against each other with both hands revealed.</sub></td>
-  </tr>
-  <tr>
-    <td width="50%"><img src="docs/assets/screenshots/shot_setup.png"/><br/>
-      <sub><b>Pre-game setup</b> — pick the opponent agent and decks.</sub></td>
-    <td width="50%"><img src="docs/assets/screenshots/shot_deckeditor.png"/><br/>
-      <sub><b>Deck editor</b> — build and save custom decks.</sub></td>
-  </tr>
-</table>
-
 ## Architecture
 
-A strict **logic / visual split**: a pure-C# game engine that runs headless, with
-Unity only as a view. This is what makes the engine **unit-testable** and lets the
-same rules drive **thousands of reproducible self-play games** for the experiments.
+A strict **logic / visual split**: a pure-C# game engine that runs headless, with a thin
+Unity adapter as the only bridge to a frontend. This makes the engine **unit-testable**
+and lets the same rules drive **thousands of reproducible self-play games**.
 
 ```mermaid
 graph TD
@@ -133,20 +143,42 @@ graph TD
     G[Greedy] --> P
     M[MCTS] --> P
     P[IGameActionPolicy] -->|GameAction| E
-    E["GameEngine · GameState · EffectEngine<br/>(pure C#, headless)"] -->|GameEvent stream| V & T
-    V["Unity VisualLayer<br/>CardController · UI"]
-    T["Telemetry<br/>BatchRunner → Runs/*.jsonl"]
-    V -->|player input| E
+    E["GameEngine · GameState · EffectEngine<br/>(pure C#, headless)"] -->|GameEvent stream| A & T
+    A["UnityGameEngineAdapter<br/>(thin bridge)"] -.-> F["Your frontend / the reference game<br/>(not in this repo)"]
+    T["Telemetry · BatchRunner → Runs/*.jsonl"]
+    F -->|player input| A
 ```
 
 - **Logic Layer (pure C#)** — `GameEngine` / `GameState` / `EffectEngine` hold all rules
   and emit a `GameEvent` stream. No Unity dependency → runs and tests headless.
-- **AI agents** plug in behind a single `IGameActionPolicy`, so Random / Greedy / MCTS
-  are swapped or pitted against each other without touching the engine.
-- **Visual Layer (Unity)** renders the event stream and forwards player input — it never
-  implements rules (the engine is the source of truth).
-- **Telemetry** drives headless self-play via `BatchRunner` and serializes games to
-  `Runs/` for analysis and ML — see [DATA_FORMAT.md](docs/DATA_FORMAT.md).
+- **AI agents** plug in behind one `IGameActionPolicy` (Random / Greedy / MCTS).
+- **`UnityGameEngineAdapter`** is the thin bridge a frontend drives — see
+  [Use it as a framework](#use-it-as-a-framework). The visual client (the reference game)
+  is **not** in this repo.
+- **Telemetry** drives headless self-play via `BatchRunner` → `Runs/*.jsonl`
+  (see [DATA_FORMAT.md](docs/DATA_FORMAT.md)).
+
+## Use it as a framework
+
+The engine is frontend-agnostic. To build your **own** card game on it, drive the
+`UnityGameEngineAdapter` and render the `GameEvent` stream however you like:
+
+```csharp
+var adapter = new UnityGameEngineAdapter();
+adapter.Initialize(initialState);                      // a GameState (cards + decks)
+
+while (!adapter.State.IsGameOver)
+{
+    var side   = adapter.State.ActiveSide;
+    var legal  = adapter.GetLegalActions(side);
+    var action = policy.ChooseAction(adapter.State, legal, side); // AI, or your player input
+    var result = adapter.ApplyAction(action);          // result.Events → render your view
+}
+```
+
+- Plug in any AI via **`IGameActionPolicy`** — Random / Greedy / MCTS are included.
+- The reference game (on itch.io) is one frontend built exactly this way.
+- Full guide → [FRAMEWORK.md](docs/FRAMEWORK.md).
 
 ## AI Models
 
@@ -168,12 +200,16 @@ How they are tuned and frozen → [MODEL_TUNING.md](docs/MODEL_TUNING.md); full 
 
 ## Build from source
 
-Requires **Unity 2021.3.32f1** (the version the project is pinned to).
+Requires **Unity 2021.3.32f1**.
 
-1. Clone the repo and open the folder via **Unity Hub** (it will offer to install
-   2021.3.32f1 if you don't have it).
-2. Open `Assets/_Project/Scenes/MainMenu_Scene.unity` and press **Play**, or
-3. Build a standalone: **File → Build Settings → Windows / macOS → Build**.
+1. Clone the repo and open it via **Unity Hub** (it offers to install 2021.3.32f1).
+2. The engine + experiment tooling compile **out of the box** — no extra assets needed.
+3. Run experiments from the editor: **EXEC_MAGICA → Tuning** (batch self-play, rating ladder)
+   and the **Batch Runner** window.
+4. Run the headless unit tests: **Window → General → Test Runner → EditMode**.
+
+To build a playable client on top of the engine → [Use it as a framework](#use-it-as-a-framework).
+The reference game is on [itch.io](https://mizantrop4real.itch.io/exec-magica).
 
 Prefer a ready binary? Download it from [itch.io](https://your-itch-url) — no Unity needed.
 
@@ -181,23 +217,20 @@ Prefer a ready binary? Download it from [itch.io](https://your-itch-url) — no 
 
 ```
 Assets/
-├── _Project/                       # all first-party work
-│   ├── Scripts/
-│   │   ├── Gameplay/LogicLayer/     # pure-C# engine — Engine, State, Rules, Effects,
-│   │   │   └── AI/                  #   Events, Telemetry + the agents (Random/Greedy/MCTS)
-│   │   ├── Gameplay/VisualLayer/    # Unity view — UI, Views, Managers, Input (no game rules)
-│   │   ├── Editor/                  # tuning & experiment tools (sweeps, rating ladder)
-│   │   └── MainMenu/  DeckEditor/  Settings/  Audio/
-│   ├── Scenes/                      # MainMenu · Gameplay · DeckEditor
-│   ├── Tests/                       # EditMode unit tests (headless logic)
-│   └── Art/  Audio/  Prefabs/
-├── Resources/                       # card data (CardsInfo/), AI presets (OpponentModels/)
-└── ThirdParty/                      # licensed third-party assets (see Acknowledgments)
-ProjectSettings/                     # Unity project config (committed)
-Packages/                            # Unity package manifest + lock (committed)
-
-Documentation/                       # METRICS · DATA_FORMAT · MODEL_TUNING · AGENTS · ROADMAP
-Runs/                                # experiment telemetry — JSONL, git-ignored
+├── _Project/
+│ ├── Scripts/
+│ │ ├── Gameplay/LogicLayer/      # pure-C# engine — Engine, State, Rules, Effects,
+│ │ │                             # Cards, Events, Telemetry, Decks + AI agents
+│ │ ├── UnityBridge/              # UnityGameEngineAdapter — the frontend hook
+│ │ └── Editor/                   # experiment tooling — batch self-play, sweeps, ladder
+│ └── Tests/                      # EditMode unit tests (headless logic)
+└── Resources/
+  ├── CardsInfo/                  # card data + deck presets (JSON)
+  ├── CardsLogos/                 # AI-generated card art (PNG)
+  └── OpponentModels/             # AI model configs (.asset)
+ProjectSettings/                  # Unity project config
+Packages/                         # Unity package manifest + lock
+docs/                             # RULES · AGENTS · MODEL_TUNING · LADDER · METRICS · DATA_FORMAT
 ```
 
 The **logic / visual split** maps directly to `Gameplay/LogicLayer` (pure C#, headless,
@@ -208,10 +241,8 @@ unit-tested) vs `Gameplay/VisualLayer` (Unity, no rules). The AI agents live in
 
 | Area | Tech |
 |---|---|
-| Engine | Unity 2021.3.32f1 (LTS) |
-| Language | C# |
-| UI / text | TextMeshPro |
-| Animation | DOTween |
+| Engine / language | Unity 2021.3.32f1 (LTS) · C# |
+| Serialization | Newtonsoft.Json (card data, telemetry) |
 | Testing | Unity Test Framework (EditMode — headless logic) |
 | Data / telemetry | JSON · JSON Lines (`Runs/`) |
 | Analysis | Python (matplotlib) for result plots |
@@ -219,6 +250,8 @@ unit-tested) vs `Gameplay/VisualLayer` (Unity, no rules). The AI agents live in
 | Planned (ML) | learned value/policy network — framework TBD |
 
 ## Documentation
+
+📖 **[Live API reference](https://kuzmenkoff.github.io/exec_magica_engine/)** — auto-generated from the engine's XML docs (DocFX).
 
 | Document | Contents |
 |---|---|
@@ -244,13 +277,11 @@ quantitative results are in [MODEL_TUNING.md](docs/MODEL_TUNING.md) and [LADDER.
 
 If you use this work, please cite it — see [CITATION.cff](CITATION.cff).
 
-## Acknowledgments
-
-Built with these third-party works — thanks to their authors. Each retains its own license.
-
 ## License
 
-Code is released under the **MIT License** — see [LICENSE](LICENSE).
+Released under the **MIT License** — see [LICENSE](LICENSE). This covers the engine, the
+AI agents, and the bundled (AI-generated) card art.
 
-Third-party assets under `Assets/ThirdParty/` (art, audio, fonts) retain their **own
-licenses** and are **not** covered by MIT — see [Acknowledgments](#acknowledgments).
+The playable reference game uses additional third-party assets (art, audio, fonts) that are
+**not part of this repository**; they remain under their own licenses and are credited on the
+game's [itch.io page](https://mizantrop4real.itch.io/exec-magica).
