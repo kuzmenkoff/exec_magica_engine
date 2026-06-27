@@ -77,6 +77,14 @@ sysinfo.txt
 # Batch run outputs
 /Runs/
 
+# docfx
+docfx/_src/
+docfx/api/
+docfx/_site/
+docfx/bin/
+docfx/obj/
+docfx/_ghpages/
+
 # Crashlytics generated file
 crashlytics-build.properties
 
@@ -92,3 +100,6 @@ crashlytics-build.properties
 /[Aa]ssets/Unity.VisualScripting.Generated/VisualScripting.Flow/UnitOptions.db.meta
 /[Aa]ssets/Unity.VisualScripting.Generated/VisualScripting.Core/Property Providers
 /[Aa]ssets/Unity.VisualScripting.Generated/VisualScripting.Core/Property Providers.meta
+
+# keep the hand-written DocFX project (Unity ignores *.csproj)
+!docfx/EngineDocs.csproj

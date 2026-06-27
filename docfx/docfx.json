@@ -1,0 +1,24 @@
+{
+  "metadata": [
+    {
+      "src": [
+        { "files": [ "EngineDocs.csproj" ], "src": "." }
+      ],
+      "dest": "api",
+      "outputFormat": "mref"
+    }
+  ],
+  "build": {
+    "content": [
+      { "files": [ "api/**.yml", "api/index.md" ] },
+      { "files": [ "toc.yml", "index.md" ] }
+    ],
+    "output": "_site",
+    "template": [ "default", "modern" ],
+    "globalMetadata": {
+      "_appName": "EXEC_MAGICA Engine",
+      "_appTitle": "EXEC_MAGICA Engine — API Reference",
+      "_enableSearch": true
+    }
+  }
+}
