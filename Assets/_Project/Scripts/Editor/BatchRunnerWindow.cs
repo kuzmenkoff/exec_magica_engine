@@ -5,6 +5,11 @@ using UnityEditor;
 using UnityEngine;
 using System;
 
+/// <summary>
+/// Editor window for running headless AI-vs-AI batches: pick the two models and decks, set the
+/// run parameters, and execute <see cref="BatchRunner"/>, writing results via
+/// <see cref="SessionWriter"/>. Research tooling — not part of the engine API.
+/// </summary>
 public class BatchRunnerWindow : EditorWindow
 {
     private IReadOnlyList<OpponentModelDefinition> models;
@@ -28,6 +33,7 @@ public class BatchRunnerWindow : EditorWindow
 
     private int parallelGames = 1;
 
+    /// <summary>Opens the Batch Runner window (menu: EXEC_MAGICA ▸ Run Batch...).</summary>
     [MenuItem("EXEC_MAGICA/Run Batch...")]
     public static void Open() => GetWindow<BatchRunnerWindow>("EXEC_MAGICA Batch");
 
@@ -136,7 +142,15 @@ public class BatchRunnerWindow : EditorWindow
             OpponentModelDefinition pDef = cloneP;
             OpponentModelDefinition eDef = cloneE;
 
-            BatchConfig cfg = new BatchConfig { /* як було */ };
+            BatchConfig cfg = new BatchConfig
+            {
+                Games = games,
+                BaseSeed = baseSeed,
+                MaxActions = maxActions,
+                AlternateStart = alternateStart,
+                LogEvents = logEvents,
+                MaxParallelGames = parallelGames
+            };
 
             if (parallelGames > 1)
                 EditorUtility.DisplayProgressBar("EXEC_MAGICA Batch", $"Running {games} games (x{parallelGames})...", 0.5f);
