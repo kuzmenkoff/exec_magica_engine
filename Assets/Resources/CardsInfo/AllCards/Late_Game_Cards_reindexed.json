@@ -25,7 +25,7 @@
       "Title": "Tollroad Behemoth",
       "Description": "",
       "Class": "ENTITY",
-      "LogoPath": "CardsLogos/Late/Tollroad Behemoth",
+      "LogoPath": "CardsLogos/Neutral/Tollroad Behemoth",
       "Attack": 6,
       "HP": 7,
       "MaxHP": 7,
@@ -78,7 +78,7 @@
       "Title": "Procession Bannerlord",
       "Description": "On Play: Your other ally cards have +1/+1.",
       "Class": "ENTITY",
-      "LogoPath": "CardsLogos/Late/Procession Bannerlord",
+      "LogoPath": "CardsLogos/Neutral/Procession Bannerlord",
       "Attack": 6,
       "HP": 6,
       "MaxHP": 6,
@@ -181,7 +181,7 @@
       "Description": "Provocation. On Death: Draw 1 card.",
       "Class": "ENTITY",
       "LogoPath": "CardsLogos/Late/Ossuary Archivist",
-      "Attack": 6,
+      "Attack": 5,
       "HP": 8,
       "MaxHP": 8,
       "ManaCost": 7,
@@ -204,7 +204,7 @@
       "Description": "On Play: Deal 4 damage to the enemy hero.",
       "Class": "ENTITY",
       "LogoPath": "CardsLogos/Late/Ruinmarch Colossus",
-      "Attack": 8,
+      "Attack": 7,
       "HP": 8,
       "MaxHP": 8,
       "ManaCost": 8,
@@ -310,26 +310,6 @@
     },
     {
       "id": 3101,
-      "Title": "Gallows Decree",
-      "Description": "Destroy an enemy card.",
-      "Class": "SPELL",
-      "LogoPath": "CardsLogos/Late/Gallows Decree",
-      "Attack": 0,
-      "HP": 0,
-      "MaxHP": 0,
-      "ManaCost": 6,
-      "Keywords": [],
-      "Effects": [
-        {
-          "Trigger": "OnPlay",
-          "Type": "Destroy",
-          "Target": "SelectedEnemyCard"
-        }
-      ],
-      "IsCollectible": true
-    },
-    {
-      "id": 3102,
       "Title": "The Last Toll",
       "Description": "Destroy all cards.",
       "Class": "SPELL",

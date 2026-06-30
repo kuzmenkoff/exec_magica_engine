@@ -114,7 +114,7 @@
     {
       "id": 2006,
       "Title": "Vesperlight Chaplain",
-      "Description": "On Play: Give a friendly card +1/+1.",
+      "Description": "On Play: Give a friendly card +2/+2.",
       "Class": "ENTITY",
       "LogoPath": "CardsLogos/Mid/Vesperlight Chaplain",
       "Attack": 4,
@@ -128,8 +128,8 @@
           "Type": "BuffStats",
           "Target": "SelectedAllyCard",
           "Value": 0,
-          "AttackValue": 1,
-          "HealthValue": 1,
+          "AttackValue": 2,
+          "HealthValue": 2,
           "Keyword": "None"
         }
       ],
@@ -205,7 +205,7 @@
       "Description": "Provocation.",
       "Class": "ENTITY",
       "LogoPath": "CardsLogos/Mid/Briarback Gate-Ape",
-      "Attack": 3,
+      "Attack": 2,
       "HP": 4,
       "MaxHP": 4,
       "ManaCost": 3,
@@ -332,7 +332,7 @@
     {
       "id": 2017,
       "Title": "Briette Haundmaster",
-      "Description": "On Play: Give a friendly card +2/+2 and Provocation.",
+      "Description": "On Play: Give a friendly card +1/+1 and Provocation.",
       "Class": "ENTITY",
       "LogoPath": "CardsLogos/Mid/Briette Haundmaster",
       "Attack": 4,
@@ -346,8 +346,8 @@
           "Type": "BuffStats",
           "Target": "SelectedAllyCard",
           "Value": 0,
-          "AttackValue": 2,
-          "HealthValue": 2,
+          "AttackValue": 1,
+          "HealthValue": 1,
           "Keyword": "None"
         },
         {
@@ -436,7 +436,7 @@
       "Description": "On Play: Deal 1 damage to all enemy cards.",
       "Class": "ENTITY",
       "LogoPath": "CardsLogos/Mid/Filthy Miron",
-      "Attack": 5,
+      "Attack": 4,
       "HP": 6,
       "MaxHP": 6,
       "ManaCost": 5,
@@ -542,7 +542,7 @@
     {
       "id": 2100,
       "Title": "Rabblemoon Howl",
-      "Description": "Give all allied cards +1 Attack.",
+      "Description": "Give all allied cards +2 Attack.",
       "Class": "SPELL",
       "LogoPath": "CardsLogos/Mid/Rabblemoon Howl",
       "ManaCost": 3,
@@ -552,7 +552,7 @@
           "Trigger": "OnPlay",
           "Type": "BuffAttack",
           "Target": "AllAllyCards",
-          "Value": 1
+          "Value": 2
         }
       ],
       "IsCollectible": true
@@ -656,6 +656,26 @@
           "AttackValue": 1,
           "HealthValue": 1,
           "Keyword": "None"
+        }
+      ],
+      "IsCollectible": true
+    },
+    {
+      "id": 2106,
+      "Title": "Gallows Decree",
+      "Description": "Destroy an enemy card.",
+      "Class": "SPELL",
+      "LogoPath": "CardsLogos/Late/Gallows Decree",
+      "Attack": 0,
+      "HP": 0,
+      "MaxHP": 0,
+      "ManaCost": 5,
+      "Keywords": [],
+      "Effects": [
+        {
+          "Trigger": "OnPlay",
+          "Type": "Destroy",
+          "Target": "SelectedEnemyCard"
         }
       ],
       "IsCollectible": true

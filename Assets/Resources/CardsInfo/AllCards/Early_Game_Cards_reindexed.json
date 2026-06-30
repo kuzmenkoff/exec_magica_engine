@@ -218,8 +218,8 @@
       "Class": "ENTITY",
       "LogoPath": "CardsLogos/Early/Hearthlight Acolyte",
       "Attack": 2,
-      "HP": 3,
-      "MaxHP": 3,
+      "HP": 2,
+      "MaxHP": 2,
       "ManaCost": 2,
       "Keywords": [],
       "Effects": [
