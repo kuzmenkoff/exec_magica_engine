@@ -7,6 +7,271 @@ references:
   commentId: N:ExecMagica.Engine
   fullName: ExecMagica.Engine
   nameWithType: ExecMagica.Engine
+- uid: ExecMagica.Engine.ActionEncoding
+  name: ActionEncoding
+  href: api/ExecMagica.Engine.ActionEncoding.html
+  commentId: T:ExecMagica.Engine.ActionEncoding
+  fullName: ExecMagica.Engine.ActionEncoding
+  nameWithType: ActionEncoding
+- uid: ExecMagica.Engine.ActionEncoding.ActionCount
+  name: ActionCount
+  href: api/ExecMagica.Engine.ActionEncoding.html#ExecMagica_Engine_ActionEncoding_ActionCount
+  commentId: F:ExecMagica.Engine.ActionEncoding.ActionCount
+  fullName: ExecMagica.Engine.ActionEncoding.ActionCount
+  nameWithType: ActionEncoding.ActionCount
+- uid: ExecMagica.Engine.ActionEncoding.Descriptor(ExecMagica.Engine.GameAction,ExecMagica.Engine.GameState,ExecMagica.Engine.PlayerSide,System.Int32@,System.Int32@,System.Int32@,System.Int32@)
+  name: Descriptor(GameAction, GameState, PlayerSide, out int, out int, out int, out int)
+  href: api/ExecMagica.Engine.ActionEncoding.html#ExecMagica_Engine_ActionEncoding_Descriptor_ExecMagica_Engine_GameAction_ExecMagica_Engine_GameState_ExecMagica_Engine_PlayerSide_System_Int32__System_Int32__System_Int32__System_Int32__
+  commentId: M:ExecMagica.Engine.ActionEncoding.Descriptor(ExecMagica.Engine.GameAction,ExecMagica.Engine.GameState,ExecMagica.Engine.PlayerSide,System.Int32@,System.Int32@,System.Int32@,System.Int32@)
+  name.vb: Descriptor(GameAction, GameState, PlayerSide, Integer, Integer, Integer, Integer)
+  fullName: ExecMagica.Engine.ActionEncoding.Descriptor(ExecMagica.Engine.GameAction, ExecMagica.Engine.GameState, ExecMagica.Engine.PlayerSide, out int, out int, out int, out int)
+  fullName.vb: ExecMagica.Engine.ActionEncoding.Descriptor(ExecMagica.Engine.GameAction, ExecMagica.Engine.GameState, ExecMagica.Engine.PlayerSide, Integer, Integer, Integer, Integer)
+  nameWithType: ActionEncoding.Descriptor(GameAction, GameState, PlayerSide, out int, out int, out int, out int)
+  nameWithType.vb: ActionEncoding.Descriptor(GameAction, GameState, PlayerSide, Integer, Integer, Integer, Integer)
+- uid: ExecMagica.Engine.ActionEncoding.Descriptor*
+  name: Descriptor
+  href: api/ExecMagica.Engine.ActionEncoding.html#ExecMagica_Engine_ActionEncoding_Descriptor_
+  commentId: Overload:ExecMagica.Engine.ActionEncoding.Descriptor
+  isSpec: "True"
+  fullName: ExecMagica.Engine.ActionEncoding.Descriptor
+  nameWithType: ActionEncoding.Descriptor
+- uid: ExecMagica.Engine.ActionEncoding.Field
+  name: Field
+  href: api/ExecMagica.Engine.ActionEncoding.html#ExecMagica_Engine_ActionEncoding_Field
+  commentId: F:ExecMagica.Engine.ActionEncoding.Field
+  fullName: ExecMagica.Engine.ActionEncoding.Field
+  nameWithType: ActionEncoding.Field
+- uid: ExecMagica.Engine.ActionEncoding.Hand
+  name: Hand
+  href: api/ExecMagica.Engine.ActionEncoding.html#ExecMagica_Engine_ActionEncoding_Hand
+  commentId: F:ExecMagica.Engine.ActionEncoding.Hand
+  fullName: ExecMagica.Engine.ActionEncoding.Hand
+  nameWithType: ActionEncoding.Hand
+- uid: ExecMagica.Engine.ActionEncoding.Index(System.Int32,System.Int32,System.Int32,System.Int32)
+  name: Index(int, int, int, int)
+  href: api/ExecMagica.Engine.ActionEncoding.html#ExecMagica_Engine_ActionEncoding_Index_System_Int32_System_Int32_System_Int32_System_Int32_
+  commentId: M:ExecMagica.Engine.ActionEncoding.Index(System.Int32,System.Int32,System.Int32,System.Int32)
+  name.vb: Index(Integer, Integer, Integer, Integer)
+  fullName: ExecMagica.Engine.ActionEncoding.Index(int, int, int, int)
+  fullName.vb: ExecMagica.Engine.ActionEncoding.Index(Integer, Integer, Integer, Integer)
+  nameWithType: ActionEncoding.Index(int, int, int, int)
+  nameWithType.vb: ActionEncoding.Index(Integer, Integer, Integer, Integer)
+- uid: ExecMagica.Engine.ActionEncoding.Index*
+  name: Index
+  href: api/ExecMagica.Engine.ActionEncoding.html#ExecMagica_Engine_ActionEncoding_Index_
+  commentId: Overload:ExecMagica.Engine.ActionEncoding.Index
+  isSpec: "True"
+  fullName: ExecMagica.Engine.ActionEncoding.Index
+  nameWithType: ActionEncoding.Index
+- uid: ExecMagica.Engine.ActionEncoding.IndexOf(ExecMagica.Engine.GameAction,ExecMagica.Engine.GameState,ExecMagica.Engine.PlayerSide)
+  name: IndexOf(GameAction, GameState, PlayerSide)
+  href: api/ExecMagica.Engine.ActionEncoding.html#ExecMagica_Engine_ActionEncoding_IndexOf_ExecMagica_Engine_GameAction_ExecMagica_Engine_GameState_ExecMagica_Engine_PlayerSide_
+  commentId: M:ExecMagica.Engine.ActionEncoding.IndexOf(ExecMagica.Engine.GameAction,ExecMagica.Engine.GameState,ExecMagica.Engine.PlayerSide)
+  fullName: ExecMagica.Engine.ActionEncoding.IndexOf(ExecMagica.Engine.GameAction, ExecMagica.Engine.GameState, ExecMagica.Engine.PlayerSide)
+  nameWithType: ActionEncoding.IndexOf(GameAction, GameState, PlayerSide)
+- uid: ExecMagica.Engine.ActionEncoding.IndexOf*
+  name: IndexOf
+  href: api/ExecMagica.Engine.ActionEncoding.html#ExecMagica_Engine_ActionEncoding_IndexOf_
+  commentId: Overload:ExecMagica.Engine.ActionEncoding.IndexOf
+  isSpec: "True"
+  fullName: ExecMagica.Engine.ActionEncoding.IndexOf
+  nameWithType: ActionEncoding.IndexOf
+- uid: ExecMagica.Engine.ActionEncoding.OffAtkCard
+  name: OffAtkCard
+  href: api/ExecMagica.Engine.ActionEncoding.html#ExecMagica_Engine_ActionEncoding_OffAtkCard
+  commentId: F:ExecMagica.Engine.ActionEncoding.OffAtkCard
+  fullName: ExecMagica.Engine.ActionEncoding.OffAtkCard
+  nameWithType: ActionEncoding.OffAtkCard
+- uid: ExecMagica.Engine.ActionEncoding.OffAtkHero
+  name: OffAtkHero
+  href: api/ExecMagica.Engine.ActionEncoding.html#ExecMagica_Engine_ActionEncoding_OffAtkHero
+  commentId: F:ExecMagica.Engine.ActionEncoding.OffAtkHero
+  fullName: ExecMagica.Engine.ActionEncoding.OffAtkHero
+  nameWithType: ActionEncoding.OffAtkHero
+- uid: ExecMagica.Engine.ActionEncoding.OffEnd
+  name: OffEnd
+  href: api/ExecMagica.Engine.ActionEncoding.html#ExecMagica_Engine_ActionEncoding_OffEnd
+  commentId: F:ExecMagica.Engine.ActionEncoding.OffEnd
+  fullName: ExecMagica.Engine.ActionEncoding.OffEnd
+  nameWithType: ActionEncoding.OffEnd
+- uid: ExecMagica.Engine.ActionEncoding.OffPlayMyF
+  name: OffPlayMyF
+  href: api/ExecMagica.Engine.ActionEncoding.html#ExecMagica_Engine_ActionEncoding_OffPlayMyF
+  commentId: F:ExecMagica.Engine.ActionEncoding.OffPlayMyF
+  fullName: ExecMagica.Engine.ActionEncoding.OffPlayMyF
+  nameWithType: ActionEncoding.OffPlayMyF
+- uid: ExecMagica.Engine.ActionEncoding.OffPlayMyH
+  name: OffPlayMyH
+  href: api/ExecMagica.Engine.ActionEncoding.html#ExecMagica_Engine_ActionEncoding_OffPlayMyH
+  commentId: F:ExecMagica.Engine.ActionEncoding.OffPlayMyH
+  fullName: ExecMagica.Engine.ActionEncoding.OffPlayMyH
+  nameWithType: ActionEncoding.OffPlayMyH
+- uid: ExecMagica.Engine.ActionEncoding.OffPlayNone
+  name: OffPlayNone
+  href: api/ExecMagica.Engine.ActionEncoding.html#ExecMagica_Engine_ActionEncoding_OffPlayNone
+  commentId: F:ExecMagica.Engine.ActionEncoding.OffPlayNone
+  fullName: ExecMagica.Engine.ActionEncoding.OffPlayNone
+  nameWithType: ActionEncoding.OffPlayNone
+- uid: ExecMagica.Engine.ActionEncoding.OffPlayOpF
+  name: OffPlayOpF
+  href: api/ExecMagica.Engine.ActionEncoding.html#ExecMagica_Engine_ActionEncoding_OffPlayOpF
+  commentId: F:ExecMagica.Engine.ActionEncoding.OffPlayOpF
+  fullName: ExecMagica.Engine.ActionEncoding.OffPlayOpF
+  nameWithType: ActionEncoding.OffPlayOpF
+- uid: ExecMagica.Engine.ActionEncoding.OffPlayOpH
+  name: OffPlayOpH
+  href: api/ExecMagica.Engine.ActionEncoding.html#ExecMagica_Engine_ActionEncoding_OffPlayOpH
+  commentId: F:ExecMagica.Engine.ActionEncoding.OffPlayOpH
+  fullName: ExecMagica.Engine.ActionEncoding.OffPlayOpH
+  nameWithType: ActionEncoding.OffPlayOpH
+- uid: ExecMagica.Engine.AgentFactory
+  name: AgentFactory
+  href: api/ExecMagica.Engine.AgentFactory.html
+  commentId: T:ExecMagica.Engine.AgentFactory
+  fullName: ExecMagica.Engine.AgentFactory
+  nameWithType: AgentFactory
+- uid: ExecMagica.Engine.AgentFactory.Build(ExecMagica.Engine.AgentSpec,System.Int32)
+  name: Build(AgentSpec, int)
+  href: api/ExecMagica.Engine.AgentFactory.html#ExecMagica_Engine_AgentFactory_Build_ExecMagica_Engine_AgentSpec_System_Int32_
+  commentId: M:ExecMagica.Engine.AgentFactory.Build(ExecMagica.Engine.AgentSpec,System.Int32)
+  name.vb: Build(AgentSpec, Integer)
+  fullName: ExecMagica.Engine.AgentFactory.Build(ExecMagica.Engine.AgentSpec, int)
+  fullName.vb: ExecMagica.Engine.AgentFactory.Build(ExecMagica.Engine.AgentSpec, Integer)
+  nameWithType: AgentFactory.Build(AgentSpec, int)
+  nameWithType.vb: AgentFactory.Build(AgentSpec, Integer)
+- uid: ExecMagica.Engine.AgentFactory.Build*
+  name: Build
+  href: api/ExecMagica.Engine.AgentFactory.html#ExecMagica_Engine_AgentFactory_Build_
+  commentId: Overload:ExecMagica.Engine.AgentFactory.Build
+  isSpec: "True"
+  fullName: ExecMagica.Engine.AgentFactory.Build
+  nameWithType: AgentFactory.Build
+- uid: ExecMagica.Engine.AgentSpec
+  name: AgentSpec
+  href: api/ExecMagica.Engine.AgentSpec.html
+  commentId: T:ExecMagica.Engine.AgentSpec
+  fullName: ExecMagica.Engine.AgentSpec
+  nameWithType: AgentSpec
+- uid: ExecMagica.Engine.AgentSpec.attackWeight
+  name: attackWeight
+  href: api/ExecMagica.Engine.AgentSpec.html#ExecMagica_Engine_AgentSpec_attackWeight
+  commentId: F:ExecMagica.Engine.AgentSpec.attackWeight
+  fullName: ExecMagica.Engine.AgentSpec.attackWeight
+  nameWithType: AgentSpec.attackWeight
+- uid: ExecMagica.Engine.AgentSpec.budgetMode
+  name: budgetMode
+  href: api/ExecMagica.Engine.AgentSpec.html#ExecMagica_Engine_AgentSpec_budgetMode
+  commentId: F:ExecMagica.Engine.AgentSpec.budgetMode
+  fullName: ExecMagica.Engine.AgentSpec.budgetMode
+  nameWithType: AgentSpec.budgetMode
+- uid: ExecMagica.Engine.AgentSpec.determinize
+  name: determinize
+  href: api/ExecMagica.Engine.AgentSpec.html#ExecMagica_Engine_AgentSpec_determinize
+  commentId: F:ExecMagica.Engine.AgentSpec.determinize
+  fullName: ExecMagica.Engine.AgentSpec.determinize
+  nameWithType: AgentSpec.determinize
+- uid: ExecMagica.Engine.AgentSpec.explorationC
+  name: explorationC
+  href: api/ExecMagica.Engine.AgentSpec.html#ExecMagica_Engine_AgentSpec_explorationC
+  commentId: F:ExecMagica.Engine.AgentSpec.explorationC
+  fullName: ExecMagica.Engine.AgentSpec.explorationC
+  nameWithType: AgentSpec.explorationC
+- uid: ExecMagica.Engine.AgentSpec.finalAction
+  name: finalAction
+  href: api/ExecMagica.Engine.AgentSpec.html#ExecMagica_Engine_AgentSpec_finalAction
+  commentId: F:ExecMagica.Engine.AgentSpec.finalAction
+  fullName: ExecMagica.Engine.AgentSpec.finalAction
+  nameWithType: AgentSpec.finalAction
+- uid: ExecMagica.Engine.AgentSpec.handCountWeight
+  name: handCountWeight
+  href: api/ExecMagica.Engine.AgentSpec.html#ExecMagica_Engine_AgentSpec_handCountWeight
+  commentId: F:ExecMagica.Engine.AgentSpec.handCountWeight
+  fullName: ExecMagica.Engine.AgentSpec.handCountWeight
+  nameWithType: AgentSpec.handCountWeight
+- uid: ExecMagica.Engine.AgentSpec.heroHpWeight
+  name: heroHpWeight
+  href: api/ExecMagica.Engine.AgentSpec.html#ExecMagica_Engine_AgentSpec_heroHpWeight
+  commentId: F:ExecMagica.Engine.AgentSpec.heroHpWeight
+  fullName: ExecMagica.Engine.AgentSpec.heroHpWeight
+  nameWithType: AgentSpec.heroHpWeight
+- uid: ExecMagica.Engine.AgentSpec.hpWeight
+  name: hpWeight
+  href: api/ExecMagica.Engine.AgentSpec.html#ExecMagica_Engine_AgentSpec_hpWeight
+  commentId: F:ExecMagica.Engine.AgentSpec.hpWeight
+  fullName: ExecMagica.Engine.AgentSpec.hpWeight
+  nameWithType: AgentSpec.hpWeight
+- uid: ExecMagica.Engine.AgentSpec.id
+  name: id
+  href: api/ExecMagica.Engine.AgentSpec.html#ExecMagica_Engine_AgentSpec_id
+  commentId: F:ExecMagica.Engine.AgentSpec.id
+  fullName: ExecMagica.Engine.AgentSpec.id
+  nameWithType: AgentSpec.id
+- uid: ExecMagica.Engine.AgentSpec.iterations
+  name: iterations
+  href: api/ExecMagica.Engine.AgentSpec.html#ExecMagica_Engine_AgentSpec_iterations
+  commentId: F:ExecMagica.Engine.AgentSpec.iterations
+  fullName: ExecMagica.Engine.AgentSpec.iterations
+  nameWithType: AgentSpec.iterations
+- uid: ExecMagica.Engine.AgentSpec.kind
+  name: kind
+  href: api/ExecMagica.Engine.AgentSpec.html#ExecMagica_Engine_AgentSpec_kind
+  commentId: F:ExecMagica.Engine.AgentSpec.kind
+  fullName: ExecMagica.Engine.AgentSpec.kind
+  nameWithType: AgentSpec.kind
+- uid: ExecMagica.Engine.AgentSpec.knowsOpponentDeck
+  name: knowsOpponentDeck
+  href: api/ExecMagica.Engine.AgentSpec.html#ExecMagica_Engine_AgentSpec_knowsOpponentDeck
+  commentId: F:ExecMagica.Engine.AgentSpec.knowsOpponentDeck
+  fullName: ExecMagica.Engine.AgentSpec.knowsOpponentDeck
+  nameWithType: AgentSpec.knowsOpponentDeck
+- uid: ExecMagica.Engine.AgentSpec.leafRolloutMix
+  name: leafRolloutMix
+  href: api/ExecMagica.Engine.AgentSpec.html#ExecMagica_Engine_AgentSpec_leafRolloutMix
+  commentId: F:ExecMagica.Engine.AgentSpec.leafRolloutMix
+  fullName: ExecMagica.Engine.AgentSpec.leafRolloutMix
+  nameWithType: AgentSpec.leafRolloutMix
+- uid: ExecMagica.Engine.AgentSpec.maxRolloutActions
+  name: maxRolloutActions
+  href: api/ExecMagica.Engine.AgentSpec.html#ExecMagica_Engine_AgentSpec_maxRolloutActions
+  commentId: F:ExecMagica.Engine.AgentSpec.maxRolloutActions
+  fullName: ExecMagica.Engine.AgentSpec.maxRolloutActions
+  nameWithType: AgentSpec.maxRolloutActions
+- uid: ExecMagica.Engine.AgentSpec.minionCountWeight
+  name: minionCountWeight
+  href: api/ExecMagica.Engine.AgentSpec.html#ExecMagica_Engine_AgentSpec_minionCountWeight
+  commentId: F:ExecMagica.Engine.AgentSpec.minionCountWeight
+  fullName: ExecMagica.Engine.AgentSpec.minionCountWeight
+  nameWithType: AgentSpec.minionCountWeight
+- uid: ExecMagica.Engine.AgentSpec.networkResource
+  name: networkResource
+  href: api/ExecMagica.Engine.AgentSpec.html#ExecMagica_Engine_AgentSpec_networkResource
+  commentId: F:ExecMagica.Engine.AgentSpec.networkResource
+  fullName: ExecMagica.Engine.AgentSpec.networkResource
+  nameWithType: AgentSpec.networkResource
+- uid: ExecMagica.Engine.AgentSpec.puctC
+  name: puctC
+  href: api/ExecMagica.Engine.AgentSpec.html#ExecMagica_Engine_AgentSpec_puctC
+  commentId: F:ExecMagica.Engine.AgentSpec.puctC
+  fullName: ExecMagica.Engine.AgentSpec.puctC
+  nameWithType: AgentSpec.puctC
+- uid: ExecMagica.Engine.AgentSpec.rolloutPolicy
+  name: rolloutPolicy
+  href: api/ExecMagica.Engine.AgentSpec.html#ExecMagica_Engine_AgentSpec_rolloutPolicy
+  commentId: F:ExecMagica.Engine.AgentSpec.rolloutPolicy
+  fullName: ExecMagica.Engine.AgentSpec.rolloutPolicy
+  nameWithType: AgentSpec.rolloutPolicy
+- uid: ExecMagica.Engine.AgentSpec.sample
+  name: sample
+  href: api/ExecMagica.Engine.AgentSpec.html#ExecMagica_Engine_AgentSpec_sample
+  commentId: F:ExecMagica.Engine.AgentSpec.sample
+  fullName: ExecMagica.Engine.AgentSpec.sample
+  nameWithType: AgentSpec.sample
+- uid: ExecMagica.Engine.AgentSpec.timeBudgetMs
+  name: timeBudgetMs
+  href: api/ExecMagica.Engine.AgentSpec.html#ExecMagica_Engine_AgentSpec_timeBudgetMs
+  commentId: F:ExecMagica.Engine.AgentSpec.timeBudgetMs
+  fullName: ExecMagica.Engine.AgentSpec.timeBudgetMs
+  nameWithType: AgentSpec.timeBudgetMs
 - uid: ExecMagica.Engine.AllCards
   name: AllCards
   href: api/ExecMagica.Engine.AllCards.html
@@ -499,6 +764,186 @@ references:
   commentId: F:ExecMagica.Engine.BatchSummary.TotalDurationMs
   fullName: ExecMagica.Engine.BatchSummary.TotalDurationMs
   nameWithType: BatchSummary.TotalDurationMs
+- uid: ExecMagica.Engine.BenchRunSpec
+  name: BenchRunSpec
+  href: api/ExecMagica.Engine.BenchRunSpec.html
+  commentId: T:ExecMagica.Engine.BenchRunSpec
+  fullName: ExecMagica.Engine.BenchRunSpec
+  nameWithType: BenchRunSpec
+- uid: ExecMagica.Engine.BenchRunSpec.agents
+  name: agents
+  href: api/ExecMagica.Engine.BenchRunSpec.html#ExecMagica_Engine_BenchRunSpec_agents
+  commentId: F:ExecMagica.Engine.BenchRunSpec.agents
+  fullName: ExecMagica.Engine.BenchRunSpec.agents
+  nameWithType: BenchRunSpec.agents
+- uid: ExecMagica.Engine.BenchRunSpec.alternateStart
+  name: alternateStart
+  href: api/ExecMagica.Engine.BenchRunSpec.html#ExecMagica_Engine_BenchRunSpec_alternateStart
+  commentId: F:ExecMagica.Engine.BenchRunSpec.alternateStart
+  fullName: ExecMagica.Engine.BenchRunSpec.alternateStart
+  nameWithType: BenchRunSpec.alternateStart
+- uid: ExecMagica.Engine.BenchRunSpec.anchorId
+  name: anchorId
+  href: api/ExecMagica.Engine.BenchRunSpec.html#ExecMagica_Engine_BenchRunSpec_anchorId
+  commentId: F:ExecMagica.Engine.BenchRunSpec.anchorId
+  fullName: ExecMagica.Engine.BenchRunSpec.anchorId
+  nameWithType: BenchRunSpec.anchorId
+- uid: ExecMagica.Engine.BenchRunSpec.baseSeed
+  name: baseSeed
+  href: api/ExecMagica.Engine.BenchRunSpec.html#ExecMagica_Engine_BenchRunSpec_baseSeed
+  commentId: F:ExecMagica.Engine.BenchRunSpec.baseSeed
+  fullName: ExecMagica.Engine.BenchRunSpec.baseSeed
+  nameWithType: BenchRunSpec.baseSeed
+- uid: ExecMagica.Engine.BenchRunSpec.decks
+  name: decks
+  href: api/ExecMagica.Engine.BenchRunSpec.html#ExecMagica_Engine_BenchRunSpec_decks
+  commentId: F:ExecMagica.Engine.BenchRunSpec.decks
+  fullName: ExecMagica.Engine.BenchRunSpec.decks
+  nameWithType: BenchRunSpec.decks
+- uid: ExecMagica.Engine.BenchRunSpec.featureVersion
+  name: featureVersion
+  href: api/ExecMagica.Engine.BenchRunSpec.html#ExecMagica_Engine_BenchRunSpec_featureVersion
+  commentId: F:ExecMagica.Engine.BenchRunSpec.featureVersion
+  fullName: ExecMagica.Engine.BenchRunSpec.featureVersion
+  nameWithType: BenchRunSpec.featureVersion
+- uid: ExecMagica.Engine.BenchRunSpec.games
+  name: games
+  href: api/ExecMagica.Engine.BenchRunSpec.html#ExecMagica_Engine_BenchRunSpec_games
+  commentId: F:ExecMagica.Engine.BenchRunSpec.games
+  fullName: ExecMagica.Engine.BenchRunSpec.games
+  nameWithType: BenchRunSpec.games
+- uid: ExecMagica.Engine.BenchRunSpec.gamesPerCell
+  name: gamesPerCell
+  href: api/ExecMagica.Engine.BenchRunSpec.html#ExecMagica_Engine_BenchRunSpec_gamesPerCell
+  commentId: F:ExecMagica.Engine.BenchRunSpec.gamesPerCell
+  fullName: ExecMagica.Engine.BenchRunSpec.gamesPerCell
+  nameWithType: BenchRunSpec.gamesPerCell
+- uid: ExecMagica.Engine.BenchRunSpec.gamesPerFile
+  name: gamesPerFile
+  href: api/ExecMagica.Engine.BenchRunSpec.html#ExecMagica_Engine_BenchRunSpec_gamesPerFile
+  commentId: F:ExecMagica.Engine.BenchRunSpec.gamesPerFile
+  fullName: ExecMagica.Engine.BenchRunSpec.gamesPerFile
+  nameWithType: BenchRunSpec.gamesPerFile
+- uid: ExecMagica.Engine.BenchRunSpec.generation
+  name: generation
+  href: api/ExecMagica.Engine.BenchRunSpec.html#ExecMagica_Engine_BenchRunSpec_generation
+  commentId: F:ExecMagica.Engine.BenchRunSpec.generation
+  fullName: ExecMagica.Engine.BenchRunSpec.generation
+  nameWithType: BenchRunSpec.generation
+- uid: ExecMagica.Engine.BenchRunSpec.iterations
+  name: iterations
+  href: api/ExecMagica.Engine.BenchRunSpec.html#ExecMagica_Engine_BenchRunSpec_iterations
+  commentId: F:ExecMagica.Engine.BenchRunSpec.iterations
+  fullName: ExecMagica.Engine.BenchRunSpec.iterations
+  nameWithType: BenchRunSpec.iterations
+- uid: ExecMagica.Engine.BenchRunSpec.leafRolloutMix
+  name: leafRolloutMix
+  href: api/ExecMagica.Engine.BenchRunSpec.html#ExecMagica_Engine_BenchRunSpec_leafRolloutMix
+  commentId: F:ExecMagica.Engine.BenchRunSpec.leafRolloutMix
+  fullName: ExecMagica.Engine.BenchRunSpec.leafRolloutMix
+  nameWithType: BenchRunSpec.leafRolloutMix
+- uid: ExecMagica.Engine.BenchRunSpec.logEvents
+  name: logEvents
+  href: api/ExecMagica.Engine.BenchRunSpec.html#ExecMagica_Engine_BenchRunSpec_logEvents
+  commentId: F:ExecMagica.Engine.BenchRunSpec.logEvents
+  fullName: ExecMagica.Engine.BenchRunSpec.logEvents
+  nameWithType: BenchRunSpec.logEvents
+- uid: ExecMagica.Engine.BenchRunSpec.maxActions
+  name: maxActions
+  href: api/ExecMagica.Engine.BenchRunSpec.html#ExecMagica_Engine_BenchRunSpec_maxActions
+  commentId: F:ExecMagica.Engine.BenchRunSpec.maxActions
+  fullName: ExecMagica.Engine.BenchRunSpec.maxActions
+  nameWithType: BenchRunSpec.maxActions
+- uid: ExecMagica.Engine.BenchRunSpec.maxRolloutActions
+  name: maxRolloutActions
+  href: api/ExecMagica.Engine.BenchRunSpec.html#ExecMagica_Engine_BenchRunSpec_maxRolloutActions
+  commentId: F:ExecMagica.Engine.BenchRunSpec.maxRolloutActions
+  fullName: ExecMagica.Engine.BenchRunSpec.maxRolloutActions
+  nameWithType: BenchRunSpec.maxRolloutActions
+- uid: ExecMagica.Engine.BenchRunSpec.mode
+  name: mode
+  href: api/ExecMagica.Engine.BenchRunSpec.html#ExecMagica_Engine_BenchRunSpec_mode
+  commentId: F:ExecMagica.Engine.BenchRunSpec.mode
+  fullName: ExecMagica.Engine.BenchRunSpec.mode
+  nameWithType: BenchRunSpec.mode
+- uid: ExecMagica.Engine.BenchRunSpec.networkResource
+  name: networkResource
+  href: api/ExecMagica.Engine.BenchRunSpec.html#ExecMagica_Engine_BenchRunSpec_networkResource
+  commentId: F:ExecMagica.Engine.BenchRunSpec.networkResource
+  fullName: ExecMagica.Engine.BenchRunSpec.networkResource
+  nameWithType: BenchRunSpec.networkResource
+- uid: ExecMagica.Engine.BenchRunSpec.oneFilePerSession
+  name: oneFilePerSession
+  href: api/ExecMagica.Engine.BenchRunSpec.html#ExecMagica_Engine_BenchRunSpec_oneFilePerSession
+  commentId: F:ExecMagica.Engine.BenchRunSpec.oneFilePerSession
+  fullName: ExecMagica.Engine.BenchRunSpec.oneFilePerSession
+  nameWithType: BenchRunSpec.oneFilePerSession
+- uid: ExecMagica.Engine.BenchRunSpec.opponent
+  name: opponent
+  href: api/ExecMagica.Engine.BenchRunSpec.html#ExecMagica_Engine_BenchRunSpec_opponent
+  commentId: F:ExecMagica.Engine.BenchRunSpec.opponent
+  fullName: ExecMagica.Engine.BenchRunSpec.opponent
+  nameWithType: BenchRunSpec.opponent
+- uid: ExecMagica.Engine.BenchRunSpec.outDir
+  name: outDir
+  href: api/ExecMagica.Engine.BenchRunSpec.html#ExecMagica_Engine_BenchRunSpec_outDir
+  commentId: F:ExecMagica.Engine.BenchRunSpec.outDir
+  fullName: ExecMagica.Engine.BenchRunSpec.outDir
+  nameWithType: BenchRunSpec.outDir
+- uid: ExecMagica.Engine.BenchRunSpec.outputRoot
+  name: outputRoot
+  href: api/ExecMagica.Engine.BenchRunSpec.html#ExecMagica_Engine_BenchRunSpec_outputRoot
+  commentId: F:ExecMagica.Engine.BenchRunSpec.outputRoot
+  fullName: ExecMagica.Engine.BenchRunSpec.outputRoot
+  nameWithType: BenchRunSpec.outputRoot
+- uid: ExecMagica.Engine.BenchRunSpec.overwrite
+  name: overwrite
+  href: api/ExecMagica.Engine.BenchRunSpec.html#ExecMagica_Engine_BenchRunSpec_overwrite
+  commentId: F:ExecMagica.Engine.BenchRunSpec.overwrite
+  fullName: ExecMagica.Engine.BenchRunSpec.overwrite
+  nameWithType: BenchRunSpec.overwrite
+- uid: ExecMagica.Engine.BenchRunSpec.parallelGames
+  name: parallelGames
+  href: api/ExecMagica.Engine.BenchRunSpec.html#ExecMagica_Engine_BenchRunSpec_parallelGames
+  commentId: F:ExecMagica.Engine.BenchRunSpec.parallelGames
+  fullName: ExecMagica.Engine.BenchRunSpec.parallelGames
+  nameWithType: BenchRunSpec.parallelGames
+- uid: ExecMagica.Engine.BenchRunSpec.presetFraction
+  name: presetFraction
+  href: api/ExecMagica.Engine.BenchRunSpec.html#ExecMagica_Engine_BenchRunSpec_presetFraction
+  commentId: F:ExecMagica.Engine.BenchRunSpec.presetFraction
+  fullName: ExecMagica.Engine.BenchRunSpec.presetFraction
+  nameWithType: BenchRunSpec.presetFraction
+- uid: ExecMagica.Engine.BenchRunSpec.puctC
+  name: puctC
+  href: api/ExecMagica.Engine.BenchRunSpec.html#ExecMagica_Engine_BenchRunSpec_puctC
+  commentId: F:ExecMagica.Engine.BenchRunSpec.puctC
+  fullName: ExecMagica.Engine.BenchRunSpec.puctC
+  nameWithType: BenchRunSpec.puctC
+- uid: ExecMagica.Engine.BenchRunSpec.resourcesRoot
+  name: resourcesRoot
+  href: api/ExecMagica.Engine.BenchRunSpec.html#ExecMagica_Engine_BenchRunSpec_resourcesRoot
+  commentId: F:ExecMagica.Engine.BenchRunSpec.resourcesRoot
+  fullName: ExecMagica.Engine.BenchRunSpec.resourcesRoot
+  nameWithType: BenchRunSpec.resourcesRoot
+- uid: ExecMagica.Engine.BenchRunSpec.rollout
+  name: rollout
+  href: api/ExecMagica.Engine.BenchRunSpec.html#ExecMagica_Engine_BenchRunSpec_rollout
+  commentId: F:ExecMagica.Engine.BenchRunSpec.rollout
+  fullName: ExecMagica.Engine.BenchRunSpec.rollout
+  nameWithType: BenchRunSpec.rollout
+- uid: ExecMagica.Engine.BenchRunSpec.runTag
+  name: runTag
+  href: api/ExecMagica.Engine.BenchRunSpec.html#ExecMagica_Engine_BenchRunSpec_runTag
+  commentId: F:ExecMagica.Engine.BenchRunSpec.runTag
+  fullName: ExecMagica.Engine.BenchRunSpec.runTag
+  nameWithType: BenchRunSpec.runTag
+- uid: ExecMagica.Engine.BenchRunSpec.timeBudgetsMs
+  name: timeBudgetsMs
+  href: api/ExecMagica.Engine.BenchRunSpec.html#ExecMagica_Engine_BenchRunSpec_timeBudgetsMs
+  commentId: F:ExecMagica.Engine.BenchRunSpec.timeBudgetsMs
+  fullName: ExecMagica.Engine.BenchRunSpec.timeBudgetsMs
+  nameWithType: BenchRunSpec.timeBudgetsMs
 - uid: ExecMagica.Engine.Card
   name: Card
   href: api/ExecMagica.Engine.Card.html
@@ -3663,6 +4108,19 @@ references:
   isSpec: "True"
   fullName: ExecMagica.Engine.GreedyOpponentModelDefinition.CreatePolicy
   nameWithType: GreedyOpponentModelDefinition.CreatePolicy
+- uid: ExecMagica.Engine.GreedyOpponentModelDefinition.ToAgentSpec
+  name: ToAgentSpec()
+  href: api/ExecMagica.Engine.GreedyOpponentModelDefinition.html#ExecMagica_Engine_GreedyOpponentModelDefinition_ToAgentSpec
+  commentId: M:ExecMagica.Engine.GreedyOpponentModelDefinition.ToAgentSpec
+  fullName: ExecMagica.Engine.GreedyOpponentModelDefinition.ToAgentSpec()
+  nameWithType: GreedyOpponentModelDefinition.ToAgentSpec()
+- uid: ExecMagica.Engine.GreedyOpponentModelDefinition.ToAgentSpec*
+  name: ToAgentSpec
+  href: api/ExecMagica.Engine.GreedyOpponentModelDefinition.html#ExecMagica_Engine_GreedyOpponentModelDefinition_ToAgentSpec_
+  commentId: Overload:ExecMagica.Engine.GreedyOpponentModelDefinition.ToAgentSpec
+  isSpec: "True"
+  fullName: ExecMagica.Engine.GreedyOpponentModelDefinition.ToAgentSpec
+  nameWithType: GreedyOpponentModelDefinition.ToAgentSpec
 - uid: ExecMagica.Engine.IGameActionPolicy
   name: IGameActionPolicy
   href: api/ExecMagica.Engine.IGameActionPolicy.html
@@ -3845,6 +4303,59 @@ references:
   isSpec: "True"
   fullName: ExecMagica.Engine.MctsActionPolicy.ChooseAction
   nameWithType: MctsActionPolicy.ChooseAction
+- uid: ExecMagica.Engine.MctsActionPolicy.Decide(ExecMagica.Engine.GameState,System.Collections.Generic.List{ExecMagica.Engine.GameAction},ExecMagica.Engine.PlayerSide)
+  name: Decide(GameState, List<GameAction>, PlayerSide)
+  href: api/ExecMagica.Engine.MctsActionPolicy.html#ExecMagica_Engine_MctsActionPolicy_Decide_ExecMagica_Engine_GameState_System_Collections_Generic_List_ExecMagica_Engine_GameAction__ExecMagica_Engine_PlayerSide_
+  commentId: M:ExecMagica.Engine.MctsActionPolicy.Decide(ExecMagica.Engine.GameState,System.Collections.Generic.List{ExecMagica.Engine.GameAction},ExecMagica.Engine.PlayerSide)
+  name.vb: Decide(GameState, List(Of GameAction), PlayerSide)
+  fullName: ExecMagica.Engine.MctsActionPolicy.Decide(ExecMagica.Engine.GameState, System.Collections.Generic.List<ExecMagica.Engine.GameAction>, ExecMagica.Engine.PlayerSide)
+  fullName.vb: ExecMagica.Engine.MctsActionPolicy.Decide(ExecMagica.Engine.GameState, System.Collections.Generic.List(Of ExecMagica.Engine.GameAction), ExecMagica.Engine.PlayerSide)
+  nameWithType: MctsActionPolicy.Decide(GameState, List<GameAction>, PlayerSide)
+  nameWithType.vb: MctsActionPolicy.Decide(GameState, List(Of GameAction), PlayerSide)
+- uid: ExecMagica.Engine.MctsActionPolicy.Decide*
+  name: Decide
+  href: api/ExecMagica.Engine.MctsActionPolicy.html#ExecMagica_Engine_MctsActionPolicy_Decide_
+  commentId: Overload:ExecMagica.Engine.MctsActionPolicy.Decide
+  isSpec: "True"
+  fullName: ExecMagica.Engine.MctsActionPolicy.Decide
+  nameWithType: MctsActionPolicy.Decide
+- uid: ExecMagica.Engine.MctsActionPolicy.DiagIterNeural
+  name: DiagIterNeural
+  href: api/ExecMagica.Engine.MctsActionPolicy.html#ExecMagica_Engine_MctsActionPolicy_DiagIterNeural
+  commentId: F:ExecMagica.Engine.MctsActionPolicy.DiagIterNeural
+  fullName: ExecMagica.Engine.MctsActionPolicy.DiagIterNeural
+  nameWithType: MctsActionPolicy.DiagIterNeural
+- uid: ExecMagica.Engine.MctsActionPolicy.DiagIterPlain
+  name: DiagIterPlain
+  href: api/ExecMagica.Engine.MctsActionPolicy.html#ExecMagica_Engine_MctsActionPolicy_DiagIterPlain
+  commentId: F:ExecMagica.Engine.MctsActionPolicy.DiagIterPlain
+  fullName: ExecMagica.Engine.MctsActionPolicy.DiagIterPlain
+  nameWithType: MctsActionPolicy.DiagIterPlain
+- uid: ExecMagica.Engine.MctsActionPolicy.DiagMovesNeural
+  name: DiagMovesNeural
+  href: api/ExecMagica.Engine.MctsActionPolicy.html#ExecMagica_Engine_MctsActionPolicy_DiagMovesNeural
+  commentId: F:ExecMagica.Engine.MctsActionPolicy.DiagMovesNeural
+  fullName: ExecMagica.Engine.MctsActionPolicy.DiagMovesNeural
+  nameWithType: MctsActionPolicy.DiagMovesNeural
+- uid: ExecMagica.Engine.MctsActionPolicy.DiagMovesPlain
+  name: DiagMovesPlain
+  href: api/ExecMagica.Engine.MctsActionPolicy.html#ExecMagica_Engine_MctsActionPolicy_DiagMovesPlain
+  commentId: F:ExecMagica.Engine.MctsActionPolicy.DiagMovesPlain
+  fullName: ExecMagica.Engine.MctsActionPolicy.DiagMovesPlain
+  nameWithType: MctsActionPolicy.DiagMovesPlain
+- uid: ExecMagica.Engine.MctsActionPolicy.ResetDiagnostics
+  name: ResetDiagnostics()
+  href: api/ExecMagica.Engine.MctsActionPolicy.html#ExecMagica_Engine_MctsActionPolicy_ResetDiagnostics
+  commentId: M:ExecMagica.Engine.MctsActionPolicy.ResetDiagnostics
+  fullName: ExecMagica.Engine.MctsActionPolicy.ResetDiagnostics()
+  nameWithType: MctsActionPolicy.ResetDiagnostics()
+- uid: ExecMagica.Engine.MctsActionPolicy.ResetDiagnostics*
+  name: ResetDiagnostics
+  href: api/ExecMagica.Engine.MctsActionPolicy.html#ExecMagica_Engine_MctsActionPolicy_ResetDiagnostics_
+  commentId: Overload:ExecMagica.Engine.MctsActionPolicy.ResetDiagnostics
+  isSpec: "True"
+  fullName: ExecMagica.Engine.MctsActionPolicy.ResetDiagnostics
+  nameWithType: MctsActionPolicy.ResetDiagnostics
 - uid: ExecMagica.Engine.MctsConfig
   name: MctsConfig
   href: api/ExecMagica.Engine.MctsConfig.html
@@ -3923,18 +4434,36 @@ references:
   commentId: F:ExecMagica.Engine.MctsConfig.KnowsOpponentDeck
   fullName: ExecMagica.Engine.MctsConfig.KnowsOpponentDeck
   nameWithType: MctsConfig.KnowsOpponentDeck
+- uid: ExecMagica.Engine.MctsConfig.LeafRolloutMix
+  name: LeafRolloutMix
+  href: api/ExecMagica.Engine.MctsConfig.html#ExecMagica_Engine_MctsConfig_LeafRolloutMix
+  commentId: F:ExecMagica.Engine.MctsConfig.LeafRolloutMix
+  fullName: ExecMagica.Engine.MctsConfig.LeafRolloutMix
+  nameWithType: MctsConfig.LeafRolloutMix
 - uid: ExecMagica.Engine.MctsConfig.MaxRolloutActions
   name: MaxRolloutActions
   href: api/ExecMagica.Engine.MctsConfig.html#ExecMagica_Engine_MctsConfig_MaxRolloutActions
   commentId: F:ExecMagica.Engine.MctsConfig.MaxRolloutActions
   fullName: ExecMagica.Engine.MctsConfig.MaxRolloutActions
   nameWithType: MctsConfig.MaxRolloutActions
+- uid: ExecMagica.Engine.MctsConfig.Network
+  name: Network
+  href: api/ExecMagica.Engine.MctsConfig.html#ExecMagica_Engine_MctsConfig_Network
+  commentId: F:ExecMagica.Engine.MctsConfig.Network
+  fullName: ExecMagica.Engine.MctsConfig.Network
+  nameWithType: MctsConfig.Network
 - uid: ExecMagica.Engine.MctsConfig.Parallelize
   name: Parallelize
   href: api/ExecMagica.Engine.MctsConfig.html#ExecMagica_Engine_MctsConfig_Parallelize
   commentId: F:ExecMagica.Engine.MctsConfig.Parallelize
   fullName: ExecMagica.Engine.MctsConfig.Parallelize
   nameWithType: MctsConfig.Parallelize
+- uid: ExecMagica.Engine.MctsConfig.PuctC
+  name: PuctC
+  href: api/ExecMagica.Engine.MctsConfig.html#ExecMagica_Engine_MctsConfig_PuctC
+  commentId: F:ExecMagica.Engine.MctsConfig.PuctC
+  fullName: ExecMagica.Engine.MctsConfig.PuctC
+  nameWithType: MctsConfig.PuctC
 - uid: ExecMagica.Engine.MctsConfig.Rollout
   name: MctsConfig.Rollout
   href: api/ExecMagica.Engine.MctsConfig.Rollout.html
@@ -4012,6 +4541,43 @@ references:
   isSpec: "True"
   fullName: ExecMagica.Engine.MctsOpponentModelDefinition.CreatePolicy
   nameWithType: MctsOpponentModelDefinition.CreatePolicy
+- uid: ExecMagica.Engine.MctsOpponentModelDefinition.ToAgentSpec
+  name: ToAgentSpec()
+  href: api/ExecMagica.Engine.MctsOpponentModelDefinition.html#ExecMagica_Engine_MctsOpponentModelDefinition_ToAgentSpec
+  commentId: M:ExecMagica.Engine.MctsOpponentModelDefinition.ToAgentSpec
+  fullName: ExecMagica.Engine.MctsOpponentModelDefinition.ToAgentSpec()
+  nameWithType: MctsOpponentModelDefinition.ToAgentSpec()
+- uid: ExecMagica.Engine.MctsOpponentModelDefinition.ToAgentSpec*
+  name: ToAgentSpec
+  href: api/ExecMagica.Engine.MctsOpponentModelDefinition.html#ExecMagica_Engine_MctsOpponentModelDefinition_ToAgentSpec_
+  commentId: Overload:ExecMagica.Engine.MctsOpponentModelDefinition.ToAgentSpec
+  isSpec: "True"
+  fullName: ExecMagica.Engine.MctsOpponentModelDefinition.ToAgentSpec
+  nameWithType: MctsOpponentModelDefinition.ToAgentSpec
+- uid: ExecMagica.Engine.MctsResult
+  name: MctsResult
+  href: api/ExecMagica.Engine.MctsResult.html
+  commentId: T:ExecMagica.Engine.MctsResult
+  fullName: ExecMagica.Engine.MctsResult
+  nameWithType: MctsResult
+- uid: ExecMagica.Engine.MctsResult.Action
+  name: Action
+  href: api/ExecMagica.Engine.MctsResult.html#ExecMagica_Engine_MctsResult_Action
+  commentId: F:ExecMagica.Engine.MctsResult.Action
+  fullName: ExecMagica.Engine.MctsResult.Action
+  nameWithType: MctsResult.Action
+- uid: ExecMagica.Engine.MctsResult.Policy
+  name: Policy
+  href: api/ExecMagica.Engine.MctsResult.html#ExecMagica_Engine_MctsResult_Policy
+  commentId: F:ExecMagica.Engine.MctsResult.Policy
+  fullName: ExecMagica.Engine.MctsResult.Policy
+  nameWithType: MctsResult.Policy
+- uid: ExecMagica.Engine.MctsResult.Value
+  name: Value
+  href: api/ExecMagica.Engine.MctsResult.html#ExecMagica_Engine_MctsResult_Value
+  commentId: F:ExecMagica.Engine.MctsResult.Value
+  fullName: ExecMagica.Engine.MctsResult.Value
+  nameWithType: MctsResult.Value
 - uid: ExecMagica.Engine.ModelInfo
   name: ModelInfo
   href: api/ExecMagica.Engine.ModelInfo.html
@@ -4030,6 +4596,213 @@ references:
   commentId: F:ExecMagica.Engine.ModelInfo.Params
   fullName: ExecMagica.Engine.ModelInfo.Params
   nameWithType: ModelInfo.Params
+- uid: ExecMagica.Engine.NeuralActionPolicy
+  name: NeuralActionPolicy
+  href: api/ExecMagica.Engine.NeuralActionPolicy.html
+  commentId: T:ExecMagica.Engine.NeuralActionPolicy
+  fullName: ExecMagica.Engine.NeuralActionPolicy
+  nameWithType: NeuralActionPolicy
+- uid: ExecMagica.Engine.NeuralActionPolicy.#ctor(ExecMagica.Engine.NeuralNet,System.Int32,System.Boolean)
+  name: NeuralActionPolicy(NeuralNet, int, bool)
+  href: api/ExecMagica.Engine.NeuralActionPolicy.html#ExecMagica_Engine_NeuralActionPolicy__ctor_ExecMagica_Engine_NeuralNet_System_Int32_System_Boolean_
+  commentId: M:ExecMagica.Engine.NeuralActionPolicy.#ctor(ExecMagica.Engine.NeuralNet,System.Int32,System.Boolean)
+  name.vb: New(NeuralNet, Integer, Boolean)
+  fullName: ExecMagica.Engine.NeuralActionPolicy.NeuralActionPolicy(ExecMagica.Engine.NeuralNet, int, bool)
+  fullName.vb: ExecMagica.Engine.NeuralActionPolicy.New(ExecMagica.Engine.NeuralNet, Integer, Boolean)
+  nameWithType: NeuralActionPolicy.NeuralActionPolicy(NeuralNet, int, bool)
+  nameWithType.vb: NeuralActionPolicy.New(NeuralNet, Integer, Boolean)
+- uid: ExecMagica.Engine.NeuralActionPolicy.#ctor*
+  name: NeuralActionPolicy
+  href: api/ExecMagica.Engine.NeuralActionPolicy.html#ExecMagica_Engine_NeuralActionPolicy__ctor_
+  commentId: Overload:ExecMagica.Engine.NeuralActionPolicy.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: ExecMagica.Engine.NeuralActionPolicy.NeuralActionPolicy
+  fullName.vb: ExecMagica.Engine.NeuralActionPolicy.New
+  nameWithType: NeuralActionPolicy.NeuralActionPolicy
+  nameWithType.vb: NeuralActionPolicy.New
+- uid: ExecMagica.Engine.NeuralActionPolicy.ChooseAction(ExecMagica.Engine.GameState,System.Collections.Generic.List{ExecMagica.Engine.GameAction},ExecMagica.Engine.PlayerSide)
+  name: ChooseAction(GameState, List<GameAction>, PlayerSide)
+  href: api/ExecMagica.Engine.NeuralActionPolicy.html#ExecMagica_Engine_NeuralActionPolicy_ChooseAction_ExecMagica_Engine_GameState_System_Collections_Generic_List_ExecMagica_Engine_GameAction__ExecMagica_Engine_PlayerSide_
+  commentId: M:ExecMagica.Engine.NeuralActionPolicy.ChooseAction(ExecMagica.Engine.GameState,System.Collections.Generic.List{ExecMagica.Engine.GameAction},ExecMagica.Engine.PlayerSide)
+  name.vb: ChooseAction(GameState, List(Of GameAction), PlayerSide)
+  fullName: ExecMagica.Engine.NeuralActionPolicy.ChooseAction(ExecMagica.Engine.GameState, System.Collections.Generic.List<ExecMagica.Engine.GameAction>, ExecMagica.Engine.PlayerSide)
+  fullName.vb: ExecMagica.Engine.NeuralActionPolicy.ChooseAction(ExecMagica.Engine.GameState, System.Collections.Generic.List(Of ExecMagica.Engine.GameAction), ExecMagica.Engine.PlayerSide)
+  nameWithType: NeuralActionPolicy.ChooseAction(GameState, List<GameAction>, PlayerSide)
+  nameWithType.vb: NeuralActionPolicy.ChooseAction(GameState, List(Of GameAction), PlayerSide)
+- uid: ExecMagica.Engine.NeuralActionPolicy.ChooseAction*
+  name: ChooseAction
+  href: api/ExecMagica.Engine.NeuralActionPolicy.html#ExecMagica_Engine_NeuralActionPolicy_ChooseAction_
+  commentId: Overload:ExecMagica.Engine.NeuralActionPolicy.ChooseAction
+  isSpec: "True"
+  fullName: ExecMagica.Engine.NeuralActionPolicy.ChooseAction
+  nameWithType: NeuralActionPolicy.ChooseAction
+- uid: ExecMagica.Engine.NeuralNet
+  name: NeuralNet
+  href: api/ExecMagica.Engine.NeuralNet.html
+  commentId: T:ExecMagica.Engine.NeuralNet
+  fullName: ExecMagica.Engine.NeuralNet
+  nameWithType: NeuralNet
+- uid: ExecMagica.Engine.NeuralNet.#ctor(System.Byte[])
+  name: NeuralNet(byte[])
+  href: api/ExecMagica.Engine.NeuralNet.html#ExecMagica_Engine_NeuralNet__ctor_System_Byte___
+  commentId: M:ExecMagica.Engine.NeuralNet.#ctor(System.Byte[])
+  name.vb: New(Byte())
+  fullName: ExecMagica.Engine.NeuralNet.NeuralNet(byte[])
+  fullName.vb: ExecMagica.Engine.NeuralNet.New(Byte())
+  nameWithType: NeuralNet.NeuralNet(byte[])
+  nameWithType.vb: NeuralNet.New(Byte())
+- uid: ExecMagica.Engine.NeuralNet.#ctor*
+  name: NeuralNet
+  href: api/ExecMagica.Engine.NeuralNet.html#ExecMagica_Engine_NeuralNet__ctor_
+  commentId: Overload:ExecMagica.Engine.NeuralNet.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: ExecMagica.Engine.NeuralNet.NeuralNet
+  fullName.vb: ExecMagica.Engine.NeuralNet.New
+  nameWithType: NeuralNet.NeuralNet
+  nameWithType.vb: NeuralNet.New
+- uid: ExecMagica.Engine.NeuralNet.Actions
+  name: Actions
+  href: api/ExecMagica.Engine.NeuralNet.html#ExecMagica_Engine_NeuralNet_Actions
+  commentId: P:ExecMagica.Engine.NeuralNet.Actions
+  fullName: ExecMagica.Engine.NeuralNet.Actions
+  nameWithType: NeuralNet.Actions
+- uid: ExecMagica.Engine.NeuralNet.Actions*
+  name: Actions
+  href: api/ExecMagica.Engine.NeuralNet.html#ExecMagica_Engine_NeuralNet_Actions_
+  commentId: Overload:ExecMagica.Engine.NeuralNet.Actions
+  isSpec: "True"
+  fullName: ExecMagica.Engine.NeuralNet.Actions
+  nameWithType: NeuralNet.Actions
+- uid: ExecMagica.Engine.NeuralNet.Features
+  name: Features
+  href: api/ExecMagica.Engine.NeuralNet.html#ExecMagica_Engine_NeuralNet_Features
+  commentId: P:ExecMagica.Engine.NeuralNet.Features
+  fullName: ExecMagica.Engine.NeuralNet.Features
+  nameWithType: NeuralNet.Features
+- uid: ExecMagica.Engine.NeuralNet.Features*
+  name: Features
+  href: api/ExecMagica.Engine.NeuralNet.html#ExecMagica_Engine_NeuralNet_Features_
+  commentId: Overload:ExecMagica.Engine.NeuralNet.Features
+  isSpec: "True"
+  fullName: ExecMagica.Engine.NeuralNet.Features
+  nameWithType: NeuralNet.Features
+- uid: ExecMagica.Engine.NeuralNet.Forward(System.Single[],System.Single[],System.Single@)
+  name: Forward(float[], float[], out float)
+  href: api/ExecMagica.Engine.NeuralNet.html#ExecMagica_Engine_NeuralNet_Forward_System_Single___System_Single___System_Single__
+  commentId: M:ExecMagica.Engine.NeuralNet.Forward(System.Single[],System.Single[],System.Single@)
+  name.vb: Forward(Single(), Single(), Single)
+  fullName: ExecMagica.Engine.NeuralNet.Forward(float[], float[], out float)
+  fullName.vb: ExecMagica.Engine.NeuralNet.Forward(Single(), Single(), Single)
+  nameWithType: NeuralNet.Forward(float[], float[], out float)
+  nameWithType.vb: NeuralNet.Forward(Single(), Single(), Single)
+- uid: ExecMagica.Engine.NeuralNet.Forward*
+  name: Forward
+  href: api/ExecMagica.Engine.NeuralNet.html#ExecMagica_Engine_NeuralNet_Forward_
+  commentId: Overload:ExecMagica.Engine.NeuralNet.Forward
+  isSpec: "True"
+  fullName: ExecMagica.Engine.NeuralNet.Forward
+  nameWithType: NeuralNet.Forward
+- uid: ExecMagica.Engine.NeuralNet.ForwardLegal(System.Single[],System.Int32[],System.Int32,System.Single[],System.Single@)
+  name: ForwardLegal(float[], int[], int, float[], out float)
+  href: api/ExecMagica.Engine.NeuralNet.html#ExecMagica_Engine_NeuralNet_ForwardLegal_System_Single___System_Int32___System_Int32_System_Single___System_Single__
+  commentId: M:ExecMagica.Engine.NeuralNet.ForwardLegal(System.Single[],System.Int32[],System.Int32,System.Single[],System.Single@)
+  name.vb: ForwardLegal(Single(), Integer(), Integer, Single(), Single)
+  fullName: ExecMagica.Engine.NeuralNet.ForwardLegal(float[], int[], int, float[], out float)
+  fullName.vb: ExecMagica.Engine.NeuralNet.ForwardLegal(Single(), Integer(), Integer, Single(), Single)
+  nameWithType: NeuralNet.ForwardLegal(float[], int[], int, float[], out float)
+  nameWithType.vb: NeuralNet.ForwardLegal(Single(), Integer(), Integer, Single(), Single)
+- uid: ExecMagica.Engine.NeuralNet.ForwardLegal*
+  name: ForwardLegal
+  href: api/ExecMagica.Engine.NeuralNet.html#ExecMagica_Engine_NeuralNet_ForwardLegal_
+  commentId: Overload:ExecMagica.Engine.NeuralNet.ForwardLegal
+  isSpec: "True"
+  fullName: ExecMagica.Engine.NeuralNet.ForwardLegal
+  nameWithType: NeuralNet.ForwardLegal
+- uid: ExecMagica.Engine.NeuralNet.Hidden
+  name: Hidden
+  href: api/ExecMagica.Engine.NeuralNet.html#ExecMagica_Engine_NeuralNet_Hidden
+  commentId: P:ExecMagica.Engine.NeuralNet.Hidden
+  fullName: ExecMagica.Engine.NeuralNet.Hidden
+  nameWithType: NeuralNet.Hidden
+- uid: ExecMagica.Engine.NeuralNet.Hidden*
+  name: Hidden
+  href: api/ExecMagica.Engine.NeuralNet.html#ExecMagica_Engine_NeuralNet_Hidden_
+  commentId: Overload:ExecMagica.Engine.NeuralNet.Hidden
+  isSpec: "True"
+  fullName: ExecMagica.Engine.NeuralNet.Hidden
+  nameWithType: NeuralNet.Hidden
+- uid: ExecMagica.Engine.NeuralNetLoader
+  name: NeuralNetLoader
+  href: api/ExecMagica.Engine.NeuralNetLoader.html
+  commentId: T:ExecMagica.Engine.NeuralNetLoader
+  fullName: ExecMagica.Engine.NeuralNetLoader
+  nameWithType: NeuralNetLoader
+- uid: ExecMagica.Engine.NeuralNetLoader.Load(System.String)
+  name: Load(string)
+  href: api/ExecMagica.Engine.NeuralNetLoader.html#ExecMagica_Engine_NeuralNetLoader_Load_System_String_
+  commentId: M:ExecMagica.Engine.NeuralNetLoader.Load(System.String)
+  name.vb: Load(String)
+  fullName: ExecMagica.Engine.NeuralNetLoader.Load(string)
+  fullName.vb: ExecMagica.Engine.NeuralNetLoader.Load(String)
+  nameWithType: NeuralNetLoader.Load(string)
+  nameWithType.vb: NeuralNetLoader.Load(String)
+- uid: ExecMagica.Engine.NeuralNetLoader.Load*
+  name: Load
+  href: api/ExecMagica.Engine.NeuralNetLoader.html#ExecMagica_Engine_NeuralNetLoader_Load_
+  commentId: Overload:ExecMagica.Engine.NeuralNetLoader.Load
+  isSpec: "True"
+  fullName: ExecMagica.Engine.NeuralNetLoader.Load
+  nameWithType: NeuralNetLoader.Load
+- uid: ExecMagica.Engine.NeuralOpponentModelDefinition
+  name: NeuralOpponentModelDefinition
+  href: api/ExecMagica.Engine.NeuralOpponentModelDefinition.html
+  commentId: T:ExecMagica.Engine.NeuralOpponentModelDefinition
+  fullName: ExecMagica.Engine.NeuralOpponentModelDefinition
+  nameWithType: NeuralOpponentModelDefinition
+- uid: ExecMagica.Engine.NeuralOpponentModelDefinition.BuildModelInfo
+  name: BuildModelInfo()
+  href: api/ExecMagica.Engine.NeuralOpponentModelDefinition.html#ExecMagica_Engine_NeuralOpponentModelDefinition_BuildModelInfo
+  commentId: M:ExecMagica.Engine.NeuralOpponentModelDefinition.BuildModelInfo
+  fullName: ExecMagica.Engine.NeuralOpponentModelDefinition.BuildModelInfo()
+  nameWithType: NeuralOpponentModelDefinition.BuildModelInfo()
+- uid: ExecMagica.Engine.NeuralOpponentModelDefinition.BuildModelInfo*
+  name: BuildModelInfo
+  href: api/ExecMagica.Engine.NeuralOpponentModelDefinition.html#ExecMagica_Engine_NeuralOpponentModelDefinition_BuildModelInfo_
+  commentId: Overload:ExecMagica.Engine.NeuralOpponentModelDefinition.BuildModelInfo
+  isSpec: "True"
+  fullName: ExecMagica.Engine.NeuralOpponentModelDefinition.BuildModelInfo
+  nameWithType: NeuralOpponentModelDefinition.BuildModelInfo
+- uid: ExecMagica.Engine.NeuralOpponentModelDefinition.CreatePolicy(System.Int32)
+  name: CreatePolicy(int)
+  href: api/ExecMagica.Engine.NeuralOpponentModelDefinition.html#ExecMagica_Engine_NeuralOpponentModelDefinition_CreatePolicy_System_Int32_
+  commentId: M:ExecMagica.Engine.NeuralOpponentModelDefinition.CreatePolicy(System.Int32)
+  name.vb: CreatePolicy(Integer)
+  fullName: ExecMagica.Engine.NeuralOpponentModelDefinition.CreatePolicy(int)
+  fullName.vb: ExecMagica.Engine.NeuralOpponentModelDefinition.CreatePolicy(Integer)
+  nameWithType: NeuralOpponentModelDefinition.CreatePolicy(int)
+  nameWithType.vb: NeuralOpponentModelDefinition.CreatePolicy(Integer)
+- uid: ExecMagica.Engine.NeuralOpponentModelDefinition.CreatePolicy*
+  name: CreatePolicy
+  href: api/ExecMagica.Engine.NeuralOpponentModelDefinition.html#ExecMagica_Engine_NeuralOpponentModelDefinition_CreatePolicy_
+  commentId: Overload:ExecMagica.Engine.NeuralOpponentModelDefinition.CreatePolicy
+  isSpec: "True"
+  fullName: ExecMagica.Engine.NeuralOpponentModelDefinition.CreatePolicy
+  nameWithType: NeuralOpponentModelDefinition.CreatePolicy
+- uid: ExecMagica.Engine.NeuralOpponentModelDefinition.ToAgentSpec
+  name: ToAgentSpec()
+  href: api/ExecMagica.Engine.NeuralOpponentModelDefinition.html#ExecMagica_Engine_NeuralOpponentModelDefinition_ToAgentSpec
+  commentId: M:ExecMagica.Engine.NeuralOpponentModelDefinition.ToAgentSpec
+  fullName: ExecMagica.Engine.NeuralOpponentModelDefinition.ToAgentSpec()
+  nameWithType: NeuralOpponentModelDefinition.ToAgentSpec()
+- uid: ExecMagica.Engine.NeuralOpponentModelDefinition.ToAgentSpec*
+  name: ToAgentSpec
+  href: api/ExecMagica.Engine.NeuralOpponentModelDefinition.html#ExecMagica_Engine_NeuralOpponentModelDefinition_ToAgentSpec_
+  commentId: Overload:ExecMagica.Engine.NeuralOpponentModelDefinition.ToAgentSpec
+  isSpec: "True"
+  fullName: ExecMagica.Engine.NeuralOpponentModelDefinition.ToAgentSpec
+  nameWithType: NeuralOpponentModelDefinition.ToAgentSpec
 - uid: ExecMagica.Engine.OpponentModelCatalog
   name: OpponentModelCatalog
   href: api/ExecMagica.Engine.OpponentModelCatalog.html
@@ -4191,6 +4964,19 @@ references:
   isSpec: "True"
   fullName: ExecMagica.Engine.OpponentModelDefinition.ShowInGame
   nameWithType: OpponentModelDefinition.ShowInGame
+- uid: ExecMagica.Engine.OpponentModelDefinition.ToAgentSpec
+  name: ToAgentSpec()
+  href: api/ExecMagica.Engine.OpponentModelDefinition.html#ExecMagica_Engine_OpponentModelDefinition_ToAgentSpec
+  commentId: M:ExecMagica.Engine.OpponentModelDefinition.ToAgentSpec
+  fullName: ExecMagica.Engine.OpponentModelDefinition.ToAgentSpec()
+  nameWithType: OpponentModelDefinition.ToAgentSpec()
+- uid: ExecMagica.Engine.OpponentModelDefinition.ToAgentSpec*
+  name: ToAgentSpec
+  href: api/ExecMagica.Engine.OpponentModelDefinition.html#ExecMagica_Engine_OpponentModelDefinition_ToAgentSpec_
+  commentId: Overload:ExecMagica.Engine.OpponentModelDefinition.ToAgentSpec
+  isSpec: "True"
+  fullName: ExecMagica.Engine.OpponentModelDefinition.ToAgentSpec
+  nameWithType: OpponentModelDefinition.ToAgentSpec
 - uid: ExecMagica.Engine.OutcomeRecord
   name: OutcomeRecord
   href: api/ExecMagica.Engine.OutcomeRecord.html
@@ -4590,6 +5376,19 @@ references:
   isSpec: "True"
   fullName: ExecMagica.Engine.RandomOpponentModelDefinition.CreatePolicy
   nameWithType: RandomOpponentModelDefinition.CreatePolicy
+- uid: ExecMagica.Engine.RandomOpponentModelDefinition.ToAgentSpec
+  name: ToAgentSpec()
+  href: api/ExecMagica.Engine.RandomOpponentModelDefinition.html#ExecMagica_Engine_RandomOpponentModelDefinition_ToAgentSpec
+  commentId: M:ExecMagica.Engine.RandomOpponentModelDefinition.ToAgentSpec
+  fullName: ExecMagica.Engine.RandomOpponentModelDefinition.ToAgentSpec()
+  nameWithType: RandomOpponentModelDefinition.ToAgentSpec()
+- uid: ExecMagica.Engine.RandomOpponentModelDefinition.ToAgentSpec*
+  name: ToAgentSpec
+  href: api/ExecMagica.Engine.RandomOpponentModelDefinition.html#ExecMagica_Engine_RandomOpponentModelDefinition_ToAgentSpec_
+  commentId: Overload:ExecMagica.Engine.RandomOpponentModelDefinition.ToAgentSpec
+  isSpec: "True"
+  fullName: ExecMagica.Engine.RandomOpponentModelDefinition.ToAgentSpec
+  nameWithType: RandomOpponentModelDefinition.ToAgentSpec
 - uid: ExecMagica.Engine.RunIndexEntry
   name: RunIndexEntry
   href: api/ExecMagica.Engine.RunIndexEntry.html
@@ -4849,6 +5648,108 @@ references:
   commentId: F:ExecMagica.Engine.SavedDeckEntry.Count
   fullName: ExecMagica.Engine.SavedDeckEntry.Count
   nameWithType: SavedDeckEntry.Count
+- uid: ExecMagica.Engine.SelfPlayDataGenerator
+  name: SelfPlayDataGenerator
+  href: api/ExecMagica.Engine.SelfPlayDataGenerator.html
+  commentId: T:ExecMagica.Engine.SelfPlayDataGenerator
+  fullName: ExecMagica.Engine.SelfPlayDataGenerator
+  nameWithType: SelfPlayDataGenerator
+- uid: ExecMagica.Engine.SelfPlayDataGenerator.FeatureVersion
+  name: FeatureVersion
+  href: api/ExecMagica.Engine.SelfPlayDataGenerator.html#ExecMagica_Engine_SelfPlayDataGenerator_FeatureVersion
+  commentId: F:ExecMagica.Engine.SelfPlayDataGenerator.FeatureVersion
+  fullName: ExecMagica.Engine.SelfPlayDataGenerator.FeatureVersion
+  nameWithType: SelfPlayDataGenerator.FeatureVersion
+- uid: ExecMagica.Engine.SelfPlayDataGenerator.Generate(System.Func{System.Int32,ExecMagica.Engine.AllCards},System.Func{System.Int32,ExecMagica.Engine.AllCards},ExecMagica.Engine.AllCards,System.Func{System.Int32,ExecMagica.Engine.MctsActionPolicy},System.Func{System.Int32,ExecMagica.Engine.MctsActionPolicy},System.Int32,System.Int32,System.Int32,System.String,System.String,System.Func{System.Int32,System.Int32,System.Boolean})
+  name: Generate(Func<int, AllCards>, Func<int, AllCards>, AllCards, Func<int, MctsActionPolicy>, Func<int, MctsActionPolicy>, int, int, int, string, string, Func<int, int, bool>)
+  href: api/ExecMagica.Engine.SelfPlayDataGenerator.html#ExecMagica_Engine_SelfPlayDataGenerator_Generate_System_Func_System_Int32_ExecMagica_Engine_AllCards__System_Func_System_Int32_ExecMagica_Engine_AllCards__ExecMagica_Engine_AllCards_System_Func_System_Int32_ExecMagica_Engine_MctsActionPolicy__System_Func_System_Int32_ExecMagica_Engine_MctsActionPolicy__System_Int32_System_Int32_System_Int32_System_String_System_String_System_Func_System_Int32_System_Int32_System_Boolean__
+  commentId: M:ExecMagica.Engine.SelfPlayDataGenerator.Generate(System.Func{System.Int32,ExecMagica.Engine.AllCards},System.Func{System.Int32,ExecMagica.Engine.AllCards},ExecMagica.Engine.AllCards,System.Func{System.Int32,ExecMagica.Engine.MctsActionPolicy},System.Func{System.Int32,ExecMagica.Engine.MctsActionPolicy},System.Int32,System.Int32,System.Int32,System.String,System.String,System.Func{System.Int32,System.Int32,System.Boolean})
+  name.vb: Generate(Func(Of Integer, AllCards), Func(Of Integer, AllCards), AllCards, Func(Of Integer, MctsActionPolicy), Func(Of Integer, MctsActionPolicy), Integer, Integer, Integer, String, String, Func(Of Integer, Integer, Boolean))
+  fullName: ExecMagica.Engine.SelfPlayDataGenerator.Generate(System.Func<int, ExecMagica.Engine.AllCards>, System.Func<int, ExecMagica.Engine.AllCards>, ExecMagica.Engine.AllCards, System.Func<int, ExecMagica.Engine.MctsActionPolicy>, System.Func<int, ExecMagica.Engine.MctsActionPolicy>, int, int, int, string, string, System.Func<int, int, bool>)
+  fullName.vb: ExecMagica.Engine.SelfPlayDataGenerator.Generate(System.Func(Of Integer, ExecMagica.Engine.AllCards), System.Func(Of Integer, ExecMagica.Engine.AllCards), ExecMagica.Engine.AllCards, System.Func(Of Integer, ExecMagica.Engine.MctsActionPolicy), System.Func(Of Integer, ExecMagica.Engine.MctsActionPolicy), Integer, Integer, Integer, String, String, System.Func(Of Integer, Integer, Boolean))
+  nameWithType: SelfPlayDataGenerator.Generate(Func<int, AllCards>, Func<int, AllCards>, AllCards, Func<int, MctsActionPolicy>, Func<int, MctsActionPolicy>, int, int, int, string, string, Func<int, int, bool>)
+  nameWithType.vb: SelfPlayDataGenerator.Generate(Func(Of Integer, AllCards), Func(Of Integer, AllCards), AllCards, Func(Of Integer, MctsActionPolicy), Func(Of Integer, MctsActionPolicy), Integer, Integer, Integer, String, String, Func(Of Integer, Integer, Boolean))
+- uid: ExecMagica.Engine.SelfPlayDataGenerator.Generate*
+  name: Generate
+  href: api/ExecMagica.Engine.SelfPlayDataGenerator.html#ExecMagica_Engine_SelfPlayDataGenerator_Generate_
+  commentId: Overload:ExecMagica.Engine.SelfPlayDataGenerator.Generate
+  isSpec: "True"
+  fullName: ExecMagica.Engine.SelfPlayDataGenerator.Generate
+  nameWithType: SelfPlayDataGenerator.Generate
+- uid: ExecMagica.Engine.SelfPlayDataGenerator.GenerateParallelByFile(System.Func{System.Int32,ExecMagica.Engine.AllCards},System.Func{System.Int32,ExecMagica.Engine.AllCards},ExecMagica.Engine.AllCards,System.Func{System.Int32,ExecMagica.Engine.MctsActionPolicy},System.Func{System.Int32,ExecMagica.Engine.MctsActionPolicy},System.Int32,System.Int32,System.Int32,System.String,System.String,System.Int32,System.Func{System.Int32,System.Int32,System.Boolean})
+  name: GenerateParallelByFile(Func<int, AllCards>, Func<int, AllCards>, AllCards, Func<int, MctsActionPolicy>, Func<int, MctsActionPolicy>, int, int, int, string, string, int, Func<int, int, bool>)
+  href: api/ExecMagica.Engine.SelfPlayDataGenerator.html#ExecMagica_Engine_SelfPlayDataGenerator_GenerateParallelByFile_System_Func_System_Int32_ExecMagica_Engine_AllCards__System_Func_System_Int32_ExecMagica_Engine_AllCards__ExecMagica_Engine_AllCards_System_Func_System_Int32_ExecMagica_Engine_MctsActionPolicy__System_Func_System_Int32_ExecMagica_Engine_MctsActionPolicy__System_Int32_System_Int32_System_Int32_System_String_System_String_System_Int32_System_Func_System_Int32_System_Int32_System_Boolean__
+  commentId: M:ExecMagica.Engine.SelfPlayDataGenerator.GenerateParallelByFile(System.Func{System.Int32,ExecMagica.Engine.AllCards},System.Func{System.Int32,ExecMagica.Engine.AllCards},ExecMagica.Engine.AllCards,System.Func{System.Int32,ExecMagica.Engine.MctsActionPolicy},System.Func{System.Int32,ExecMagica.Engine.MctsActionPolicy},System.Int32,System.Int32,System.Int32,System.String,System.String,System.Int32,System.Func{System.Int32,System.Int32,System.Boolean})
+  name.vb: GenerateParallelByFile(Func(Of Integer, AllCards), Func(Of Integer, AllCards), AllCards, Func(Of Integer, MctsActionPolicy), Func(Of Integer, MctsActionPolicy), Integer, Integer, Integer, String, String, Integer, Func(Of Integer, Integer, Boolean))
+  fullName: ExecMagica.Engine.SelfPlayDataGenerator.GenerateParallelByFile(System.Func<int, ExecMagica.Engine.AllCards>, System.Func<int, ExecMagica.Engine.AllCards>, ExecMagica.Engine.AllCards, System.Func<int, ExecMagica.Engine.MctsActionPolicy>, System.Func<int, ExecMagica.Engine.MctsActionPolicy>, int, int, int, string, string, int, System.Func<int, int, bool>)
+  fullName.vb: ExecMagica.Engine.SelfPlayDataGenerator.GenerateParallelByFile(System.Func(Of Integer, ExecMagica.Engine.AllCards), System.Func(Of Integer, ExecMagica.Engine.AllCards), ExecMagica.Engine.AllCards, System.Func(Of Integer, ExecMagica.Engine.MctsActionPolicy), System.Func(Of Integer, ExecMagica.Engine.MctsActionPolicy), Integer, Integer, Integer, String, String, Integer, System.Func(Of Integer, Integer, Boolean))
+  nameWithType: SelfPlayDataGenerator.GenerateParallelByFile(Func<int, AllCards>, Func<int, AllCards>, AllCards, Func<int, MctsActionPolicy>, Func<int, MctsActionPolicy>, int, int, int, string, string, int, Func<int, int, bool>)
+  nameWithType.vb: SelfPlayDataGenerator.GenerateParallelByFile(Func(Of Integer, AllCards), Func(Of Integer, AllCards), AllCards, Func(Of Integer, MctsActionPolicy), Func(Of Integer, MctsActionPolicy), Integer, Integer, Integer, String, String, Integer, Func(Of Integer, Integer, Boolean))
+- uid: ExecMagica.Engine.SelfPlayDataGenerator.GenerateParallelByFile*
+  name: GenerateParallelByFile
+  href: api/ExecMagica.Engine.SelfPlayDataGenerator.html#ExecMagica_Engine_SelfPlayDataGenerator_GenerateParallelByFile_
+  commentId: Overload:ExecMagica.Engine.SelfPlayDataGenerator.GenerateParallelByFile
+  isSpec: "True"
+  fullName: ExecMagica.Engine.SelfPlayDataGenerator.GenerateParallelByFile
+  nameWithType: SelfPlayDataGenerator.GenerateParallelByFile
+- uid: ExecMagica.Engine.SelfPlayDataGenerator.RunGame(ExecMagica.Engine.GameState,ExecMagica.Engine.MctsActionPolicy,ExecMagica.Engine.MctsActionPolicy,System.Int32)
+  name: RunGame(GameState, MctsActionPolicy, MctsActionPolicy, int)
+  href: api/ExecMagica.Engine.SelfPlayDataGenerator.html#ExecMagica_Engine_SelfPlayDataGenerator_RunGame_ExecMagica_Engine_GameState_ExecMagica_Engine_MctsActionPolicy_ExecMagica_Engine_MctsActionPolicy_System_Int32_
+  commentId: M:ExecMagica.Engine.SelfPlayDataGenerator.RunGame(ExecMagica.Engine.GameState,ExecMagica.Engine.MctsActionPolicy,ExecMagica.Engine.MctsActionPolicy,System.Int32)
+  name.vb: RunGame(GameState, MctsActionPolicy, MctsActionPolicy, Integer)
+  fullName: ExecMagica.Engine.SelfPlayDataGenerator.RunGame(ExecMagica.Engine.GameState, ExecMagica.Engine.MctsActionPolicy, ExecMagica.Engine.MctsActionPolicy, int)
+  fullName.vb: ExecMagica.Engine.SelfPlayDataGenerator.RunGame(ExecMagica.Engine.GameState, ExecMagica.Engine.MctsActionPolicy, ExecMagica.Engine.MctsActionPolicy, Integer)
+  nameWithType: SelfPlayDataGenerator.RunGame(GameState, MctsActionPolicy, MctsActionPolicy, int)
+  nameWithType.vb: SelfPlayDataGenerator.RunGame(GameState, MctsActionPolicy, MctsActionPolicy, Integer)
+- uid: ExecMagica.Engine.SelfPlayDataGenerator.RunGame*
+  name: RunGame
+  href: api/ExecMagica.Engine.SelfPlayDataGenerator.html#ExecMagica_Engine_SelfPlayDataGenerator_RunGame_
+  commentId: Overload:ExecMagica.Engine.SelfPlayDataGenerator.RunGame
+  isSpec: "True"
+  fullName: ExecMagica.Engine.SelfPlayDataGenerator.RunGame
+  nameWithType: SelfPlayDataGenerator.RunGame
+- uid: ExecMagica.Engine.SelfPlayDataGenerator.Sample
+  name: SelfPlayDataGenerator.Sample
+  href: api/ExecMagica.Engine.SelfPlayDataGenerator.Sample.html
+  commentId: T:ExecMagica.Engine.SelfPlayDataGenerator.Sample
+  fullName: ExecMagica.Engine.SelfPlayDataGenerator.Sample
+  nameWithType: SelfPlayDataGenerator.Sample
+- uid: ExecMagica.Engine.SelfPlayDataGenerator.Sample.cardIds
+  name: cardIds
+  href: api/ExecMagica.Engine.SelfPlayDataGenerator.Sample.html#ExecMagica_Engine_SelfPlayDataGenerator_Sample_cardIds
+  commentId: F:ExecMagica.Engine.SelfPlayDataGenerator.Sample.cardIds
+  fullName: ExecMagica.Engine.SelfPlayDataGenerator.Sample.cardIds
+  nameWithType: SelfPlayDataGenerator.Sample.cardIds
+- uid: ExecMagica.Engine.SelfPlayDataGenerator.Sample.features
+  name: features
+  href: api/ExecMagica.Engine.SelfPlayDataGenerator.Sample.html#ExecMagica_Engine_SelfPlayDataGenerator_Sample_features
+  commentId: F:ExecMagica.Engine.SelfPlayDataGenerator.Sample.features
+  fullName: ExecMagica.Engine.SelfPlayDataGenerator.Sample.features
+  nameWithType: SelfPlayDataGenerator.Sample.features
+- uid: ExecMagica.Engine.SelfPlayDataGenerator.Sample.policy
+  name: policy
+  href: api/ExecMagica.Engine.SelfPlayDataGenerator.Sample.html#ExecMagica_Engine_SelfPlayDataGenerator_Sample_policy
+  commentId: F:ExecMagica.Engine.SelfPlayDataGenerator.Sample.policy
+  fullName: ExecMagica.Engine.SelfPlayDataGenerator.Sample.policy
+  nameWithType: SelfPlayDataGenerator.Sample.policy
+- uid: ExecMagica.Engine.SelfPlayDataGenerator.Sample.side
+  name: side
+  href: api/ExecMagica.Engine.SelfPlayDataGenerator.Sample.html#ExecMagica_Engine_SelfPlayDataGenerator_Sample_side
+  commentId: F:ExecMagica.Engine.SelfPlayDataGenerator.Sample.side
+  fullName: ExecMagica.Engine.SelfPlayDataGenerator.Sample.side
+  nameWithType: SelfPlayDataGenerator.Sample.side
+- uid: ExecMagica.Engine.SelfPlayDataGenerator.Sample.t
+  name: t
+  href: api/ExecMagica.Engine.SelfPlayDataGenerator.Sample.html#ExecMagica_Engine_SelfPlayDataGenerator_Sample_t
+  commentId: F:ExecMagica.Engine.SelfPlayDataGenerator.Sample.t
+  fullName: ExecMagica.Engine.SelfPlayDataGenerator.Sample.t
+  nameWithType: SelfPlayDataGenerator.Sample.t
+- uid: ExecMagica.Engine.SelfPlayDataGenerator.Sample.z
+  name: z
+  href: api/ExecMagica.Engine.SelfPlayDataGenerator.Sample.html#ExecMagica_Engine_SelfPlayDataGenerator_Sample_z
+  commentId: F:ExecMagica.Engine.SelfPlayDataGenerator.Sample.z
+  fullName: ExecMagica.Engine.SelfPlayDataGenerator.Sample.z
+  nameWithType: SelfPlayDataGenerator.Sample.z
 - uid: ExecMagica.Engine.SessionRecord
   name: SessionRecord
   href: api/ExecMagica.Engine.SessionRecord.html
@@ -4971,3 +5872,167 @@ references:
   isSpec: "True"
   fullName: ExecMagica.Engine.SessionWriter.WriteRun
   nameWithType: SessionWriter.WriteRun
+- uid: ExecMagica.Engine.StateEncoder
+  name: StateEncoder
+  href: api/ExecMagica.Engine.StateEncoder.html
+  commentId: T:ExecMagica.Engine.StateEncoder
+  fullName: ExecMagica.Engine.StateEncoder
+  nameWithType: StateEncoder
+- uid: ExecMagica.Engine.StateEncoder.CardEffectSize
+  name: CardEffectSize
+  href: api/ExecMagica.Engine.StateEncoder.html#ExecMagica_Engine_StateEncoder_CardEffectSize
+  commentId: F:ExecMagica.Engine.StateEncoder.CardEffectSize
+  fullName: ExecMagica.Engine.StateEncoder.CardEffectSize
+  nameWithType: StateEncoder.CardEffectSize
+- uid: ExecMagica.Engine.StateEncoder.CardFeatureSize
+  name: CardFeatureSize
+  href: api/ExecMagica.Engine.StateEncoder.html#ExecMagica_Engine_StateEncoder_CardFeatureSize
+  commentId: F:ExecMagica.Engine.StateEncoder.CardFeatureSize
+  fullName: ExecMagica.Engine.StateEncoder.CardFeatureSize
+  nameWithType: StateEncoder.CardFeatureSize
+- uid: ExecMagica.Engine.StateEncoder.CardFeatureSizeV2
+  name: CardFeatureSizeV2
+  href: api/ExecMagica.Engine.StateEncoder.html#ExecMagica_Engine_StateEncoder_CardFeatureSizeV2
+  commentId: F:ExecMagica.Engine.StateEncoder.CardFeatureSizeV2
+  fullName: ExecMagica.Engine.StateEncoder.CardFeatureSizeV2
+  nameWithType: StateEncoder.CardFeatureSizeV2
+- uid: ExecMagica.Engine.StateEncoder.CardSlots
+  name: CardSlots
+  href: api/ExecMagica.Engine.StateEncoder.html#ExecMagica_Engine_StateEncoder_CardSlots
+  commentId: F:ExecMagica.Engine.StateEncoder.CardSlots
+  fullName: ExecMagica.Engine.StateEncoder.CardSlots
+  nameWithType: StateEncoder.CardSlots
+- uid: ExecMagica.Engine.StateEncoder.Encode(ExecMagica.Engine.GameState,ExecMagica.Engine.PlayerSide)
+  name: Encode(GameState, PlayerSide)
+  href: api/ExecMagica.Engine.StateEncoder.html#ExecMagica_Engine_StateEncoder_Encode_ExecMagica_Engine_GameState_ExecMagica_Engine_PlayerSide_
+  commentId: M:ExecMagica.Engine.StateEncoder.Encode(ExecMagica.Engine.GameState,ExecMagica.Engine.PlayerSide)
+  fullName: ExecMagica.Engine.StateEncoder.Encode(ExecMagica.Engine.GameState, ExecMagica.Engine.PlayerSide)
+  nameWithType: StateEncoder.Encode(GameState, PlayerSide)
+- uid: ExecMagica.Engine.StateEncoder.Encode*
+  name: Encode
+  href: api/ExecMagica.Engine.StateEncoder.html#ExecMagica_Engine_StateEncoder_Encode_
+  commentId: Overload:ExecMagica.Engine.StateEncoder.Encode
+  isSpec: "True"
+  fullName: ExecMagica.Engine.StateEncoder.Encode
+  nameWithType: StateEncoder.Encode
+- uid: ExecMagica.Engine.StateEncoder.EncodeCardIds(ExecMagica.Engine.GameState,ExecMagica.Engine.PlayerSide)
+  name: EncodeCardIds(GameState, PlayerSide)
+  href: api/ExecMagica.Engine.StateEncoder.html#ExecMagica_Engine_StateEncoder_EncodeCardIds_ExecMagica_Engine_GameState_ExecMagica_Engine_PlayerSide_
+  commentId: M:ExecMagica.Engine.StateEncoder.EncodeCardIds(ExecMagica.Engine.GameState,ExecMagica.Engine.PlayerSide)
+  fullName: ExecMagica.Engine.StateEncoder.EncodeCardIds(ExecMagica.Engine.GameState, ExecMagica.Engine.PlayerSide)
+  nameWithType: StateEncoder.EncodeCardIds(GameState, PlayerSide)
+- uid: ExecMagica.Engine.StateEncoder.EncodeCardIds*
+  name: EncodeCardIds
+  href: api/ExecMagica.Engine.StateEncoder.html#ExecMagica_Engine_StateEncoder_EncodeCardIds_
+  commentId: Overload:ExecMagica.Engine.StateEncoder.EncodeCardIds
+  isSpec: "True"
+  fullName: ExecMagica.Engine.StateEncoder.EncodeCardIds
+  nameWithType: StateEncoder.EncodeCardIds
+- uid: ExecMagica.Engine.StateEncoder.EncodeFor(System.Int32,ExecMagica.Engine.GameState,ExecMagica.Engine.PlayerSide)
+  name: EncodeFor(int, GameState, PlayerSide)
+  href: api/ExecMagica.Engine.StateEncoder.html#ExecMagica_Engine_StateEncoder_EncodeFor_System_Int32_ExecMagica_Engine_GameState_ExecMagica_Engine_PlayerSide_
+  commentId: M:ExecMagica.Engine.StateEncoder.EncodeFor(System.Int32,ExecMagica.Engine.GameState,ExecMagica.Engine.PlayerSide)
+  name.vb: EncodeFor(Integer, GameState, PlayerSide)
+  fullName: ExecMagica.Engine.StateEncoder.EncodeFor(int, ExecMagica.Engine.GameState, ExecMagica.Engine.PlayerSide)
+  fullName.vb: ExecMagica.Engine.StateEncoder.EncodeFor(Integer, ExecMagica.Engine.GameState, ExecMagica.Engine.PlayerSide)
+  nameWithType: StateEncoder.EncodeFor(int, GameState, PlayerSide)
+  nameWithType.vb: StateEncoder.EncodeFor(Integer, GameState, PlayerSide)
+- uid: ExecMagica.Engine.StateEncoder.EncodeFor*
+  name: EncodeFor
+  href: api/ExecMagica.Engine.StateEncoder.html#ExecMagica_Engine_StateEncoder_EncodeFor_
+  commentId: Overload:ExecMagica.Engine.StateEncoder.EncodeFor
+  isSpec: "True"
+  fullName: ExecMagica.Engine.StateEncoder.EncodeFor
+  nameWithType: StateEncoder.EncodeFor
+- uid: ExecMagica.Engine.StateEncoder.EncodeV2(ExecMagica.Engine.GameState,ExecMagica.Engine.PlayerSide)
+  name: EncodeV2(GameState, PlayerSide)
+  href: api/ExecMagica.Engine.StateEncoder.html#ExecMagica_Engine_StateEncoder_EncodeV2_ExecMagica_Engine_GameState_ExecMagica_Engine_PlayerSide_
+  commentId: M:ExecMagica.Engine.StateEncoder.EncodeV2(ExecMagica.Engine.GameState,ExecMagica.Engine.PlayerSide)
+  fullName: ExecMagica.Engine.StateEncoder.EncodeV2(ExecMagica.Engine.GameState, ExecMagica.Engine.PlayerSide)
+  nameWithType: StateEncoder.EncodeV2(GameState, PlayerSide)
+- uid: ExecMagica.Engine.StateEncoder.EncodeV2*
+  name: EncodeV2
+  href: api/ExecMagica.Engine.StateEncoder.html#ExecMagica_Engine_StateEncoder_EncodeV2_
+  commentId: Overload:ExecMagica.Engine.StateEncoder.EncodeV2
+  isSpec: "True"
+  fullName: ExecMagica.Engine.StateEncoder.EncodeV2
+  nameWithType: StateEncoder.EncodeV2
+- uid: ExecMagica.Engine.StateEncoder.EncodeV3(ExecMagica.Engine.GameState,ExecMagica.Engine.PlayerSide)
+  name: EncodeV3(GameState, PlayerSide)
+  href: api/ExecMagica.Engine.StateEncoder.html#ExecMagica_Engine_StateEncoder_EncodeV3_ExecMagica_Engine_GameState_ExecMagica_Engine_PlayerSide_
+  commentId: M:ExecMagica.Engine.StateEncoder.EncodeV3(ExecMagica.Engine.GameState,ExecMagica.Engine.PlayerSide)
+  fullName: ExecMagica.Engine.StateEncoder.EncodeV3(ExecMagica.Engine.GameState, ExecMagica.Engine.PlayerSide)
+  nameWithType: StateEncoder.EncodeV3(GameState, PlayerSide)
+- uid: ExecMagica.Engine.StateEncoder.EncodeV3*
+  name: EncodeV3
+  href: api/ExecMagica.Engine.StateEncoder.html#ExecMagica_Engine_StateEncoder_EncodeV3_
+  commentId: Overload:ExecMagica.Engine.StateEncoder.EncodeV3
+  isSpec: "True"
+  fullName: ExecMagica.Engine.StateEncoder.EncodeV3
+  nameWithType: StateEncoder.EncodeV3
+- uid: ExecMagica.Engine.StateEncoder.FeatureSize
+  name: FeatureSize
+  href: api/ExecMagica.Engine.StateEncoder.html#ExecMagica_Engine_StateEncoder_FeatureSize
+  commentId: F:ExecMagica.Engine.StateEncoder.FeatureSize
+  fullName: ExecMagica.Engine.StateEncoder.FeatureSize
+  nameWithType: StateEncoder.FeatureSize
+- uid: ExecMagica.Engine.StateEncoder.FeatureSizeV2
+  name: FeatureSizeV2
+  href: api/ExecMagica.Engine.StateEncoder.html#ExecMagica_Engine_StateEncoder_FeatureSizeV2
+  commentId: F:ExecMagica.Engine.StateEncoder.FeatureSizeV2
+  fullName: ExecMagica.Engine.StateEncoder.FeatureSizeV2
+  nameWithType: StateEncoder.FeatureSizeV2
+- uid: ExecMagica.Engine.StateEncoder.FeatureSizeV3
+  name: FeatureSizeV3
+  href: api/ExecMagica.Engine.StateEncoder.html#ExecMagica_Engine_StateEncoder_FeatureSizeV3
+  commentId: F:ExecMagica.Engine.StateEncoder.FeatureSizeV3
+  fullName: ExecMagica.Engine.StateEncoder.FeatureSizeV3
+  nameWithType: StateEncoder.FeatureSizeV3
+- uid: ExecMagica.Engine.StateEncoder.FieldSlots
+  name: FieldSlots
+  href: api/ExecMagica.Engine.StateEncoder.html#ExecMagica_Engine_StateEncoder_FieldSlots
+  commentId: F:ExecMagica.Engine.StateEncoder.FieldSlots
+  fullName: ExecMagica.Engine.StateEncoder.FieldSlots
+  nameWithType: StateEncoder.FieldSlots
+- uid: ExecMagica.Engine.StateEncoder.GlobalSize
+  name: GlobalSize
+  href: api/ExecMagica.Engine.StateEncoder.html#ExecMagica_Engine_StateEncoder_GlobalSize
+  commentId: F:ExecMagica.Engine.StateEncoder.GlobalSize
+  fullName: ExecMagica.Engine.StateEncoder.GlobalSize
+  nameWithType: StateEncoder.GlobalSize
+- uid: ExecMagica.Engine.StateEncoder.HandSlots
+  name: HandSlots
+  href: api/ExecMagica.Engine.StateEncoder.html#ExecMagica_Engine_StateEncoder_HandSlots
+  commentId: F:ExecMagica.Engine.StateEncoder.HandSlots
+  fullName: ExecMagica.Engine.StateEncoder.HandSlots
+  nameWithType: StateEncoder.HandSlots
+- uid: ExecMagica.Engine.StateEncoder.LayoutVersion
+  name: LayoutVersion
+  href: api/ExecMagica.Engine.StateEncoder.html#ExecMagica_Engine_StateEncoder_LayoutVersion
+  commentId: F:ExecMagica.Engine.StateEncoder.LayoutVersion
+  fullName: ExecMagica.Engine.StateEncoder.LayoutVersion
+  nameWithType: StateEncoder.LayoutVersion
+- uid: ExecMagica.Engine.StateEncoder.LayoutVersionV2
+  name: LayoutVersionV2
+  href: api/ExecMagica.Engine.StateEncoder.html#ExecMagica_Engine_StateEncoder_LayoutVersionV2
+  commentId: F:ExecMagica.Engine.StateEncoder.LayoutVersionV2
+  fullName: ExecMagica.Engine.StateEncoder.LayoutVersionV2
+  nameWithType: StateEncoder.LayoutVersionV2
+- uid: ExecMagica.Engine.StateEncoder.LayoutVersionV3
+  name: LayoutVersionV3
+  href: api/ExecMagica.Engine.StateEncoder.html#ExecMagica_Engine_StateEncoder_LayoutVersionV3
+  commentId: F:ExecMagica.Engine.StateEncoder.LayoutVersionV3
+  fullName: ExecMagica.Engine.StateEncoder.LayoutVersionV3
+  nameWithType: StateEncoder.LayoutVersionV3
+- uid: ExecMagica.Engine.StateEncoder.PoolBlockSize
+  name: PoolBlockSize
+  href: api/ExecMagica.Engine.StateEncoder.html#ExecMagica_Engine_StateEncoder_PoolBlockSize
+  commentId: F:ExecMagica.Engine.StateEncoder.PoolBlockSize
+  fullName: ExecMagica.Engine.StateEncoder.PoolBlockSize
+  nameWithType: StateEncoder.PoolBlockSize
+- uid: ExecMagica.Engine.StateEncoder.PoolBuckets
+  name: PoolBuckets
+  href: api/ExecMagica.Engine.StateEncoder.html#ExecMagica_Engine_StateEncoder_PoolBuckets
+  commentId: F:ExecMagica.Engine.StateEncoder.PoolBuckets
+  fullName: ExecMagica.Engine.StateEncoder.PoolBuckets
+  nameWithType: StateEncoder.PoolBuckets

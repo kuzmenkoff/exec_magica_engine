@@ -95,6 +95,31 @@
 Classes
 </h3>
     <dl class="jumplist">
+      <dt><a class="xref" href="ExecMagica.Engine.ActionEncoding.html">ActionEncoding</a></dt>
+      <dd><p>Maps a <a class="xref" href="ExecMagica.Engine.GameAction.html">GameAction</a> to the flat policy index used by the trained network,
+mirroring ml/train.py:action_index. Slot indices are positions within a zone list,
+consistent with <a class="xref" href="ExecMagica.Engine.StateEncoder.html">StateEncoder</a> and <a class="xref" href="ExecMagica.Engine.SelfPlayDataGenerator.html">SelfPlayDataGenerator</a>.</p>
+<p>Flat layout (ActionCount = 227):
+End=0 | PlayCard(noTarget)=[1..10] | Play→myField=[11..80] | Play→oppField=[81..150]
+| Play→myHero=[151..160] | Play→oppHero=[161..170]
+| AttackCard=[171..219] | AttackHero=[220..226]</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="ExecMagica.Engine.AgentFactory.html">AgentFactory</a></dt>
+      <dd><p>Builds a runtime <a class="xref" href="ExecMagica.Engine.IGameActionPolicy.html">IGameActionPolicy</a> from a serializable <a class="xref" href="ExecMagica.Engine.AgentSpec.html">AgentSpec</a>.
+Shared by the Unity Editor tools and the .NET bench runner, so both construct identical policies
+(network loaded via <a class="xref" href="ExecMagica.Engine.NeuralNetLoader.html">NeuralNetLoader</a>, which resolves .bytes on both runtimes).</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="ExecMagica.Engine.AgentSpec.html">AgentSpec</a></dt>
+      <dd><p>Serializable description of an agent, portable between the Unity Editor windows and the .NET
+bench runner. <a class="xref" href="ExecMagica.Engine.AgentFactory.html">AgentFactory</a> turns it into an <a class="xref" href="ExecMagica.Engine.IGameActionPolicy.html">IGameActionPolicy</a>.
+Covers the standard kinds: random, greedy, mcts (optional network = NN-guided), neural (standalone).</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
       <dt><a class="xref" href="ExecMagica.Engine.AllCards.html">AllCards</a></dt>
       <dd><p>Represents either a saved deck or the full card database.</p>
 <p>Saved decks use the &quot;cards&quot; list.
@@ -121,6 +146,10 @@ entities, spells and summonEntities.</p>
       <dt><a class="xref" href="ExecMagica.Engine.BatchSummary.html">BatchSummary</a></dt>
       <dd><p>Aggregate statistics over a batch: win rates (with Wilson CI), end reasons, lengths, think times, card impact.</p>
 </dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="ExecMagica.Engine.BenchRunSpec.html">BenchRunSpec</a></dt>
+      <dd></dd>
     </dl>
     <dl class="jumplist">
       <dt><a class="xref" href="ExecMagica.Engine.Card.html">Card</a></dt>
@@ -339,6 +368,30 @@ policy, information model, final-move selection, seeding and parallelization.</p
 </dd>
     </dl>
     <dl class="jumplist">
+      <dt><a class="xref" href="ExecMagica.Engine.NeuralActionPolicy.html">NeuralActionPolicy</a></dt>
+      <dd><p>Pure network policy (no search): encodes the state, runs the distilled net, and picks the
+legal action with the highest policy logit (or samples from the masked softmax). The &quot;NN&quot;
+baseline for the ladder — one forward pass per move, no MCTS.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="ExecMagica.Engine.NeuralNet.html">NeuralNet</a></dt>
+      <dd><p>Tiny in-engine forward pass for the distilled policy+value MLP
+(400→Hidden→Hidden→[policy logits, value]). Pure C#, no inference runtime:
+weights are loaded from the flat blob written by ml/train.py:export_weights.
+Read-only after construction → safe to share across MCTS threads.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="ExecMagica.Engine.NeuralNetLoader.html">NeuralNetLoader</a></dt>
+      <dd><p>Loads and caches distilled <a class="xref" href="ExecMagica.Engine.NeuralNet.html">NeuralNet</a> models from Resources (.bytes blobs).</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="ExecMagica.Engine.NeuralOpponentModelDefinition.html">NeuralOpponentModelDefinition</a></dt>
+      <dd></dd>
+    </dl>
+    <dl class="jumplist">
       <dt><a class="xref" href="ExecMagica.Engine.OpponentModelCatalog.html">OpponentModelCatalog</a></dt>
       <dd><p>Loads and caches all <a class="xref" href="ExecMagica.Engine.OpponentModelDefinition.html">OpponentModelDefinition</a> assets from Resources/OpponentModels
 and resolves them by id.</p>
@@ -417,6 +470,18 @@ DecksManagerScr (already synced with the DB), not here.</p>
 </dd>
     </dl>
     <dl class="jumplist">
+      <dt><a class="xref" href="ExecMagica.Engine.SelfPlayDataGenerator.html">SelfPlayDataGenerator</a></dt>
+      <dd><p>Runs MCTS self-play and writes a training dataset: per decision a row of
+(features, MCTS policy π, side); at game end each row gets the outcome z.
+Output is JSON Lines, written in chunks (one file per N games) so a crash never loses prior data.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="ExecMagica.Engine.SelfPlayDataGenerator.Sample.html">SelfPlayDataGenerator.Sample</a></dt>
+      <dd><p>One logged decision. Action descriptor encoded as [type, src, tgtZone, tgtIdx, visits].</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
       <dt><a class="xref" href="ExecMagica.Engine.SessionRecord.html">SessionRecord</a></dt>
       <dd><p>Full telemetry record for a single game: identity, models, decks, outcome, per-side metrics,
 per-card impact and (optionally) the raw event stream. Serialized to JSON/JSONL.</p>
@@ -432,6 +497,33 @@ per-card impact.</p>
     <dl class="jumplist">
       <dt><a class="xref" href="ExecMagica.Engine.SessionWriter.html">SessionWriter</a></dt>
       <dd><p>Writes batch results to disk as run folders plus an append-only index.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="ExecMagica.Engine.StateEncoder.html">StateEncoder</a></dt>
+      <dd><p>Encodes a <a class="xref" href="ExecMagica.Engine.GameState.html">GameState</a> into a fixed-length feature vector for the ML agent.
+Always encoded from the acting player's point of view (&quot;me&quot; = the player passed in), using
+PUBLIC information only — the opponent's hand is represented by its card count, never its cards.</p>
+<p>Layout (FeatureSize = 400 floats):
+[0   .. 159]  my hand   : 10 slots x 16
+[160 .. 271]  my field  : 7 slots x 16
+[272 .. 383]  opp field : 7 slots x 16
+[384 .. 399]  globals   : 16 scalars</p>
+<p>Per-card slot (16 floats):
+0 manaCost/10, 1 attack/15, 2 hp/15, 3 maxHp/15,
+4 Provocation, 5 Shield, 6 Charge, 7 Rush, 8 DoubleAttack, 9 Lifesteal,
+10 isSpell, 11 occupied, 12 canAttack, 13 remainingAttacks/2, 14 isSilenced, 15 hasEffects</p>
+<p>Globals (16): myHP/30, oppHP/30, myMana/10, myPool/10, myPending/10, oppMana/10, oppPool/10,
+myFatigue/10, oppFatigue/10, myDeck/30, oppDeck/30, myHand/10, oppHand/10, myField/7, oppField/7, turn/30</p>
+</dd>
+    </dl>
+    <h3 id="structs">
+Structs
+</h3>
+    <dl class="jumplist">
+      <dt><a class="xref" href="ExecMagica.Engine.MctsResult.html">MctsResult</a></dt>
+      <dd><p>Result of an MCTS decision: the chosen action plus the root visit distribution (the policy
+target for ML) and the root value estimate. Returned by <a class="xref" href="ExecMagica.Engine.MctsActionPolicy.html#ExecMagica_Engine_MctsActionPolicy_Decide_ExecMagica_Engine_GameState_System_Collections_Generic_List_ExecMagica_Engine_GameAction__ExecMagica_Engine_PlayerSide_">Decide(GameState, List&lt;GameAction&gt;, PlayerSide)</a>.</p>
 </dd>
     </dl>
     <h3 id="interfaces">

@@ -2,9 +2,9 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title>Class MctsOpponentModelDefinition | EXEC_MAGICA Engine — API Reference </title>
+      <title>Class NeuralOpponentModelDefinition | EXEC_MAGICA Engine — API Reference </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="Class MctsOpponentModelDefinition | EXEC_MAGICA Engine — API Reference ">
+      <meta name="title" content="Class NeuralOpponentModelDefinition | EXEC_MAGICA Engine — API Reference ">
       
       
       <link rel="icon" href="../favicon.ico">
@@ -16,7 +16,7 @@
       <meta name="docfx:rel" content="../">
       
       
-      <meta name="docfx:docurl" content="https://github.com/kuzmenkoff/exec_magica_engine/new/main/apiSpec/new?filename=ExecMagica_Engine_MctsOpponentModelDefinition.md&amp;value=---%0Auid%3A%20ExecMagica.Engine.MctsOpponentModelDefinition%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="docfx:docurl" content="https://github.com/kuzmenkoff/exec_magica_engine/new/main/apiSpec/new?filename=ExecMagica_Engine_NeuralOpponentModelDefinition.md&amp;value=---%0Auid%3A%20ExecMagica.Engine.NeuralOpponentModelDefinition%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -84,12 +84,12 @@
           <nav id="breadcrumb"></nav>
         </div>
 
-        <article data-uid="ExecMagica.Engine.MctsOpponentModelDefinition">
+        <article data-uid="ExecMagica.Engine.NeuralOpponentModelDefinition">
 
 
 
-  <h1 id="ExecMagica_Engine_MctsOpponentModelDefinition" data-uid="ExecMagica.Engine.MctsOpponentModelDefinition" class="text-break">
-Class MctsOpponentModelDefinition  <a class="header-action link-secondary" title="View source" href="https://github.com/kuzmenkoff/exec_magica_engine/blob/main/docfx/_src/AI/Models/MctsOpponentModelDefinition.cs/#L4"><i class="bi bi-code-slash"></i></a>
+  <h1 id="ExecMagica_Engine_NeuralOpponentModelDefinition" data-uid="ExecMagica.Engine.NeuralOpponentModelDefinition" class="text-break">
+Class NeuralOpponentModelDefinition  <a class="header-action link-secondary" title="View source" href="https://github.com/kuzmenkoff/exec_magica_engine/blob/main/docfx/_src/AI/Models/NeuralOpponentModelDefinition.cs/#L5"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -101,8 +101,8 @@ Class MctsOpponentModelDefinition  <a class="header-action link-secondary" title
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[CreateAssetMenu(fileName = &quot;MctsOpponentModel&quot;, menuName = &quot;EXEC_MAGICA/Opponent Models/MCTS&quot;)]
-public class MctsOpponentModelDefinition : OpponentModelDefinition</code></pre>
+    <pre><code class="lang-csharp hljs">[CreateAssetMenu(fileName = &quot;NeuralOpponentModel&quot;, menuName = &quot;EXEC_MAGICA/Opponent Models/Neural (NN)&quot;)]
+public class NeuralOpponentModelDefinition : OpponentModelDefinition</code></pre>
   </div>
 
 
@@ -115,7 +115,7 @@ public class MctsOpponentModelDefinition : OpponentModelDefinition</code></pre>
       <div><span class="xref">Object</span></div>
       <div><span class="xref">ScriptableObject</span></div>
       <div><a class="xref" href="ExecMagica.Engine.OpponentModelDefinition.html">OpponentModelDefinition</a></div>
-      <div><span class="xref">MctsOpponentModelDefinition</span></div>
+      <div><span class="xref">NeuralOpponentModelDefinition</span></div>
     </dd>
   </dl>
 
@@ -318,11 +318,11 @@ public class MctsOpponentModelDefinition : OpponentModelDefinition</code></pre>
 </h2>
 
 
-  <a id="ExecMagica_Engine_MctsOpponentModelDefinition_BuildModelInfo_" data-uid="ExecMagica.Engine.MctsOpponentModelDefinition.BuildModelInfo*"></a>
+  <a id="ExecMagica_Engine_NeuralOpponentModelDefinition_BuildModelInfo_" data-uid="ExecMagica.Engine.NeuralOpponentModelDefinition.BuildModelInfo*"></a>
 
-  <h3 id="ExecMagica_Engine_MctsOpponentModelDefinition_BuildModelInfo" data-uid="ExecMagica.Engine.MctsOpponentModelDefinition.BuildModelInfo">
+  <h3 id="ExecMagica_Engine_NeuralOpponentModelDefinition_BuildModelInfo" data-uid="ExecMagica.Engine.NeuralOpponentModelDefinition.BuildModelInfo">
   BuildModelInfo()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/kuzmenkoff/exec_magica_engine/blob/main/docfx/_src/AI/Models/MctsOpponentModelDefinition.cs/#L62"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/kuzmenkoff/exec_magica_engine/blob/main/docfx/_src/AI/Models/NeuralOpponentModelDefinition.cs/#L20"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Returns telemetry metadata (model id + parameters) recorded with each session.</p>
@@ -350,11 +350,11 @@ public class MctsOpponentModelDefinition : OpponentModelDefinition</code></pre>
 
 
 
-  <a id="ExecMagica_Engine_MctsOpponentModelDefinition_CreatePolicy_" data-uid="ExecMagica.Engine.MctsOpponentModelDefinition.CreatePolicy*"></a>
+  <a id="ExecMagica_Engine_NeuralOpponentModelDefinition_CreatePolicy_" data-uid="ExecMagica.Engine.NeuralOpponentModelDefinition.CreatePolicy*"></a>
 
-  <h3 id="ExecMagica_Engine_MctsOpponentModelDefinition_CreatePolicy_System_Int32_" data-uid="ExecMagica.Engine.MctsOpponentModelDefinition.CreatePolicy(System.Int32)">
+  <h3 id="ExecMagica_Engine_NeuralOpponentModelDefinition_CreatePolicy_System_Int32_" data-uid="ExecMagica.Engine.NeuralOpponentModelDefinition.CreatePolicy(System.Int32)">
   CreatePolicy(int)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/kuzmenkoff/exec_magica_engine/blob/main/docfx/_src/AI/Models/MctsOpponentModelDefinition.cs/#L59"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/kuzmenkoff/exec_magica_engine/blob/main/docfx/_src/AI/Models/NeuralOpponentModelDefinition.cs/#L16"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Builds the runtime AI policy for this model. <code class="paramref">seed</code> 0 = non-deterministic.</p>
@@ -387,11 +387,11 @@ public class MctsOpponentModelDefinition : OpponentModelDefinition</code></pre>
 
 
 
-  <a id="ExecMagica_Engine_MctsOpponentModelDefinition_ToAgentSpec_" data-uid="ExecMagica.Engine.MctsOpponentModelDefinition.ToAgentSpec*"></a>
+  <a id="ExecMagica_Engine_NeuralOpponentModelDefinition_ToAgentSpec_" data-uid="ExecMagica.Engine.NeuralOpponentModelDefinition.ToAgentSpec*"></a>
 
-  <h3 id="ExecMagica_Engine_MctsOpponentModelDefinition_ToAgentSpec" data-uid="ExecMagica.Engine.MctsOpponentModelDefinition.ToAgentSpec">
+  <h3 id="ExecMagica_Engine_NeuralOpponentModelDefinition_ToAgentSpec" data-uid="ExecMagica.Engine.NeuralOpponentModelDefinition.ToAgentSpec">
   ToAgentSpec()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/kuzmenkoff/exec_magica_engine/blob/main/docfx/_src/AI/Models/MctsOpponentModelDefinition.cs/#L84"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/kuzmenkoff/exec_magica_engine/blob/main/docfx/_src/AI/Models/NeuralOpponentModelDefinition.cs/#L30"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Serializable spec for the .NET bench runner and research tooling; mirrors CreatePolicy.</p>

@@ -12,6 +12,48 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/ExecMagica.Engine.ActionEncoding.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ExecMagica.Engine.ActionEncoding.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ExecMagica.Engine.ActionEncoding",
+      "Summary": "<p sourcefile=\"api/ExecMagica.Engine.ActionEncoding.yml\" sourcestartlinenumber=\"1\">Maps a <xref href=\"ExecMagica.Engine.GameAction\" data-throw-if-not-resolved=\"false\"></xref> to the flat policy index used by the trained network,\nmirroring ml/train.py:action_index. Slot indices are positions within a zone list,\nconsistent with <xref href=\"ExecMagica.Engine.StateEncoder\" data-throw-if-not-resolved=\"false\"></xref> and <xref href=\"ExecMagica.Engine.SelfPlayDataGenerator\" data-throw-if-not-resolved=\"false\"></xref>.</p>\n<p sourcefile=\"api/ExecMagica.Engine.ActionEncoding.yml\" sourcestartlinenumber=\"5\">Flat layout (ActionCount = 227):\nEnd=0 | PlayCard(noTarget)=[1..10] | Play→myField=[11..80] | Play→oppField=[81..150]\n| Play→myHero=[151..160] | Play→oppHero=[161..170]\n| AttackCard=[171..219] | AttackHero=[220..226]</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ExecMagica.Engine.AgentFactory.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ExecMagica.Engine.AgentFactory.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ExecMagica.Engine.AgentFactory",
+      "Summary": "<p sourcefile=\"api/ExecMagica.Engine.AgentFactory.yml\" sourcestartlinenumber=\"1\">Builds a runtime <xref href=\"ExecMagica.Engine.IGameActionPolicy\" data-throw-if-not-resolved=\"false\"></xref> from a serializable <xref href=\"ExecMagica.Engine.AgentSpec\" data-throw-if-not-resolved=\"false\"></xref>.\nShared by the Unity Editor tools and the .NET bench runner, so both construct identical policies\n(network loaded via <xref href=\"ExecMagica.Engine.NeuralNetLoader\" data-throw-if-not-resolved=\"false\"></xref>, which resolves .bytes on both runtimes).</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ExecMagica.Engine.AgentSpec.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ExecMagica.Engine.AgentSpec.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ExecMagica.Engine.AgentSpec",
+      "Summary": "<p sourcefile=\"api/ExecMagica.Engine.AgentSpec.yml\" sourcestartlinenumber=\"1\">Serializable description of an agent, portable between the Unity Editor windows and the .NET\nbench runner. <xref href=\"ExecMagica.Engine.AgentFactory\" data-throw-if-not-resolved=\"false\"></xref> turns it into an <xref href=\"ExecMagica.Engine.IGameActionPolicy\" data-throw-if-not-resolved=\"false\"></xref>.\nCovers the standard kinds: random, greedy, mcts (optional network = NN-guided), neural (standalone).</p>\n"
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/ExecMagica.Engine.AllCards.yml",
       "output": {
         ".html": {
@@ -79,6 +121,20 @@
       "IsMRef": true,
       "Title": "ExecMagica.Engine.BatchSummary",
       "Summary": "<p sourcefile=\"api/ExecMagica.Engine.BatchSummary.yml\" sourcestartlinenumber=\"1\">Aggregate statistics over a batch: win rates (with Wilson CI), end reasons, lengths, think times, card impact.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ExecMagica.Engine.BenchRunSpec.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ExecMagica.Engine.BenchRunSpec.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ExecMagica.Engine.BenchRunSpec",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -712,6 +768,20 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/ExecMagica.Engine.MctsResult.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ExecMagica.Engine.MctsResult.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ExecMagica.Engine.MctsResult",
+      "Summary": "<p sourcefile=\"api/ExecMagica.Engine.MctsResult.yml\" sourcestartlinenumber=\"1\">Result of an MCTS decision: the chosen action plus the root visit distribution (the policy\ntarget for ML) and the root value estimate. Returned by <xref href=\"ExecMagica.Engine.MctsActionPolicy.Decide(ExecMagica.Engine.GameState%2cSystem.Collections.Generic.List%7bExecMagica.Engine.GameAction%7d%2cExecMagica.Engine.PlayerSide)\" data-throw-if-not-resolved=\"false\"></xref>.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/ExecMagica.Engine.ModelInfo.yml",
       "output": {
         ".html": {
@@ -723,6 +793,62 @@
       "IsMRef": true,
       "Title": "ExecMagica.Engine.ModelInfo",
       "Summary": "<p sourcefile=\"api/ExecMagica.Engine.ModelInfo.yml\" sourcestartlinenumber=\"1\">AI model identity recorded with a session: a model id plus its parameters.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ExecMagica.Engine.NeuralActionPolicy.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ExecMagica.Engine.NeuralActionPolicy.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ExecMagica.Engine.NeuralActionPolicy",
+      "Summary": "<p sourcefile=\"api/ExecMagica.Engine.NeuralActionPolicy.yml\" sourcestartlinenumber=\"1\">Pure network policy (no search): encodes the state, runs the distilled net, and picks the\nlegal action with the highest policy logit (or samples from the masked softmax). The &quot;NN&quot;\nbaseline for the ladder — one forward pass per move, no MCTS.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ExecMagica.Engine.NeuralNet.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ExecMagica.Engine.NeuralNet.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ExecMagica.Engine.NeuralNet",
+      "Summary": "<p sourcefile=\"api/ExecMagica.Engine.NeuralNet.yml\" sourcestartlinenumber=\"1\">Tiny in-engine forward pass for the distilled policy+value MLP\n(400→Hidden→Hidden→[policy logits, value]). Pure C#, no inference runtime:\nweights are loaded from the flat blob written by ml/train.py:export_weights.\nRead-only after construction → safe to share across MCTS threads.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ExecMagica.Engine.NeuralNetLoader.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ExecMagica.Engine.NeuralNetLoader.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ExecMagica.Engine.NeuralNetLoader",
+      "Summary": "<p sourcefile=\"api/ExecMagica.Engine.NeuralNetLoader.yml\" sourcestartlinenumber=\"1\">Loads and caches distilled <xref href=\"ExecMagica.Engine.NeuralNet\" data-throw-if-not-resolved=\"false\"></xref> models from Resources (.bytes blobs).</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ExecMagica.Engine.NeuralOpponentModelDefinition.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ExecMagica.Engine.NeuralOpponentModelDefinition.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ExecMagica.Engine.NeuralOpponentModelDefinition",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -964,6 +1090,34 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/ExecMagica.Engine.SelfPlayDataGenerator.Sample.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ExecMagica.Engine.SelfPlayDataGenerator.Sample.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ExecMagica.Engine.SelfPlayDataGenerator.Sample",
+      "Summary": "<p sourcefile=\"api/ExecMagica.Engine.SelfPlayDataGenerator.Sample.yml\" sourcestartlinenumber=\"1\">One logged decision. Action descriptor encoded as [type, src, tgtZone, tgtIdx, visits].</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ExecMagica.Engine.SelfPlayDataGenerator.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ExecMagica.Engine.SelfPlayDataGenerator.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ExecMagica.Engine.SelfPlayDataGenerator",
+      "Summary": "<p sourcefile=\"api/ExecMagica.Engine.SelfPlayDataGenerator.yml\" sourcestartlinenumber=\"1\">Runs MCTS self-play and writes a training dataset: per decision a row of\n(features, MCTS policy π, side); at game end each row gets the outcome z.\nOutput is JSON Lines, written in chunks (one file per N games) so a crash never loses prior data.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/ExecMagica.Engine.SessionRecord.yml",
       "output": {
         ".html": {
@@ -1003,6 +1157,20 @@
       "IsMRef": true,
       "Title": "ExecMagica.Engine.SessionWriter",
       "Summary": "<p sourcefile=\"api/ExecMagica.Engine.SessionWriter.yml\" sourcestartlinenumber=\"1\">Writes batch results to disk as run folders plus an append-only index.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ExecMagica.Engine.StateEncoder.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ExecMagica.Engine.StateEncoder.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ExecMagica.Engine.StateEncoder",
+      "Summary": "<p sourcefile=\"api/ExecMagica.Engine.StateEncoder.yml\" sourcestartlinenumber=\"1\">Encodes a <xref href=\"ExecMagica.Engine.GameState\" data-throw-if-not-resolved=\"false\"></xref> into a fixed-length feature vector for the ML agent.\nAlways encoded from the acting player's point of view (&quot;me&quot; = the player passed in), using\nPUBLIC information only — the opponent's hand is represented by its card count, never its cards.</p>\n<p sourcefile=\"api/ExecMagica.Engine.StateEncoder.yml\" sourcestartlinenumber=\"5\">Layout (FeatureSize = 400 floats):\n[0   .. 159]  my hand   : 10 slots x 16\n[160 .. 271]  my field  : 7 slots x 16\n[272 .. 383]  opp field : 7 slots x 16\n[384 .. 399]  globals   : 16 scalars</p>\n<p sourcefile=\"api/ExecMagica.Engine.StateEncoder.yml\" sourcestartlinenumber=\"11\">Per-card slot (16 floats):\n0 manaCost/10, 1 attack/15, 2 hp/15, 3 maxHp/15,\n4 Provocation, 5 Shield, 6 Charge, 7 Rush, 8 DoubleAttack, 9 Lifesteal,\n10 isSpell, 11 occupied, 12 canAttack, 13 remainingAttacks/2, 14 isSilenced, 15 hasEffects</p>\n<p sourcefile=\"api/ExecMagica.Engine.StateEncoder.yml\" sourcestartlinenumber=\"16\">Globals (16): myHP/30, oppHP/30, myMana/10, myPool/10, myPending/10, oppMana/10, oppPool/10,\nmyFatigue/10, oppFatigue/10, myDeck/30, oppDeck/30, myHand/10, oppHand/10, myField/7, oppField/7, turn/30</p>\n"
     },
     {
       "type": "ManagedReference",

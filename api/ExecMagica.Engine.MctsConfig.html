@@ -188,7 +188,7 @@ policy, information model, final-move selection, seeding and parallelization.</p
 
   <h3 id="ExecMagica_Engine_MctsConfig_Determinize" data-uid="ExecMagica.Engine.MctsConfig.Determinize">
   Determinize
-  <a class="header-action link-secondary" title="View source" href="https://github.com/kuzmenkoff/exec_magica_engine/blob/main/docfx/_src/AI/MCTS/MctsConfig.cs/#L30"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/kuzmenkoff/exec_magica_engine/blob/main/docfx/_src/AI/MCTS/MctsConfig.cs/#L38"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>If true, re-determinize hidden info each iteration (ISMCTS); false = perfect-information search.</p>
@@ -250,7 +250,7 @@ policy, information model, final-move selection, seeding and parallelization.</p
 
   <h3 id="ExecMagica_Engine_MctsConfig_FinalAction" data-uid="ExecMagica.Engine.MctsConfig.FinalAction">
   FinalAction
-  <a class="header-action link-secondary" title="View source" href="https://github.com/kuzmenkoff/exec_magica_engine/blob/main/docfx/_src/AI/MCTS/MctsConfig.cs/#L35"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/kuzmenkoff/exec_magica_engine/blob/main/docfx/_src/AI/MCTS/MctsConfig.cs/#L43"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>How the root move is selected after search.</p>
@@ -312,7 +312,7 @@ policy, information model, final-move selection, seeding and parallelization.</p
 
   <h3 id="ExecMagica_Engine_MctsConfig_KnowsOpponentDeck" data-uid="ExecMagica.Engine.MctsConfig.KnowsOpponentDeck">
   KnowsOpponentDeck
-  <a class="header-action link-secondary" title="View source" href="https://github.com/kuzmenkoff/exec_magica_engine/blob/main/docfx/_src/AI/MCTS/MctsConfig.cs/#L32"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/kuzmenkoff/exec_magica_engine/blob/main/docfx/_src/AI/MCTS/MctsConfig.cs/#L40"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Known-decklist assumption: the opponent's hidden cards are re-dealt from their actual deck.</p>
@@ -329,6 +329,37 @@ policy, information model, final-move selection, seeding and parallelization.</p
   <h4 class="section">Field Value</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="ExecMagica_Engine_MctsConfig_LeafRolloutMix" data-uid="ExecMagica.Engine.MctsConfig.LeafRolloutMix">
+  LeafRolloutMix
+  <a class="header-action link-secondary" title="View source" href="https://github.com/kuzmenkoff/exec_magica_engine/blob/main/docfx/_src/AI/MCTS/MctsConfig.cs/#L29"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>NN-MCTS only: blend a rollout into the leaf value (0 = pure value, 1 = pure rollout).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double LeafRolloutMix</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
     <dd></dd>
   </dl>
 
@@ -372,9 +403,41 @@ policy, information model, final-move selection, seeding and parallelization.</p
 
 
 
+  <h3 id="ExecMagica_Engine_MctsConfig_Network" data-uid="ExecMagica.Engine.MctsConfig.Network">
+  Network
+  <a class="header-action link-secondary" title="View source" href="https://github.com/kuzmenkoff/exec_magica_engine/blob/main/docfx/_src/AI/MCTS/MctsConfig.cs/#L33"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Optional distilled net. When set, search uses PUCT priors + value-at-leaf
+instead of UCB1 + rollout (NN-guided MCTS). Null = classic ISMCTS.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public NeuralNet Network</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ExecMagica.Engine.NeuralNet.html">NeuralNet</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
   <h3 id="ExecMagica_Engine_MctsConfig_Parallelize" data-uid="ExecMagica.Engine.MctsConfig.Parallelize">
   Parallelize
-  <a class="header-action link-secondary" title="View source" href="https://github.com/kuzmenkoff/exec_magica_engine/blob/main/docfx/_src/AI/MCTS/MctsConfig.cs/#L40"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/kuzmenkoff/exec_magica_engine/blob/main/docfx/_src/AI/MCTS/MctsConfig.cs/#L48"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Enable root parallelization (off by default for determinism and simplicity).</p>
@@ -391,6 +454,37 @@ policy, information model, final-move selection, seeding and parallelization.</p
   <h4 class="section">Field Value</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="ExecMagica_Engine_MctsConfig_PuctC" data-uid="ExecMagica.Engine.MctsConfig.PuctC">
+  PuctC
+  <a class="header-action link-secondary" title="View source" href="https://github.com/kuzmenkoff/exec_magica_engine/blob/main/docfx/_src/AI/MCTS/MctsConfig.cs/#L35"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>PUCT exploration constant (used only when <a class="xref" href="ExecMagica.Engine.MctsConfig.html#ExecMagica_Engine_MctsConfig_Network">Network</a> is set).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double PuctC</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
     <dd></dd>
   </dl>
 
@@ -436,7 +530,7 @@ policy, information model, final-move selection, seeding and parallelization.</p
 
   <h3 id="ExecMagica_Engine_MctsConfig_Seed" data-uid="ExecMagica.Engine.MctsConfig.Seed">
   Seed
-  <a class="header-action link-secondary" title="View source" href="https://github.com/kuzmenkoff/exec_magica_engine/blob/main/docfx/_src/AI/MCTS/MctsConfig.cs/#L37"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/kuzmenkoff/exec_magica_engine/blob/main/docfx/_src/AI/MCTS/MctsConfig.cs/#L45"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>RNG seed; 0 = non-deterministic, non-zero = reproducible.</p>
@@ -467,7 +561,7 @@ policy, information model, final-move selection, seeding and parallelization.</p
 
   <h3 id="ExecMagica_Engine_MctsConfig_ThreadCount" data-uid="ExecMagica.Engine.MctsConfig.ThreadCount">
   ThreadCount
-  <a class="header-action link-secondary" title="View source" href="https://github.com/kuzmenkoff/exec_magica_engine/blob/main/docfx/_src/AI/MCTS/MctsConfig.cs/#L42"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/kuzmenkoff/exec_magica_engine/blob/main/docfx/_src/AI/MCTS/MctsConfig.cs/#L50"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Worker thread count; 0 = auto (<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.environment.processorcount">ProcessorCount</a>).</p>
