@@ -85,6 +85,22 @@ docfx/bin/
 docfx/obj/
 docfx/_ghpages/
 
+# .NET bench build outputs
+bench/bin/
+bench/obj/
+
+# ML scratch — trained models ship from Assets/Resources/Models/
+ml/__pycache__/
+ml/**/__pycache__/
+ml/.venv/
+ml/venv/
+ml/models/*.bytes
+ml/models/*.onnx
+ml/models/*.png
+ml/models/*.json
+ml/models/*.pt
+.ipynb_checkpoints/
+
 # Crashlytics generated file
 crashlytics-build.properties
 
@@ -103,3 +119,6 @@ crashlytics-build.properties
 
 # keep the hand-written DocFX project (Unity ignores *.csproj)
 !docfx/EngineDocs.csproj
+
+# keep the .NET bench project — Unity's *.csproj rule would otherwise ignore it
+!bench/ExecMagicaBench.csproj

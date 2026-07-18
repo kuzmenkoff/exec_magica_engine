@@ -1,0 +1,29 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>disable</Nullable>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <LangVersion>latest</LangVersion>
+    <AssemblyName>ExecMagicaBench</AssemblyName>
+    <ServerGarbageCollection>true</ServerGarbageCollection>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- console-local sources (shim + Program) -->
+    <Compile Include="*.cs" />
+    <!-- shared engine source from the Unity project -->
+    <Compile Include="..\Assets\_Project\Scripts\Gameplay\LogicLayer\**\*.cs"
+             Exclude="..\Assets\_Project\Scripts\Gameplay\LogicLayer\AI\Models\**\*.cs" />
+    <Compile Include="..\Assets\_Project\Scripts\Editor\Ladder\LadderRating.cs" />
+    <Compile Include="..\Assets\_Project\Scripts\Editor\Ladder\LadderStore.cs" />
+    <Compile Include="..\Assets\_Project\Scripts\Editor\Ladder\LadderStandings.cs" />
+    <Compile Include="..\Assets\_Project\Scripts\Gameplay\LogicLayer\AI\Models\NeuralNetLoader.cs" />
+    <Compile Include="..\Assets\_Project\Scripts\Gameplay\LogicLayer\AI\Models\AgentFactory.cs" />
+  </ItemGroup>
+</Project>
