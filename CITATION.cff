@@ -19,7 +19,7 @@ keywords:
   - imperfect information
   - decision-making under uncertainty
 license: MIT
-version: "1.0.0"
+version: "2.0.0"
 date-released: 2026-06-27
 url: "https://github.com/kuzmenkoff/exec_magica"
 repository-code: "https://github.com/kuzmenkoff/exec_magica"
