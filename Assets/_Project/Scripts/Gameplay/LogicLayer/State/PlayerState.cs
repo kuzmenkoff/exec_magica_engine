@@ -1,6 +1,5 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 
 /// <summary>
 /// One player's full state: hero health, mana, fatigue, and the four card zones
@@ -48,21 +47,25 @@ public class PlayerState
             TurnsStarted = TurnsStarted,
             FatigueCounter = FatigueCounter,
 
-            Deck = Deck != null
-                ? Deck.Where(card => card != null).Select(card => card.GetDeepCopy()).ToList()
-                : new List<CardInstance>(),
-
-            Hand = Hand != null
-                ? Hand.Where(card => card != null).Select(card => card.GetDeepCopy()).ToList()
-                : new List<CardInstance>(),
-
-            Field = Field != null
-                ? Field.Where(card => card != null).Select(card => card.GetDeepCopy()).ToList()
-                : new List<CardInstance>(),
-
-            Graveyard = Graveyard != null
-                ? Graveyard.Where(card => card != null).Select(card => card.GetDeepCopy()).ToList()
-                : new List<CardInstance>()
+            Deck = CopyZone(Deck),
+            Hand = CopyZone(Hand),
+            Field = CopyZone(Field),
+            Graveyard = CopyZone(Graveyard)
         };
+    }
+
+    /// <summary>Clones a zone. Hand-rolled instead of LINQ: this runs once per zone per deep copy,
+    /// and a deep copy runs on every MCTS iteration and every Greedy candidate action.</summary>
+    private static List<CardInstance> CopyZone(List<CardInstance> src)
+    {
+        if (src == null) return new List<CardInstance>();
+
+        List<CardInstance> dst = new List<CardInstance>(src.Count);   // exact capacity → one array, no regrowth
+        for (int i = 0; i < src.Count; i++)
+        {
+            CardInstance c = src[i];
+            if (c != null) dst.Add(c.GetDeepCopy());
+        }
+        return dst;
     }
 }

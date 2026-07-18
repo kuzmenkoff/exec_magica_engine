@@ -32,16 +32,15 @@ public static class SessionRunner
             { PlayerSide.Enemy,  new List<double>() }
         };
 
-        bool reachedCap = true;
         Stopwatch total = Stopwatch.StartNew();
 
         for (int i = 0; i < maxActions; i++)
         {
-            if (engine.State.IsGameOver) { reachedCap = false; break; }
+            if (engine.State.IsGameOver) { break; }
 
             PlayerSide side = engine.State.ActiveSide;
             List<GameAction> legal = engine.GetLegalActions(side);
-            if (legal == null || legal.Count == 0) { reachedCap = false; break; }
+            if (legal == null || legal.Count == 0) { break; }
 
             IGameActionPolicy policy = side == PlayerSide.Player ? playerPolicy : enemyPolicy;
 
@@ -50,11 +49,11 @@ public static class SessionRunner
             decision.Stop();
             thinkMs[side].Add(decision.Elapsed.TotalMilliseconds);
 
-            if (action == null) { reachedCap = false; break; }
+            if (action == null) { break; }
 
             GameStepResult result = engine.ApplyAction(action);
             if (result.Events != null) events.AddRange(result.Events);
-            if (!result.Success) { reachedCap = false; break; }
+            if (!result.Success) { break; }
         }
         total.Stop();
 

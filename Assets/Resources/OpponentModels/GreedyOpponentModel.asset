@@ -16,9 +16,9 @@ MonoBehaviour:
   displayName: Greedy
   showInGame: 1
   heroAvatarPath: HeroLogos/1
-  eloRating: 455
+  eloRating: 492
   rated: 1
-  description: Best move now. Shortsighted.
+  description: Plays the best move one step ahead.
   heroHpWeight: 1
   attackWeight: 2
   hpWeight: 1

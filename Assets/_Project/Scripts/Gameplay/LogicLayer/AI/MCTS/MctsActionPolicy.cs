@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Threading.Tasks;
@@ -25,6 +25,8 @@ public class MctsActionPolicy : IGameActionPolicy
         public readonly Dictionary<string, Node> Children = new Dictionary<string, Node>();
 
         public int Visits;
+        public bool Evaluated;                              // net already ran here?
+        public Dictionary<string, double> Priors;           // child key -> PUCT prior P(a)
         public double RootWins;                            // ROOT player's perspective
         public int Availability = 1;
 
@@ -52,49 +54,74 @@ public class MctsActionPolicy : IGameActionPolicy
     /// visit count or mean value. Cases with 0 or 1 legal actions short-circuit.
     /// </summary>
     public GameAction ChooseAction(GameState state, List<GameAction> legalActions, PlayerSide actorSide)
+        => Decide(state, legalActions, actorSide).Action;
+
+    // --- Optional diagnostics: iteration accounting, split by neural vs plain MCTS.
+    // Reset before a measured batch, read after. One atomic add per search call (cheap).
+    public static long DiagIterNeural, DiagMovesNeural, DiagIterPlain, DiagMovesPlain;
+    public static void ResetDiagnostics()
+    { DiagIterNeural = DiagMovesNeural = DiagIterPlain = DiagMovesPlain = 0; }
+
+    /// <summary>
+    /// Like <see cref="ChooseAction"/>, but also returns the root visit distribution (the MCTS policy
+    /// target) and the root value estimate — for ML data generation.
+    /// </summary>
+    public MctsResult Decide(GameState state, List<GameAction> legalActions, PlayerSide actorSide)
     {
         if (state == null || legalActions == null || legalActions.Count == 0)
-            return null;
+            return new MctsResult { Action = null };
         if (legalActions.Count == 1)
-            return legalActions[0];
+            return new MctsResult
+            {
+                Action = legalActions[0],
+                Policy = new List<(GameAction, int)> { (legalActions[0], 1) },
+                Value = 0.5
+            };
 
         int threads = ResolveThreadCount();
-        Dictionary<string, (int visits, double wins)> aggregate;
+        Dictionary<string, (int visits, double wins)> aggregate = RunAndAggregate(state, actorSide, threads);
 
-        if (!config.Parallelize || threads <= 1)
-        {
-            Node root = RunSearch(state, actorSide, config.Iterations, rng);
-            aggregate = AggregateRoots(new[] { root });
-        }
-        else
-        {
-            // Iterations is the TOTAL budget, split across threads (keeps the knob comparable).
-            int perThread = config.BudgetMode == MctsConfig.Budget.Iterations
-                ? Math.Max(1, (config.Iterations + threads - 1) / threads)
-                : 0; // Time mode: each thread runs to TimeBudgetMs (handled in RunSearch)
+        if (config.Network != null) System.Threading.Interlocked.Increment(ref DiagMovesNeural);
+        else System.Threading.Interlocked.Increment(ref DiagMovesPlain);
 
-            Node[] roots = new Node[threads];
-            ParallelOptions po = new ParallelOptions { MaxDegreeOfParallelism = threads };
-            Parallel.For(0, threads, po, i =>
-            {
-                // Per-thread RNG: deterministic when seeded (sum aggregation is commutative,
-                // so the result is independent of thread scheduling).
-                System.Random threadRng = config.Seed == 0
-                    ? new System.Random()
-                    : new System.Random(config.Seed + i + 1);
-                roots[i] = RunSearch(state, actorSide, perThread, threadRng);
-            });
-            aggregate = AggregateRoots(roots);
+        var policy = new List<(GameAction a, int visits)>(legalActions.Count);
+        foreach (GameAction a in legalActions)
+        {
+            aggregate.TryGetValue(ActionKey(a, state, actorSide), out var s);
+            policy.Add((a, s.visits));
         }
 
         string bestKey = SelectFinalKey(aggregate);
-        if (bestKey == null)
-            return legalActions[0];
+        GameAction chosen = legalActions[0];
+        if (bestKey != null)
+            foreach (GameAction a in legalActions)
+                if (ActionKey(a, state, actorSide) == bestKey) { chosen = a; break; }
 
-        foreach (GameAction a in legalActions)
-            if (ActionKey(a, state, actorSide) == bestKey)
-                return a;
-        return legalActions[0];
+        double wins = 0; int vis = 0;
+        foreach (var kv in aggregate) { wins += kv.Value.wins; vis += kv.Value.visits; }
+
+        return new MctsResult { Action = chosen, Policy = policy, Value = vis > 0 ? wins / vis : 0.5 };
+    }
+
+    private Dictionary<string, (int visits, double wins)> RunAndAggregate(GameState state, PlayerSide actorSide, int threads)
+    {
+        if (!config.Parallelize || threads <= 1)
+            return AggregateRoots(new[] { RunSearch(state, actorSide, config.Iterations, rng) });
+
+        int perThread = config.BudgetMode == MctsConfig.Budget.Iterations
+            ? Math.Max(1, (config.Iterations + threads - 1) / threads)
+            : 0;
+
+        Node[] roots = new Node[threads];
+        ParallelOptions po = new ParallelOptions { MaxDegreeOfParallelism = threads };
+        Parallel.For(0, threads, po, i =>
+        {
+            System.Random threadRng = config.Seed == 0
+                ? new System.Random()
+                : new System.Random(config.Seed + i + 1);
+            roots[i] = RunSearch(state, actorSide, perThread, threadRng);
+        });
+        return AggregateRoots(roots);
     }
 
     private int ResolveThreadCount()
@@ -106,20 +133,22 @@ public class MctsActionPolicy : IGameActionPolicy
     private Node RunSearch(GameState trueState, PlayerSide actorSide, int iterationBudget, System.Random localRng)
     {
         Node root = new Node(null, null, actorSide);
+        int iters = 0;
 
         if (config.BudgetMode == MctsConfig.Budget.Time)
         {
             Stopwatch sw = Stopwatch.StartNew();
-            do { Iterate(trueState, actorSide, root, localRng); }
+            do { Iterate(trueState, actorSide, root, localRng); iters++; }
             while (sw.ElapsedMilliseconds < config.TimeBudgetMs);
         }
         else
         {
             int n = Math.Max(1, iterationBudget);
-            for (int i = 0; i < n; i++)
-                Iterate(trueState, actorSide, root, localRng);
+            for (int i = 0; i < n; i++) { Iterate(trueState, actorSide, root, localRng); iters++; }
         }
 
+        if (config.Network != null) System.Threading.Interlocked.Add(ref DiagIterNeural, iters);
+        else System.Threading.Interlocked.Add(ref DiagIterPlain, iters);
         return root;
     }
 
@@ -154,6 +183,7 @@ public class MctsActionPolicy : IGameActionPolicy
 
     private void Iterate(GameState trueState, PlayerSide root, Node rootNode, System.Random localRng)
     {
+        if (config.Network != null) { IterateNeural(trueState, root, rootNode, localRng); return; }
         GameState world = BuildDeterminizedRoot(trueState, root, localRng);
         GameEngine engine = new GameEngine(world);
 
@@ -300,6 +330,127 @@ public class MctsActionPolicy : IGameActionPolicy
         }
 
         return Outcome(s, root);
+    }
+
+    private void IterateNeural(GameState trueState, PlayerSide root, Node rootNode, System.Random localRng)
+    {
+        GameState world = BuildDeterminizedRoot(trueState, root, localRng);
+        GameEngine engine = new GameEngine(world);
+
+        Node node = rootNode;
+        double value;
+
+        while (true)
+        {
+            if (engine.State.IsGameOver) { value = Outcome(engine.State, root); break; }
+
+            PlayerSide toMove = engine.State.ActiveSide;
+            List<GameAction> legal = engine.GetLegalActions(toMove);
+            if (legal == null || legal.Count == 0) { value = Outcome(engine.State, root); break; }
+
+            Dictionary<string, GameAction> byKey = new Dictionary<string, GameAction>();
+            foreach (GameAction a in legal)
+            {
+                string k = ActionKey(a, engine.State, root);
+                if (!byKey.ContainsKey(k)) byKey[k] = a;
+            }
+
+            // Leaf: evaluate net (value + priors), optionally blend a rollout, stop here.
+            if (!node.Evaluated)
+            {
+                value = EvaluateLeaf(engine.State, root, toMove, node, byKey);
+                if (config.LeafRolloutMix > 0.0 && !engine.State.IsGameOver)
+                {
+                    double vRoll = Rollout(engine, root, localRng);   // unbiased [0,1] root POV
+                    value = (1.0 - config.LeafRolloutMix) * value + config.LeafRolloutMix * vRoll;
+                }
+                node.Evaluated = true;
+                break;
+            }
+
+            // Ensure a child per legal key (ISMCTS: new keys appear across determinizations) + availability.
+            foreach (KeyValuePair<string, GameAction> kv in byKey)
+            {
+                if (!node.Children.TryGetValue(kv.Key, out Node ch))
+                {
+                    ch = new Node(kv.Key, node, toMove);
+                    node.Children[kv.Key] = ch;
+                    (node.Priors ??= new Dictionary<string, double>())[kv.Key] = 1e-3; // fallback prior
+                }
+                ch.Availability++;
+            }
+
+            // PUCT selection among children legal in THIS world.
+            Node best = null; string bestKey = null; double bestVal = double.NegativeInfinity;
+            foreach (KeyValuePair<string, Node> kv in node.Children)
+            {
+                if (!byKey.ContainsKey(kv.Key)) continue;
+                double prior = node.Priors != null && node.Priors.TryGetValue(kv.Key, out double p) ? p : 1e-3;
+                double v = Puct(kv.Value, prior, root);
+                if (v > bestVal) { bestVal = v; best = kv.Value; bestKey = kv.Key; }
+            }
+            if (best == null) { value = Outcome(engine.State, root); break; }
+
+            engine.ApplyAction(byKey[bestKey]);
+            node = best;
+        }
+
+        for (Node n = node; n != null; n = n.Parent) { n.Visits++; n.RootWins += value; }
+    }
+
+    // One net eval: fills child priors (softmax of policy logits at legal indices) and
+    // returns the leaf value as P(root wins) in [0,1].
+    private double EvaluateLeaf(GameState world, PlayerSide root, PlayerSide toMove, Node node,
+                               Dictionary<string, GameAction> byKey)
+    {
+        float[] feat = StateEncoder.EncodeFor(config.Network.Features, world, toMove);
+
+        // Gather legal flat indices FIRST → net computes only those policy logits.
+        Dictionary<string, int> idxByKey = new Dictionary<string, int>(byKey.Count);
+        int[] legal = new int[byKey.Count];
+        int nLegal = 0;
+        foreach (KeyValuePair<string, GameAction> kv in byKey)
+        {
+            int idx = ActionEncoding.IndexOf(kv.Value, world, toMove);
+            idxByKey[kv.Key] = idx;
+            if (idx >= 0) legal[nLegal++] = idx;
+        }
+
+        float[] logits = new float[config.Network.Actions];
+        config.Network.ForwardLegal(feat, legal, nLegal, logits, out float vToMove);
+
+        node.Priors = new Dictionary<string, double>(byKey.Count);
+        double max = double.NegativeInfinity;
+        foreach (KeyValuePair<string, int> kv in idxByKey)
+            if (kv.Value >= 0 && logits[kv.Value] > max) max = logits[kv.Value];
+        if (double.IsNegativeInfinity(max)) max = 0;
+
+        double sum = 0;
+        foreach (KeyValuePair<string, int> kv in idxByKey)
+        {
+            double e = kv.Value >= 0 ? Math.Exp(logits[kv.Value] - max) : 0.0;
+            node.Priors[kv.Key] = e; sum += e;
+        }
+        List<string> keys = new List<string>(node.Priors.Keys);
+        foreach (string k in keys)
+            node.Priors[k] = sum > 0 ? node.Priors[k] / sum : 1.0 / keys.Count;
+
+        // Create child stubs (chooser = side to move at this node).
+        foreach (KeyValuePair<string, GameAction> kv in byKey)
+            if (!node.Children.ContainsKey(kv.Key))
+                node.Children[kv.Key] = new Node(kv.Key, node, toMove);
+
+        double vRoot = (toMove == root) ? vToMove : -vToMove;   // net value is from toMove's POV
+        return (vRoot + 1.0) / 2.0;
+    }
+
+    private double Puct(Node c, double prior, PlayerSide root)
+    {
+        double exploit = c.Visits > 0
+            ? (c.Chooser == root ? c.RootWins / c.Visits : 1.0 - c.RootWins / c.Visits)
+            : 0.5;   // unvisited: neutral Q, let the prior drive exploration
+        double u = config.PuctC * prior * Math.Sqrt(c.Availability) / (1.0 + c.Visits);
+        return exploit + u;
     }
 
     private static double Outcome(GameState s, PlayerSide root)

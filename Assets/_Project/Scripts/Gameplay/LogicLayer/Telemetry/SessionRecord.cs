@@ -37,7 +37,7 @@ public class SessionRecord
     public string SessionId;
     public int Seed;
     public string StartedAtUtc;
-    public string CardSetRevision = "2026-06-13";
+    public string CardSetRevision = "2026-06-29";
 
     public Dictionary<string, ModelInfo> Players = new Dictionary<string, ModelInfo>();
     public Dictionary<string, string> Decks = new Dictionary<string, string>();

@@ -1,0 +1,16 @@
+{
+  "mode": "generate",
+  "generation": 3,
+  "games": 9000,
+  "gamesPerFile": 60,
+  "maxActions": 400,
+  "featureVersion": 3,
+  "parallelGames": 0,
+  "iterations": 5000,
+  "rollout": "Random",
+  "maxRolloutActions": 40,
+  "networkResource": "Models/Experimental/gen2_v3",
+  "leafRolloutMix": 0.75,
+  "puctC": 1.5,
+  "presetFraction": 0.6
+}

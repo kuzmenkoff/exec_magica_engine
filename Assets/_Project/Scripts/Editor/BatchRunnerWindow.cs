@@ -27,7 +27,7 @@ public class BatchRunnerWindow : EditorWindow
     private OpponentModelDefinition cloneP, cloneE;
     private SerializedObject soP, soE;
     private int cachedP = -1, cachedE = -1;
-    private bool showP = true, showE = true;
+    private bool showP = false, showE = false;   // Parameters foldouts collapsed by default
     private Vector2 scroll;
     private string[] deckOptions;
 
@@ -94,6 +94,7 @@ public class BatchRunnerWindow : EditorWindow
 
         EditorGUILayout.Space();
         if (GUILayout.Button("Run batch")) Run();
+        if (GUILayout.Button("Run batch (.NET)")) RunDotNet();
         if (!string.IsNullOrEmpty(lastResult)) EditorGUILayout.HelpBox(lastResult, MessageType.Info);
 
         EditorGUILayout.EndScrollView();
@@ -118,7 +119,9 @@ public class BatchRunnerWindow : EditorWindow
         while (p.NextVisible(enter))
         {
             enter = false;
-            if (p.name == "m_Script" || p.name == "id" || p.name == "displayName") continue;
+            if (p.name == "m_Script" || p.name == "id" || p.name == "displayName" ||
+                p.name == "showInGame" || p.name == "heroAvatarPath" || p.name == "eloRating" ||
+                p.name == "rated" || p.name == "description") continue;
             EditorGUILayout.PropertyField(p, true);
         }
         so.ApplyModifiedProperties();
@@ -182,6 +185,38 @@ public class BatchRunnerWindow : EditorWindow
             Debug.LogException(ex);
         }
         finally { EditorUtility.ClearProgressBar(); }
+    }
+
+    private void RunDotNet()
+    {
+        string pDeck = BenchDeckName(deck1), eDeck = BenchDeckName(deck2);
+        if (pDeck == null || eDeck == null)
+        { lastResult = ".NET supports preset / random decks only (not saved Player/Enemy decks)."; return; }
+
+        BenchLauncher.Launch(new BenchRunSpec
+        {
+            mode = "batch",
+            agents = new List<AgentSpec> { cloneP.ToAgentSpec(), cloneE.ToAgentSpec() },
+            decks = new[] { pDeck, eDeck },
+            games = games,
+            baseSeed = baseSeed,
+            maxActions = maxActions,
+            parallelGames = parallelGames,
+            alternateStart = alternateStart,
+            logEvents = logEvents,
+            oneFilePerSession = oneFilePerSession,
+            outputRoot = outputRoot
+        });
+        lastResult = $"Launched .NET batch: {cloneP.Id} ({pDeck}) vs {cloneE.Id} ({eDeck}), {games} games (see terminal).";
+    }
+
+    private string BenchDeckName(int idx)
+    {
+        int P = deckResourceNames.Length;
+        if (idx < P) return deckResourceNames[idx];
+        if (idx == P + 2) return "RandomDeck";
+        if (idx == P + 3) return "RandomPreset";
+        return null;   // saved Player/Enemy decks — Unity-only
     }
 
     private static AllCards LoadDatabase()

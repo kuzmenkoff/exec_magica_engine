@@ -29,4 +29,15 @@ public class GreedyOpponentModelDefinition : OpponentModelDefinition
             { "handCountWeight", handCountWeight }
         }
     };
+
+    public override AgentSpec ToAgentSpec() => new AgentSpec
+    {
+        id = Id,
+        kind = "greedy",
+        heroHpWeight = heroHpWeight,
+        attackWeight = attackWeight,
+        hpWeight = hpWeight,
+        minionCountWeight = minionCountWeight,
+        handCountWeight = handCountWeight
+    };
 }

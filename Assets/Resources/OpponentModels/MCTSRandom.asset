@@ -16,18 +16,21 @@ MonoBehaviour:
   displayName: "MCTS \xB7 Random"
   showInGame: 1
   heroAvatarPath: HeroLogos/2
-  eloRating: 568
+  eloRating: 741
   rated: 1
-  description: Deep search. Strong & fast.
-  budgetMode: 0
+  description: Tree search with random playouts.
+  budgetMode: 1
   iterations: 3200
-  timeBudgetMs: 1000
+  timeBudgetMs: 750
   explorationC: 1.41
   rolloutPolicy: 0
-  maxRolloutActions: 200
+  maxRolloutActions: 40
   finalAction: 0
+  leafRolloutMix: 0
   determinize: 1
   knowsOpponentDeck: 1
   parallelize: 0
   threadCount: 0
   seed: 0
+  networkResource: 
+  puctC: 1.5

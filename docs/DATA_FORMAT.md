@@ -1,11 +1,19 @@
-# Data Format — EXEC_MAGICA
+# Data Format — EXEC_MAGICA <!-- omit in toc -->
 
 How a game is serialized for analysis and ML training. The engine's **event log**
 is the source of truth; everything here is derived from it plus harness metadata.
 On-disk contract is **`schemaVersion: 1`** (frozen 2026-06-13). Metric definitions
 live in [METRICS.md](METRICS.md).
 
----
+## Table of Contents <!-- omit in toc -->
+- [Versioning](#versioning)
+- [Reproducibility](#reproducibility)
+- [Session record — one JSON document per game](#session-record--one-json-document-per-game)
+- [Self-play dataset — the ML training data](#self-play-dataset--the-ml-training-data)
+- [Hidden information](#hidden-information)
+- [Persistence layout](#persistence-layout)
+- [Who produces what](#who-produces-what)
+
 
 ## Versioning
 
@@ -56,8 +64,7 @@ so every record is self-describing.
   },
 
   "cardImpact": { "1042": 12.0, "3005": 6.0 },  // per-card impact (CardId → score), see METRICS.md
-  "decisions": [ /* the ML dataset rows — see below */ ],
-  "events":    [ /* full GameEvent log; written only when the logEvents toggle is on */ ]
+  "events": [ /* full GameEvent log; written only when the logEvents toggle is on */ ]
 }
 ```
 
@@ -66,70 +73,68 @@ recomputed from scratch.
 
 ---
 
-## Decision record — the unit of the ML dataset
+## Self-play dataset — the ML training data
 
-One row per decision an agent made.
+Separate from the telemetry session records above: `SelfPlayDataGenerator` plays
+MCTS-vs-MCTS games and writes **one JSONL row per decision**, used to distil the network (see [AGENTS.md](AGENTS.md) → *Neural*), consumed by
+[`ml/train_generations.ipynb`](../ml/train_generations.ipynb). Written in chunks (one file per N games) under
+`Runs/SelfPlayData/gen<N>/`.
 
 ```jsonc
 {
-  "turn": 5,
-  "actionIndex": 21,
-  "actorSide": "Player",
-  "thinkTimeMs": 4.1,
-  "stateFeatures": { /* see below */ },
-  "legalActions": [ /* encoded actions, see below */ ],
-  "chosenActionIndex": 3,   // policy label: index into legalActions
-  "valueTarget": 1          // 1 if actorSide ultimately won, else 0 (stamped from outcome)
+  "features": [ /* fixed-length float vector, PUBLIC info only — see below */ ],
+  "side": "Player",                              // acting side; this row's point of view
+  "policy": [ [type, src, tgtZone, tgtIdx, visits], ... ],  // MCTS visit distribution π
+  "z": 1,            // outcome from `side` POV: +1 win / 0 draw / -1 loss (stamped at game end)
+  "t": 7,            // decisions remaining until the game ends (for optional value discount z·γ^t)
+  "cardIds": [ ... ] // per-slot CardId, parallel to the feature slots (for future card embeddings)
 }
 ```
 
-`chosenActionIndex` is the label for **policy (behavior-cloning)** training;
-`valueTarget` is the label for **value-network** training.
+Unlike behaviour cloning, the **policy target is the full visit distribution** (a soft
+AlphaZero-style target), and the **value target is the signed outcome** $z$ (optionally
+discounted by game length). The same network is trained with masked cross-entropy on $\pi$
+and MSE on $z$.
 
----
+### Feature vector (encoder) <!-- omit in toc -->
 
-## State features
+Produced by `StateEncoder` from the **acting player's point of view**, **public information
+only** — the opponent's hand is a **count**, never identities. A fixed-length flat float
+vector of per-card slots + global scalars:
 
-> **Status:** the session record (outcome, per-side metrics, card impact, events) is
-> produced now. The **decision rows and state features below are the ML dataset spec** —
-> they are emitted by a dedicated **dataset extractor** added with the ML phase, not yet
-> populated by the runner.
+- **per-card slot** (hand, own field, opponent field): normalized mana/attack/HP/maxHP,
+  keyword one-hots, and flags (isSpell, occupied, canAttack, remaining-attacks, silenced,
+  has-effects);
+- **globals:** hero HP, mana/pool/pending, fatigue, deck/hand/field counts, turn number.
+- **effect block** (v2+): the slot's primary card effect — trigger / type / target one-hots + values;
+- **unseen-pool block** (v3): the opponent's and own remaining cards, summed **per mana bucket**
+  (order-free) — the network's view of the hidden pool (see *Hidden information*).
 
-What an agent / the dataset sees about a position.
+> **Versioned & evolving.** Size and layout are tagged by `StateEncoder.LayoutVersion`:
+> **v1-400** (stats + keywords), **v2-1216** (+ structured card **effects** per slot), **v3-1616**
+> (+ **unseen-card-pool** summaries — see *Hidden information*). A dataset is compatible only with a
+> network trained on the **same** layout version. The **row schema is unchanged** across them
+> (`schemaVersion` stays 1) — only the `features` length differs.
 
-**Numeric groups**
-- **self / opponent** (same fields each): `hp, maxHp, mana, manaPool, fatigueCounter,
-  handCount, deckCount, fieldCount, graveyardCount, sumFieldAttack, sumFieldHP`
-- **board:** 7 slots per side — `{ attack, hp, keywords }`; an empty slot is all zeros
-- **global:** `turnNumber, whoseTurn`
+### Action space (policy head) <!-- omit in toc -->
 
-**Keyword bitmask** — the dataset **feature encoding** (one bit per keyword, bitwise OR;
-*not* the raw `KeywordType` enum values, which are sequential):
+Every action maps to a **fixed flat index**, mirrored in C# (`ActionEncoding`) and Python
+(`action_index`). An action is first described as `[type, src, tgtZone, tgtIdx]` using **slot
+indices consistent with the feature encoding**:
 
-| keyword | bit |
+| field | values |
 |---|---|
-| Provocation | 1 |
-| Shield | 2 |
-| Charge | 4 |
-| Rush | 8 |
-| DoubleAttack | 16 |
-| Lifesteal | 32 |
+| type | 0 EndTurn · 1 PlayCard · 2 AttackCard · 3 AttackHero |
+| tgtZone | 0 none · 1 myField · 2 oppField · 3 myHero · 4 oppHero |
+| src / tgtIdx | positions within the hand / field slot lists |
 
-**Action encoding**
+The flat layout (227 indices): `End | Play(noTarget) | Play→myField | Play→oppField |
+Play→myHero | Play→oppHero | AttackCard | AttackHero`. The policy head emits one logit per
+index; illegal actions are masked before softmax.
 
-```jsonc
-{
-  "type": "PlayCard|AttackCard|AttackHero|EndTurn",
-  "sourceInstanceId": 1234,
-  "targetType": "None|Card|Hero",
-  "targetInstanceId": 5678,     // when targetType == Card
-  "targetHeroSide": "Enemy",    // when targetType == Hero
-  "fieldIndex": null
-}
-```
-
-A fixed-width numeric encoding (for a policy head) is derived from this structured
-form when needed.
+> **C#↔Python contract.** `StateEncoder` ↔ Python `FEATURES`, and `ActionEncoding.Index` ↔
+> `action_index`, must agree on feature size and action layout — otherwise training and
+> in-engine inference disagree. **Changing the encoding requires regenerating the dataset.**
 
 ---
 
@@ -137,10 +142,12 @@ form when needed.
 
 Two different things treat hidden information separately:
 
-**Dataset / training feature view** masks the opponent's hand and deck **identities** —
-only their **counts** are exposed, so a value/policy network never sees hidden cards.
-- Visible: own everything; opponent HP / mana / field / graveyard (face-up) + hand/deck counts.
-- Hidden (to the feature view): opponent hand-card identities and deck order.
+**Dataset / training feature view.** v1/v2 expose only the opponent's hand/deck **counts** — no card
+identities. **v3** additionally gives the network the **unseen-card pool**: the multiset of still-unseen
+cards (opponent deck + hand, and own deck), summarized **order-free** by mana bucket. This is the *same
+legal information the MCTS uses* (known decklist minus what's been played) — it slightly closes the
+information gap between the network and its search teacher, **without** ever revealing the opponent's
+*current* hand or draw order.
 
 **MCTS agent info model (`knowsOpponentDeck = true`)** uses a **known-decklist** assumption:
 the agent knows *which* cards the opponent runs and sees what's already been played, but not
@@ -162,9 +169,13 @@ queries without opening individual files.
 ```
 Runs/
 ├── index.jsonl                         # master query table (one line per finished run)
-└── <UTC>__<P-model>-vs-<E-model>__<P-deck>-vs-<E-deck>/
-    ├── sessions.jsonl                  # one full session record per line
-    └── summary.json                    # run config + BatchSummary
+├── <UTC>__<P-model>-vs-<E-model>__<P-deck>-vs-<E-deck>/
+│   ├── sessions.jsonl                  # one full session record per line
+│   └── summary.json                    # run config + BatchSummary
+└── SelfPlayData/
+    └── gen<N>/
+        ├── meta.json            # generation, teacher, layout version, card-set rev, seeds
+        └── gen<N>_0000.jsonl    # chunked decision rows (one file per N games), resume-aware
 ```
 
 - **`sessions.jsonl`** — JSON Lines; append-friendly during the run, stream-readable
@@ -198,5 +209,5 @@ df[(df.playerModel == "MCTS") | (df.enemyModel == "MCTS")]
 | `thinkTimeMs`, mean/median think | harness (`Stopwatch` around `ChooseAction`) |
 | end reason | harness (post-loop classification) |
 | seed, startingSide, players, decks, sessionId | harness (session setup) |
-| state features, legal actions, labels, masking | dataset extractor |
+| self-play features / visit-distribution policy / value targets | `SelfPlayDataGenerator` (StateEncoder + MCTS `Decide`) |
 | win rate + CI, mana efficiency, card impact | offline metrics aggregator |

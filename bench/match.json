@@ -1,0 +1,11 @@
+{
+  "mode": "match",
+  "networkResource": "Models/Experimental/gen3",
+  "leafRolloutMix": 0.75,
+  "puctC": 1.5,
+  "decks": ["AggroPreset", "ControlPreset", "MidrangePreset", "TokenPreset"],
+  "timeBudgetsMs": [1500],
+  "gamesPerCell": 40,
+  "maxActions": 400,
+  "parallelGames": 0
+}

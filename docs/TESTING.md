@@ -1,6 +1,6 @@
 # Testing — EXEC_MAGICA <!-- omit in toc -->
 
-The engine ships with **77 automated unit tests** ([NUnit](https://nunit.org/) /
++ The engine ships with **90 automated unit tests** ([NUnit](https://nunit.org/) /
 Unity Test Framework, EditMode). They run **headless** — no scene, no play mode — because the
 whole `LogicLayer` is pure C#. Every test builds a controlled `GameState`, applies actions
 through the real `GameEngine`, and asserts on the resulting state and `GameEvent` stream.
@@ -40,7 +40,8 @@ which references only `LogicLayer`). No Unity Asset Store content or visual asse
 | **Simulation** | `GameSimulationDeterminismTests` | 3 | Seeded playouts are reproducible and never mutate the caller's state. |
 | **AI** | `GreedyVsRandomBaselineTests`, `MctsBaselineTests` | 3 | Greedy beats Random; ISMCTS beats Random (> 70% on a synthetic mirror match); MCTS decision-speed benchmark. |
 | **Telemetry** | `BatchRunnerTests`, `SessionWriterTest` | 2 | Batch summary aggregation; run output (`summary.json` / `sessions.jsonl` / `index.jsonl`). |
-| | **Total** | **77** | |
+| **Encoding** | `StateEncoderTests` | 13 | `StateEncoder` v1-400 / v2-1216 / v3-1616: feature lengths + `EncodeFor` dispatch, imperfect information (opponent hand identities and deck order never leak), the v2 effect block and the v3 unseen-pool block (v2 is a strict prefix of v3). |
+| | **Total** | **90** | |
 
 ## What the tests guarantee
 
@@ -55,6 +56,9 @@ which references only `LogicLayer`). No Unity Asset Store content or visual asse
   that weakens an agent fails the build.
 - **Telemetry integrity** — batch aggregation and run serialization match the documented
   [data format](DATA_FORMAT.md).
+- **Imperfect-information integrity** — the feature encoder is proven to expose only public
+  information: the opponent's hidden hand identities and both decks' draw order never affect the
+  encoding (encodings v1/v2/v3), so the network cannot read hidden state.
 
 ## Scope
 

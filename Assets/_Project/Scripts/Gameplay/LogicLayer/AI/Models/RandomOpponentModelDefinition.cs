@@ -14,4 +14,6 @@ public class RandomOpponentModelDefinition : OpponentModelDefinition
         ModelId = string.IsNullOrEmpty(Id) ? "Random" : Id,
         Params = new Dictionary<string, object>()
     };
+
+    public override AgentSpec ToAgentSpec() => new AgentSpec { id = Id, kind = "random" };
 }

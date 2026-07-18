@@ -1,4 +1,4 @@
-# Metrics — EXEC_MAGICA
+# Metrics — EXEC_MAGICA <!-- omit in toc -->
 
 How the project measures and compares decision-making agents. Every metric is
 computed **offline** from a recorded game's **event log** — the deterministic
@@ -6,9 +6,18 @@ stream of everything that happened (`HeroDamaged`, `CardSummoned`, `ManaSpent`, 
 Because the log is replayable for a fixed seed, every number here is reproducible
 and auditable: the same games always yield the same metrics.
 
----
+## Table of Contents <!-- omit in toc -->
+- [Win rate (with confidence interval)](#win-rate-with-confidence-interval)
+- [Rating — Bradley–Terry / Elo](#rating--bradleyterry--elo)
+- [Game duration](#game-duration)
+- [Think time per move](#think-time-per-move)
+- [Mana efficiency](#mana-efficiency)
+- [Card impact score](#card-impact-score)
+- [Game end reason](#game-end-reason)
+- [Compute scaling (tactical depth)](#compute-scaling-tactical-depth)
 
-## 1. Win rate (with confidence interval)
+
+## Win rate (with confidence interval)
 
 **What.** The fraction of games an agent wins — the headline measure of strength.
 
@@ -44,7 +53,7 @@ Two agents whose intervals **overlap** are not distinguishable at this sample si
 
 ---
 
-## 2. Rating — Bradley–Terry / Elo
+## Rating — Bradley–Terry / Elo
 
 **What.** A single number per agent that summarizes strength on one common scale,
 so the whole field can be ranked at a glance.
@@ -68,12 +77,12 @@ from **bootstrap**: resample the games, refit the ratings, repeat (300×), and t
 the 2.5/97.5 percentiles — this captures how much the ratings could wobble given
 the limited games per pair.
 
-**Example.** Greedy ≈ 332, an MCTS ≈ 561. A ~230-point gap predicts the MCTS wins
-roughly 4 out of 5 of their head-to-head games.
+**Example.** tuned Greedy ≈ 492, NN+MCTS (gen0) ≈ 794. The ~300-point gap predicts the NN+MCTS wins
+~85% of head-to-head games — matching the observed **82%** in the matchup matrix.
 
 ---
 
-## 3. Game duration
+## Game duration
 
 **What.** How long a game runs — in **turns** and in **actions** (individual plays).
 
@@ -88,7 +97,7 @@ freak-long game).
 
 ---
 
-## 4. Think time per move
+## Think time per move
 
 **What.** How long an agent takes to choose one action, in milliseconds.
 
@@ -104,9 +113,13 @@ report both **mean** and **median**:
 MCTS in particular has a few very slow moves (large branching) that pull the mean
 above the median — reporting both is honest.
 
+For search agents on a **time** budget, the ladder also reports **iters/move** — how many MCTS iterations
+fit the budget. It is the machine-anchored companion to think-time: on other hardware the same wall-clock
+buys proportionally more/fewer iterations (see [LADDER.md](LADDER.md) → *Benchmark environment*).
+
 ---
 
-## 5. Mana efficiency
+## Mana efficiency
 
 **What.** What fraction of its available mana an agent actually spends each turn.
 
@@ -133,7 +146,7 @@ across the game uses its resources well; one at $0.55$ is leaving a lot on the t
 
 ---
 
-## 6. Card impact score
+## Card impact score
 
 **What.** A per-card number measuring how much a card actually *does* in the games it's
 played.
@@ -172,7 +185,7 @@ Once the planned removal credit lands, a minion that kills a 3/4 would add $+7$.
 
 ---
 
-## 7. Game end reason
+## Game end reason
 
 **What.** A label for *why* each game ended.
 
@@ -193,6 +206,23 @@ A healthy experiment is dominated by `HeroLethal`; a spike in `MaxActionsReached
 means games are stalling and the numbers need a second look.
 
 ---
+
+## Compute scaling (tactical depth)
+
+**What.** How much an agent's play improves when given **more thinking time** — measured by playing the
+champion **against itself** with one side on a K× time budget, reading the stronger side's win rate.
+
+**Why.** Strength metrics are taken at a fixed budget; this asks the orthogonal question — *how much depth
+is left to find?* If K× more compute barely wins (~50%), extra search finds no better moves: the deck is
+near its **skill ceiling**. If it wins decisively, real tactical depth remains. Run per deck, it maps where
+the game rewards deeper thought — and separates a *method* plateau from the *game's* ceiling.
+
+**How.** For ratio $K \in \{1,2,4,8,16\}$ the "strong" side gets $K\times$ the reference's time/move (both
+sides the same network), alternating start; report the strong side's Wilson win rate. $K=1$ is the ~50%
+sanity check; a rising curve = depth remains; a flat ~50% curve = depth exhausted.
+
+**Example.** Champion vs self: on ControlPreset the 16× side wins ~73% (deep — more search keeps helping);
+on TokenPreset ~51% (flat — the ceiling is reached). See [GENERATIONS.md](GENERATIONS.md) → *Conclusion*.
 
 *Computation lives in the offline metrics aggregator; raw per-game data and the
 serialized record schema are described in [DATA_FORMAT.md](DATA_FORMAT.md).*

@@ -39,6 +39,8 @@ public abstract class OpponentModelDefinition : ScriptableObject
     public abstract IGameActionPolicy CreatePolicy(int seed);
     /// <summary>Returns telemetry metadata (model id + parameters) recorded with each session.</summary>
     public abstract ModelInfo BuildModelInfo();
+    /// <summary>Serializable spec for the .NET bench runner and research tooling; mirrors CreatePolicy.</summary>
+    public abstract AgentSpec ToAgentSpec();
 
 #if UNITY_EDITOR
     /// <summary>Called by the Tournament+Rating Editor tool to persist computed ratings.</summary>

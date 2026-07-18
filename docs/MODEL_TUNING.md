@@ -1,16 +1,27 @@
-# Model Tuning — EXEC_MAGICA
+# Model Tuning — EXEC_MAGICA <!-- omit in toc -->
 
 How each agent's parameters are selected and frozen. Comparative rankings live in
 [LADDER.md](LADDER.md); metric definitions in [METRICS.md](METRICS.md). Random is
 untuned (the baseline).
+
+## Table of Contents <!-- omit in toc -->
+- [Method](#method)
+- [Greedy (heuristic baseline)](#greedy-heuristic-baseline)
+- [MCTS — rollout families](#mcts--rollout-families)
+  - [MCTS · Greedy rollout](#mcts--greedy-rollout)
+  - [MCTS · Random rollout](#mcts--random-rollout)
+  - [MCTS · Neural (NN-guided)](#mcts--neural-nn-guided)
+- [Comparison — rollout families vs NN (strength vs time and iterations)](#comparison--rollout-families-vs-nn-strength-vs-time-and-iterations)
+- [Frozen configs (summary)](#frozen-configs-summary)
+
 
 ## Method
 
 - **Selection:** round-robin between candidate parameter sets.
 - **Metric:** win rate with Wilson 95% CI; rank by the CI **lower bound**.
 - **Discipline:** tune on **TRAIN** decks+seeds, confirm on **HELD-OUT** before freezing.
-- **Budget:** Iterations (reproducible at seed) for all data; wall-clock only for live play.
-- Common: alternating start, mirror matches, fixed seed set.
+- **Budget:** parameter *sweeps* use fixed **iterations** (reproducible at seed); the **ladder** and head-to-heads use a **time budget** (1 s/move). iteration↔time is runtime/machine-dependent, so a
+common wall-clock is the only cross-agent-fair footing (see the Frozen-configs note).
 
 
 ---
@@ -161,62 +172,84 @@ Strong even at the lowest budget; saturates ~85%. Per-iteration cost ~0.25–0.3
 
 > **Frozen (search params):** `explorationC=1.41, maxRolloutActions=40, finalSelection=MaxVisits`
 
-### MCTS · ML rollout (value network)
+### MCTS · Neural (NN-guided)
 
-**What.** *Future work (roadmap).* A learned value function replaces playout-based leaf
-evaluation — aiming for high-quality leaf estimates at near-instant cost.
+**What.** MCTS whose leaf evaluation is a learned **value head**, with a **policy-head prior**
+in selection (PUCT) instead of a playout — see [AGENTS.md](AGENTS.md) → *MCTS · Neural*.
 
-**Search space**
+**Not grid-tuned here.** Unlike the Greedy / rollout families, this agent's quality is not a
+small parameter search — the network is **trained** (distilled from self-play) and **evolves
+by generation** (encoding, architecture, data). Its per-generation training config, metrics,
+and strength live in **[GENERATIONS.md](GENERATIONS.md)**.
 
-| param | role | values |
+**Search-side params** (the few knobs that *are* config, not learned):
+
+| param | role | value |
 |---|---|---|
-| rolloutPolicy | leaf evaluation | learned value network |
-| network arch | value head | TBD |
-| explorationC | UCB exploration | TBD (likely 1.41) |
-| iterations | search budget | TBD |
+| networkResource | which trained weight set guides search | per generation |
+| puctC | PUCT exploration / prior weight | 1.5 (initial) |
+| explorationC | unused in NN mode (PUCT replaces UCB) | — |
 
-> 🚧 Selection / Strength-vs-budget / Frozen to be added when the network ships.
+> Selection / strength-vs-budget are tracked per generation in
+> [GENERATIONS.md](GENERATIONS.md), not frozen here.
 
 ---
 
-## Comparison — rollout policies (strength vs time)
+## Comparison — rollout families vs NN (strength vs time and iterations)
 
-Greedy- vs random-rollout MCTS, both vs tuned Greedy, common decks (Aggro/Control),
-fatigue-on. Win% is read against **mean think-time per move**, so the policies are
-compared at matched compute — not at matched iterations.
+All three MCTS agents vs tuned Greedy, decks Aggro+Control (deck-averaged), 100 games/cell,
+fatigue-on. Measured on the **.NET headless runner** (server GC) — see the runtime note below.
 
-![Rollout policies — strength vs time](assets/rollout_time.png)
+![Strength vs time](assets/rollout_time.png)
+![Sample efficiency — strength vs iterations](assets/rollout_iters.png)
 
-| ~Time / move | Greedy rollout | Random rollout |
-|---|---|---|
-| ~340–405 ms | 59.2% | **82.5%** |
-| ~670–1030 ms | 76.7% | **85.0%** |
-| ~1370–2080 ms | 83.3% | 85.0% |
-| ~2720–3050 ms | 85.0% | 85.8% |
+| think/move | Greedy rollout | Random rollout | NN+MCTS (gen0) |
+|---|---|---|---|
+| ~80 ms   | 51.0% | 81.5% | 82.5% |
+| ~195 ms  | 77.5% | 85.0% | 84.0% |
+| ~390 ms  | 85.0% | 89.0% | 89.0% |
+| ~780 ms  | 86.0% | 88.5% | **92.0%** |
+| ~1560 ms | 90.0% | 88.5% | **91.5%** |
 
-**Finding.** At matched time, **random rollout dominates** — by ~23 pts at a tight ~400 ms
-budget (CIs disjoint), the gap shrinking as the budget grows; both saturate at the ~85%
-matchup ceiling. Random rollouts are ~14× cheaper per iteration, so under a time budget the
-sheer **number** of simulations beats the higher per-rollout **quality** of greedy rollouts
-— until both plateau.
+Iterations to ~85% vs Greedy: **NN+MCTS ~2 700 · Greedy rollout ~2 250 · Random rollout ~4 950.**
+
+**Findings (two axes).**
+- **On time:** NN+MCTS matches or **edges** Random rollout (92% vs 88.5% at ~780 ms), and both ≫
+  Greedy rollout at tight budgets (~80 ms: Greedy 51% — only ~400 iters fit).
+- **On iterations:** NN+MCTS ≈ Greedy rollout ≫ Random rollout — NN reaches 85% with **~2× fewer
+  iterations** than Random rollout; the learned prior roughly doubles per-iteration value.
+- **Why NN wins as a class:** Greedy rollout has efficient but expensive iterations (slow on time);
+  Random rollout has cheap but wasteful ones (~2×); **NN+MCTS = efficient *and* cheap-enough
+  iterations**, competitive on *both* axes.
+
+> **Runtime note.** iteration↔time depends on the runtime. These are **.NET-runner** figures
+> (Random rollout ~19 000 it/s vs ~3 200 on Unity/Mono). Cross-agent fairness comes from the
+> **time budget**, not iteration counts — the earlier Unity iteration budgets are superseded.
 
 ---
 
 ## Frozen configs (summary)
 
-Ladder agents run at the **strongest configuration whose mean think-time ≤ 2 s/move** on
-the reference machine (the ladder eligibility cap — see [LADDER.md](LADDER.md)).
+Every search agent is compared at a **common time budget of 1 s/move** (`Budget.Time`); iterations are
+an *output*, not a frozen input. Figures below are from the final time-matched ladder
+([LADDER.md](LADDER.md)); mean think/move ≈ 0.78 s (forced 1-move states,
+counted at 0 ms, pull the average below the 1 s cap).
 
-| Agent | Frozen parameters | Ladder budget | ≈ think/move | ≈ win% vs Greedy |
-|---|---|---|---|---|
-| **Greedy** | `attack=2, hp=1, minionCount=1, handCount=1` (heroHp anchor 1.0) | — | <1 ms | — |
-| **MCTS · Greedy rollout** | `C=1.41, maxRolloutActions=40, finalSelection=MaxVisits` | **350 iters** | ~1.4 s | ~80% |
-| **MCTS · Random rollout** | `C=1.41, maxRolloutActions=40, finalSelection=MaxVisits` | **3200 iters** | ~1.0 s | ~85% |
+| Agent | Frozen parameters | iters/move @ 1 s | Elo |
+|---|---|---|---|
+| **random** | — | — | 0 (anchor) |
+| **Greedy** | `attack=2, hp=1, minionCount=1, handCount=1` (heroHp anchor 1.0) | — | 492 |
+| **MCTS · Greedy rollout** | `C=1.41, maxRolloutActions=40, finalSelection=MaxVisits` | ~2 400 | 722 |
+| **MCTS · Random rollout** | `C=1.41, maxRolloutActions=40, finalSelection=MaxVisits` | ~14 700 | 741 |
+| **MCTS + NN (gen0)** | `net h128 v2 · mix=0.75 · mr=40 · C=1.41 · PuctC=1.5` | ~8 500 | 794 |
+| **MCTS + NN (gen1)** | `net h128 v2 · mix=0.75` (temp=1.3 self-play champion) | ~9 100 | 856 |
+| **MCTS + NN (gen2)** | `net h128 v3-1616 · mix=0.75` (unseen-card pools) | ~7 100 | 860 |
+| **MCTS + NN (gen3)** | `net h128 v3-1616 · mix=0.75` (pool-aware teacher) | ~8 500 | 877 |
 
-Under the ≤2 s cap, the **random-rollout** family reaches its ~85% plateau (3200 iters,
-~1.0 s), while the **greedy-rollout** family cannot quite reach 85% (800 iters ≈ 2.7 s is
-over budget) and competes at ~83% (400 iters). The practical time cap mildly favors the
-cheaper rollout — consistent with the Comparison.
-
-> Iteration budgets are deck-dependent in think-time; the final ladder run confirms each
-> stays ≤2 s on its deck pool.
+> **Why time, not frozen iterations.** An earlier ladder froze each agent at a hand-tuned iteration count
+> chosen to hit ~1 s/move — but that is **machine-dependent**: the same count yields very different
+> wall-clock on different hardware (and after the deep-copy speed-up), so the denser v3 nets silently got
+> more time and an **inflated Elo**. A `Budget.Time` ladder removes the calibration entirely and rates every
+> agent on the same footing. Note the iters/move column: the NN agents do **fewer** iterations than plain
+> Random rollout (~14 700) yet rank far higher — the learned prior + value make each iteration count.
+> (PuctC is still at its initial **1.5**, never grid-searched — a free tuning lever for future work.)

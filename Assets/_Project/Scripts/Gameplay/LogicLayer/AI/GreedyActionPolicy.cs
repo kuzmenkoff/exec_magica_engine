@@ -72,6 +72,9 @@ public class GreedyActionPolicy : IGameActionPolicy
 
             double score = Evaluate(engine.State, actorSide);
 
+            if (score >= WinScore)
+                return action;
+
             if (score > bestScore)
             {
                 bestScore = score;

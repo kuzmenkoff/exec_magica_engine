@@ -24,6 +24,14 @@ public class MctsConfig
     public Rollout RolloutPolicy = Rollout.Random;
     /// <summary>Hard cap on actions per rollout; if reached, the rollout scores as a draw (0.5).</summary>
     public int MaxRolloutActions = 200;
+    /// <summary>NN-MCTS only: blend a rollout into the leaf value (0 = pure value, 1 = pure rollout).</summary>
+    public double LeafRolloutMix = 0.0;
+
+    /// <summary>Optional distilled net. When set, search uses PUCT priors + value-at-leaf
+    /// instead of UCB1 + rollout (NN-guided MCTS). Null = classic ISMCTS.</summary>
+    public NeuralNet Network = null;
+    /// <summary>PUCT exploration constant (used only when <see cref="Network"/> is set).</summary>
+    public double PuctC = 1.5;
 
     /// <summary>If true, re-determinize hidden info each iteration (ISMCTS); false = perfect-information search.</summary>
     public bool Determinize = true;

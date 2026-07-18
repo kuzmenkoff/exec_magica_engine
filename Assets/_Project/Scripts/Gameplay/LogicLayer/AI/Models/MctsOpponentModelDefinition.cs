@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 [CreateAssetMenu(
     fileName = "MctsOpponentModel",
@@ -17,6 +17,7 @@ public class MctsOpponentModelDefinition : OpponentModelDefinition
     [SerializeField] private MctsConfig.Rollout rolloutPolicy = MctsConfig.Rollout.Random;
     [SerializeField] private int maxRolloutActions = 200;
     [SerializeField] private MctsConfig.FinalSelection finalAction = MctsConfig.FinalSelection.MaxVisits;
+    [SerializeField] private double leafRolloutMix = 0.0;
 
     [Header("Information model")]
     [SerializeField] private bool determinize = true;
@@ -28,6 +29,11 @@ public class MctsOpponentModelDefinition : OpponentModelDefinition
 
     [Header("Reproducibility")]
     [SerializeField] private int seed = 0;            // 0 = non-deterministic
+
+    [Header("Neural guidance (optional)")]
+    [Tooltip("Resources path to a weight blob → enables PUCT + value-at-leaf (NN+MCTS). Empty = classic ISMCTS.")]
+    [SerializeField] private string networkResource = "";
+    [SerializeField] private double puctC = 1.5;
 
     private MctsConfig BuildConfig(int seed) => new MctsConfig
     {
@@ -42,7 +48,10 @@ public class MctsOpponentModelDefinition : OpponentModelDefinition
         KnowsOpponentDeck = knowsOpponentDeck,
         Parallelize = parallelize,
         ThreadCount = threadCount,
-        Seed = seed
+        Seed = seed,
+        Network = NeuralNetLoader.Load(networkResource),   // null when path empty
+        PuctC = puctC,
+        LeafRolloutMix = leafRolloutMix,
     };
 
     /// <inheritdoc/>
@@ -64,7 +73,28 @@ public class MctsOpponentModelDefinition : OpponentModelDefinition
             { "knowsOpponentDeck", knowsOpponentDeck },
             { "finalAction", finalAction.ToString() },
             { "parallelize", parallelize },
-            { "threadCount", threadCount }
+            { "threadCount", threadCount },
+            { "networkResource", networkResource },
+            { "puctC", puctC },
+            { "leafRolloutMix", leafRolloutMix },
         }
+    };
+
+    public override AgentSpec ToAgentSpec() => new AgentSpec
+    {
+        id = Id,
+        kind = "mcts",
+        budgetMode = budgetMode,
+        iterations = iterations,
+        timeBudgetMs = timeBudgetMs,
+        explorationC = explorationC,
+        rolloutPolicy = rolloutPolicy,
+        maxRolloutActions = maxRolloutActions,
+        finalAction = finalAction,
+        leafRolloutMix = leafRolloutMix,
+        determinize = determinize,
+        knowsOpponentDeck = knowsOpponentDeck,
+        networkResource = networkResource,
+        puctC = puctC
     };
 }

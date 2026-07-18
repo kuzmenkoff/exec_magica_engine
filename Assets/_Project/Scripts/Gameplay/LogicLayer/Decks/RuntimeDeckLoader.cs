@@ -74,6 +74,8 @@ public static class RuntimeDeckLoader
         return LoadPreset(pick, db);
     }
 
+#pragma warning disable CS0649   // fields are populated by Newtonsoft JSON deserialization
     private class DeckPresetDto { public string PresetName; public List<DeckEntry> Cards; }
     private class DeckEntry { public int CardId; public int Count; }
+#pragma warning restore CS0649
 }

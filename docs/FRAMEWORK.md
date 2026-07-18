@@ -1,4 +1,4 @@
-# Building on the EXEC_MAGICA engine <!-- omit in toc -->
+# EXEC_MAGICA as a framework <!-- omit in toc -->
 
 This repository's engine is **frontend-agnostic**: a pure-C# rules core that runs headless.
 You drive it through one small contract and render the result however you like — a Unity
@@ -17,6 +17,7 @@ frontend built on exactly this API.
 - [Rendering from the event stream](#rendering-from-the-event-stream)
 - [Adding your own cards](#adding-your-own-cards)
 - [Headless self-play](#headless-self-play)
+- [Running experiments at scale (.NET runner)](#running-experiments-at-scale-net-runner)
 - [Where to go next](#where-to-go-next)
 
 ## The engine contract
@@ -197,6 +198,37 @@ SessionWriter.WriteRun("Runs", result);   // -> summary.json + sessions.jsonl + 
 `BatchResult.Summary` gives win rate (with Wilson 95% CI), end-reason breakdown, average
 length, think time and per-card impact. This is the exact pipeline behind the project's
 [ladder](LADDER.md) and [metrics](METRICS.md).
+
+The same call also runs on the standalone **.NET runner** for large parallel experiments — see below.
+
+## Running experiments at scale (.NET runner)
+
+The engine is pure C# with no Unity dependency, so the **same `LogicLayer` also compiles as a
+standalone .NET console** (`bench/`), not just inside Unity. This matters for throughput: Unity's
+Mono/Boehm GC serializes allocations, so game-level parallelism scales *negatively* there; the .NET
+runner uses **server GC** (per-core heaps) and scales **~linearly (~10× on 28 cores)** — with
+bit-identical results.
+
+Agents are described as **data** (`AgentSpec`) and rebuilt in either runtime by `AgentFactory`, so a
+matchup defined in the Unity Editor runs unchanged on the .NET runner:
+
+```csharp
+AgentSpec spec           = model.ToAgentSpec();          // from any OpponentModelDefinition, or hand-built
+IGameActionPolicy policy = AgentFactory.Build(spec, seed);
+```
+
+The runner reads a JSON `BenchRunSpec` and supports several modes:
+
+| mode | what it does |
+|---|---|
+| `generate` | self-play data generation (teacher = MCTS or NN+MCTS) → `Runs/SelfPlayData/gen<N>/` |
+| `batch` | one matchup A vs B, full telemetry via `SessionWriter` — identical output to the in-process path |
+| `ladder` | round-robin of an agent roster → Bradley–Terry / Elo (`Runs/Ladder/`) |
+| `duel` · `match` · `ceiling` | head-to-heads, strength-vs-time, compute-scaling |
+
+The three Editor windows — **Self-Play Data**, **Batch**, **Ladder** — each offer a **Run (.NET)**
+button that serializes the current settings and launches the runner in a separate process: Unity stays 
+responsive, and the run uses the core count set in the window (**0 = all cores**).
 
 ## Where to go next
 

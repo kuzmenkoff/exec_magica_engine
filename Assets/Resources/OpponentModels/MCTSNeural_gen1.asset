@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c647976e49548ec4f96e97bf35a53f9a, type: 3}
+  m_Name: MCTSNeural_gen1
+  m_EditorClassIdentifier: 
+  id: nnmcts-gen1
+  displayName: "MCTS \xB7 NN (gen 1)"
+  showInGame: 0
+  heroAvatarPath: HeroLogos/3
+  eloRating: 856
+  rated: 1
+  description: Network-guided tree search.
+  budgetMode: 1
+  iterations: 300
+  timeBudgetMs: 750
+  explorationC: 1.41
+  rolloutPolicy: 0
+  maxRolloutActions: 40
+  finalAction: 0
+  leafRolloutMix: 0.75
+  determinize: 1
+  knowsOpponentDeck: 1
+  parallelize: 0
+  threadCount: 0
+  seed: 0
+  networkResource: Models/Experimental/gen1
+  puctC: 1.5
